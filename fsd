@@ -1,0 +1,8 @@
+=> [34;4mApp\Models\Category[39;24m {#4213
+     [34mid[39m: [35m1[39m,
+     [34mname[39m: "[32mPersonal[39m",
+     [34mslug[39m: "[32mpersonal[39m",
+     [34mcreated_at[39m: "[32m2022-08-27 17:35:13[39m",
+     [34mupdated_at[39m: "[32m2022-08-27 17:35:12[39m",
+   }
+
