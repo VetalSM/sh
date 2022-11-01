@@ -6,9 +6,8 @@
 
                 <form method="POST" action="/register" class="mt-10">
                     @csrf
-
-                    <x-form.input name="name" placeholder="П.І.Б"required />
-                    <x-form.input name="username"placeholder="логін" required />
+                    <x-form.input name="name" placeholder="П.І.Б" required />
+                    <x-form.input name="username" placeholder="логін" required />
                     <x-form.input name="email" placeholder="email" type="email" required />
                     <x-form.input name="password" placeholder="пароль" type="password" autocomplete="new-password" required />
                     <x-form.button>Зареєструватися</x-form.button>

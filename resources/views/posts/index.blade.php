@@ -9,7 +9,7 @@
 
             {{ $posts->links() }}
         @else
-            <p class="text-center">No posts yet. Please check back later.</p>
+            <p class="text-center">No products yet. Please check back later.</p>
         @endif
     </main>
 </x-layout>
