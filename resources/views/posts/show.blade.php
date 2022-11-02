@@ -125,7 +125,7 @@
                     {{ $post->title }}
                 </h1>
 
-                <div class="space-y-4 text-3xl lg:text-lg leading-loose">{!! $post->body !!}
+                <div class="space-y-4 text-4xl lg:text-lg leading-loose">{!! $post->body !!}
                 </div>
                 <div class=" text-xl md:text-base flex justify-between mb-6">
                     <a href="/"
