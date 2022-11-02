@@ -5,7 +5,7 @@
 
             <header class="flex items-center">
 
-                <h2 class="ml-4">Залишити відгук</h2>
+                <h4 class="ml-4">Залишити відгук</h4>
             </header>
 
             <div class="mt-6">

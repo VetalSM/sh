@@ -4,28 +4,24 @@
 
 
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
-            <div class="col-span-4 lg:text-center lg:pt-14 mb-10">
+        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
+            <div class="col-span-4  lg:pt-14 "  >
+                <div  class=" text-center" >
 
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
-
-                {{--                <p class="mt-4 block text-gray-400 text-xs">--}}
-                {{--                    Published--}}
-                {{--                    <time>{{ $post->created_at->diffForHumans() }}</time>--}}
-                {{--                </p>--}}
-
                 <div>
                     @php
                         $ratings = \App\Models\Rating::where('prod_id', $post->id)->get();
                         $rating_sum =  \App\Models\Rating::where('prod_id', $post->id)->sum('stars_rated');
-        if($ratings!==0 && $rating_sum!==0){
+
+                        if($ratings!==0 && $rating_sum!==0){
                         $rating_value = $rating_sum/$ratings->count();
                         $rate_num = number_format($rating_value);}else{
-            $rate_num=0;
+                        $rate_num=0;
                         }
                     @endphp
-                    <div >
-                        <div class="text-xs py-2 px-10  flex items-center lg:justify-center">
+                    <div>
+                        <div class="  lg:text-center" >
                             @for($i=1; $i<=$rate_num; $i++)
                                 <i class="fa fa-star checked"></i>
                             @endfor
@@ -44,8 +40,9 @@
                                             &nbsp; Немає оцінок
                                         </span>
                                 @endif
-
                         </div>
+                        </div>
+                        <div>
 
                         <form action="{{url('/add-rating')}}" method="post">
                             @csrf
@@ -81,18 +78,17 @@
                                 </div>
                             </div>
                         </form>
-
+                        </div>
                     </div>
                     @if(!empty(auth()->id()))
                         <button type="button" class="bg-blue-500 text-white uppercase font-semibold text-xs py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Оцінити
                         </button>
                     @endif
-<div><p></p></div>
+
                 </div>
-                <div>
-                    @if(@auth()->id() > 0)
-                        @auth()
+                <div class="py-4 text-center ">
+
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
                         @csrf
@@ -100,9 +96,9 @@
                             $prices = DB::table('price')->get();
                         @endphp
                         <input type="hidden" value="{{ $post->id . time()}}" name="id">
-                        <select name="price" class="bt">
+                        <select name="price" class="bt rounded-full py-2 px-2 " >
                             @foreach ($prices as $price)
-                                <option value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
+                                <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
                         </select>
                         <input type="hidden" value="{{$post->title  }}" name="name">
@@ -110,22 +106,23 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton transition-colors text-xm font-semibold hover: rounded-full py-2 px-2" style="margin-left: 40px;">
-
+                            class="cartbutton transition-colors text-xm font-semibold hover: rounded-full ml-6 py-2 px-2">
                             Купити
                         </button>
                     </form>
-                    @endauth
-                    @else
-                        <p class="font-semibold">
-                            <a href="/register" class="hover:underline">Зареєструйтеся</a> або
-                            <a href="/login" class="hover:underline">Увійдіть</a> для покупок.
-                        </p>
-                    @endif
+
+
             </div>
             </div>
             <div class="col-span-8">
-                <div class="hidden lg:flex justify-between mb-6">
+
+
+                <h1 class="font-bold text-3xl lg:text-4xl mb-10 text-center">
+                    {{ $post->title }}
+                </h1>
+
+                <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
+                <div class=" flex justify-between mb-6">
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
@@ -140,17 +137,12 @@
                         До каталогу
                     </a>
 
-                    <div class="space-x-2">
-                        <x-category-button :category="$post->category"/>
-                    </div>
+                    {{--                <div class="space-x-2">--}}
+                    {{--                    <x-category-button :category="$post->category"/>--}}
+                    {{--                </div>--}}
                 </div>
-
-                <h1 class="font-bold text-3xl lg:text-4xl mb-10">
-                    {{ $post->title }}
-                </h1>
-
-                <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
             </div>
+
 
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 @include ('posts._add-comment-form')

@@ -7,7 +7,8 @@
     <div class="py-6 px-5 h-full flex flex-col card text-center">
 {{--        <div class="py-6 px-5 h-full flex-col">--}}
         <div>
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt=" Post illustration" class=" card-img-top rounded-xl">
+            <img src="{{ asset('storage/' . $post->thumbnail) }}"
+                 alt=" Post illustration" class=" card-img-top rounded-xl">
         </div>
 
         <div class="py-6  flex flex-col justify-between flex-1  ">
@@ -76,8 +77,6 @@
 
             <footer class=" items-center mt-8">
                 <div>
-                    @if(@auth()->id() > 0)
-                        @auth()
                     <form  action="{{ route('cart.store') }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
@@ -85,26 +84,21 @@
                             $prices = DB::table('price')->get();
                         @endphp
                         <input type="hidden" value="{{ $post->id . time()}}" name="id">
-                        <select name="price" class="bt" style="float:left;">
+                        <select name="price" class="bt rounded-full py-2 px-2 " style="float:left;">
                             @foreach ($prices as $price)
-                                <option value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
+                                <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
                         </select>
                         <input type="hidden" value="{{$post->title  }}" name="name">
                         <input type="hidden" value="{{$price->weight }}" name="weight">
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                      <button
-                            class="cartbutton transition-colors text-xs font-semibold hover: rounded-full py-2 px-2" style="float:right;">
+                        <button
+                            class="cartbutton transition-colors text-xm font-semibold hover: rounded-full ml-6 py-2 px-2" style="float:left;">
                             Купити
                         </button>
                     </form>
-                        @endauth
-                        @else
-                        <p class="font-semibold">
-                            <a href="/register" class="hover:underline">Зареєструйтеся</a> або
-                            <a href="/login" class="hover:underline">Увійдіть</a> для покупок.
-                        </p>
+
                     {{--                <div class="flex items-center text-sm">--}}
 {{--                                        <img src="/images/author.svg" alt="author"width="30" height="16">--}}
 {{--                    <div class="ml-3">--}}
@@ -122,7 +116,6 @@
                 </div>
 
 
-                @endif
 
             </footer>
         </div>
