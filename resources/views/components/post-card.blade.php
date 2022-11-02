@@ -4,7 +4,7 @@
 <article
 
     {{ $attributes->merge(['class' => 'text-4xl lg:text-sm card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
-    <div class="py-6 px-5 h-full flex flex-col text-center">
+    <div class="py-4 px-5 h-full flex flex-col text-center text-4xl lg:text-sm">
 {{--        <div class="py-6 px-5 h-full flex-col">--}}
         <div>
             <img src="{{ asset('storage/' . $post->thumbnail) }}"
@@ -14,8 +14,8 @@
         <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
 
-                <div class=" text-4xl lg:text-sm" style="float:left;">
-                    <x-category-button class="" :category="$post->category " />
+                <div  style="float:left;">
+                    <x-category-button :category="$post->category " />
                     {{--                   <span class="">--}}
                 </div>
                 <div style="float:right;">
@@ -26,7 +26,7 @@
                     {{--                   </span>--}}
                 </div>
 
-                <div class="mt-12 lg:mt-7 ">
+                <div class="mt-20 lg:mt-8 ">
                     <h1 class=" text-4xl lg:text-sm">
                         <a href="/posts/{{ $post->slug }}">
                             {{ $post->title }}
@@ -42,8 +42,8 @@
                 $rate_num=0;
                             }
                         @endphp
-                        <div class="items-center">
-                            <div class="  items-center">
+                        <div>
+                            <div class="mt-39 lg:mt-3  text-center">
                                 @for($i=1; $i<=$rate_num; $i++)
                                     <i class="fa fa-star checked"></i>
                                 @endfor
@@ -70,13 +70,13 @@
             </header>
 
 
-            <div class=" card-text">
+            <div class="mt-10 lg:mt-3 card-text">
                 {!! $post->excerpt !!}
 
             </div>
 
-            <footer class=" text-center mt-1">
-                <div class="py-2 text-4xl lg:text-sm text-center">
+            <footer class=" mt-10 lg:mt-3">
+                <div class=" text-4xl lg:text-sm text-center">
                     <form  action="{{ route('cart.store') }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf

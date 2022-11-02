@@ -1,9 +1,9 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
-    <h1 class="text-4xl">
+    <h1 class=" text-7xl lg:text-4xl">
         Made<span class="text-blue-500">IS</span>
     </h1>
 <div>
-    <h5>
+    <h5 class="text-4xl lg:text-xl">
       Віддушки <span class="text-blue-700">CANDLESCIENCE</span> в Україні
     </h5>
 </div>
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Search -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
+        <div class="relative flex lg:inline-flex  items-center bg-gray-100 rounded-xl px-3 py-2">
             <form method="GET" action="/">
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">
@@ -22,7 +22,7 @@
                 <input type="text"
                        name="search"
                        placeholder="Пошук"
-                       class="bg-transparent placeholder-black font-semibold text-sm"
+                       class="bg-transparent placeholder-black font-semibold text-4xl lg:text-sm"
                        value="{{ request('search') }}"
                 >
             </form>

@@ -36,10 +36,10 @@
             </a>
         </div>
 
-        <div class="mt-8 md:mt-0 flex items-center px-15">
+        <div class="mt-8 md:mt-0 flex items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex items-center">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
-                <i class="ya-share1__item text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
+                <i class="ya-share1__item text-xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
             </a>
             @auth
 {{--                <a href="#" class="ml-3 rounded-full text-xs font-semibold  uppercase py-3 px-2">--}}
@@ -49,7 +49,7 @@
 
                 <x-dropdown>
                     <x-slot name="trigger">
-                        <button class="text-xm font-bold ">
+                        <button class="text-xl lg:text-sm font-bold ">
                             Вітаю, {{ auth()->user()->name }}!
                         </button>
                     </x-slot>
@@ -84,12 +84,12 @@
                 </x-dropdown>
             @else
                 <a href="/register"
-                   class="text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
+                   class="text-2xl lg:text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                     Реєстрація
                 </a>
 
                 <a href="/login"
-                   class="ml-6 text-xs font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
+                   class="ml-6 text-2xl lg:text-sm font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
                     Вхід
                 </a>
             @endauth

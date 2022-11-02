@@ -55,12 +55,12 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Оцінити {{$post->title}}</h5>
+                                            <h5 class="modal-title text-4xl lg:text-sm" id="exampleModalLabel">Оцінити {{$post->title}}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="rating-css">
-                                                <div class="star-icon">
+                                                <div class="text-4xl lg:text-sm star-icon">
                                                     <input type="radio" value="1" name="product_rating" checked id="rating1">
                                                     <label for="rating1" class="fa fa-star"></label>
                                                     <input type="radio" value="2" name="product_rating" id="rating2">
@@ -75,8 +75,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="rounded-2xl btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
-                                            <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xs py-2.5 px-8 rounded-2xl hover:bg-blue-600">Оцінити</button>
+                                            <button type="button" class=" rounded-2xl btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                                            <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-4xl lg:text-sm py-2.5 px-8 rounded-2xl hover:bg-blue-600">Оцінити</button>
                                         </div>
                                     </div>
                                 </div>
