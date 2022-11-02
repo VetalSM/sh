@@ -6,7 +6,7 @@
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  "  >
-                <div  class=" text-center" >
+                <div  class=" text-center text-4xl lg:text-sm" >
 
                 <img src="{{ asset('storage/' . $post->thumbnail) }}"
                      alt="" class=" rounded-xl" style="display: block;
@@ -25,7 +25,7 @@
                         }
                     @endphp
                     <div>
-                        <div class="text-2xl lg:text-sm  lg:text-center" >
+                        <div class="  lg:text-center" >
                             @for($i=1; $i<=$rate_num; $i++)
                                 <i class="fa fa-star checked"></i>
                             @endfor
@@ -85,13 +85,13 @@
                         </div>
                     </div>
                     @if(!empty(auth()->id()))
-                        <button type="button" class="bg-blue-500 text-white uppercase font-semibold text-2xl lg:text-sm py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="bg-blue-500 text-white uppercase font-semibold  py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Оцінити
                         </button>
                     @endif
 
                 </div>
-                <div class="py-4  text-center">
+                <div class="py-4 text-4xl lg:text-sm text-center">
 
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
@@ -100,7 +100,7 @@
                             $prices = DB::table('price')->get();
                         @endphp
                         <input type="hidden" value="{{ $post->id . time()}}" name="id">
-                        <select name="price" class="bt rounded-full py-2 px-2 text-2xl lg:text-sm" >
+                        <select name="price" class="bt rounded-full py-2 px-2 " >
                             @foreach ($prices as $price)
                                 <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
@@ -110,7 +110,7 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton transition-colors text-2xl lg:text-sm font-semibold hover: rounded-full ml-6 py-2 px-2" >
+                            class="cartbutton transition-colors font-semibold hover: rounded-full ml-6 py-2 px-2" >
                             Купити
                         </button>
                     </form>
@@ -118,16 +118,16 @@
 
             </div>
             </div>
-            <div class="col-span-6">
+            <div class="col-span-6 text-4xl lg:text-sm">
 
 
-                <h1 class="font-bold text-3xl lg:text-lg text-center  mb-10">
+                <h1 class="font-bold text-center  mb-10">
                     {{ $post->title }}
                 </h1>
 
-                <div class="space-y-4 text-4xl lg:text-lg leading-loose">{!! $post->body !!}
+                <div class="space-y-4 leading-loose">{!! $post->body !!}
                 </div>
-                <div class=" text-xl md:text-base flex justify-between mb-6">
+                <div class="  flex justify-between mb-6">
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex items-center text-2xl lg:text-lg hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
