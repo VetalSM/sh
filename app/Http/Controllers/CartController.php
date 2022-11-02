@@ -69,7 +69,7 @@ class CartController extends Controller
     {
 
              $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
-            $chat_id ='5260826364';
+            $chat_id ='-760962497';
 //        dd($_POST['name']);
 //        $search = array('{', '}', ',');
 //        $replace = '';

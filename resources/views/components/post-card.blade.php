@@ -3,27 +3,29 @@
 
 <article
 
-    {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
-    <div class="py-6 px-5 h-full flex flex-col">
+    {{ $attributes->merge(['class' => ' card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
+    <div class="py-6 px-5 h-full flex flex-col card text-center">
 {{--        <div class="py-6 px-5 h-full flex-col">--}}
         <div>
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt=" Post illustration" class="rounded-xl">
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt=" Post illustration" class=" card-img-top rounded-xl">
         </div>
 
-        <div class="mt-6 flex flex-col justify-between flex-1">
+        <div class="py-6  flex flex-col justify-between flex-1  ">
             <header>
 
-                <div class="space-x-2 ">
+                <div class="" style="float:left;">
                     <x-category-button :category="$post->category" />
-                   <span class="ya-share2__item">
+                    {{--                   <span class="">--}}
+                </div>
+                <div style="float:right;">
 
-                       <a class="transition-colors duration-300 text-xs font-semibold bg-gray-100 hover:bg-gray-300 rounded-full py-1 px-1 "
-                           href="/posts/{{ $post->slug }}"
+                    <a class=" transition-colors duration-300 text-xs font-semibold bg-gray-100 hover:bg-gray-300 rounded-full py-1 px-1 "
+                       href="/posts/{{ $post->slug }}"
                     >Більше інформації...</a>
-                   </span>
+                    {{--                   </span>--}}
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-9 card-title">
                     <h1 class="text-3xl clamp one-line">
                         <a href="/posts/{{ $post->slug }}">
                             {{ $post->title }}
@@ -39,8 +41,8 @@
                 $rate_num=0;
                             }
                         @endphp
-                        <div >
-                            <div class="text-xs py-2 px-10  flex items-center lg:justify-center">
+                        <div class="items-center">
+                            <div class="  items-center">
                                 @for($i=1; $i<=$rate_num; $i++)
                                     <i class="fa fa-star checked"></i>
                                 @endfor
@@ -67,12 +69,12 @@
             </header>
 
 
-            <div class="text-sm mt-2 space-y-4">
+            <div class=" card-text">
                 {!! $post->excerpt !!}
 
             </div>
 
-            <footer class="flex justify-between items-center mt-8">
+            <footer class=" items-center mt-8">
                 <div>
                     @if(@auth()->id() > 0)
                         @auth()
@@ -83,7 +85,7 @@
                             $prices = DB::table('price')->get();
                         @endphp
                         <input type="hidden" value="{{ $post->id . time()}}" name="id">
-                        <select name="price" class="bt">
+                        <select name="price" class="bt" style="float:left;">
                             @foreach ($prices as $price)
                                 <option value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
@@ -93,7 +95,7 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                       <button
-                            class="cartbutton transition-colors text-xs font-semibold hover: rounded-full py-2 px-2" style="margin-left: 76px;">
+                            class="cartbutton transition-colors text-xs font-semibold hover: rounded-full py-2 px-2" style="float:right;">
                             Купити
                         </button>
                     </form>
