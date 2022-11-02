@@ -5,10 +5,14 @@
 
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
-            <div class="col-span-4  lg:pt-14 "  >
+            <div class="col-span-4  lg:pt-14  "  >
                 <div  class=" text-center" >
 
-                <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
+                <img src="{{ asset('storage/' . $post->thumbnail) }}"
+                     alt="" class=" rounded-xl" style="display: block;
+                                                        margin-left: auto;
+                                                        margin-right: auto;
+                                                        width:70%;">
                 <div>
                     @php
                         $ratings = \App\Models\Rating::where('prod_id', $post->id)->get();
@@ -87,7 +91,7 @@
                     @endif
 
                 </div>
-                <div class="py-4 text-center ">
+                <div class="py-4  text-center">
 
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
@@ -106,7 +110,7 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton transition-colors text-xm font-semibold hover: rounded-full ml-6 py-2 px-2">
+                            class="cartbutton transition-colors text-xm font-semibold hover: rounded-full ml-6 py-2 px-2" >
                             Купити
                         </button>
                     </form>
@@ -114,10 +118,10 @@
 
             </div>
             </div>
-            <div class="col-span-8">
+            <div class="col-span-6">
 
 
-                <h1 class="font-bold text-3xl lg:text-4xl mb-10 text-center">
+                <h1 class="font-bold text-3xl text-center lg:text-4xl mb-10">
                     {{ $post->title }}
                 </h1>
 
