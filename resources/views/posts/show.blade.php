@@ -91,7 +91,7 @@
                     @endif
 
                 </div>
-                <div class="py-4 text-3xl lg:text-sm text-center">
+                <div class="py-4 text-3xl lg:text-sm text-center" style="vertical-align:middle;">
 
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
@@ -110,7 +110,7 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton text-5xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2" >
+                            class=" cartbutton text-4xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
                             Купити
                         </button>
                     </form>
