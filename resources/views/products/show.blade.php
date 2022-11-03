@@ -124,7 +124,7 @@
                 <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
-                <div class="text-3xl lg:text-sm">
+                <div class="text-4xl lg:text-sm">
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
@@ -138,7 +138,7 @@
                         </svg>
                         До каталогу
                     </a>
-                <div class="text-3xl lg:text-sm space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
+                <div class=" mt-2 text-4xl lg:text-sm space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
                 </div>
 
 
