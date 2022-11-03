@@ -56,17 +56,17 @@
 
                     @admin
                     <x-dropdown-item
-                        href="/admin/posts"
-                        :active="request()->is('admin/posts')"
+                        href="/admin/products"
+                        :active="request()->is('admin/products')"
                     >
                         Dashboard
                     </x-dropdown-item>
 
                     <x-dropdown-item
-                        href="/admin/posts/create"
-                        :active="request()->is('admin/posts/create')"
+                        href="/admin/products/create"
+                        :active="request()->is('admin/products/create')"
                     >
-                        New Post
+                        New Product
                     </x-dropdown-item>
                     @endadmin
 

@@ -1,4 +1,4 @@
-@props(['post'])
+@props(['product'])
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
 <article
@@ -7,35 +7,35 @@
     <div class="py-4 px-5 h-full flex flex-col text-center text-4xl lg:text-sm">
 {{--        <div class="py-6 px-5 h-full flex-col">--}}
         <div>
-            <img src="{{ asset('storage/' . $post->thumbnail) }}"
-                 alt=" Post illustration" class=" card-img-top rounded-xl">
+            <img src="{{ asset('storage/' . $product->thumbnail) }}"
+                 alt=" Product illustration" class=" card-img-top rounded-xl">
         </div>
 
         <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
 
                 <div  style="float:left;">
-                    <x-category-button :category="$post->category " />
+                    <x-category-button :category="$product->category " />
                     {{--                   <span class="">--}}
                 </div>
                 <div style="float:right;">
 
                     <a class=" transition-colors duration-300  font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
-                       href="/posts/{{ $post->slug }}"
+                       href="/products/{{ $product->slug }}"
                     >Більше інформації...</a>
                     {{--                   </span>--}}
                 </div>
 
                 <div class="mt-20 lg:mt-8 ">
                     <h1 class=" text-5xl lg:text-sm">
-                        <a href="/posts/{{ $post->slug }}">
-                            {{ $post->title }}
+                        <a href="/products/{{ $product->slug }}">
+                            {{ $product->title }}
                         </a>
                     </h1>
                     <div>
                         @php
-                            $ratings = \App\Models\Rating::where('prod_id', $post->id)->get();
-                            $rating_sum =  \App\Models\Rating::where('prod_id', $post->id)->sum('stars_rated');
+                            $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
+                            $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
             if($ratings!==0 && $rating_sum!==0){
                             $rating_value = $rating_sum/$ratings->count();
                             $rate_num = number_format($rating_value);}else{
@@ -71,7 +71,7 @@
 
 
             <div class="mt-10 lg:mt-3 card-text">
-                {!! $post->excerpt !!}
+                {!! $product->excerpt !!}
 
             </div>
 
@@ -83,15 +83,15 @@
                         @php
                             $prices = DB::table('price')->get();
                         @endphp
-                        <input type="hidden" value="{{ $post->id . time()}}" name="id">
+                        <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " style="float:left;">
                             @foreach ($prices as $price)
                                 <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
                         </select>
-                        <input type="hidden" value="{{$post->title  }}" name="name">
+                        <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{$price->weight }}" name="weight">
-                        <input type="hidden" value="{{ $post->thumbnail }}" name="image">
+                        <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
                             class="cartbutton text-5xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2" >
@@ -109,7 +109,7 @@
 {{--                </div>--}}
 
 {{--                <div>--}}
-{{--                    <a href="/posts/{{ $post->slug }}"--}}
+{{--                    <a href="/products/{{ $post->slug }}"--}}
 {{--                       class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"--}}
 {{--                    >Read More</a>--}}
 {{--                </div>--}}

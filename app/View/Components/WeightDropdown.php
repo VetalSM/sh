@@ -3,7 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\Category;
-use App\Models\Post;
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class WeightDropdown extends Component
@@ -14,8 +14,8 @@ class WeightDropdown extends Component
     public function render()
     {
         return view('components.weight-dropdown', [
-            'posts' => Post::all(),
-            'currentCategory' => Post::firstWhere('slug', request('post'))
+            'products' => Product::all(),
+            'currentCategory' => Product::firstWhere('slug', request('product'))
         ]);
     }
 }

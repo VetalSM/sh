@@ -8,15 +8,15 @@
             <div class="col-span-4  lg:pt-14  "  >
                 <div  class=" text-center text-4xl lg:text-sm" >
 
-                <img src="{{ asset('storage/' . $post->thumbnail) }}"
+                <img src="{{ asset('storage/' . $product->thumbnail) }}"
                      alt="" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
                                                         width:70%;">
                 <div>
                     @php
-                        $ratings = \App\Models\Rating::where('prod_id', $post->id)->get();
-                        $rating_sum =  \App\Models\Rating::where('prod_id', $post->id)->sum('stars_rated');
+                        $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
+                        $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
 
                         if($ratings!==0 && $rating_sum!==0){
                         $rating_value = $rating_sum/$ratings->count();
@@ -50,12 +50,12 @@
 
                         <form action="{{url('/add-rating')}}" method="post">
                             @csrf
-                            <input type="hidden" name="product_id" value="{{$post->id}}">
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title text-4xl lg:text-sm" id="exampleModalLabel">Оцінити {{$post->title}}</h5>
+                                            <h5 class="modal-title text-4xl lg:text-sm" id="exampleModalLabel">Оцінити {{$product->title}}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -99,15 +99,15 @@
                         @php
                             $prices = DB::table('price')->get();
                         @endphp
-                        <input type="hidden" value="{{ $post->id . time()}}" name="id">
+                        <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " >
                             @foreach ($prices as $price)
                                 <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
                             @endforeach
                         </select>
-                        <input type="hidden" value="{{$post->title  }}" name="name">
+                        <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{$price->weight }}" name="weight">
-                        <input type="hidden" value="{{ $post->thumbnail }}" name="image">
+                        <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
                             class=" cartbutton text-4xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
@@ -122,10 +122,10 @@
 
 
                 <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10">
-                    {{ $post->title }}
+                    {{ $product->title }}
                 </h1>
 
-                <div class="space-y-4 leading-loose">{!! $post->body !!}
+                <div class="space-y-4 leading-loose">{!! $product->body !!}
                 </div>
                 <div class="  flex justify-between mb-6">
                     <a href="/"
@@ -150,10 +150,10 @@
 
 
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                @include ('posts._add-comment-form')
+                @include ('products._add-comment-form')
 
-                @foreach ($post->comments as $comment)
-                    <x-post-comment :comment="$comment"/>
+                @foreach ($product->comments as $comment)
+                    <x-product-comment :comment="$comment"/>
                 @endforeach
             </section>
         </article>

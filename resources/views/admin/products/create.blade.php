@@ -1,6 +1,6 @@
 <x-layout>
-    <x-setting heading="Publish New Post">
-        <form method="POST" action="/admin/posts" enctype="multipart/form-data">
+    <x-setting heading="Publish New Product">
+        <form method="POST" action="/admin/products" enctype="multipart/form-data">
             @csrf
 
             <x-form.input name="title" required />

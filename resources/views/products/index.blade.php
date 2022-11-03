@@ -1,13 +1,13 @@
 
 <x-layout>
-    @include ('posts._header')
+    @include ('products._header')
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-        @if ($posts->count())
+        @if ($products->count())
 
-            <x-posts-grid :posts="$posts" />
+            <x-products-grid :products="$products" />
 
-            {{ $posts->links() }}
+            {{ $products->links() }}
         @else
             <p class="text-center">No products yet. Please check back later.</p>
         @endif

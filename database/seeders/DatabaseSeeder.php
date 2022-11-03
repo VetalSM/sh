@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use App\Models\Post;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Post::factory(5)->create();
+        Product::factory(5)->create();
 //        User::truncate();
 //        Post::truncate();
 //        Category::truncate();

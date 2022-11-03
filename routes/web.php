@@ -1,19 +1,19 @@
 <?php
 
-use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\PostCommentsController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductCommentsController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/', [ProductController::class, 'index'])->name('home');
 
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
-Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
+Route::get('products/{product:slug}', [ProductController::class, 'show']);
+Route::post('products/{product:slug}/comments', [ProductCommentsController::class, 'store']);
 Route::post('add-rating', [RatingController::class, 'add'] );
 Route::post('newsletter', NewsletterController::class);
 
@@ -27,7 +27,7 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 
 // Admin Section
 Route::middleware('can:admin')->group(function () {
-    Route::resource('admin/posts', AdminPostController::class)->except('show');
+    Route::resource('admin/products', AdminProductController::class)->except('show');
 });
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
