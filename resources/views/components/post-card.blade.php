@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="mt-20 lg:mt-8 ">
-                    <h1 class=" text-4xl lg:text-sm">
+                    <h1 class=" text-5xl lg:text-sm">
                         <a href="/posts/{{ $post->slug }}">
                             {{ $post->title }}
                         </a>
@@ -94,7 +94,7 @@
                         <input type="hidden" value="{{ $post->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton transition-colors  font-semibold hover: rounded-full ml-6 py-2 px-2" >
+                            class="cartbutton text-5xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2" >
                             Купити
                         </button>
                     </form>
