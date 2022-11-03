@@ -68,8 +68,8 @@ class CartController extends Controller
     public static function message_to_telegram($text, $reply_markup = '')
     {
 
-             $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
-            $chat_id ='-760962497';
+        $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
+        $chat_id ='-760962497';
 //        dd($_POST['name']);
 //        $search = array('{', '}', ',');
 //        $replace = '';
@@ -120,8 +120,8 @@ class CartController extends Controller
 
                     curl_setopt_array($ch, $ch_post);
                     curl_exec($ch);
-        \Cart::clear();
-         return  redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
+                    \Cart::clear();
+                    return  redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
                 }
             }
         }

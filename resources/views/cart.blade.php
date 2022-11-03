@@ -96,32 +96,32 @@
                                 <h3 style="color: #000000" for="escola">Контактні дані:</h3>
                                 <input type="hidden" value="{{$cartItems}}" name="name">
                                 @php
-//                                    $gg=[];
-                                    $ff=[];
-                                    foreach($cartItems as $f=>$b){
+                                    //                                    $gg=[];
+                                                                        $ff=[];
+                                                                        foreach($cartItems as $f=>$b){
 
-                                        $user = DB::table('price')->where('price', "$b->price")->first();
-                                        $ff[]=$b->name.': '.$user->weight.' г'.': '.$b->price.' грн'.
-                                        ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";
-//                                        $gg['name'][]= $b->name;
-//                                        $gg['price'][]= $b->price;
-//                                        $gg['quantity'][]= $b->quantity;
-                                        }
-//                                    $nameDb = implode("','",$gg['name']);
-//                                    $priceDb = implode("','",$gg['price']);
+                                                                            $user = DB::table('price')->where('price', "$b->price")->first();
+                                                                            $ff[]=$b->name.': '.$user->weight.' г'.': '.$b->price.' грн'.
+                                                                            ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";
+                                    //                                        $gg['name'][]= $b->name;
+                                    //                                        $gg['price'][]= $b->price;
+                                    //                                        $gg['quantity'][]= $b->quantity;
+                                                                            }
+                                    //                                    $nameDb = implode("','",$gg['name']);
+                                    //                                    $priceDb = implode("','",$gg['price']);
                                 @endphp
 
                                 <input type="hidden" value="{{implode("", $ff)}}" name="name"/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total"/>
-{{--                                <input type="hidden" value="{{$nameDb}}" name="nameDb"/>--}}
-{{--                                <input type="hidden" value="{{$priceDb}}" name="priceDb"/>--}}
+                                {{--                                <input type="hidden" value="{{$nameDb}}" name="nameDb"/>--}}
+                                {{--                                <input type="hidden" value="{{$priceDb}}" name="priceDb"/>--}}
 
                                 <p>tel: <input type="tel" placeholder="+380" name="tel" class="form-control" required/>
                                 </p>
                                 <p>email: <input type="email" placeholder="email" name="email" class="form-control"
                                                  required/></p>
                                 <p>П.І.Б: <input type="text" placeholder="Прізвище, Ім'я" name="user"
-                                                       class="form-control"/></p>
+                                                 class="form-control"/></p>
                                 <p>Адреса: населений пункт, № відділення Нової Пошти <input type="text" placeholder="" name="adress" class="form-control"/>
                                 </p>
                             </div>

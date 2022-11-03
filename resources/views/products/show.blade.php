@@ -91,7 +91,7 @@
                     @endif
 
                 </div>
-                <div class=" mt-4 lg:mt-0 py-4 text-3xl lg:text-sm text-center ">
+                <div class="  lg:mt-0 py-4 text-3xl lg:text-sm text-center ">
 
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
@@ -121,15 +121,12 @@
             <div class="col-span-6 text-4xl lg:text-sm">
 
 
-                <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10">
+                <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
-
-                <div class="space-y-4 leading-loose">{!! $product->body !!}
-                </div>
-                <div class="  flex justify-between mb-6">
+                <div class="text-5xl lg:text-sm">
                     <a href="/"
-                       class="transition-colors duration-300 relative inline-flex items-center text-2xl lg:text-lg hover:text-blue-500">
+                       class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">
                                 <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
@@ -141,6 +138,9 @@
                         </svg>
                         До каталогу
                     </a>
+                <div class="space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
+                </div>
+
 
                     {{--                <div class="space-x-2">--}}
                     {{--                    <x-category-button :category="$post->category"/>--}}

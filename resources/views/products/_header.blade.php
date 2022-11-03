@@ -2,11 +2,11 @@
     <h1 class=" text-7xl lg:text-4xl">
         Made<span class="text-blue-500">IS</span>
     </h1>
-<div>
-    <h5 class="text-4xl lg:text-xl">
-      Віддушки <span class="text-blue-700">CANDLESCIENCE</span> в Україні
-    </h5>
-</div>
+    <div>
+        <h5 class="text-4xl lg:text-xl">
+            Віддушки <span class="text-blue-700">CANDLESCIENCE</span> в Україні
+        </h5>
+    </div>
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
         <div class="relative lg:inline-flex bg-gray-100 rounded-xl">
             <x-category-dropdown />

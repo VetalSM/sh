@@ -42,9 +42,9 @@
                 <i class="ya-share1__item text-3xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
             </a>
             @auth
-{{--                <a href="#" class="ml-3 rounded-full text-xs font-semibold  uppercase py-3 px-2">--}}
-{{--                    <img src="/images/cart.png" alt="cart" width="40" height="20">--}}
-{{--                </a>--}}
+                {{--                <a href="#" class="ml-3 rounded-full text-xs font-semibold  uppercase py-3 px-2">--}}
+                {{--                    <img src="/images/cart.png" alt="cart" width="40" height="20">--}}
+                {{--                </a>--}}
 
 
                 <x-dropdown>

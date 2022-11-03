@@ -17,7 +17,7 @@
                     required></textarea>
 
                 @error('body')
-                    <span class="text-3xl lg:text-xl text-red-500">{{ $message }}</span>
+                <span class="text-3xl lg:text-xl text-red-500">{{ $message }}</span>
                 @enderror
             </div>
 
