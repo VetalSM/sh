@@ -25,7 +25,7 @@
                         }
                     @endphp
                     <div>
-                        <div class="  lg:text-center" >
+                        <div class="  mt-3 lg:mt-0 lg:text-center" >
                             @for($i=1; $i<=$rate_num; $i++)
                                 <i class="fa fa-star checked"></i>
                             @endfor
@@ -91,7 +91,7 @@
                     @endif
 
                 </div>
-                <div class="py-4 text-3xl lg:text-sm text-center" style="vertical-align:middle;">
+                <div class=" mt-4 lg:mt-0 py-4 text-3xl lg:text-sm text-center ">
 
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
@@ -121,7 +121,7 @@
             <div class="col-span-6 text-4xl lg:text-sm">
 
 
-                <h1 class="font-bold text-5xl lg:text-sm text-center  mb-10">
+                <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10">
                     {{ $post->title }}
                 </h1>
 

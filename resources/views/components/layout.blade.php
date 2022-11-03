@@ -31,7 +31,7 @@
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
-                <img src="/images/logo.png" alt="Logo" width="80" height="40" >
+                <img src="/images/logo.png" alt="Logo" width="100" height="60" >
 
             </a>
         </div>
@@ -39,7 +39,7 @@
         <div class="mt-8 md:mt-0 flex items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex items-center">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
-                <i class="ya-share1__item text-2xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
+                <i class="ya-share1__item text-3xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
             </a>
             @auth
 {{--                <a href="#" class="ml-3 rounded-full text-xs font-semibold  uppercase py-3 px-2">--}}
