@@ -8,8 +8,8 @@
             <x-form.input name="thumbnail" type="file" required />
             <x-form.textarea name="excerpt" required />
             <x-form.textarea name="body" required />
-            <x-form.textarea name="meta_keywords" required />
-            <x-form.textarea name="meta_description" required />
+            <x-form.textarea name="meta_keywords" ></x-form.textarea>
+           <x-form.textarea name="meta_description"></x-form.textarea>
 
 
             <x-form.field>
