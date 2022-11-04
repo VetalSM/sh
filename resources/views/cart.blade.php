@@ -37,10 +37,10 @@
                                 <td>
                                     <a href="#">
                                         @php
-                                            $user = DB::table('price')->where('price', "$item->price")->first();
+                                            $price = DB::table('price')->where('price', "$item->price")->first();
 
                                         @endphp
-                                        <p class="mb-2 md:ml-1">{{ $item->name.'  '.$user->weight.'г'.'('.$item->price.' грн'.')' }}</p>
+                                        <p class="mb-2 md:ml-1">{{ $item->name.'  '.$price->weight.'г'.'('.$item->price.' грн'.')' }}</p>
 
                                     </a>
                                 </td>
@@ -96,36 +96,23 @@
                                 <h3 style="color: #000000" for="escola">Контактні дані:</h3>
                                 <input type="hidden" value="{{$cartItems}}" name="name">
                                 @php
-                                    //                                    $gg=[];
+
                                                                         $ff=[];
                                                                         foreach($cartItems as $f=>$b){
 
                                                                             $user = DB::table('price')->where('price', "$b->price")->first();
-                                                                            $ff[]=$b->name.': '.$user->weight.' г'.': '.$b->price.' грн'.
-                                                                            ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";
-                                    //                                        $gg['name'][]= $b->name;
-                                    //                                        $gg['price'][]= $b->price;
-                                    //                                        $gg['quantity'][]= $b->quantity;
-                                                                            }
-                                    //                                    $nameDb = implode("','",$gg['name']);
-                                    //                                    $priceDb = implode("','",$gg['price']);
+                                                                            $ff[]=$b->name.': '.$price->weight.' г'.': '.$b->price.' грн'.
+                                                                            ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";}
                                 @endphp
 
-                                <input type="hidden" value="{{implode("", $ff)}}" name="name"/>
-                                <input type="hidden" value="{{Cart::getTotal()}}" name="total"/>
-                                {{--                                <input type="hidden" value="{{$nameDb}}" name="nameDb"/>--}}
-                                {{--                                <input type="hidden" value="{{$priceDb}}" name="priceDb"/>--}}
-
-                                <p>tel: <input type="tel" placeholder="+380" name="tel" class="form-control" required/>
-                                </p>
-                                <p>email: <input type="email" placeholder="email" name="email" class="form-control"
-                                                 required/></p>
-                                <p>П.І.Б: <input type="text" placeholder="Прізвище, Ім'я" name="user"
-                                                 class="form-control"/></p>
-                                <p>Адреса: населений пункт, № відділення Нової Пошти <input type="text" placeholder="" name="adress" class="form-control"/>
-                                </p>
+                                <input type="hidden" value="{{implode("", $ff)}}" name="name" required/>
+                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" required/>
+                               <x-form.input type="tel" placeholder="+380" name="tel" class="form-control" required/>
+                               <x-form.input type="email" placeholder="email" name="email" class="form-control" required/>
+                               <x-form.input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б"  required/>
+                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700 text-3xl lg:text-sm  w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200 text-4xl lg:text-sm p-2 w-full rounded" required/>
                             </div>
-                            <div>
+                            <div class="mt-3">
                                 <button type="submit" class="btn btn-danger">Замовити</button>
                                 <a href="/" class="btn btn-primary">Повернутись до покупок</a>
                             </div>

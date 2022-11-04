@@ -21,7 +21,7 @@ class AdminProductController extends Controller
 
     public function store()
     {
-        Product::create(array_merge($this->validatePost(), [
+        Product::create(array_merge($this->validateProduct(), [
             'user_id' => request()->user()->id,
             'thumbnail' => request()->file('thumbnail')->store('thumbnails')
         ]));
@@ -36,7 +36,7 @@ class AdminProductController extends Controller
 
     public function update(Product $product)
     {
-        $attributes = $this->validatePost($product);
+        $attributes = $this->validateProduct($product);
 
         if ($attributes['thumbnail'] ?? false) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
@@ -54,7 +54,7 @@ class AdminProductController extends Controller
         return back()->with('success', 'Product Deleted!');
     }
 
-    protected function validatePost(?Product $product = null): array
+    protected function validateProduct(?Product $product = null): array
     {
         $product ??= new Product();
 
@@ -64,6 +64,8 @@ class AdminProductController extends Controller
             'slug' => ['required', Rule::unique('products', 'slug')->ignore($product)],
             'excerpt' => 'required',
             'body' => 'required',
+            'meta_keywords' =>'required',
+            'meta_description' =>'required',
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
     }

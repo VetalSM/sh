@@ -1,18 +1,24 @@
 <x-layout>
+
+    @section('title')
+        {{$product->title}}
+    @endsection
+        @section('description')
+            {{$product->meta_description}}
+        @endsection
+        @section('keywords')
+            {{$product->meta_keywords}}
+        @endsection
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-
-
-
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  "  >
                 <div  class=" text-center text-4xl lg:text-sm" >
-
                 <img src="{{ asset('storage/' . $product->thumbnail) }}"
                      alt="" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                        width:70%;">
+                                                        width:100%;">
                 <div>
                     @php
                         $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
@@ -47,7 +53,6 @@
                         </div>
                         </div>
                         <div>
-
                         <form action="{{url('/add-rating')}}" method="post">
                             @csrf
                             <input type="hidden" name="product_id" value="{{$product->id}}">
@@ -89,10 +94,8 @@
                             Оцінити
                         </button>
                     @endif
-
                 </div>
                 <div class="  lg:mt-0 py-4 text-3xl lg:text-sm text-center ">
-
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
                         @csrf
@@ -114,16 +117,13 @@
                             Купити
                         </button>
                     </form>
-
-
             </div>
             </div>
             <div class="col-span-6 text-4xl lg:text-sm">
-
-
-                <h1 class="font-bold text-5xl lg:text-sm text-center  mt-4 lg:mt-0 mb-10" >
+                <h1 class="font-bold text-5xl lg:text-2xl text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
+
                 <div class="text-4xl lg:text-sm">
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
@@ -139,19 +139,9 @@
                         До каталогу
                     </a>
                 <div class=" mt-2 text-4xl lg:text-sm space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
-                </div>
-
-
-                    {{--                <div class="space-x-2">--}}
-                    {{--                    <x-category-button :category="$post->category"/>--}}
-                    {{--                </div>--}}
-                </div>
             </div>
-
-
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 @include ('products._add-comment-form')
-
                 @foreach ($product->comments as $comment)
                     <x-product-comment :comment="$comment"/>
                 @endforeach

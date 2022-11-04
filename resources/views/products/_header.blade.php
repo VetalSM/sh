@@ -1,4 +1,5 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
+
     <h1 class=" text-7xl lg:text-4xl">
         Made<span class="text-blue-500">IS</span>
     </h1>

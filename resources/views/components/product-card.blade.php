@@ -1,31 +1,22 @@
 @props(['product'])
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-
 <article
-
     {{ $attributes->merge(['class' => 'text-4xl lg:text-sm card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-4 px-5 h-full flex flex-col text-center text-4xl lg:text-sm">
-        {{--        <div class="py-6 px-5 h-full flex-col">--}}
         <div>
             <img src="{{ asset('storage/' . $product->thumbnail) }}"
                  alt=" Product illustration" class=" card-img-top rounded-xl">
         </div>
-
         <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
-
                 <div  style="float:left;">
                     <x-category-button :category="$product->category " />
-                    {{--                   <span class="">--}}
                 </div>
                 <div style="float:right;">
-
                     <a class=" transition-colors duration-300  font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
                        href="/products/{{ $product->slug }}"
                     >Більше інформації...</a>
-                    {{--                   </span>--}}
                 </div>
-
                 <div class="mt-20 lg:mt-8 ">
                     <h1 class=" text-5xl lg:text-sm">
                         <a href="/products/{{ $product->slug }}">
@@ -62,19 +53,14 @@
                                             &nbsp; Немає оцінок
                                         </span>
                                 @endif
-
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-
-
-            <div class="mt-10 lg:mt-3 card-text">
+            <div class="mt-10 lg:mt-3 card-text" style=" line-height: 1.1em;">
                 {!! $product->excerpt !!}
-
             </div>
-
             <footer class=" mt-10 lg:mt-3">
                 <div class=" text-4xl lg:text-sm text-center">
                     <form  action="{{ route('cart.store') }}" method="POST"
@@ -98,27 +84,8 @@
                             Купити
                         </button>
                     </form>
-
-                    {{--                <div class="flex items-center text-sm">--}}
-                    {{--                                        <img src="/images/author.svg" alt="author"width="30" height="16">--}}
-                    {{--                    <div class="ml-3">--}}
-                    {{--                                                <h5 class="font-bold">--}}
-                    {{--                                                    <a href="/?author={{ $post->author->username }}">{{ $post->author->name }}</a>--}}
-                    {{--                                                </h5>--}}
-                    {{--                    </div>--}}
-                    {{--                </div>--}}
-
-                    {{--                <div>--}}
-                    {{--                    <a href="/products/{{ $post->slug }}"--}}
-                    {{--                       class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"--}}
-                    {{--                    >Read More</a>--}}
-                    {{--                </div>--}}
                 </div>
-
-
-
             </footer>
         </div>
     </div>
-
 </article>
