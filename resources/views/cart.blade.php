@@ -12,7 +12,7 @@
                 @endif
                 <h3 class="text-3xl text-bold">Кошик</h3>
                 <div class="flex-1">
-                    <table class="w-full text-xl lg:text-base" cellspacing="0">
+                    <table class="w-full md:table-fixed" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
@@ -35,12 +35,18 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="#">
+                                    <p href="#">
                                         @php
                                             $price = DB::table('price')->where('price', "$item->price")->first();
 
                                         @endphp
-                                        <p class="mb-2 md:ml-1">{{ $item->name.'  '.$price->weight.'г'.'('.$item->price.' грн'.')' }}</p>
+                                        <span class="mb-3">{{ $item->name}}
+                                        </span>
+                                        <br>
+                                        <h10 class="font-bold text-blue-700">
+                                        {{$price->weight.'г'}} <span class="text-black">{{'('.$item->price.' грн'.')' }}</span>
+                                        </h10>
+{{--                                        <span class=" font-bold">{{$price->weight.'г'.' ('.$item->price.' грн'.')' }}</span>--}}
 
                                     </a>
                                 </td>
@@ -53,19 +59,19 @@
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300"/>
-                                                <button type="submit" class="px-3 py-0.5 text-white bg-green-600  rounded-full">
-                                                    v
+                                                <button type="submit" class="px-1  ml-2 text-white rounded-xl bg-blue-500">
+                                                    оновити
                                                 </button>
                                             </form>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="hidden  text-right md:table-cell" style="padding: 0px 0px 9px 0;">
-                                <span class="text-sm font-medium lg:text-base max-height">
+                                <td class="hidden  text-right md:table-cell "  style="padding: 0px 0px 22px 0;">
+                                <span class="text-sm font-medium lg:text-base  max-height">
                                     {{ $item->price*$item->quantity }} грн
                                 </span>
                                 </td>
-                                <td class="text-right md:table-cell " style="padding: 6px 25px 0px 0;">
+                                <td class="text-right md:table-cell " style="padding: 0px 25px 4px 0;">
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{ $item->id }}" name="id">

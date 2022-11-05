@@ -13,7 +13,7 @@
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  "  >
-                <div  class=" text-center text-4xl lg:text-sm" >
+                <div  class=" text-center " >
                 <img src="{{ asset('storage/' . $product->thumbnail) }}"
                      alt="" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
@@ -60,12 +60,12 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title text-4xl lg:text-sm" id="exampleModalLabel">Оцінити {{$product->title}}</h5>
+                                            <h5 class="modal-title " id="exampleModalLabel">Оцінити {{$product->title}}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="rating-css">
-                                                <div class="text-4xl lg:text-sm star-icon">
+                                                <div class=" star-icon">
                                                     <input type="radio" value="1" name="product_rating" checked id="rating1">
                                                     <label for="rating1" class="fa fa-star"></label>
                                                     <input type="radio" value="2" name="product_rating" id="rating2">
@@ -95,7 +95,7 @@
                         </button>
                     @endif
                 </div>
-                <div class="  lg:mt-0 py-4  text-center ">
+                <div class="  lg:mt-0 py-4 text-center ">
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
                         @csrf
@@ -113,18 +113,18 @@
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class=" cartbutton  transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
+                            class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
                             Купити
                         </button>
                     </form>
             </div>
             </div>
-            <div class="col-span-6 ">
-                <h1 class="font-bold  text-center  mt-4 lg:mt-0 mb-10" >
+            <div class="col-span-6">
+                <h1 class="font-bold text-5xl lg:text-2xl text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
 
-                <div class="">
+                <div>
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
