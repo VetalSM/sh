@@ -35,20 +35,20 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <p href="#">
+                                    <a href="#"></a>
                                         @php
                                             $price = DB::table('price')->where('price', "$item->price")->first();
 
                                         @endphp
-                                        <span class="mb-3">{{ $item->name}}
+                                        <span class="mb-3 text-2xl lg:text-basic">{{ $item->name}}
                                         </span>
                                         <br>
                                         <h10 class="font-bold text-blue-700">
                                         {{$price->weight.'г'}} <span class="text-black">{{'('.$item->price.' грн'.')' }}</span>
                                         </h10>
-{{--                                        <span class=" font-bold">{{$price->weight.'г'.' ('.$item->price.' грн'.')' }}</span>--}}
 
-                                    </a>
+
+
                                 </td>
                                 <td class="justify-center mt-8 md:justify-end md:flex">
                                     <div class="h-10 w-28">
