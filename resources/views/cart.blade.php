@@ -4,7 +4,7 @@
 <main class="max-w-6xl mx-auto my-8">
     <div class=" px-6 mx-auto">
         <div class="flex justify-center my-6">
-            <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
+            <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-1/1">
                 @if ($message = Session::get('success'))
                     <div class="p-4 mb-3 bg-green-400 rounded">
                         <p class="text-green-800">{{ $message }}</p>
@@ -18,7 +18,7 @@
                             <th class="hidden md:table-cell"></th>
                             <th class="text-left">Найменування</th>
                             <th class="pl-3 text-left lg:text-center lg:pl-5">
-                                <span class="lg:hidden" title="Quantity">                      К-ть</span>
+                                <span class="lg:hidden" title="Quantity">К-ть</span>
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
                             <th class="hidden text-right md:table-cell"> ціна</th>
