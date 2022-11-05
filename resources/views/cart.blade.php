@@ -2,7 +2,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <main class="my-8">
-    <div class="container px-6 mx-auto">
+    <div class=" px-6 mx-auto">
         <div class="flex justify-center my-6">
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                 @if ($message = Session::get('success'))
@@ -53,7 +53,7 @@
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300"/>
-                                                <button type="submit" class="px-1 pb-1 ml-2 text-white rounded-xl bg-blue-500">
+                                                <button type="submit" class="px-1  ml-2 text-white rounded-xl bg-blue-500">
                                                     оновити
                                                 </button>
                                             </form>
@@ -111,7 +111,7 @@
                                <x-form.input type="tel" placeholder="+380" name="tel" class="form-control" required/>
                                <x-form.input type="email" placeholder="email" name="email" class="form-control" required/>
                                <x-form.input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б"  required/>
-                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700 text-3xl lg:text-sm  w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200 text-4xl lg:text-sm p-2 w-full rounded" required/>
+                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200 text-4xl lg:text-sm p-2 w-full rounded" required/>
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-danger">Замовити</button>
