@@ -12,7 +12,7 @@
                 @endif
                 <h3 class="text-3xl text-bold">Кошик</h3>
                 <div class="flex-1">
-                    <table class="w-full text-sm lg:text-base" cellspacing="0">
+                    <table class="w-full text-xl lg:text-base" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
