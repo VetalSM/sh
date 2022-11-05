@@ -60,12 +60,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="hidden  text-right md:table-cell" style="padding: 0px 0px 11px 0;">
+                                <td class="hidden  text-right md:table-cell" style="padding: 0px 0px 9px 0;">
                                 <span class="text-sm font-medium lg:text-base max-height">
                                     {{ $item->price*$item->quantity }} грн
                                 </span>
                                 </td>
-                                <td class="text-right md:table-cell " style="padding: 4px 25px 0px 0;">
+                                <td class="text-right md:table-cell " style="padding: 6px 25px 0px 0;">
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{ $item->id }}" name="id">
@@ -106,12 +106,12 @@
                                 @endphp
 
 
-                                <input type="hidden" value="{{implode("", $ff)}}" name="name" required/>
-                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" required/>
-                               <x-form.input type="tel" placeholder="+380" name="tel" class="form-control" required/>
-                               <x-form.input type="email" placeholder="email" name="email" class="form-control" required/>
-                               <x-form.input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б"  required/>
-                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200 text-4xl lg:text-sm p-2 w-full rounded" required/>
+                                <input type="hidden" value="{{implode("", $ff)}}" name="name" class="text-xs" required/>
+                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
+                               <x-form.input type="tel" placeholder="+380" name="tel" class="text-xs" required/>
+                               <x-form.input type="email" placeholder="email" name="email" class="text-xs" required/>
+                               <x-form.input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" class="text-xs" required/>
+                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200  p-2 w-full rounded" required/>
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-danger">Замовити</button>
