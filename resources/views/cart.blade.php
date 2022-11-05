@@ -105,6 +105,7 @@
                                                                             ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";}
                                 @endphp
 
+
                                 <input type="hidden" value="{{implode("", $ff)}}" name="name" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" required/>
                                <x-form.input type="tel" placeholder="+380" name="tel" class="form-control" required/>
