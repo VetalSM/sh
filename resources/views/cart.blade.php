@@ -1,8 +1,8 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<main class="max-w-6xl text-xl lg:text-sm mx-auto my-8">
-    <div class=" px-6 mx-auto">
+<main class="max-w-6xl text-2xl lg:text-sm mx-auto my-8">
+    <div class=" px-6 mx-auto text-2xl lg:text-sm">
         <div class="flex justify-center my-6">
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                 @if ($message = Session::get('success'))
