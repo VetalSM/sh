@@ -4,7 +4,7 @@
 <main class="max-w-6xl mx-auto my-8">
     <div class=" px-6 mx-auto">
         <div class="flex justify-center my-6">
-            <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-1/1">
+            <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                 @if ($message = Session::get('success'))
                     <div class="p-4 mb-3 bg-green-400 rounded">
                         <p class="text-green-800">{{ $message }}</p>
@@ -17,7 +17,7 @@
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
                             <th class="text-left">Найменування</th>
-                            <th class="pl-3 text-left lg:text-center lg:pl-5">
+                            <th class="pl-5 text-left lg:text-center lg:pl-5">
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
@@ -53,8 +53,8 @@
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300"/>
-                                                <button type="submit" class="px-1  ml-2 text-white rounded-xl bg-blue-500">
-                                                    оновити
+                                                <button type="submit" class="px-3 py-0.5 text-white bg-green-600  rounded-full">
+                                                    v
                                                 </button>
                                             </form>
                                         </div>
