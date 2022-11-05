@@ -95,7 +95,7 @@
                         </button>
                     @endif
                 </div>
-                <div class="  lg:mt-0 py-4 text-3xl lg:text-sm text-center ">
+                <div class="  lg:mt-0 py-4  text-center ">
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
                         @csrf
@@ -113,18 +113,18 @@
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class=" cartbutton text-4xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
+                            class=" cartbutton  transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
                             Купити
                         </button>
                     </form>
             </div>
             </div>
-            <div class="col-span-6 text-4xl lg:text-sm">
+            <div class="col-span-6 ">
                 <h1 class="font-bold text-5xl lg:text-2xl text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
 
-                <div class="text-4xl lg:text-sm">
+                <div class="">
                     <a href="/"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
@@ -138,7 +138,7 @@
                         </svg>
                         До каталогу
                     </a>
-                <div class=" mt-2 text-4xl lg:text-sm space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
+                <div class=" mt-2  space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
             </div>
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 @include ('products._add-comment-form')

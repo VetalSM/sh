@@ -48,7 +48,7 @@
         <div class="mt-8 md:mt-0 flex items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex items-center">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
-                <i class="ya-share1__item text-3xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
+                <i class="ya-share1__item ">     Всього: {{ Cart::getTotal() }} грн</i>
             </a>
             @auth
 
@@ -89,12 +89,12 @@
                 </x-dropdown>
             @else
                 <a href="/register"
-                   class="text-2xl lg:text-xs font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
+                   class=" font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                     Реєстрація
                 </a>
 
                 <a href="/login"
-                   class="ml-6 text-2xl lg:text-sm font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
+                   class="ml-6  font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
                     Вхід
                 </a>
             @endauth
