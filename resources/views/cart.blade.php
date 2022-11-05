@@ -17,7 +17,7 @@
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
                             <th class="text-left">Найменування</th>
-                            <th class="pl-5 text-left lg:text-right lg:pl-0">
+                            <th class="pl-3 text-left lg:text-center lg:pl-5">
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
@@ -44,9 +44,9 @@
 
                                     </a>
                                 </td>
-                                <td class="justify-center mt-6 md:justify-end md:flex">
+                                <td class="justify-center mt-8 md:justify-end md:flex">
                                     <div class="h-10 w-28">
-                                        <div class="relative flex flex-row w-full h-8">
+                                        <div class="relative  flex flex-row w-full h-8">
 
                                             <form action="{{ route('cart.update') }}" method="POST">
                                                 @csrf
@@ -60,12 +60,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="hidden text-right md:table-cell" style="padding: 0px 0px 30px 0;">
+                                <td class="hidden  text-right md:table-cell" style="padding: 0px 0px 11px 0;">
                                 <span class="text-sm font-medium lg:text-base max-height">
                                     {{ $item->price*$item->quantity }} грн
                                 </span>
                                 </td>
-                                <td class="text-right md:table-cell " style="padding: 0px 25px 12px 0;">
+                                <td class="text-right md:table-cell " style="padding: 4px 25px 0px 0;">
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{ $item->id }}" name="id">
