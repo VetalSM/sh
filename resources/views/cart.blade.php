@@ -18,7 +18,7 @@
                             <th class="hidden md:table-cell"></th>
                             <th class="text-left">Найменування</th>
                             <th class="pl-3 text-left lg:text-center lg:pl-5">
-                                <span class="lg:hidden" title="Quantity">К-ть</span>
+                                <span class="lg:hidden" title="Quantity">Кількість</span>
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
                             <th class="hidden text-right md:table-cell"> ціна</th>
