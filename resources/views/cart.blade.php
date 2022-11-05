@@ -40,10 +40,10 @@
                                             $price = DB::table('price')->where('price', "$item->price")->first();
 
                                         @endphp
-                                        <span class="mb-3 text-2xl lg:text-basic">{{ $item->name}}
+                                        <span class="mb-3 text-2xl lg:text-base">{{ $item->name}}
                                         </span>
                                         <br>
-                                        <h10 class="font-bold text-blue-700">
+                                        <h10 class="font-bold text-2xl lg:text-base text-blue-700">
                                         {{$price->weight.'г'}} <span class="text-black">{{'('.$item->price.' грн'.')' }}</span>
                                         </h10>
 
@@ -59,7 +59,7 @@
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300"/>
-                                                <button type="submit" class="px-1  ml-2 text-white rounded-xl bg-blue-500">
+                                                <button type="submit" class="px-1  ml-2 text-white text-2xl lg:text-base rounded-xl bg-blue-500">
                                                     оновити
                                                 </button>
                                             </form>
@@ -67,7 +67,7 @@
                                     </div>
                                 </td>
                                 <td class="hidden  text-right md:table-cell "  style="padding: 0px 0px 22px 0;">
-                                <span class="text-sm font-medium lg:text-base  max-height">
+                                <span class="text-2xl lg:text-base font-medium lg:text-base  max-height">
                                     {{ $item->price*$item->quantity }} грн
                                 </span>
                                 </td>
@@ -114,10 +114,10 @@
 
                                 <input type="hidden" value="{{implode("", $ff)}}" name="name" class="text-xs" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
-                               <x-form.input type="tel" placeholder="+380" name="tel" class="text-xs" required/>
-                               <x-form.input type="email" placeholder="email" name="email" class="text-xs" required/>
-                               <x-form.input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" class="text-xs" required/>
-                               <p  class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border border-gray-200  p-2 w-full rounded" required/>
+                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                             <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">email</p>  <input type="email" placeholder="email" name="email" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">П.І.Б</p> <input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                               <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-danger">Замовити</button>
