@@ -27,7 +27,7 @@
         </form>
     </x-panel>
 @else
-    <p class="font-semibold text-4xl lg:text-sm">
+    <p class="font-semibold ">
         <a href="/register" class="hover:underline">Зареєструйтеся</a> або
         <a href="/login" class="hover:underline">Увійдіть</a> для коментування.
     </p>
