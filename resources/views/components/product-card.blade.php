@@ -1,8 +1,8 @@
 @props(['product'])
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 <article
-    {{ $attributes->merge(['class' => 'text-4xl lg:text-sm card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
-    <div class="py-4 px-5 h-full flex flex-col text-center text-4xl lg:text-sm">
+    {{ $attributes->merge(['class' => 'card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
+    <div class="py-4 px-5 h-full flex flex-col text-center ">
         <div>
             <img src="{{ asset('storage/' . $product->thumbnail) }}"
                  alt=" Product illustration" class=" card-img-top rounded-xl">
@@ -18,7 +18,7 @@
                     >Більше інформації...</a>
                 </div>
                 <div class="mt-20 lg:mt-8 ">
-                    <h1 class=" text-5xl lg:text-sm">
+                    <h1 >
                         <a href="/products/{{ $product->slug }}">
                             {{ $product->title }}
                         </a>
@@ -62,7 +62,7 @@
                 {!! $product->excerpt !!}
             </div>
             <footer class=" mt-10 lg:mt-3">
-                <div class=" text-4xl lg:text-sm text-center">
+                <div class="text-center">
                     <form  action="{{ route('cart.store') }}" method="POST"
                            enctype="multipart/form-data">
                         @csrf
@@ -80,7 +80,7 @@
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         <button
-                            class="cartbutton text-5xl lg:text-sm transition-colors  hover: rounded-3xl ml-6 py-2 px-2" >
+                            class="cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2" >
                             Купити
                         </button>
                     </form>

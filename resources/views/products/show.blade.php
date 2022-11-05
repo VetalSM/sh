@@ -120,7 +120,7 @@
             </div>
             </div>
             <div class="col-span-6 ">
-                <h1 class="font-bold text-5xl lg:text-2xl text-center  mt-4 lg:mt-0 mb-10" >
+                <h1 class="font-bold  text-center  mt-4 lg:mt-0 mb-10" >
                     {{ $product->title }}
                 </h1>
 

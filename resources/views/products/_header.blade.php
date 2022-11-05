@@ -4,7 +4,7 @@
         Made<span class="text-blue-500">IS</span>
     </h1>
     <div>
-        <h5 class="text-4xl lg:text-xl">
+        <h5 class="text-2xl lg:text-xl">
             Віддушки <span class="text-blue-700">CANDLESCIENCE</span> в Україні
         </h5>
     </div>
@@ -23,7 +23,7 @@
                 <input type="text"
                        name="search"
                        placeholder="Пошук"
-                       class="bg-transparent placeholder-black font-semibold text-4xl lg:text-sm"
+                       class="bg-transparent placeholder-black font-semibold "
                        value="{{ request('search') }}"
                 >
             </form>
