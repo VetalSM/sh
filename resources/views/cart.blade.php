@@ -12,7 +12,7 @@
                 @endif
                 <h3 class="text-3xl text-bold">Кошик</h3>
                 <div class="flex-1">
-                    <table class="w-full md:table-fixed" cellspacing="0">
+                    <table class="w-full md:table-auto" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
@@ -22,7 +22,7 @@
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
                             <th class="hidden text-right md:table-cell"> ціна</th>
-                            <th class="hidden text-right md:table-cell">  </th>
+                            <th class="hidden text-right md:table-cell"> Видалити</th>
                         </tr>
                         </thead>
                         <tbody>
