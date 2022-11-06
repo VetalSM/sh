@@ -7,7 +7,7 @@
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                 @if ($message = Session::get('success'))
                     <div class="p-4 mb-3 bg-green-400 rounded">
-                        <p class="text-green-800">{{ $message }}</p>
+                        <p class="text-green-800 text-xl lg:text-base">{{ $message }}</p>
                     </div>
                 @endif
                 <h3 class="text-3xl text-bold">Кошик</h3>
@@ -22,7 +22,7 @@
                                 <span class="hidden lg:inline">Кількість</span>
                             </th>
                             <th class="hidden text-right md:table-cell"> ціна</th>
-                            <th class="hidden text-right md:table-cell"> Видалити</th>
+                            <th class="hidden text-right md:table-cell">  </th>
                         </tr>
                         </thead>
                         <tbody>
