@@ -103,16 +103,16 @@
                                 <input type="hidden" value="{{$cartItems}}" name="name">
                                 @php
 
-                                                                        $ff=[];
+                                                                        $text=[];
                                                                         foreach($cartItems as $f=>$b){
 
                                                                             $user = DB::table('price')->where('price', "$b->price")->first();
-                                                                            $ff[]=$b->name.': '.$price->weight.' г'.': '.$b->price.' грн'.
-                                                                            ' к-во'.': '.$b->quantity. '|'.' pretotal: '.$b->price*$b->quantity."\n";}
+                                                                            $text[]=$b->name.': '.$price->weight.' г'.': '.$b->price.' грн'.
+                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity."\n";}
                                 @endphp
 
 
-                                <input type="hidden" value="{{implode("", $ff)}}" name="name" class="text-xs" required/>
+                                <input type="hidden" value="{{implode("", $text)}}" name="name" class="text-xs" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" value="{{old('tel')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                 <x-form.error name="tel"/>

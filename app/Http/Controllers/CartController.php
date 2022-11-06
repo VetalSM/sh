@@ -10,7 +10,7 @@ class CartController extends Controller
     {
         $cartItems = \Cart::getContent();
         // dd($cartItems);
-        return view('cart', compact('cartItems'));
+        return view('components.cart', compact('cartItems'));
     }
 
 
@@ -78,7 +78,7 @@ class CartController extends Controller
 
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
         $chat_id = '-760962497';
-        $text = $attributes['П_І_Б'] . ' tel: ' . $attributes['tel'] . '  ' . $attributes['email'] . "\n" . $attributes['address'] . "\n" . $attributes['name'] . "\n" . 'total: ' . $attributes['total'] . ' грн';
+        $text = $attributes['П_І_Б'] . ' tel: ' . $attributes['tel'] . '  ' . $attributes['email'] . "\n" . $attributes['address'] . "\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн';
 
         $ch = curl_init();
         $ch_post = [
@@ -95,8 +95,8 @@ class CartController extends Controller
         ];
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
-//        \Cart::clear();
-//        return redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
+        \Cart::clear();
+        return redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
     }
 }
 
