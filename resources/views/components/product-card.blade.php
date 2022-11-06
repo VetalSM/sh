@@ -17,13 +17,13 @@
                        href="/products/{{ $product->slug }}"
                     >Більше інформації...</a>
                 </div>
-                <div class="mt-20 lg:mt-8  ">
+                <div class="mt-10 lg:mt-8  ">
                     <div class=" text-2xl">
                         <a href="/products/{{ $product->slug }}">
                             {{ $product->title }}
                         </a>
                     </div>
-                    <div >
+                    <div class="mt-2">
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </header>
-            <div class="mt-10 lg:mt-3 card-text" style=" line-height: 1.1em;">
+            <div class="mt-3 lg:mt-3 card-text" style=" line-height: 1.1em;">
                 {!! $product->excerpt !!}
             </div>
             <footer class=" mt-10 lg:mt-3">
