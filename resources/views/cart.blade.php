@@ -92,7 +92,7 @@
                     <div>
                         <form action="{{ route('cart.clear') }}" method="POST">
                             @csrf
-                            <button class="px-6 py-2 text-red-800 bg-red-300  rounded-full">Очистити кошик</button>
+                            <button class="px-6 py-2 text-red-800 bg-red-300 text-xl lg:text-base  rounded-full">Очистити кошик</button>
                         </form>
 
                         <form action="{{route('order')}}" method="post">
@@ -120,8 +120,8 @@
                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
                             </div>
                             <div class="mt-3">
-                                <button type="submit" class="btn btn-danger">Замовити</button>
-                                <a href="/" class="btn btn-primary">Повернутись до покупок</a>
+                                <button type="submit" class="btn btn-danger btn-lg">Замовити</button>
+                                <a href="/" class="btn btn-primary btn-lg">Повернутись до покупок</a>
                             </div>
                         </form>
                     </div>
