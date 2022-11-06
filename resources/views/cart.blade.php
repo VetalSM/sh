@@ -116,7 +116,7 @@
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                 <x-form.error name="tel"/>
-                             <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">email</p>  <input type="email" placeholder="email" name="email"    class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                             <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">email</p>  <input type="email" placeholder="email" name="email"  value="{{old('email')}}"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">П.І.Б</p> <input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
                             </div>
