@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class=" rounded-2xl btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
-                                            <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-4xl lg:text-sm py-2.5 px-8 rounded-2xl hover:bg-blue-600">Оцінити</button>
+                                            <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-xl lg:text-sm py-2.5 px-8 rounded-2xl hover:bg-blue-600">Оцінити</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     @if(!empty(auth()->id()))
-                        <button type="button" class="bg-blue-500 text-white uppercase font-semibold  py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="bg-blue-500 text-white  mt-2 py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Оцінити
                         </button>
                     @endif

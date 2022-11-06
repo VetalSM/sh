@@ -5,7 +5,7 @@
 
             <header class="flex items-center">
 
-                <h4 class="ml-4">Залишити відгук</h4>
+                <h4 class="ml-4">Залишити відгук:</h4>
             </header>
 
             <div class="mt-6">
@@ -17,7 +17,7 @@
                     required></textarea>
 
                 @error('body')
-                <span class="text-3xl lg:text-xl text-red-500">{{ $message }}</span>
+                <span class="text-xl lg:text-xl text-red-500">{{ $message }}</span>
                 @enderror
             </div>
 

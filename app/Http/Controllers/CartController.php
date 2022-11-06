@@ -95,8 +95,8 @@ class CartController extends Controller
         ];
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
-        \Cart::clear();
-        return redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
+//        \Cart::clear();
+//        return redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
     }
 }
 
