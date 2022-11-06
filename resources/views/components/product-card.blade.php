@@ -13,17 +13,17 @@
                     <x-category-button :category="$product->category " />
                 </div>
                 <div style="float:right;">
-                    <a class=" transition-colors duration-300  font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
+                    <a class=" transition-colors text-sm duration-300  font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
                        href="/products/{{ $product->slug }}"
                     >Більше інформації...</a>
                 </div>
-                <div class="mt-20 lg:mt-8 ">
-                    <h1 >
+                <div class="mt-20 lg:mt-8  ">
+                    <div class=" text-2xl">
                         <a href="/products/{{ $product->slug }}">
                             {{ $product->title }}
                         </a>
-                    </h1>
-                    <div>
+                    </div>
+                    <div >
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
