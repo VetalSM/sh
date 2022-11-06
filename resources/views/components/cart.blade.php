@@ -107,8 +107,8 @@
                                                                         foreach($cartItems as $f=>$b){
 
                                                                             $user = DB::table('price')->where('price', "$b->price")->first();
-                                                                            $text[]=$b->name.': '.$price->weight.' г'.': '.$b->price.' грн'.
-                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity."\n";}
+                                                                            $text[]=$b->name.' '.$price->weight.' г'.': '.$b->price.' грн'.
+                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' грн'."\n";}
                                 @endphp
 
 
