@@ -10,7 +10,7 @@
             <header class="mb-4">
                 <h3 class="font-bold">{{ $comment->author->username }}</h3>
 
-                <p class="text-2xl lg:text-sm">
+                <p >
                     Прокоментовано:
                     <time>{{ $comment->created_at->format("Y-m-d H:i:s") }}</time>
                 </p>
