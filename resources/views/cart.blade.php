@@ -66,12 +66,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="hidden  text-right md:table-cell "  style="padding: 0px 0px 22px 0;">
+                                <td class="hidden  text-right md:table-cell "  style="padding: 0px 0px 18px 0;">
                                 <span class="text-2xl lg:text-base font-medium lg:text-base  max-height">
                                     {{ $item->price*$item->quantity }} грн
                                 </span>
                                 </td>
-                                <td class="text-right md:table-cell " style="padding: 0px 25px 4px 0;">
+                                <td class="text-right md:table-cell " style="padding: 1px 25px 0px 0;">
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{ $item->id }}" name="id">
