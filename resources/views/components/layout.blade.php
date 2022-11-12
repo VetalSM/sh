@@ -96,15 +96,15 @@
                 <i class="ya-share1__item text-lg lg:text-xl ">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
             </a>
             <div class="flex" style=" margin-left: auto;margin-right: 0;" >
-                <a href="/contact"
-                   class=" text-sm  lg:text-base  text-black " style="  padding: 0.1em 0px 0px 0px;">
-                    Контакти
-                </a>
-                @auth
 
-                    <x-dropdown  class="flex">
+                @auth
+                    <a href="/contact"
+                       class=" text-sm  lg:text-base mt-0.5 text-black " >
+                        Контакти
+                    </a>
+                    <x-dropdown class="">
                         <x-slot name="trigger">
-                            <button class=" ml-2 text-sm lg:text-base font-bold ">
+                            <button class=" ml-2 text-sm mt-0.5 lg:text-base font-bold ">
                                 Вітаю, {{ auth()->user()->name }}!
                             </button>
                         </x-slot>
@@ -139,10 +139,10 @@
                         </form>
                     </x-dropdown>
                 @else
-                    {{--                <a href="/contact"--}}
-                    {{--                   class="  text-black ">--}}
-                    {{--                    Контакти--}}
-                    {{--                </a>--}}
+                    <a href="/contact"
+                       class=" text-sm  lg:text-base  text-black " >
+                        Контакти
+                    </a>
                     <a href="/register"
                        class="ml-2 text-sm lg:text-base font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                         Реєстрація
