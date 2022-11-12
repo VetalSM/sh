@@ -97,7 +97,7 @@
             </a>
             <div class="flex" style=" margin-left: auto;margin-right: 0;" >
                 <a href="/contact"
-                   class=" text-sm  lg:text-base  text-black " style="text-decoration: none;  padding: 0.1em 0px 0px 0px;">
+                   class=" text-sm  lg:text-base  text-black " style="  padding: 0.1em 0px 0px 0px;">
                     Контакти
                 </a>
                 @auth
