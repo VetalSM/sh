@@ -95,16 +95,16 @@
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
                 <i class="ya-share1__item text-lg lg:text-xl ">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
             </a>
-            <div class="" style="margin-left: auto;margin-right: 0;" >
+            <div class="flex" style=" margin-left: auto;margin-right: 0;" >
                 <a href="/contact"
-                   class=" text-sm lg:text-base  text-black ">
+                   class=" text-sm  lg:text-base  text-black ">
                     Контакти
                 </a>
                 @auth
 
-                    <x-dropdown>
+                    <x-dropdown  class="flex">
                         <x-slot name="trigger">
-                            <button class="text-xl ml-6 lg:text-sm font-bold ">
+                            <button class=" ml-2 text-sm lg:text-base font-bold ">
                                 Вітаю, {{ auth()->user()->name }}!
                             </button>
                         </x-slot>
