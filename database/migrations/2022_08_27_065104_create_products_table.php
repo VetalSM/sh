@@ -19,11 +19,11 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id');
             $table->string('slug')->unique();
             $table->string('title');
-            $table->text('meta_keywords')->nullable();
-            $table->text('meta_description')->nullable();
             $table->string('thumbnail')->nullable();
             $table->text('excerpt');
             $table->text('body');
+            $table->text('meta_keywords')->nullable();
+            $table->text('meta_description')->nullable();
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

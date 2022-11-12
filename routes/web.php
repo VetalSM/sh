@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProductCommentsController;
 use App\Http\Controllers\ProductController;
@@ -37,3 +38,4 @@ Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove'
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 Route::post('/post-form', [CartController::class, 'message_to_telegram'])->name('order');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');

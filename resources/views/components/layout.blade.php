@@ -44,22 +44,73 @@
 
             </a>
         </div>
+{{--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">--}}
+{{--            Launch demo modal--}}
+{{--        </button>--}}
+
+{{--        <!-- Modal -->--}}
+{{--        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--            <div class="modal-dialog modal-xl">--}}
+{{--                <div class="modal-content">--}}
+{{--                    <div class="modal-header">--}}
+{{--                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+{{--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--                    </div>--}}
+{{--                    <div class="modal-body">--}}
+{{--                        ...--}}
+{{--                    </div>--}}
+{{--                    <div class="modal-footer">--}}
+{{--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
+{{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+
+{{--        <div class="hidden lg:flex justify-between mb-6">--}}
+{{--            <a href="/"--}}
+{{--               class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">--}}
+{{--                <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">--}}
+{{--                    <g fill="none" fill-rule="evenodd">--}}
+{{--                        <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">--}}
+{{--                        </path>--}}
+{{--                        <path class="fill-current"--}}
+{{--                              d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z">--}}
+{{--                        </path>--}}
+{{--                    </g>--}}
+{{--                </svg>--}}
+
+{{--                Back to products--}}
+{{--            </a>--}}
+
+
+{{--                <x-category-button :category="$post->category"/>--}}
+{{--            </div>--}}
+
+
 
         <div class="mt-8 md:mt-0 flex items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex items-center">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
-                <i class="ya-share1__item text-xl lg:text-xl">     Всього: {{ Cart::getTotal() }} грн</i>
+                <i class="ya-share1__item text-xl lg:text-xl">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
+            </a>
+
+            <a href="/contact"
+               class="  text-black ">
+                Контакти
             </a>
             @auth
 
                 <x-dropdown>
                     <x-slot name="trigger">
-                        <button class="text-xl lg:text-sm font-bold ">
+                        <button class="text-xl ml-6 lg:text-sm font-bold ">
                             Вітаю, {{ auth()->user()->name }}!
                         </button>
                     </x-slot>
 
                     @admin
+
                     <x-dropdown-item
                         href="/admin/products"
                         :active="request()->is('admin/products')"
@@ -88,8 +139,12 @@
                     </form>
                 </x-dropdown>
             @else
+{{--                <a href="/contact"--}}
+{{--                   class="  text-black ">--}}
+{{--                    Контакти--}}
+{{--                </a>--}}
                 <a href="/register"
-                   class=" font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
+                   class="ml-6 font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                     Реєстрація
                 </a>
 

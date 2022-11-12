@@ -22,6 +22,8 @@
                         <a href="/products/{{ $product->slug }}">
                             {{ $product->title }}
                         </a>
+
+
                     </div>
                     <div class="mt-2">
                         @php
