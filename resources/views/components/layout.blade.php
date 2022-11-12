@@ -93,11 +93,11 @@
         <div class="mt-8 md:mt-0 flex items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex items-center">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
-                <i class="ya-share1__item text-xl lg:text-xl">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
+                <i class="ya-share1__item text-lg lg:text-xl ">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
             </a>
 
             <a href="/contact"
-               class="  text-black ">
+               class=" text-sm lg:text-base text-black ">
                 Контакти
             </a>
             @auth
@@ -144,12 +144,12 @@
 {{--                    Контакти--}}
 {{--                </a>--}}
                 <a href="/register"
-                   class="ml-6 font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
+                   class="ml-2 text-sm lg:text-base font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">
                     Реєстрація
                 </a>
 
                 <a href="/login"
-                   class="ml-6  font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
+                   class="ml-2 text-sm lg:text-base font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">
                     Вхід
                 </a>
             @endauth
