@@ -20,6 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->string('title');
             $table->string('thumbnail')->nullable();
+            $table->string('ifra_certificate')->nullable();
+            $table->string('certificate')->nullable();
+            $table->string('safety')->nullable();
             $table->text('excerpt');
             $table->text('body');
             $table->text('meta_keywords')->nullable();

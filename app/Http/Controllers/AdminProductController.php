@@ -21,10 +21,42 @@ class AdminProductController extends Controller
 
     public function store()
     {
-        Product::create(array_merge($this->validateProduct(), [
-            'user_id' => request()->user()->id,
-            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
-        ]));
+
+        if (isset($this->validateProduct()['safety']) && isset($this->validateProduct()['ifra_certificate'])){
+            Product::create(array_merge($this->validateProduct(), [
+                'user_id' => request()->user()->id,
+                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'ifra_certificate' => request()->file('ifra_certificate')->store('thumbnails'),
+                'safety' => request()->file('safety')->store('thumbnails')
+            ]));
+        }elseif(isset($this->validateProduct()['certificate'])){
+            Product::create(array_merge($this->validateProduct(), [
+                'user_id' => request()->user()->id,
+                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'certificate' => request()->file('certificate')->store('thumbnails')
+            ]));
+
+        }
+        elseif (isset($this->validateProduct()['ifra_certificate'])){
+            Product::create(array_merge($this->validateProduct(), [
+                'user_id' => request()->user()->id,
+                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'ifra_certificate' => request()->file('ifra_certificate')->store('thumbnails')
+            ]));
+
+        }elseif (isset($this->validateProduct()['safety'])){
+            Product::create(array_merge($this->validateProduct(), [
+                'user_id' => request()->user()->id,
+                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'safety' => request()->file('safety')->store('thumbnails')
+            ]));
+
+        }else{
+            Product::create(array_merge($this->validateProduct(), [
+                'user_id' => request()->user()->id,
+                'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+            ]));
+        }
 
         return redirect('/');
     }
@@ -36,12 +68,21 @@ class AdminProductController extends Controller
 
     public function update(Product $product)
     {
+
         $attributes = $this->validateProduct($product);
 
         if ($attributes['thumbnail'] ?? false) {
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         }
-
+        if ($attributes['certificate'] ?? false) {
+            $attributes['certificate'] = request()->file('certificate')->store('thumbnails');
+        }
+        if ($attributes['ifra_certificate'] ?? false) {
+            $attributes['ifra_certificate'] = request()->file('ifra_certificate')->store('thumbnails');
+        }
+        if ($attributes['safety'] ?? false) {
+            $attributes['safety'] = request()->file('safety')->store('thumbnails');
+        }
         $product->update($attributes);
 
         return back()->with('success', 'Product Updated!');
@@ -61,6 +102,9 @@ class AdminProductController extends Controller
         return request()->validate([
             'title' => 'required',
             'thumbnail' => $product->exists ? ['image'] : ['required', 'image'],
+            'certificate' => $product->exists ? ['mimes:pdf'] : ['mimes:pdf'] ,
+            'safety' => $product->exists ? ['mimes:pdf'] : ['mimes:pdf'],
+            'ifra_certificate' => $product->exists ? ['mimes:pdf'] : ['mimes:pdf'],
             'slug' => ['required', Rule::unique('products', 'slug')->ignore($product)],
             'excerpt' => 'required',
             'body' => 'required',

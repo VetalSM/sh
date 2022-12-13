@@ -14,11 +14,16 @@
 
                 <img src="{{ asset('storage/' . $product->thumbnail) }}" alt="" class="rounded-xl ml-6" width="100">
             </div>
-
+            <x-form.input name="certificate" type="file"  />
+           <span> {{$product->certificate}}</span>
+            <x-form.input name="ifra_certificate" type="file"  />
+            <span> {{$product->ifra_certificate}}</span>
+            <x-form.input name="safety" type="file" />
+            <span> {{$product->safety}}</span>
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $product->excerpt) }}</x-form.textarea>
             <x-form.textarea name="body" required>{{ old('body', $product->body) }}</x-form.textarea>
-            <x-form.textarea name="meta_keywords" required>{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
-            <x-form.textarea name="meta_description" required>{{ old('meta_description', $product->meta_description) }}</x-form.textarea>
+            <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
+            <x-form.textarea name="meta_description" >{{ old('meta_description', $product->meta_description) }}</x-form.textarea>
             <x-form.field>
                 <x-form.label name="category"/>
 

@@ -140,6 +140,47 @@
                     </a>
                 <div class=" mt-2  space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
             </div>
+{{--                    <a href="{{ asset('storage/' . $product->certificate) }}"--}}
+{{--                       class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">--}}
+{{--                        <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">--}}
+{{--                            <g fill="none" fill-rule="evenodd">--}}
+{{--                                <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">--}}
+{{--                                </path>--}}
+{{--                                <path class="fill-current"--}}
+{{--                                      d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z">--}}
+{{--                                </path>--}}
+{{--                            </g>--}}
+{{--                        </svg>--}}
+{{--                        До каталогу--}}
+{{--                    </a>--}}
+{{--                    class="document-link document-link-hasMargin document-link-l-default"--}}
+{{--                    href="https://dpoy1j4zladj1.cloudfront.net/CS Apple Harvest SDS 2022.pdf"--}}
+{{--                    target="_blank"--}}
+                   @if(isset($product->ifra_certificate))
+                        <div class="flex items-center  mt-3 lg:mt-0 ">
+
+                        <a href="{{ asset('storage/' . $product->ifra_certificate) }}"  class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black" target="_blank" style="  text-decoration: none;">
+                            <img src="/images/ifra.png" alt="Logo" width="20" height="20" class="text-black rounded-l " >
+                           <span  class="  px-2">IFRA Certificate</span>
+                        </a>
+                    </div>
+                    @endif
+                    @if(isset($product->safety))
+                    <div class="flex items-center  mt-1 lg:mt-0 mb-1">
+                        <a href="{{ asset('storage/' . $product->safety) }}"  class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black" target="_blank" style="  text-decoration: none;">
+                            <img src="/images/pdf.png" alt="Logo" width="20" height="20" class="text-black rounded-l" >
+                            <span  class="  px-2">Safety Data Sheet</span>
+                        </a>
+                    </div>
+                    @endif
+                    @if(isset($product->certificate))
+                        <div class="flex items-center  mt-1 lg:mt-0 mb-1">
+                            <a href="{{ asset('storage/' . $product->certificate) }}"  class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black" target="_blank" style="  text-decoration: none;">
+                                <img src="/images/pdf.png" alt="Logo" width="20" height="20" class="text-black rounded-l" >
+                                <span  class="  px-2">Certificate</span>
+                            </a>
+                        </div>
+                    @endif
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 @include ('products._add-comment-form')
                 @foreach ($product->comments as $comment)

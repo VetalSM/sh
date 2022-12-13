@@ -547,6 +547,7 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\InfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/InfoController.php',
         'App\\Http\\Controllers\\NewsletterController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsletterController.php',
         'App\\Http\\Controllers\\ProductCommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductCommentsController.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
