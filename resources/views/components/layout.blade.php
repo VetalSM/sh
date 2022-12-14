@@ -39,26 +39,26 @@
 <body style="font-family: Open Sans, sans-serif">
 <div class="  bg-gray-100 border-opacity-5 rounded-xl text-right py-1 px-4 ">
     <div class="py-1">
-        <div class="px-2  inline">
+        <div class="px-3  inline">
         <a href="/info_payment"
            class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
-           style=" position: relative; top: -9px !important;
+           style=" position: relative; top: 0px !important;
             text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Оплата
         </a>
         </div>
-        <div class="px-2  inline">
+        <div class="px-3 inline">
         <a href="/info_delivery"
            class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
-           style=" position: relative; top: -9px !important;
+           style=" position: relative; top: 0px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Доставка
         </a>
         </div>
-        <div class="px-2 inline">
+        <div class="px-3 inline">
         <a href="/info_contact"
            class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
-           style=" position: relative; top: -9px !important;
+           style=" position: relative; top: 0px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Контакти
         </a>
@@ -67,19 +67,19 @@
 {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
 {{--            <span>Ми у соцмережах</span>--}}
 {{--        </div>--}}
-        <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
+        <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://t.me/MadeIS_UA" target="_blank">
-                <img src="/images/telegram.png" alt="" class="mx-auto " style="width: 30px;">
+                <img src="/images/telegram.png" alt=""  style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
-        <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
+        <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://instagram.com/madeis.ua" target="_blank">
-                <img src="/images/instagram.png" alt="" class="mx-auto " style="width: 30px;">
+                <img src="/images/instagram.png" alt="" style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
-        <div class="relative  inline-block mx-auto lg:bg-gray-200 rounded-full">
+        <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://www.facebook.com/madeis.ua/" target="_blank">
-                <img src="/images/facebook.png" alt="" class="mx-auto " style="width: 30px;">
+                <img src="/images/facebook.png" alt=""  style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
     </div>
