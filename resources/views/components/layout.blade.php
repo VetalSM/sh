@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>@yield('title', 'Madeis')</title>
+<link rel="icon" type="image/x-icon" href="/images/logo.png">
 
 <meta name="description" content="@yield('description')">
 <meta name="keywords" content="@yield('keywords')">
