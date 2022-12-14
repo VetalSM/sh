@@ -27,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->text('body');
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
+            $table->text('meta_title')->nullable();
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

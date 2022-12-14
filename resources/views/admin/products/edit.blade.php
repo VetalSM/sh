@@ -22,6 +22,7 @@
             <span> {{$product->safety}}</span>
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $product->excerpt) }}</x-form.textarea>
             <x-form.textarea name="body" required>{{ old('body', $product->body) }}</x-form.textarea>
+            <x-form.textarea name="meta_title" >{{ old('meta_title', $product->meta_title) }}</x-form.textarea>
             <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
             <x-form.textarea name="meta_description" >{{ old('meta_description', $product->meta_description) }}</x-form.textarea>
             <x-form.field>

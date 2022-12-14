@@ -11,6 +11,7 @@
             <x-form.input name="safety" type="file" />
             <x-form.textarea name="excerpt" required />
             <x-form.textarea name="body" required />
+            <x-form.textarea name="meta_title" ></x-form.textarea>
             <x-form.textarea name="meta_keywords" ></x-form.textarea>
            <x-form.textarea name="meta_description"></x-form.textarea>
 

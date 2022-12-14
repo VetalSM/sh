@@ -6,7 +6,7 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>@yield('title', 'Madeis')</title>
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
-
+<meta name="title" content="@yield('meta_title')">
 <meta name="description" content="@yield('description')">
 <meta name="keywords" content="@yield('keywords')">
 <link rel="canonical" href="{{url()->current()}}"/>
@@ -38,7 +38,7 @@
 </style>
 
 <body style="font-family: Open Sans, sans-serif">
-<div class="  bg-gray-100 border-opacity-5 rounded-xl text-right py-1 px-4 ">
+<div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
     <div class="py-1">
         <div class="px-3  inline">
         <a href="/info_payment"

@@ -3,6 +3,9 @@
     @section('title')
         {{$product->title}}
     @endsection
+        @section('meta_title')
+            {{$product->meta_title}}
+        @endsection
         @section('description')
             {{$product->meta_description}}
         @endsection
