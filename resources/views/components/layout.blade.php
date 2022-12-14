@@ -37,26 +37,32 @@
 </style>
 
 <body style="font-family: Open Sans, sans-serif">
-<div class="bg-gray-100 border-opacity-5 rounded-xl text-right py-1 px-4 ">
+<div class="  bg-gray-100 border-opacity-5 rounded-xl text-right py-1 px-4 ">
     <div class="py-1">
+        <div class="px-2  inline">
         <a href="/info_payment"
-           class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
-           style=" position: relative; top: -9px !important; right: 93px !important;
+           class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
+           style=" position: relative; top: -9px !important;
             text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Оплата
         </a>
+        </div>
+        <div class="px-2  inline">
         <a href="/info_delivery"
            class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
-           style=" position: relative; top: -9px !important; right: 64px !important;
+           style=" position: relative; top: -9px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Доставка
         </a>
+        </div>
+        <div class="px-2 inline">
         <a href="/info_contact"
            class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
-           style=" position: relative; top: -9px !important; right: 37px !important;
+           style=" position: relative; top: -9px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
         >Контакти
         </a>
+        </div>
 {{--        <div class=" inline  px-1   rounded-full  "--}}
 {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
 {{--            <span>Ми у соцмережах</span>--}}
@@ -78,8 +84,9 @@
         </div>
     </div>
 </div>
+
 <section class="px-6 py-8">
-    <nav class="md:flex md:justify-between md:items-center">
+    <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
         <div>
             <a href="/">
                 <img src="/images/logo.png" alt="Logo" width="100" height="60" >
@@ -132,7 +139,7 @@
 
 
 
-        <div class="mt-8 md:mt-0 flex items-center  px-15">
+        <div class="mt-8 md:mt-0 flex inline-block items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex mr-18 items-center" style="  text-decoration-color: #747171;">
                 <img src="/images/cart.png" alt="cart" width="40" height="20">
                 <i class="ya-share1__item text-lg lg:text-xl ">  <span class="hidden  lg:inline-flex  ">  Всього:</span>  {{ Cart::getTotal() }} грн</i>
@@ -201,10 +208,11 @@
 
     {{ $slot }}
 
-    <footer class="bg-gray-100 border-opacity-5 rounded-xl text-center py-1 px-1 mt-5">
-        <div class=" inline py-1 px-2 rounded-full  " style="position: relative; top: -19px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">
+    <footer class="bg-gray-100  border-opacity-5 rounded-xl text-center py-1 px-1 mt-5">
+        <div class=" inline py-1 px-2 bg-gray-200 rounded-full  " style="position: relative;   height: 200px; border: 3px solid rgb(255, 179, 0);">
        <span>Приєднуйтесь до нас у соцмережах</span>
         </div>
+        <div style=" position: relative; top: 8px !important;">
         <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
             <a href="https://t.me/MadeIS_UA"  target="_blank">
                 <img src="/images/telegram.png" alt="" class="mx-auto " style="width: 50px;">
@@ -220,7 +228,7 @@
                 <img src="/images/facebook.png" alt="" class="mx-auto " style="width: 50px;">
             </a>
         </div>
-
+        </div>
 {{--        <img src="/images/newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 50px;">--}}
 
 
