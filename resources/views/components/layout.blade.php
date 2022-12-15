@@ -43,7 +43,7 @@
         -webkit-line-clamp: 1;
     }
 </style>
-
+</head>
 <body style="font-family: Open Sans, sans-serif">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8DH3S"

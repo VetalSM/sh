@@ -1,17 +1,9 @@
 <x-layout>
 
-    @section('title')
-        {{$product->title}}
-    @endsection
-        @section('meta_title')
-            {{$product->meta_title}}
-        @endsection
-        @section('description')
-            {{$product->meta_description}}
-        @endsection
-        @section('keywords')
-            {{$product->meta_keywords}}
-        @endsection
+    @section('title'){{$product->title}}@endsection
+        @section('meta_title'){{$product->meta_title}}@endsection
+        @section('description'){{$product->meta_description}}@endsection
+        @section('keywords'){{$product->meta_keywords}}@endsection
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">

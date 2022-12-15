@@ -5,7 +5,7 @@
     </h1>
     <div>
         <h5 class="text-2xl lg:text-xl ">
-            Віддушки <span class="text-blue-700 ">CANDLESCIENCE</span> в Україні
+            Віддушки <span class="text-blue-700 ">CANDLESCIENCE</span> купити в Україні
         </h5>
     </div>
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
