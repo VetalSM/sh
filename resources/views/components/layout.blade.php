@@ -6,9 +6,9 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>@yield('title', 'Madeis')</title>
 <link rel="icon" type="image/x-icon" href="/images/logo.png">
-<meta name="title" content="@yield('meta_title')">
-<meta name="description" content="@yield('description')">
-<meta name="keywords" content="@yield('keywords')">
+<meta name="title" content="@yield('meta_title', 'MadeIS - товари для виготовлення свічок в Україні, віддушки CandleScience в Україні.')">
+<meta name="description" content="@yield('description', 'Товари та складові для виготовлення свічок, які ви можете придбати у магазині MadeIS в Україні. Якісні товари за приємними цінами: віддушки CandleScience США, соевий віск Kerasoy, деревяні гноти Wooden Wick та гноти Stabilo')">
+<meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товари для свічок, віддушки для свічок, віддушки для мила, ароматизатори для свічок, ароматизатори для аромадифузорів, совий віск Kerax в Україні, американські віддушки Україна, купити ароматизатори США в Україні, Candlescience в Україні, дерев’яні гноти Wooden Wick в Україні, товари для свічок MadeIS, Мейдіс , товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитили.')">
 <link rel="canonical" href="{{url()->current()}}"/>
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
