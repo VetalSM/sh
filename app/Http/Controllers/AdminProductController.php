@@ -108,6 +108,7 @@ class AdminProductController extends Controller
             'slug' => ['required', Rule::unique('products', 'slug')->ignore($product)],
             'excerpt' => 'required',
             'body' => 'required',
+            'status' => '',
             'meta_title' =>'',
             'meta_keywords' =>'',
             'meta_description' =>'',

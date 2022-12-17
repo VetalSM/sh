@@ -1,7 +1,7 @@
 <x-layout>
 
-    @section('title'){{$product->title}}@endsection
-        @section('meta_title'){{$product->meta_title}}@endsection
+    @section('title'){{$product->meta_title}}@endsection
+
         @section('description'){{$product->meta_description}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >

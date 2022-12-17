@@ -3,7 +3,7 @@
         <form method="POST" action="/admin/products/{{ $product->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-
+            <x-form.input name="status" :value="old('status', $product->status)" required />
             <x-form.input name="title" :value="old('title', $product->title)" required />
             <x-form.input name="slug" :value="old('slug', $product->slug)" required />
 
