@@ -1,9 +1,9 @@
 
 <x-layout>
-    <div class="card text-left  mx-auto" style="width: 50rem;">
+    <div class="card text-left items-center mx-auto" >
         <div class="card-body">
             <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Доставка</span></h3>
-            <p class="card-text">
+            <p class="card-text ">
                 Доставка здійснюється кожного дня після 14.00, крім суботи, у вихідні дні можуть бути зміни.<p/>
 
                 Доставка здійснюється компаніями "Нова Пошта" та "УкрПошта", послуги доставки сплачує замовник.<p/>

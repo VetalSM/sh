@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="card text-left  mx-auto" style="width: 50rem;">
+    <div class="card text-left items-center mx-auto" >
         <div class="card-body">
             <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Оплата</span></h3>
             <p class="card-text">   <span class="text-danger">Відправка замовлень здійснюється тільки після повної передоплати за замовлення</span>.<p/>
