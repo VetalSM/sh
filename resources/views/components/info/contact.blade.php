@@ -4,33 +4,34 @@
 
         @section('description')Отдушки Candlescience США вы можете купить на нашем сайте или связаться с нами любым из удобных способов для вас.@endsection
 
-        <div class="card text-left  mx-auto" style="width: 50rem;">
+        <div class="card text-left  mx-auto" style="">
             <div class="card-body">
                 <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Контакти</span></h3>
-                <p class="card-text">
+                <p class="card-text text-center" >
                     Ви можете зв'язатись з нами за номером телефону: <br/>
-                    <span class="text-danger"> +380955600435 <br/>
-                    e-mail: support@madeis.com.ua</span><p/>
-
-                    Або приєднуйтесь до наших спільнот у меседжерах: <br/>
+                    <span class="text-danger text-center"> +380955600435 <br/>
+                    e-mail: support@madeis.com.ua</span>
+                    <br/>   <br/>
+                <span class="card-text text-center">Або приєднуйтесь до наших спільнот у меседжерах: <br/>
                 <a href="https://www.facebook.com/madeis.ua"
                 >Facebook
-                </a><br/>
+                </a>/
                 <a href="https://www.instagram.com/madeis.ua/"
                 >Instagram
-                </a><br/>
+                </a>/
                 <a href="https://t.me/MadeIS_UA"
                 >Telegram
-                </a> <p/>
+                </a>
+                    <br/>
+                       <br/>
                     Графік роботи:<br/>
-                    ПН-ПТ: з 9.00 до 18.00 <br/>
-                <span class="text-danger"> СБ: вихідний день</span> <br/>
-                    НД: з 10.00 до 16.00 <p/>
+                  ПН-ПТ: з 9.00 до 18.00 <br/><span class="text-danger">СБ: вихідний день</span> <br/>
+                    НД: з 10.00 до 16.00
+                    <br/>
+ <br/>
 
 
 
-
-                </p>
                 <a href="/"
                    class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                     <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
@@ -44,6 +45,7 @@
                     </svg>
                     До каталогу
                 </a>
+                </span>
             </div>
         </div></x-layout>
 
