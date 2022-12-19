@@ -84,11 +84,11 @@
                         </form>
                         </div>
                     </div>
-                    @if(!empty(auth()->id()))
+{{--                    @if(!empty(auth()->id()))--}}
                         <button type="button" class="bg-blue-500 text-white  mt-2 py-1 px-6 rounded-2xl hover:bg-blue-600" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Оцінити
                         </button>
-                    @endif
+{{--                    @endif--}}
                 </div>
                 <div class="  lg:mt-0 py-4 text-center ">
                     <form  action="{{ route('cart.store') }}" method="POST"
