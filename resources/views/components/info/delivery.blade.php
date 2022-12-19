@@ -14,7 +14,7 @@
 
                 Усі замовлення при доставці застраховуються на повну вартість замовлення!!!<p/>
             </p><br/>
-            <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Поверненя товару</span></h3>
+            <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Повернення товару</span></h3>
             Якщо Ви вирішили повернути товар, ознайомтесь з правилами повернення товарів:<p/>
             <p/>
             Подивитись в описі товару чи підлягає товар поверненню.<p/>
