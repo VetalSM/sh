@@ -21,18 +21,19 @@ class AdminProductController extends Controller
 
     public function store()
     {
+        $thumbnailName= $this->validateProduct()['slug'].'.jpg';
 
         if (isset($this->validateProduct()['safety']) && isset($this->validateProduct()['ifra_certificate'])){
             Product::create(array_merge($this->validateProduct(), [
                 'user_id' => request()->user()->id,
-                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'thumbnail' => request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName),
                 'ifra_certificate' => request()->file('ifra_certificate')->store('thumbnails'),
                 'safety' => request()->file('safety')->store('thumbnails')
             ]));
         }elseif(isset($this->validateProduct()['certificate'])){
             Product::create(array_merge($this->validateProduct(), [
                 'user_id' => request()->user()->id,
-                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'thumbnail' => request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName),
                 'certificate' => request()->file('certificate')->store('thumbnails')
             ]));
 
@@ -40,21 +41,21 @@ class AdminProductController extends Controller
         elseif (isset($this->validateProduct()['ifra_certificate'])){
             Product::create(array_merge($this->validateProduct(), [
                 'user_id' => request()->user()->id,
-                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'thumbnail' => request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName),
                 'ifra_certificate' => request()->file('ifra_certificate')->store('thumbnails')
             ]));
 
         }elseif (isset($this->validateProduct()['safety'])){
             Product::create(array_merge($this->validateProduct(), [
                 'user_id' => request()->user()->id,
-                'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
+                'thumbnail' => request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName),
                 'safety' => request()->file('safety')->store('thumbnails')
             ]));
 
         }else{
             Product::create(array_merge($this->validateProduct(), [
                 'user_id' => request()->user()->id,
-                'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+                'thumbnail' => request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName)
             ]));
         }
 
@@ -70,9 +71,9 @@ class AdminProductController extends Controller
     {
 
         $attributes = $this->validateProduct($product);
-
+        $thumbnailName= $attributes['slug'].'.jpg';
         if ($attributes['thumbnail'] ?? false) {
-            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            $attributes['thumbnail'] = request()->file('thumbnail')->storeAs('thumbnails',$thumbnailName);
         }
         if ($attributes['certificate'] ?? false) {
             $attributes['certificate'] = request()->file('certificate')->store('thumbnails');
