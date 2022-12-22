@@ -113,7 +113,8 @@
                             Купити
                         </button>
                         @else
-                            <p class="transition-colors  hover: rounded-3xl ml-6  " >Немає в наявності</p>
+                            <button type="button" style=" pointer-events: none; background-color: #b2b2b2;" class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " disabled>Закінчився</button>
+
                         @endif
                     </form>
             </div>
