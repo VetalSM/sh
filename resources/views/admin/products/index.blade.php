@@ -16,17 +16,24 @@
                                             <div class="flex items-center">
                                                 @if($product->status === "not_available")
                                                     <div class="text-sm text-red font-medium text-gray-900">
-                                                        <a href="/products/{{ $product->slug }}"  style="color:#FF0000; text-decoration:none">
-                                                            {{ $product->title }}///{{ $product->status }}
+                                                        <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                            {{ $product->title }}<span class="text-dark">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
+                                                        </a>
+                                                    </div>
+                                                    @elseif($product->status === "ends")
+                                                    <div class="text-sm font-medium text-gray-900">
+                                                        <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                            {{ $product->title }}<span class="text-danger">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
                                                         </a>
                                                     </div>
                                                 @else
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="/products/{{ $product->slug }}">
-                                                        {{ $product->title }}///{{ $product->status }}
+                                                    <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
                                                     </a>
-                                                    @endif
                                                 </div>
+                                                    @endif
+
                                             </div>
                                         </td>
 
