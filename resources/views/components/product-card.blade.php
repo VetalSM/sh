@@ -87,7 +87,7 @@
                                 Купити
                             </button>
                         @else
-                            <p class="transition-colors  hover: rounded-3xl ml-6  " >Немає в наявності</p>
+                            <p style=" padding: 0.2em 0px 0px 0px;" >Немає в наявності</p>
                         @endif
 
                     </form>
