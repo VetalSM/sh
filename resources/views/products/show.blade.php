@@ -107,7 +107,7 @@
                         <input type="hidden" value="{{$price->weight }}" name="weight">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                        @if($product->status !== "not_available")
+                        @if($product->status !== "ends")
                         <button
                             class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
                             Купити
