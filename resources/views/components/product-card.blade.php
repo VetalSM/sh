@@ -69,7 +69,7 @@
                            enctype="multipart/form-data">
                         @csrf
                         @php
-                            $prices = DB::table('price')->get();
+                            $prices = DB::table('prices_oil')->get();
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " style="float:left;">
