@@ -17,13 +17,13 @@
                                                 @if($product->status === "not_available")
                                                     <div class="text-sm text-red font-medium text-gray-900">
                                                         <a href="/products/{{ $product->slug }}"  style="color:#FF0000; text-decoration:none">
-                                                            {{ $product->title }}
+                                                            {{ $product->title }}///{{ $product->status }}
                                                         </a>
                                                     </div>
                                                 @else
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <a href="/products/{{ $product->slug }}">
-                                                        {{ $product->title }}
+                                                        {{ $product->title }}///{{ $product->status }}
                                                     </a>
                                                     @endif
                                                 </div>
