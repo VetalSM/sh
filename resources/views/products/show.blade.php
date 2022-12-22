@@ -114,7 +114,6 @@
                         </button>
                         @else
                             <button type="button" style=" pointer-events: none; background-color: #c0bebe;" class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " disabled>Закінчився</button>
-
                         @endif
                     </form>
             </div>
