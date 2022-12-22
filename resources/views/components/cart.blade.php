@@ -37,7 +37,7 @@
                                 <td>
                                     <a href="#"></a>
                                         @php
-                                            $price = DB::table('price')->where('price', "$item->price")->first();
+                                            $price = DB::table('prices_oil')->where('price', "$item->price")->first();
 
                                         @endphp
                                         <span class="mb-3 text-2xl lg:text-base">{{ $item->name}}
@@ -106,7 +106,7 @@
                                                                         $text=[];
                                                                         foreach($cartItems as $f=>$b){
 
-                                                                            $user = DB::table('price')->where('price', "$b->price")->first();
+                                                                            $user = DB::table('prices_oil')->where('price', "$b->price")->first();
                                                                             $text[]=$b->name.' '.$price->weight.' г'.': '.$b->price.' грн'.
                                                                             ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' грн'."\n";}
                                 @endphp

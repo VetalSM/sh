@@ -95,7 +95,12 @@
                            enctype="multipart/form-data">
                         @csrf
                         @php
-                            $prices = DB::table('prices_oil')->get();
+
+                        if ($product->category->name === "Віддушки"){
+                            $prices = DB::table('prices_oil')->get();}
+                        elseif ($product->category->name === "Віск"){
+                         $prices = DB::table('prices_wax')->get();}
+
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " >
