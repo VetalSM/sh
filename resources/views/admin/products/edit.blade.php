@@ -3,7 +3,18 @@
         <form method="POST" action="/admin/products/{{ $product->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-            <x-form.input name="status" :value="old('status', $product->status)" required />
+
+            <select  name="status" class="form-select" aria-label="Default select example" required>
+                <option selected>{{old('status', $product->status)}}</option>
+                <option value="active">active</option>
+                <option value="new">new</option>
+                <option value="promotion">promotion</option>
+                <option value="sale">sale</option>
+                <option value="hit">hit</option>
+                <option value="expect">expect</option>
+                <option value="ends">ends</option>
+                <option value="not_available">not_available</option>
+            </select>
             <x-form.input name="title" :value="old('title', $product->title)" required />
             <x-form.input name="slug" :value="old('slug', $product->slug)" required />
 

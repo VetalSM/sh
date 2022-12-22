@@ -10,13 +10,22 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach (\App\Models\Product::all() as $product)
+
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
+                                                @if($product->status === "not_available")
+                                                    <div class="text-sm text-red font-medium text-gray-900">
+                                                        <a href="/products/{{ $product->slug }}"  style="color:#FF0000; text-decoration:none">
+                                                            {{ $product->title }}
+                                                        </a>
+                                                    </div>
+                                                @else
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <a href="/products/{{ $product->slug }}">
                                                         {{ $product->title }}
                                                     </a>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </td>
