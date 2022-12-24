@@ -8,11 +8,11 @@
 
         <div>
             <header class="mb-4">
-                <h3 class="font-bold">{{ $comment->author->username }}</h3>
+                <h3 class="font-bold">{{ $comment->name }}</h3>
 
                 <p >
                     Прокоментовано:
-                    <time>{{ $comment->created_at->format("Y-m-d H:i:s") }}</time>
+                    <time>{{ $comment->created_at->format("d-m-Y H:i:s") }}</time>
                 </p>
             </header>
 
