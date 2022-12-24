@@ -120,7 +120,7 @@
             </div>
             </div>
             <div class="col-span-6">
-                <h1 class="font-bold text-2xl lg:text-2xl text-center  mt-0 lg:mt-0 mb-3" >
+                <h1 class="font-bold text-2xl lg:text-3xl text-center  mt-0 lg:mt-0 mb-3" >
                     {{ $product->title }}
                 </h1>
 
@@ -138,7 +138,7 @@
                         </svg>
                         До каталогу
                     </a>
-                <div class=" mt-2  space-y-4 leading-loose" style=" line-height: 1.1em;">{!! $product->body !!}
+                <div class=" mt-2  space-y-4 leading-loose" style=" line-height: 1.5em;">{!! $product->body !!}
             </div>
 {{--                    <a href="{{ asset('storage/' . $product->certificate) }}"--}}
 {{--                       class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">--}}

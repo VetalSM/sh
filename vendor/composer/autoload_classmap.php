@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AdminPriceController' => $baseDir . '/app/Http/Controllers/AdminPriceController.php',
     'App\\Http\\Controllers\\AdminProductController' => $baseDir . '/app/Http/Controllers/AdminProductController.php',
     'App\\Http\\Controllers\\CartController' => $baseDir . '/app/Http/Controllers/CartController.php',
     'App\\Http\\Controllers\\CommentController' => $baseDir . '/app/Http/Controllers/CommentController.php',
@@ -39,6 +40,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Rules\\PhoneNumber' => $baseDir . '/app/Rules/PhoneNumber.php',
     'App\\Services\\MailchimpNewsletter' => $baseDir . '/app/Services/MailchimpNewsletter.php',
     'App\\Services\\Newsletter' => $baseDir . '/app/Services/Newsletter.php',
     'App\\View\\Components\\CategoryDropdown' => $baseDir . '/app/View/Components/CategoryDropdown.php',

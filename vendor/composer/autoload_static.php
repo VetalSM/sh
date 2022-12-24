@@ -543,6 +543,7 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminPriceController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminPriceController.php',
         'App\\Http\\Controllers\\AdminProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminProductController.php',
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
@@ -574,6 +575,7 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rules\\PhoneNumber' => __DIR__ . '/../..' . '/app/Rules/PhoneNumber.php',
         'App\\Services\\MailchimpNewsletter' => __DIR__ . '/../..' . '/app/Services/MailchimpNewsletter.php',
         'App\\Services\\Newsletter' => __DIR__ . '/../..' . '/app/Services/Newsletter.php',
         'App\\View\\Components\\CategoryDropdown' => __DIR__ . '/../..' . '/app/View/Components/CategoryDropdown.php',
