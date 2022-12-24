@@ -13,7 +13,7 @@ class CreatePricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('prices_oil', function (Blueprint $table) {
+        Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->text('name');
             $table->text('price');
