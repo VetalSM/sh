@@ -1,11 +1,11 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
 
     <h1 class=" text-6xl lg:text-5xl Tangerine">
-        Made<span  style="color: #6E00FF">IS</span>
+        Made<span  style="color: #3B82F6">IS</span>
     </h1>
     <div>
         <h5 class="text-2xl lg:text-xl ">
-            Віддушки <span style="color: #0600a7">CANDLESCIENCE</span> купити в Україні
+            Віддушки <span style="color: #3B82F6">CANDLESCIENCE</span> купити в Україні
         </h5>
     </div>
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
