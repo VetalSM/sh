@@ -9,7 +9,7 @@
             </header>
 
             <div class="mt-6">
-                <x-form.input name="Назвіться"  required />
+                <x-form.input name="Ім'я"  required />
                 <x-form.input name="Телефон"  required />
 
                 <textarea
@@ -26,7 +26,7 @@
             </div>
 
             <div class="flex justify-end mt-6 pt-2 border-t border-gray-200">
-                <x-form.button>Опубліковати</x-form.button>
+                <x-form.button>Опублікувати</x-form.button>
             </div>
         </form>
     </x-panel>
