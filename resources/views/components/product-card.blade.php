@@ -1,16 +1,16 @@
 @props(['product'])
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <article
     {{ $attributes->merge(['class' => 'card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-4 px-5 h-full flex flex-col text-center ">
-        <div>
+        <div class="">
             <img src="{{ asset('storage/' . $product->thumbnail) }}"
                  alt=" Product illustration" class=" card-img-top rounded-xl">
         </div>
         <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
-                <div  style="float:left;">
-                    <x-category-button :category="$product->category " />
+                <div style="float:left;">
+                    <x-category-button :category="$product->category "/>
                 </div>
                 <div style="float:right;">
                     <a class=" transition-colors italic text-sm duration-300 py-2 px-2 font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
@@ -65,8 +65,8 @@
             </div>
             <footer class=" mt-10 lg:mt-3">
                 <div class="text-center">
-                    <form  action="{{ route('cart.store') }}" method="POST"
-                           enctype="multipart/form-data">
+                    <form action="{{ route('cart.store') }}" method="POST"
+                          enctype="multipart/form-data">
                         @csrf
 
                         @php
@@ -76,7 +76,8 @@
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " style="float:left;">
                             @foreach ($prices as $price)
-                                <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
+                                <option class="rounded-full"
+                                        value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
                             @endforeach
                         </select>
                         <input type="hidden" value="грн" name="currency">
@@ -86,11 +87,13 @@
                         <input type="hidden" value="1" name="quantity">
                         @if($product->status !== "ends")
                             <button
-                                class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " >
+                                class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 ">
                                 Купити
                             </button>
                         @else
-                            <button type="button" style=" pointer-events: none; background-color: #c0bebe;" class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " disabled>Закінчився</button>
+                            <button type="button" style=" pointer-events: none; background-color: #c0bebe;"
+                                    class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " disabled>Закінчився
+                            </button>
                         @endif
 
                     </form>

@@ -65,3 +65,70 @@
     font-size: 48px;
     text-shadow: 4px 4px 4px #aaa;
 }
+
+/*Promotion*/
+/*.bd_item {*/
+/*    position: relative;*/
+
+/*    overflow: hidden;*/
+/*}*/
+/*.bd_item_vip:after {*/
+/*    content: 'Акція!!!';*/
+/*    background: #fb1717;*/
+/*    z-index: 1500;*/
+/*    padding-top: 4px;*/
+/*    color: white;*/
+/*    font-family: Tangerine;*/
+/*    letter-spacing: 1px;*/
+/*    font-weight: 400;*/
+/*    text-transform: none;*/
+/*    text-align: center;*/
+/*    display: inline-block;*/
+/*    width: 200px;*/
+/*    font-size: 16px;*/
+/*    line-height: 14px;*/
+/*    opacity: 0.7;*/
+/*    -webkit-transform-origin: center center;*/
+/*    -ms-transform-origin: center center;*/
+/*    transform-origin: center center;*/
+/*    top: 50px;*/
+/*    border-bottom: 2px solid #7A3521;*/
+/*    right: -38px;*/
+/*    -webkit-transform: rotate(45deg);*/
+/*    -ms-transform: rotate(45deg);*/
+/*    transform: rotate(45deg);*/
+/*    position: absolute;*/
+/*}*/
+/*new*/
+/*.bd_item {*/
+/*    position: relative;*/
+
+/*    overflow: hidden;*/
+/*}*/
+/*.bd_item_vip:after {*/
+/*    content: 'Новинка!!!';*/
+/*    background: #2fc102;*/
+/*    z-index: 1500;*/
+/*    padding-top: 10px;*/
+/*    color: white;*/
+/*    font-family: Tangerine;*/
+/*    letter-spacing: 4px;*/
+/*    font-weight: 400;*/
+/*    text-transform: none;*/
+/*    text-align: center;*/
+/*    display: inline-block;*/
+/*    width: 200px;*/
+/*    font-size: 16px;*/
+/*    line-height: 16px;*/
+/*    opacity: 0.9;*/
+/*    -webkit-transform-origin: center center;*/
+/*    -ms-transform-origin: center center;*/
+/*    transform-origin: center center;*/
+/*    top: 50px;*/
+/*    border-bottom: 1px solid #7A3521;*/
+/*    right: -38px;*/
+/*    -webkit-transform: rotate(45deg);*/
+/*    -ms-transform: rotate(45deg);*/
+/*    transform: rotate(45deg);*/
+/*    position: absolute;*/
+/*}*/

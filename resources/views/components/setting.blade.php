@@ -22,6 +22,9 @@
                 <li>
                     <a href="/admin/products/price/create" class="{{ request()->is('admin/products/price/create') ? 'text-blue-500' : '' }}">New price</a>
                 </li>
+                <li>
+                    <a href="/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">comments</a>
+                </li>
             </ul>
         </aside>
 

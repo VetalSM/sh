@@ -1,10 +1,8 @@
 <x-layout>
     <x-setting :heading="'Edit Product: ' . $price->name">
-
         <form method="POST" action="/admin/products/price/{{ $price->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-
             <x-form.input name="name" :value="old('name', $price->name)" required />
             <x-form.input name="price" :value="old('price', $price->price)" required />
             <x-form.input name="weight" :value="old('weight', $price->weight)" required />
