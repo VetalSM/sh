@@ -15,8 +15,8 @@ class ProductCommentsController extends Controller
         ]);
 
         $product->comments()->create([
-            'name' => request('name'),
-            'tel' => request('tel'),
+            'name' => request('Назвіться'),
+            'tel' => request('Телефон'),
             'body' => request('body')
         ]);
 

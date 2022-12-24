@@ -8,7 +8,7 @@
 
         <div>
             <header class="mb-4">
-                <h3 class="font-bold">{{ $comment->name }}</h3>
+                <h5 class="font-bold">{{ $comment->name }}</h5>
 
                 <p >
                     Прокоментовано:
