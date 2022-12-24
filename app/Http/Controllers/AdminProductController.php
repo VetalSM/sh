@@ -110,6 +110,7 @@ class AdminProductController extends Controller
             'excerpt' => 'required',
             'body' => 'required',
             'status' => '',
+            'prices' =>  ['required', Rule::exists('prices', 'name')],
             'meta_title' =>'',
             'meta_keywords' =>'',
             'meta_description' =>'',

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePricesWaxTable extends Migration
+class CreatePricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreatePricesWaxTable extends Migration
      */
     public function up()
     {
-        Schema::create('prices_wax', function (Blueprint $table) {
+        Schema::create('prices_oil', function (Blueprint $table) {
             $table->id();
-            $table->integer('price');
-            $table->integer('weight');
+            $table->text('name');
+            $table->text('price');
+            $table->text('weight');
+            $table->text('unit');
+            $table->text('currency');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +31,6 @@ class CreatePricesWaxTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prices_wax');
+        Schema::dropIfExists('prices_oil');
     }
 }

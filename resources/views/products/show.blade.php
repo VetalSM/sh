@@ -95,21 +95,17 @@
                            enctype="multipart/form-data">
                         @csrf
                         @php
-
-                        if ($product->category->name === "Віддушки"){
-                            $prices = DB::table('prices_oil')->get();}
-                        elseif ($product->category->name === "Віск"){
-                         $prices = DB::table('prices_wax')->get();}
-
+                              $prices = DB::table('prices')->where('name', "$product->prices")->get();
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " >
                             @foreach ($prices as $price)
-                                <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}г {{$price->price}}грн</option>
+                                <option class="rounded-full" value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
                             @endforeach
                         </select>
+                        <input type="hidden" value="грн" name="currency">
+                        <input type="hidden" value="{{$product->prices}}" name="prices">
                         <input type="hidden" value="{{$product->title  }}" name="name">
-                        <input type="hidden" value="{{$price->weight }}" name="weight">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         @if($product->status !== "ends")

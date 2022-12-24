@@ -37,14 +37,17 @@
                                 <td>
                                     <a href="#"></a>
                                         @php
-                                            $price = DB::table('prices_oil')->where('price', "$item->price")->first();
-
+                                            $pricesName = $item->attributes->prices;
+                                             $price = DB::table('prices')->where('name', "$pricesName")->where('price', "$item->price")->first();
+                                            if(!isset($price->currency)) {
+                                                $price->currency=" ";
+                                            }
                                         @endphp
                                         <span class="mb-3 text-2xl lg:text-base">{{ $item->name}}
                                         </span>
                                         <br>
                                         <h10 class="font-bold text-2xl lg:text-base text-blue-700">
-                                        {{$price->weight.'г'}} <span class="text-black">{{'('.$item->price.' грн'.')' }}</span>
+                                        {{$price->weight. $price->unit}} <span class="text-black">{{'('.$item->price.' '.$price->currency.')' }}</span>
                                         </h10>
 
 
@@ -68,7 +71,7 @@
                                 </td>
                                 <td class="hidden  text-right md:table-cell "  style="padding: 0px 0px 18px 0;">
                                 <span class="text-2xl lg:text-base font-medium lg:text-base  max-height">
-                                    {{ $item->price*$item->quantity }} грн
+                                    {{ $item->price*$item->quantity }} {{$price->currency}}
                                 </span>
                                 </td>
                                 <td class="text-right md:table-cell " style="padding: 1px 25px 0px 0;">
@@ -86,7 +89,12 @@
                     </table>
 
                     <div class="text-xl">
-                        Загальна вартість: {{ Cart::getTotal() }} грн
+                        @if(isset($price->currency))
+                            Загальна вартість: {{ Cart::getTotal() }} {{$price->currency}}
+                        @else
+
+                        @endif
+
                     </div>
                     <br>
                     <div>
@@ -107,8 +115,8 @@
                                                                         foreach($cartItems as $f=>$b){
 
                                                                             $user = DB::table('prices_oil')->where('price', "$b->price")->first();
-                                                                            $text[]=$b->name.' '.$price->weight.' г'.': '.$b->price.' грн'.
-                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' грн'."\n";}
+                                                                            $text[]=$b->name.' '.$price->weight.' '.$price->unit.': '.$b->price.' '.$price->currency.
+                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$price->currency."\n";}
                                 @endphp
 
 

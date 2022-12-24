@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InfoController;
@@ -29,6 +31,8 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 // Admin Section
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/products', AdminProductController::class)->except('show');
+    Route::resource('/admin/products/price', AdminPriceController::class);
+
 });
 
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');

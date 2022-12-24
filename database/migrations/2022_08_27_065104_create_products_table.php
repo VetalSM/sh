@@ -25,7 +25,8 @@ class CreateProductsTable extends Migration
             $table->string('safety')->nullable();
             $table->text('excerpt');
             $table->text('body');
-            $table->integer('status')->default(1);;
+            $table->integer('status')->default(1);
+            $table->text('prices');
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_title')->nullable();
