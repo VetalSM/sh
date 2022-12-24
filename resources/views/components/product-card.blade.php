@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </header>
-            <div class="mt-3 lg:mt-3 card-text" style=" line-height: 1.5em;">
+            <div class="mt-3 lg:mt-3 card-text" style=" line-height: 1.4em;">
                 {!! $product->excerpt !!}
             </div>
             <footer class=" mt-10 lg:mt-3">
