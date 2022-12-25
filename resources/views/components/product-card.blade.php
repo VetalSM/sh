@@ -15,7 +15,8 @@
                 <div style="float:right;">
                     <a class=" transition-colors italic text-sm duration-300 py-2 px-2 font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
                        href="/products/{{ $product->slug }}"
-                    >Більше інформації...</a>
+{{--                    >Більше інформації...</a>--}}
+                    >Повний опис</a>
                 </div>
                 <div class="mt-10 lg:mt-8  ">
                     <div class=" text-2xl">
