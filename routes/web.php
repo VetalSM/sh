@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
@@ -32,8 +33,9 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 // Admin Section
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/products', AdminProductController::class)->except('show');
-    Route::resource('/admin/products/price', AdminPriceController::class);
-    Route::resource('/admin/products/comments', AdminCommentController::class);
+//    Route::resource('/admin/products/price', AdminPriceController::class);
+//    Route::resource('/admin/products/comments', AdminCommentController::class);
+//    Route::resource('/admin/products/category', AdminCategoryController::class);
 
 });
 
