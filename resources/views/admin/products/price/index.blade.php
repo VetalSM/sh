@@ -13,7 +13,11 @@
                                 <th class="text-center">ціна</th>
                                 <th class="text-center">вал.</th>
                             </tr>
-                            @foreach (\App\Models\Price::all() as $price)
+                            @php
+                                $prices = \App\Models\Price::all();
+                                    $sorted = $prices->sortBy('name');
+                            @endphp
+                            @foreach ($sorted as $price)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
