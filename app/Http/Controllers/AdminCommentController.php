@@ -21,19 +21,6 @@ class AdminCommentController extends Controller
         return redirect('/admin/products/comments')->with('success', 'Price Deleted!');
     }
 
-    protected function validatePrice(?Price $price = null): array
-    {
-        $price ??= new Price();
-
-        return request()->validate([
-            'name' => 'required',
-            'price' => 'required',
-            'weight' => 'required',
-            'unit' => 'required',
-            'currency' => 'required'
-        ]);
-    }
-
 }
 
 
