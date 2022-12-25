@@ -1,5 +1,8 @@
 
 <x-layout>
+    @section('title')Candlescience с доставкой по Украине, Аромамасла для свечей,мыла,косметики и массажных масел.....@endsection
+
+    @section('description')Аромамасла Candlescience США вы можете заказать в нашем магазине с доставкой по Украине.Отдушки премиум качества для свечей,мыла, массажных масел@endsection
     <div class="card text-left items-center mx-auto" >
         <div class="card-body">
             <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Доставка</span></h3>

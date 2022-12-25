@@ -1,5 +1,7 @@
 <x-layout>
+    @section('title')Купить Candlescience в Украине@endsection
 
+    @section('description')Отдушки Candlescience США для свечей, массажных масел, косметики, мыла. Если оплату осуществили до 13:00 отпровляем в тот же день.@endsection
     <div class="card text-left items-center mx-auto" >
         <div class="card-body">
             <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Оплата</span></h3>
