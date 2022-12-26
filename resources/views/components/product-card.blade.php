@@ -4,7 +4,10 @@
 <article
     {{ $attributes->merge(['class' => 'card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-4 px-5 h-full flex flex-col text-center ">
-        <x-status-product :product="$product"/>
+        <div class="">
+            <x-status-product :product="$product"/>
+        </div>
+
 
         <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
