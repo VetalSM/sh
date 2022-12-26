@@ -127,6 +127,7 @@
                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">email</p>  <input type="email" placeholder="email" name="email"  value="{{old('email')}}"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">П.І.Б</p> <input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" value="{{old('П_І_Б')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" value="{{old('address')}}" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
+                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Коментар до замовлення</p>  <textarea  placeholder="Коментар" name="comment" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" >{{old('comment')}}</textarea>
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-danger btn-lg">Замовити</button>
