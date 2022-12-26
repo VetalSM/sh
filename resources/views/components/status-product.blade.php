@@ -36,10 +36,14 @@
     </div>
 
 @else
-    <div class="text-center">
-        <img src="{{ asset('storage/' . $product->thumbnail) }}"
-             alt=" Product illustration" class=" card-img-top rounded-xl">
-    </div>
+                            <div class=" text-center ">
+
+                                <img src="{{ asset('storage/' . $product->thumbnail) }}"
+                                     alt="" class=" rounded-xl" style="display: block;
+                                                        margin-left: auto;
+                                                        margin-right: auto;
+                                                        width:100%;">
+                                <div>
 
 @endif
 
