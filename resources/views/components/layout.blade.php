@@ -251,7 +251,7 @@
         <div class="mt-8 md:mt-0 flex inline-block items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex mr-18 items-center"
                style="  text-decoration-color: #747171;">
-                <img src="/images/cart.png" alt="cart" width="40" height="20">
+                <img src="/images/cart.png" alt="cart" width="40" height="40">
                 <i class="ya-share1__item text-lg lg:text-xl "> <span
                         class="hidden  lg:inline-flex  ">  Всього:</span> {{ Cart::getTotal() }} грн</i>
             </a>
