@@ -9,7 +9,7 @@
             <x-product-card
                 :product="$product"
                 class="{{ $loop->iteration < 3 ? 'col-span-2' : 'col-span-2' }}"></x-product-card>
-            @else
+{{--            @else--}}
 
             @endif
         @endforeach

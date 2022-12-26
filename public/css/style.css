@@ -67,68 +67,65 @@
 }
 
 /*Promotion*/
-/*.bd_item {*/
-/*    position: relative;*/
 
-/*    overflow: hidden;*/
-/*}*/
-/*.bd_item_vip:after {*/
-/*    content: 'Акція!!!';*/
-/*    background: #fb1717;*/
-/*    z-index: 1500;*/
-/*    padding-top: 4px;*/
-/*    color: white;*/
-/*    font-family: Tangerine;*/
-/*    letter-spacing: 1px;*/
-/*    font-weight: 400;*/
-/*    text-transform: none;*/
-/*    text-align: center;*/
-/*    display: inline-block;*/
-/*    width: 200px;*/
-/*    font-size: 16px;*/
-/*    line-height: 14px;*/
-/*    opacity: 0.7;*/
-/*    -webkit-transform-origin: center center;*/
-/*    -ms-transform-origin: center center;*/
-/*    transform-origin: center center;*/
-/*    top: 50px;*/
-/*    border-bottom: 2px solid #7A3521;*/
-/*    right: -38px;*/
-/*    -webkit-transform: rotate(45deg);*/
-/*    -ms-transform: rotate(45deg);*/
-/*    transform: rotate(45deg);*/
-/*    position: absolute;*/
-/*}*/
+.bd_item_Promotion:after {
+    content: 'Акція!!!';
+    background: #fb1717;
+    z-index: 1500;
+    padding-top: 4px;
+    color: white;
+    font-family: sans-serif ;
+    letter-spacing: 1px;
+    font-weight: 550;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    font-size: 16px;
+    line-height: 20px;
+    opacity: 1;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    top: 30px;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    right: -60px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+}
 /*new*/
-/*.bd_item {*/
-/*    position: relative;*/
-
-/*    overflow: hidden;*/
-/*}*/
-/*.bd_item_vip:after {*/
-/*    content: 'Новинка!!!';*/
-/*    background: #2fc102;*/
-/*    z-index: 1500;*/
-/*    padding-top: 10px;*/
-/*    color: white;*/
-/*    font-family: Tangerine;*/
-/*    letter-spacing: 4px;*/
-/*    font-weight: 400;*/
-/*    text-transform: none;*/
-/*    text-align: center;*/
-/*    display: inline-block;*/
-/*    width: 200px;*/
-/*    font-size: 16px;*/
-/*    line-height: 16px;*/
-/*    opacity: 0.9;*/
-/*    -webkit-transform-origin: center center;*/
-/*    -ms-transform-origin: center center;*/
-/*    transform-origin: center center;*/
-/*    top: 50px;*/
-/*    border-bottom: 1px solid #7A3521;*/
-/*    right: -38px;*/
-/*    -webkit-transform: rotate(45deg);*/
-/*    -ms-transform: rotate(45deg);*/
-/*    transform: rotate(45deg);*/
-/*    position: absolute;*/
-/*}*/
+.bd_item {
+    position: relative;
+    overflow: hidden;
+}
+.bd_item_new:after {
+    content: 'Новинка!!!';
+    background: #13b003;
+    z-index: 1500;
+    padding-top: 4px;
+    color: #ffffff;
+    font-family: sans-serif ;
+    letter-spacing: 1px;
+    font-weight: 550;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    font-size: 14px;
+    line-height: 20px;
+    opacity: 1;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    top: 30px;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    right: -60px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+}
