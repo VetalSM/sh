@@ -75,12 +75,13 @@ class CartController extends Controller
             'tel' => 'required|min:13|max:13',
             'email' => '',
             'П_І_Б' => '',
-            'address' => ''
+            'address' => '',
+            'comment'=>''
         ]);
 
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
         $chat_id = '-760962497';
-        $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн';
+        $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн'."\n".'коментар: '.$attributes['comment'];
 
         $ch = curl_init();
         $ch_post = [
