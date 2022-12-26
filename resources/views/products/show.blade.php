@@ -14,7 +14,10 @@
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  ">
-                <x-status-product :product="$product"/>
+                <div class=" text-center ">
+                    <x-status-product :product="$product"/>
+                    <div>
+
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
@@ -97,12 +100,12 @@
                             </form>
                         </div>
                     </div>
-                    {{--                    @if(!empty(auth()->id()))--}}
+
                     <button type="button" class="bg-blue-500 text-white  mt-2 py-1 px-6 rounded-2xl hover:bg-blue-600"
                             data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Оцінити
                     </button>
-                    {{--                    @endif--}}
+
                 </div>
                 <div class="  lg:mt-0 py-4 text-center ">
                     <form action="{{ route('cart.store') }}" method="POST"
