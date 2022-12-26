@@ -156,34 +156,34 @@
                         </svg>
                         До каталогу
                     </a>
-                    <div class=" mt-2  space-y-4 leading-loose" style=" line-height: 1.5em;">
+                    <div class=" mt-2 mb-4  space-y-4 leading-loose" style=" line-height: 1.5em;">
                         {!! $product->body !!}
                     </div>
                     @if(isset($product->ifra_certificate))
-                        <div class="flex items-center  mt-3 lg:mt-0 ">
+                        <div class="flex items-center  mt-1 lg:mt-0 ">
 
                             <a href="{{ asset('storage/' . $product->ifra_certificate) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/ifra.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l ">
-                                <span class="  px-2">IFRA Certificate</span>
+                                <span class="  px-2" style="color: rgb(38,46,58)">IFRA Certificate</span>
                             </a>
                         </div>
                     @endif
                     @if(isset($product->safety))
-                        <div class="flex items-center  mt-1 lg:mt-0 mb-1">
+                        <div class="flex items-center  mt-1 lg:mt-0">
                             <a href="{{ asset('storage/' . $product->safety) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/pdf.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l">
-                                <span class="  px-2">Safety Data Sheet</span>
+                                <span class="  px-2" style="color: rgb(38,46,58)">Safety Data Sheet</span>
                             </a>
                         </div>
                     @endif
                     @if(isset($product->certificate))
-                        <div class="flex items-center  mt-1 lg:mt-0 mb-1">
+                        <div class="flex items-center  mt-1 lg:mt-0 ">
                             <a href="{{ asset('storage/' . $product->certificate) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
                                 target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
