@@ -14,14 +14,7 @@
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  ">
-                <div class=" text-center ">
-
-                    <img src="{{ asset('storage/' . $product->thumbnail) }}"
-                         alt="" class=" rounded-xl" style="display: block;
-                                                        margin-left: auto;
-                                                        margin-right: auto;
-                                                        width:100%;">
-                    <div>
+                <x-status-product :product="$product"/>
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
@@ -170,8 +163,8 @@
                         <div class="flex items-center  mt-3 lg:mt-0 ">
 
                             <a href="{{ asset('storage/' . $product->ifra_certificate) }}"
-                               class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
-                               target="_blank" style="  text-decoration: none;">
+                               class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
+                               target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/ifra.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l ">
                                 <span class="  px-2">IFRA Certificate</span>
@@ -181,8 +174,8 @@
                     @if(isset($product->safety))
                         <div class="flex items-center  mt-1 lg:mt-0 mb-1">
                             <a href="{{ asset('storage/' . $product->safety) }}"
-                               class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
-                               target="_blank" style="  text-decoration: none;">
+                               class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
+                               target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/pdf.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l">
                                 <span class="  px-2">Safety Data Sheet</span>
@@ -192,11 +185,11 @@
                     @if(isset($product->certificate))
                         <div class="flex items-center  mt-1 lg:mt-0 mb-1">
                             <a href="{{ asset('storage/' . $product->certificate) }}"
-                               class="  py-1 px-2 bg-green-100 border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
-                               target="_blank" style="  text-decoration: none;">
+                               class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
+                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/pdf.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l">
-                                <span class="  px-2">Certificate</span>
+                                <span class="  px-2" style="color: rgb(38,46,58)">Certificate</span>
                             </a>
                         </div>
                     @endif
