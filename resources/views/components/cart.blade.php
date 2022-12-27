@@ -111,15 +111,13 @@
                                 <input type="hidden" value="{{$cartItems}}" name="name">
                                 @php
 
-                                                                        $text=[];
-                                                                        foreach($cartItems as $f=>$b){
+                                                                                                            $text=[];
+                                                                                                            foreach($cartItems as $f=>$b){
 
 
-                                                                            $text[]=$b->name.' '.$price->weight.' '.$price->unit.': '.$b->price.' '.$price->currency.
-                                                                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$price->currency."\n";}
+                                                                                                                $text[]=$b->name.' '.$b->attributes->weight.' '.$b->attributes->unit.': '.$b->price.' '.$b->attributes->currency.
+                                                                                                                ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$b->currency."\n";}
                                 @endphp
-
-
                                 <input type="hidden" value="{{implode("", $text)}}" name="name" class="text-xs" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" value="{{old('tel')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>

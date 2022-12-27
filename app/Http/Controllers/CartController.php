@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -9,7 +10,6 @@ class CartController extends Controller
     public function cartList()
     {
         $cartItems = \Cart::getContent();
-        // dd($cartItems);
         return view('components.cart', compact('cartItems'));
     }
 
@@ -24,7 +24,9 @@ class CartController extends Controller
             'attributes' => array(
                 'image' => $request->image,
                 'prices'=> $request->prices,
-                'currency' => $request->currency
+                'currency' => $request->currency,
+                'unit'=>$request->unit,
+                'weight'=>$request->weight
             )
         ]);
         session()->flash('success', 'Товар додано у кошик!');
@@ -69,6 +71,7 @@ class CartController extends Controller
 
     public static function message_to_telegram($text, $reply_markup = '')
     {
+
         $attributes = request()->validate([
             'name' => '',
             'total' => '',
@@ -79,10 +82,12 @@ class CartController extends Controller
             'comment'=>''
         ]);
 
+
+
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
         $chat_id = '-760962497';
         $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн'."\n".'коментар: '.$attributes['comment'];
-
+        dd($text);
         $ch = curl_init();
         $ch_post = [
             CURLOPT_URL => 'https://api.telegram.org/bot' . $bot_token . '/sendMessage',
