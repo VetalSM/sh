@@ -117,12 +117,12 @@
         {{--        </div>--}}
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://t.me/MadeIS_UA" target="_blank">
-                <img src="/images/telegram.png" alt="" style="width: 20px; position: relative; top: 50px !important;">
+                <img src="/images/telegram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://instagram.com/madeis.ua" target="_blank">
-                <img src="/images/instagram.png" alt="" style="width: 20px; position: relative; top: 50px !important;">
+                <img src="/images/instagram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
@@ -199,7 +199,7 @@
     <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
         <div>
             <a href="/">
-                <img src="/images/logo.png" alt="Logo" width="100" height="60">
+                <img src="/images/logo.webp" alt="Logo" width="100" height="60">
 
             </a>
         </div>
@@ -327,12 +327,12 @@
         <div style=" position: relative; top: 8px !important;">
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://t.me/MadeIS_UA" target="_blank">
-                    <img src="/images/telegram.png" alt="" class="mx-auto " style="width: 50px;">
+                    <img src="/images/telegram.webp" alt="" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://instagram.com/madeis.ua" target="_blank">
-                    <img src="/images/instagram.png" alt="" class="mx-auto " style="width: 50px;">
+                    <img src="/images/instagram.webp" alt="" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
             <div class="relative  inline-block mx-auto lg:bg-gray-200 rounded-full">
