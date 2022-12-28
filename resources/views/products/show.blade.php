@@ -114,17 +114,15 @@
                         @php
                             $prices = DB::table('prices')->where('name', "$product->prices")->get();
                             $sorted = $prices->sortBy('price');
+                            $d='';
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 ">
                             @foreach ($sorted as $price)
                                 <option class="rounded-full"
-                                        value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
+                                        value="{{$d=$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
                             @endforeach
                         </select>
-                        <input type="hidden" value="{{$price->weight}}" name="weight">
-                        <input type="hidden" value="{{$price->unit}}" name="unit">
-                        <input type="hidden" value="{{$price->currency}}" name="currency">
                         <input type="hidden" value="{{$product->prices}}" name="prices">
                         <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">

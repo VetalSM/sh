@@ -82,12 +82,8 @@
                             @foreach ($sorted as $price)
                                 <option class="rounded-full"
                                         value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
-                            @endforeach
+                        @endforeach
                         </select>
-
-                        <input type="hidden" value="{{$price->weight}}" name="weight">
-                        <input type="hidden" value="{{$price->unit}}" name="unit">
-                        <input type="hidden" value="{{$price->currency}}" name="currency">
                         <input type="hidden" value="{{$product->prices}}" name="prices">
                         <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">

@@ -37,11 +37,11 @@
                                 <td>
                                     <a href="#"></a>
                                         @php
-                                            $pricesName = $item->attributes->prices;
-                                             $price = DB::table('prices')->where('name', "$pricesName")->where('price', "$item->price")->first();
-                                            if(!isset($price->currency)) {
-                                                $price->currency=" ";
-                                            }
+                                             $pricesName = $item->attributes->prices;
+                                              $price = DB::table('prices')->where('name', "$pricesName")->where('price', "$item->price")->first();
+                                             if(!isset($price->currency)) {
+                                                 $price->currency=" ";
+                                             }
                                         @endphp
                                         <span class="mb-3 text-2xl lg:text-base">{{ $item->name}}
                                         </span>
@@ -84,7 +84,6 @@
                                 </td>
                             </tr>
                         @endforeach
-
                         </tbody>
                     </table>
 
@@ -109,14 +108,30 @@
                                 {{--@dd($cartItems)--}}
                                 <h3 style="color: #000000" for="escola">Контактні дані:</h3>
                                 <input type="hidden" value="{{$cartItems}}" name="name">
+{{--                                @php--}}
+{{--                                    $prices = DB::table('prices')->where('price', "$d")->get();--}}
+{{--                                @endphp--}}
+{{--                                @foreach ($prices as $price)--}}
+{{--                                    <input type="hidden" value="{{$price->weight}}" name="weight">--}}
+{{--                                    <input type="hidden" value="{{$price->unit}}" name="unit">--}}
+{{--                                    <input type="hidden" value="{{$price->currency}}" name="currency">--}}
+{{--                                    --}}{{--                            @endif--}}
+{{--                                @endforeach--}}
+{{--                                @dd($cartItems)--}}
+
+{{--                              dd($cartItems->name);--}}
+{{--                                    $text[]=$cartItems->name.' '.$cartItems->attributes->weight.' '.$cartItems->attributes->unit.': '.$cartItems->price.' '.$cartItems->attributes->currency.--}}
+{{--                                   ' к-во'.': '.$cartItems->quantity. '|'.' Всього: '.$cartItems->price*$cartItems->quantity.' '.$cartItems->attributes->currency."\n";--}}
                                 @php
+                                                                       $text=[];
+                                          foreach($cartItems as $f=>$b){
+                                         $price = DB::table('prices')->where('price', "$b->price")->first();
+                                    if(!isset($price->currency)) {
+                               $price->currency=" ";
+                                                         }
+                               $text[]=$b->name.' '.$price->weight.' '.$price->unit.': '.$b->price.' '.$price->currency.
+                           ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$price->currency."\n";}
 
-                                                                                                            $text=[];
-                                                                                                            foreach($cartItems as $f=>$b){
-
-
-                                                                                                                $text[]=$b->name.' '.$b->attributes->weight.' '.$b->attributes->unit.': '.$b->price.' '.$b->attributes->currency.
-                                                                                                                ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$b->currency."\n";}
                                 @endphp
                                 <input type="hidden" value="{{implode("", $text)}}" name="name" class="text-xs" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
