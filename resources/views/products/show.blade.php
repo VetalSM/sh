@@ -125,7 +125,7 @@
                         </select>
 
                             @php $price = DB::table('prices')->where('price', "$d")->first()  @endphp
-                        @dd($price)
+
                             @if(!isset($price->currency))
                                 {{$price->currency=" "}}
                             @endif
