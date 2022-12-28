@@ -131,7 +131,6 @@
                                                          }
                                $text[]=$b->name.' '.$price->weight.' '.$price->unit.': '.$b->price.' '.$price->currency.
                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$price->currency."\n";}
-
                                 @endphp
                                 <input type="hidden" value="{{implode("", $text)}}" name="name" class="text-xs" required/>
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
