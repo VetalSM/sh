@@ -200,53 +200,8 @@
         <div>
             <a href="/">
                 <img src="/images/logo.webp" alt="Logo" width="100" height="60">
-
             </a>
         </div>
-        {{--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">--}}
-        {{--            Launch demo modal--}}
-        {{--        </button>--}}
-
-        {{--        <!-- Modal -->--}}
-        {{--        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
-        {{--            <div class="modal-dialog modal-xl">--}}
-        {{--                <div class="modal-content">--}}
-        {{--                    <div class="modal-header">--}}
-        {{--                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-        {{--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
-        {{--                    </div>--}}
-        {{--                    <div class="modal-body">--}}
-        {{--                        ...--}}
-        {{--                    </div>--}}
-        {{--                    <div class="modal-footer">--}}
-        {{--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>--}}
-        {{--                        <button type="button" class="btn btn-primary">Save changes</button>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
-
-
-        {{--        <div class="hidden lg:flex justify-between mb-6">--}}
-        {{--            <a href="/"--}}
-        {{--               class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">--}}
-        {{--                <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">--}}
-        {{--                    <g fill="none" fill-rule="evenodd">--}}
-        {{--                        <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">--}}
-        {{--                        </path>--}}
-        {{--                        <path class="fill-current"--}}
-        {{--                              d="M13.854 7.224l-3.847 3.856 3.847 3.856-1.184 1.184-5.04-5.04 5.04-5.04z">--}}
-        {{--                        </path>--}}
-        {{--                    </g>--}}
-        {{--                </svg>--}}
-
-        {{--                Back to products--}}
-        {{--            </a>--}}
-
-
-        {{--                <x-category-button :category="$post->category"/>--}}
-        {{--            </div>--}}
-
 
         <div class="mt-8 md:mt-0 flex inline-block items-center  px-15">
             <a href="{{ route('cart.list') }}" class="flex mr-18 items-center"
