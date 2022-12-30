@@ -116,15 +116,16 @@
         {{--            <span>Ми у соцмережах</span>--}}
         {{--        </div>--}}
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
-            <a href="https://t.me/MadeIS_UA" target="_blank">
-                <img src="/images/telegram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
-            </a>
-        </div>
-        <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://instagram.com/madeis.ua" target="_blank">
                 <img src="/images/instagram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
             </a>
         </div>
+        <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
+            <a href="https://t.me/MadeIS_UA" target="_blank">
+                <img src="/images/telegram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
+            </a>
+        </div>
+
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://www.facebook.com/madeis.ua/" target="_blank">
                 <img src="/images/facebook.png" alt="" style="width: 20px; position: relative; top: 50px !important;">
@@ -281,15 +282,16 @@
         </div>
         <div style=" position: relative; top: 8px !important;">
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
-                <a href="https://t.me/MadeIS_UA" target="_blank">
-                    <img src="/images/telegram.webp" alt="" class="mx-auto " style="width: 50px;">
-                </a>
-            </div>
-            <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://instagram.com/madeis.ua" target="_blank">
                     <img src="/images/instagram.webp" alt="" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
+            <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
+                <a href="https://t.me/MadeIS_UA" target="_blank">
+                    <img src="/images/telegram.webp" alt="" class="mx-auto " style="width: 50px;">
+                </a>
+            </div>
+
             <div class="relative  inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://www.facebook.com/madeis.ua/" target="_blank">
                     <img src="/images/facebook.png" alt="" class="mx-auto " style="width: 50px;">
