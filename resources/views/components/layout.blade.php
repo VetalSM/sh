@@ -85,8 +85,25 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
+<div class="  bg-blue-200 border-opacity-5  text-center py-1 px-4 ">
+    <div class="py-1 ">
+        <div class="px-3  inline">
+            <p
+               class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
+{{--               style=" position: relative; top: 0px !important;--}}
+{{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
+            >Магазин Made<span  style="color: #3B82F6">IS</span>
+                вітає вас зі святами! Нехай у Новому Році здійснюються
+                всі ваші мрії!<br/> <span  style="color: rgba(255,26,26,0.84)">Ми вихідні 31 грудня та 1 січня, інші дні працюємо у звичному режимі.</span>
+
+            </p>
+        </div>
+
+    </div>
+</div>
+
 <div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
-    <div class="py-1">
+    <div class="py-1 text-centre">
         <div class="px-3  inline">
             <a href="/info_payment"
                class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
@@ -111,6 +128,7 @@
             >Контакти
             </a>
         </div>
+
         {{--        <div class=" inline  px-1   rounded-full  "--}}
         {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
         {{--            <span>Ми у соцмережах</span>--}}
