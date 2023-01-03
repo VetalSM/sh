@@ -84,7 +84,9 @@
                                         value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
                         @endforeach
                         </select>
+
                         <input type="hidden" value="{{$product->prices}}" name="prices">
+                        <input type="hidden" value="{{$product->id}}" name="prod_id">
                         <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">

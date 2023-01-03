@@ -24,7 +24,7 @@ class AdminCategoryController extends Controller
     {
         Category::create(array_merge($this->validateCategory()));
 
-        return redirect('/admin/products/category')->with('success', 'price created');
+        return redirect('/admin/products/categories')->with('success', 'price created');
     }
 //
     public function edit(Category $category)
@@ -52,14 +52,14 @@ class AdminCategoryController extends Controller
 //        }
         $category->update($attributes);
 
-        return redirect('/admin/products/category')->with('success', 'Product Updated!');
+        return redirect('/admin/products/categories')->with('success', 'Product Updated!');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return redirect('/admin/products/category')->with('success', 'Price Deleted!');
+        return redirect('/admin/products/categories')->with('success', 'Price Deleted!');
     }
 
     protected function validateCategory(?Category $category = null): array

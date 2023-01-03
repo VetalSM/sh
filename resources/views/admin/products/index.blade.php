@@ -1,6 +1,6 @@
 
 <x-layout>
-    <x-setting heading="Manage Products" >
+    <x-setting heading="Менеджер продуктов" >
 
 
         <div class="flex flex-col">

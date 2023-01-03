@@ -132,7 +132,7 @@
                             <input type="hidden" value="{{$price->weight}}" name="weight">
                             <input type="hidden" value="{{$price->unit}}" name="unit">
                             <input type="hidden" value="{{$price->currency}}" name="currency">
-
+                        <input type="hidden" value="{{$product->id}}" name="prod_id">
                         <input type="hidden" value="{{$product->prices}}" name="prices">
                         <input type="hidden" value="{{$product->title  }}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
