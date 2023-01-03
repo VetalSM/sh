@@ -36,6 +36,7 @@ class CartController extends Controller
                 'currency' => $price->currency,
                 'unit'=>$price->unit,
                 'weight'=>$price->weight,
+                'prod_id'=>$attributes->prod_id,
 
             )
         ]);
@@ -95,15 +96,19 @@ class CartController extends Controller
         foreach (\Cart::getContent() as $cart) {
             $total = \Cart::gettotal();
             $product_total =  $cart->price * $cart->quantity;
+
+            $weight = $cart->attributes->weight * $cart->quantity;
+
             $order = new order([
                 'tel' => $attributes['tel'],
                 'credentials' => $attributes['П_І_Б'],
                 'address' => $attributes['address'],
                 'comment' => $attributes['comment'],
                 'product' => $cart->name,
+                'product_id' => $cart->attributes->prod_id,
                 'price' => $cart->price,
                 'currency' => $cart->attributes->currency,
-                'weight' => $cart->attributes->weight,
+                'weight' => $weight,
                 'unit' => $cart->attributes->unit,
                 'quantity' => $cart->quantity,
                 'product_total' => $product_total,

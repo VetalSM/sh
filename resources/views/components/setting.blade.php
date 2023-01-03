@@ -7,42 +7,50 @@
 
     <div class="flex">
         <aside class="w-48 flex-shrink-0">
-            <h4 class="font-semibold mb-4">Links</h4>
+            <h4 class="font-semibold mb-4">Меню</h4>
 
             <ul>
-                <li>
-                    <span class="font-semibold mb-4">Product</span>
+                <li >
+                    <span class="font-semibold mb-4">Товары</span>
                 </li>
                 <li>
-                    <a href="/admin/products" class="{{ request()->is('admin/products') ? 'text-blue-500' : '' }}">All Product</a>
+                    <a href="/admin/products" class="{{ request()->is('admin/products') ? 'text-blue-500' : '' }}">Все товары</a>
                 </li>
 
                 <li>
-                    <a href="/admin/products/create" class="{{ request()->is('admin/products/create') ? 'text-blue-500' : '' }}">New Product</a>
+                    <a href="/admin/products/create" class="{{ request()->is('admin/products/create') ? 'text-blue-500' : '' }}">Новый товар</a>
                 </li>
                 <li>
-                    <span class="font-semibold mb-4">Price</span>
+                    <span class="font-semibold mb-4">Цены</span>
                 </li>
                 <li>
-                    <a href="/admin/products/price" class="{{ request()->is('admin/products/price') ? 'text-blue-500' : '' }}">All price</a>
+                    <a href="/admin/products/price" class="{{ request()->is('admin/products/price') ? 'text-blue-500' : '' }}">Все цены</a>
                 </li>
                 <li>
-                    <a href="/admin/products/price/create" class="{{ request()->is('admin/products/price/create') ? 'text-blue-500' : '' }}">New price</a>
-                </li>
-                <li>
-                <li>
-                    <span class="font-semibold mb-4">Comments</span>
-                </li>
-                    <a href="/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">All comments</a>
+                    <a href="/admin/products/price/create" class="{{ request()->is('admin/products/price/create') ? 'text-blue-500' : '' }}">Новая цeна</a>
                 </li>
                 <li>
                 <li>
-                    <span class="font-semibold mb-4">Category</span>
+                    <span class="font-semibold mb-4">Комментарии</span>
                 </li>
-                    <a href="/admin/products/category" class="{{ request()->is('admin/products/category') ? 'text-blue-500' : '' }}">All category</a>
+                    <a href="/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">Все комментарии</a>
                 </li>
                 <li>
-                    <a href="/admin/products/category/create" class="{{ request()->is('admin/products/category/create') ? 'text-blue-500' : '' }}">New category</a>
+                <li>
+                    <span class="font-semibold mb-4">Категории</span>
+                </li>
+                    <a href="/admin/products/categories" class="{{ request()->is('admin/products/categories') ? 'text-blue-500' : '' }}">Все категории</a>
+                </li>
+                <li>
+                    <a href="/admin/products/categories/create" class="{{ request()->is('admin/products/categories/create') ? 'text-blue-500' : '' }}">Новая категория</a>
+                </li>
+                <li>
+                    <span class="font-semibold mb-4">Остатки</span>
+                </li>
+                <a href="/admin/products/balance_products" class="{{ request()->is('admin/products/balance_products') ? 'text-blue-500' : '' }}">Все остатки</a>
+                </li>
+                <li>
+                    <a href="/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>
                 </li>
             </ul>
         </aside>

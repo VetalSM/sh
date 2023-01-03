@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting :heading="'Edit Category: ' . $category->name">
-        <form method="POST" action="/admin/products/category/{{ $category->id }}" enctype="multipart/form-data">
+        <form method="POST" action="/admin/products/categories/{{ $category->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <x-form.input name="name" :value="old('name', $category->name)" required />
