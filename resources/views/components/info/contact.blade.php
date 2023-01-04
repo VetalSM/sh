@@ -2,7 +2,7 @@
     <x-layout>
         @section('title')Candlescience - купить аромамасла в магазине madeis Украина, отдушки Candlescience(США) в Украине@endsection
 
-        @section('description')Отдушки Candlescience США вы можете купить на нашем сайте или связаться с нами любым из удобных способов для вас.@endsection
+        @section('description')Candlescience США вы можете купить на нашем сайте или связаться с нами любым из удобных способов для вас.@endsection
 
         <div class="card text-left  mx-auto" style="">
             <div class="card-body">
