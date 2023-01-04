@@ -148,7 +148,7 @@
                 </h1>
 
                 <div>
-                    <a href="/"
+                    <a href="{{session('prod_url')}}"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">
