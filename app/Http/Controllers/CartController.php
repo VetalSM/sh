@@ -44,7 +44,7 @@ class CartController extends Controller
         session()->flash('success', 'Товар додано у кошик!');
 
 
-        return redirect(session('product_ur'));
+        return redirect('/');
     }
 
     public function updateCart(Request $request)
