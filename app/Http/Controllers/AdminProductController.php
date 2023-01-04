@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class AdminProductController extends Controller
 {
     public function index()
     {
+        Session::put('product_url', request()->fullUrl());
         return view('admin.products.index', [
             'products' => Product::paginate(50)
         ]);
