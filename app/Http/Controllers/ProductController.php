@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        Session::put('product_ur', request()->fullUrl());
+        Session::put('prod_url', request()->fullUrl());
         return view('products.index', [
             'products' => Product::orderBy('status')->filter(
                 request(['search', 'category', 'author'])
