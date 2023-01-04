@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Price;
 use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -42,7 +43,8 @@ class CartController extends Controller
         ]);
         session()->flash('success', 'Товар додано у кошик!');
 
-        return redirect('/');
+
+        return redirect(session('product_ur'));
     }
 
     public function updateCart(Request $request)
