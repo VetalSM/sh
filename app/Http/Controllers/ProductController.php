@@ -11,16 +11,16 @@ class ProductController extends Controller
     public function index()
     {
         Session::put('product_url', request()->fullUrl());
-//        return view('products.index', [
-//            'products' => Product::orderBy('status')->filter(
-//                request(['search', 'category', 'author'])
-//            )->paginate(18)->withQueryString()
-//        ]);
         return view('products.index', [
-            'products' => Product::latest()->filter(
-                        request(['search', 'category', 'author'])
-                    )->paginate(18)->withQueryString()
+            'products' => Product::orderBy('status')->filter(
+                request(['search', 'category', 'author'])
+            )->paginate(18)->withQueryString()
         ]);
+//        return view('products.index', [
+//            'products' => Product::latest()->filter(
+//                        request(['search', 'category', 'author'])
+//                    )->paginate(18)->withQueryString()
+//        ]);
     }
 
     public function show(Product $product)
