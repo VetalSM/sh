@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
