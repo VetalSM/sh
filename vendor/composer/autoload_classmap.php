@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AdminBalanceProductController' => $baseDir . '/app/Http/Controllers/AdminBalanceProductController.php',
     'App\\Http\\Controllers\\AdminCategoryController' => $baseDir . '/app/Http/Controllers/AdminCategoryController.php',
     'App\\Http\\Controllers\\AdminCommentController' => $baseDir . '/app/Http/Controllers/AdminCommentController.php',
     'App\\Http\\Controllers\\AdminPriceController' => $baseDir . '/app/Http/Controllers/AdminPriceController.php',
@@ -31,6 +32,7 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Models\\BalanceProduct' => $baseDir . '/app/Models/BalanceProduct.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Comment' => $baseDir . '/app/Models/Comment.php',
     'App\\Models\\Order' => $baseDir . '/app/Models/Order.php',

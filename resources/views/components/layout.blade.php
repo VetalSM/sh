@@ -29,6 +29,18 @@
 
         gtag('config', 'G-CY3K5VV4KR');
     </script>
+    <script>
+        var $window = $(window)
+
+        /* Restore scroll position */
+        window.scroll(0, localStorage.getItem('scrollPosition')|0)
+
+        /* Save scroll position */
+        $window.scroll(function () {
+            localStorage.setItem('scrollPosition', $window.scrollTop())
+        })
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
