@@ -10,7 +10,6 @@ class AdminProductController extends Controller
 {
     public function index()
     {
-        Session::put('product_url', request()->fullUrl());
         return view('admin.products.index', [
             'products' => Product::paginate(50)
         ]);
