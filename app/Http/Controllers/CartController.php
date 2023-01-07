@@ -42,7 +42,7 @@ class CartController extends Controller
 
             )
         ]);
-        session()->flash('success', 'Товар додано у кошик!');
+        session()->flash('success', __('Товар додано у кошик!'));
 
 
         return  redirect(session('prod_url'));
@@ -60,26 +60,26 @@ class CartController extends Controller
             ]
         );
 
-        session()->flash('success', 'Позиція оновлена успішно!');
+        session()->flash('success',  __('Позиція оновлена успішно!'));
 
-        return redirect()->route('cart.list');
+        return redirect()->route('cart.list',app()->getLocale());
     }
 
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);
-        session()->flash('success', 'Позицію видалено!');
+        session()->flash('success', __('Позицію видалено!'));
 
-        return redirect()->route('cart.list');
+        return redirect()->route('cart.list',app()->getLocale());
     }
 
     public function clearAllCart()
     {
         \Cart::clear();
 
-        session()->flash('success', 'Всі позиції видалено :(');
+        session()->flash('success', __('Всі позиції видалено'));
 
-        return redirect()->route('cart.list');
+        return redirect()->route('cart.list',app()->getLocale());
 
     }
 
@@ -144,7 +144,7 @@ class CartController extends Controller
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
         \Cart::clear();
-        return redirect('/')->with('order', "Дякуємо за замовлення, найближчим часом зв'яжемося з вами!");
+        return redirect("/".app()->getLocale())->with('order', __("Дякуємо за замовлення, найближчим часом зв'яжемося з вами!"));
     }
 }
 

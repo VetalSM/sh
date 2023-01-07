@@ -11,7 +11,7 @@
                 <h5 class="font-bold">{{ $comment->name }}</h5>
 
                 <p >
-                    Прокоментовано:
+                    {{__("Прокоментовано:")}}
                     <time>{{ $comment->created_at->format("d-m-Y H:i:s") }}</time>
                 </p>
             </header>

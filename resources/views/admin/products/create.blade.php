@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting heading="Publish New Product">
-        <form method="POST" action="/admin/products" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products" enctype="multipart/form-data">
             @csrf
 
             <x-form.input name="title" required />
@@ -30,7 +30,11 @@
 
                 <x-form.error name="category"/>
             </x-form.field>
-
+            <x-form.input name="title_ru" />
+            <x-form.textarea name="excerpt_ru" />
+            <x-form.textarea name="body_ru" />
+            <x-form.textarea name="meta_title_ru" ></x-form.textarea>
+            <x-form.textarea name="meta_description_ru"></x-form.textarea>
             <x-form.button>Publish</x-form.button>
         </form>
     </x-setting>

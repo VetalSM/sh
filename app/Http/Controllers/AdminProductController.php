@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductRu;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 
 class AdminProductController extends Controller
 {
+
     public function index()
-    {
-        return view('admin.products.index', [
-            'products' => Product::paginate(50)
-        ]);
+    { $locale = App::currentLocale();
+
+            return view('admin.products.index', [
+                'products' => Product::paginate(50)]);
+
     }
 
     public function create()
@@ -60,15 +64,15 @@ class AdminProductController extends Controller
             ]));
         }
 
-        return redirect('/');
+        return redirect('/'.app()->getLocale());
     }
 
-    public function edit(Product $product)
+    public function edit($locale,Product $product)
     {
         return view('admin.products.edit', ['product' => $product]);
     }
 
-    public function update(Product $product)
+    public function update($locale,Product $product)
     {
 
         $attributes = $this->validateProduct($product);
@@ -90,7 +94,7 @@ class AdminProductController extends Controller
         return back()->with('success', 'Product Updated!');
     }
 
-    public function destroy(Product $product)
+    public function destroy($locale,Product $product)
     {
         $product->delete();
 
@@ -115,6 +119,11 @@ class AdminProductController extends Controller
             'meta_title' =>'',
             'meta_keywords' =>'',
             'meta_description' =>'',
+            'title_ru' => '',
+            'excerpt_ru' => '',
+            'body_ru' => '',
+            'meta_title_ru' =>'',
+            'meta_description_ru' =>'',
             'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
     }

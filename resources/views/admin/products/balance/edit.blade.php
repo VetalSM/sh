@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting :heading="'Edit Balance: ' . $balanceProduct->name">
-        <form method="POST" action="/admin/products/balance_products/{{ $balanceProduct->id }}" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/balance_products/{{ $balanceProduct->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
 

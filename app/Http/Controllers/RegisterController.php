@@ -22,6 +22,6 @@ class RegisterController extends Controller
 
         auth()->login(User::create($attributes));
 
-        return redirect('/')->with('success', 'Ви успішно зареєструвались!');
+        return redirect('/'.app()->getLocale())->with('success', 'Ви успішно зареєструвались!');
     }
 }

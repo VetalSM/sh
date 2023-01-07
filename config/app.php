@@ -82,6 +82,10 @@ return [
 
     'locale' => 'ua',
 
+'available_locales' => [
+   'ru',
+   'ua'
+],
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

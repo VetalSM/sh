@@ -1,7 +1,7 @@
 
 <x-layout>
     <x-setting heading="Новый остаток для товара">
-        <form method="POST" action="/admin/products/balance_products" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/balance_products" enctype="multipart/form-data">
             @csrf
 
             <select name="product_id" class="bt rounded-full ">

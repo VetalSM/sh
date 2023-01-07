@@ -14,43 +14,43 @@
                     <span class="font-semibold mb-4">Товары</span>
                 </li>
                 <li>
-                    <a href="/admin/products" class="{{ request()->is('admin/products') ? 'text-blue-500' : '' }}">Все товары</a>
+                    <a href="/{{app()->getLocale()}}/admin/products" class="{{ request()->is('admin/products') ? 'text-blue-500' : '' }}">Все товары</a>
                 </li>
 
                 <li>
-                    <a href="/admin/products/create" class="{{ request()->is('admin/products/create') ? 'text-blue-500' : '' }}">Новый товар</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/create" class="{{ request()->is('admin/products/create') ? 'text-blue-500' : '' }}">Новый товар</a>
                 </li>
                 <li>
                     <span class="font-semibold mb-4">Цены</span>
                 </li>
                 <li>
-                    <a href="/admin/products/price" class="{{ request()->is('admin/products/price') ? 'text-blue-500' : '' }}">Все цены</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/price" class="{{ request()->is('admin/products/price') ? 'text-blue-500' : '' }}">Все цены</a>
                 </li>
                 <li>
-                    <a href="/admin/products/price/create" class="{{ request()->is('admin/products/price/create') ? 'text-blue-500' : '' }}">Новая цeна</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/price/create" class="{{ request()->is('admin/products/price/create') ? 'text-blue-500' : '' }}">Новая цeна</a>
                 </li>
                 <li>
                 <li>
                     <span class="font-semibold mb-4">Комментарии</span>
                 </li>
-                    <a href="/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">Все комментарии</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">Все комментарии</a>
                 </li>
                 <li>
                 <li>
                     <span class="font-semibold mb-4">Категории</span>
                 </li>
-                    <a href="/admin/products/categories" class="{{ request()->is('admin/products/categories') ? 'text-blue-500' : '' }}">Все категории</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/categories" class="{{ request()->is('admin/products/categories') ? 'text-blue-500' : '' }}">Все категории</a>
                 </li>
                 <li>
-                    <a href="/admin/products/categories/create" class="{{ request()->is('admin/products/categories/create') ? 'text-blue-500' : '' }}">Новая категория</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/categories/create" class="{{ request()->is('admin/products/categories/create') ? 'text-blue-500' : '' }}">Новая категория</a>
                 </li>
                 <li>
                     <span class="font-semibold mb-4">Остатки</span>
                 </li>
-                <a href="/admin/products/balance_products" class="{{ request()->is('admin/products/balance_products') ? 'text-blue-500' : '' }}">Все остатки</a>
+                <a href="/{{app()->getLocale()}}/admin/products/balance_products" class="{{ request()->is('admin/products/balance_products') ? 'text-blue-500' : '' }}">Все остатки</a>
                 </li>
                 <li>
-                    <a href="/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>
+                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>
                 </li>
             </ul>
         </aside>

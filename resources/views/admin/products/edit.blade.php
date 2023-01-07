@@ -1,7 +1,7 @@
 
 <x-layout>
     <x-setting :heading="'Edit Product: ' . $product->title">
-        <form method="POST" action="/admin/products/{{ $product->id }}" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/{{ $product->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             @php
@@ -76,7 +76,11 @@
             <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
             <x-form.textarea name="meta_description" >{{ old('meta_description', $product->meta_description) }}</x-form.textarea>
 
-
+            <x-form.input name="title_ru" :value="old('title', $product->title_ru)" required />
+            <x-form.textarea name="excerpt_ru" required>{{ old('excerpt', $product->excerpt_ru) }}</x-form.textarea>
+            <x-form.textarea name="body_ru" required>{{ old('body', $product->body_ru) }}</x-form.textarea>
+            <x-form.textarea name="meta_title_ru" >{{ old('meta_title', $product->meta_title_ru) }}</x-form.textarea>
+            <x-form.textarea name="meta_description_ru" >{{ old('meta_description', $product->meta_description_ru) }}</x-form.textarea>
             <x-form.button>Update</x-form.button>
         </form>
     </x-setting>

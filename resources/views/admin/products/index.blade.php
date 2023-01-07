@@ -9,26 +9,25 @@
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach (\App\Models\Product::all() as $product)
-
+                            @foreach (\App\Models\Product::all() as $product)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 @if($product->status === "not_available")
                                                     <div class="text-sm text-red font-medium text-gray-900">
-                                                        <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                        <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
                                                             {{ $product->title }}<span class="text-dark">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
                                                         </a>
                                                     </div>
                                                     @elseif($product->status === "ends")
                                                     <div class="text-sm font-medium text-gray-900">
-                                                        <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                        <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
                                                             {{ $product->title }}<span class="text-danger">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
                                                         </a>
                                                     </div>
                                                 @else
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                    <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
                                                         {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
                                                     </a>
                                                 </div>
@@ -38,11 +37,11 @@
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="/admin/products/{{ $product->id }}/edit" class="text-blue-500 hover:text-blue-600">Edit</a>
+                                            <a href="/{{app()->getLocale()}}/admin/products/{{ $product->id }}/edit" class="text-blue-500 hover:text-blue-600">Edit</a>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <form method="POST" action="/admin/products/{{ $product->id }}">
+                                            <form method="POST" action="/{{app()->getLocale()}}/admin/products/{{ $product->id }}">
                                                 @csrf
                                                 @method('DELETE')
 

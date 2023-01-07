@@ -8,9 +8,9 @@
 
             <x-products-grid :products="$products" />
 
-            {{ $products->links() }}
+            {{ $products->links()}}
         @else
-            <p class="text-center">В даній категорії наразі немає товарів. Але трохи пізніше вони обов'язково з'являться:))</p>
+            <p class="text-center">{{  __("В даній категорії наразі немає товарів. Але трохи пізніше вони обов'язково з'являться:))")}}</p>
         @endif
     </main>
 </x-layout>
