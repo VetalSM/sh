@@ -1,34 +1,35 @@
 <!doctype html>
-<html lang="ua">
+
+<html lang="{{App::currentLocale()}}">
 <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+{{--    <script>(function (w, d, s, l, i) {--}}
+{{--            w[l] = w[l] || [];--}}
+{{--            w[l].push({--}}
+{{--                'gtm.start':--}}
+{{--                    new Date().getTime(), event: 'gtm.js'--}}
+{{--            });--}}
+{{--            var f = d.getElementsByTagName(s)[0],--}}
+{{--                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';--}}
+{{--            j.async = true;--}}
+{{--            j.src =--}}
+{{--                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;--}}
+{{--            f.parentNode.insertBefore(j, f);--}}
+{{--        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>--}}
+{{--    <!-- End Google Tag Manager -->--}}
+{{--    <!-- Google tag (gtag.js) -->--}}
+{{--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>--}}
+{{--    <script>--}}
+{{--        window.dataLayer = window.dataLayer || [];--}}
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+{{--        function gtag() {--}}
+{{--            dataLayer.push(arguments);--}}
+{{--        }--}}
 
-        gtag('js', new Date());
+{{--        gtag('js', new Date());--}}
 
-        gtag('config', 'G-CY3K5VV4KR');
-    </script>
+{{--        gtag('config', 'G-CY3K5VV4KR');--}}
+{{--    </script>--}}
     <script>
         var $window = $(window)
 
@@ -45,8 +46,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 {{--    <title>@yield('title', 'MadeIS - товари для виготовлення свічок в Україні, віддушки CandleScience в Україні. madeis.com.ua madeis')</title>--}}
-    <title>@yield('title', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')</title>
-    <meta name="title" content="@yield('title', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -55,11 +54,17 @@
     <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    @if(App::currentLocale() ==='ua')
+    <title>@yield('title', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')</title>
+    <meta name="title" content="@yield('title_m', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')">
     <meta name="description" content="@yield('description', 'Купити CandleScience в Україні. Аромаолії США, Candlescience, використовуються для свічок, мила, дифузорів, косметики, бомбочок для ван, запашки для лосьйонів, віддушки для натуральних свічок ручної роботи із соєвого воску')">
-{{--    <meta name="description"--}}
-{{--          content="@yield('description', 'Товари та складові для виготовлення свічок, які ви можете придбати у магазині madeis.com.ua в Україні. Якісні товари за приємними цінами: віддушки CandleScience США, соевий віск Kerasoy, деревяні гноти Wooden Wick та гноти Stabilo madeis.com.ua madeis')">--}}
-
     <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товари для свічок, віддушки для свічок, віддушки для мила, ароматизатори для свічок, ароматизатори для аромадифузорів, совий віск Kerax в Україні, американські віддушки Україна, купити ароматизатори США в Україні, Candlescience в Україні, дерев’яні гноти Wooden Wick в Україні, товари для свічок MadeIS, Мейдіс , товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитили. madeis.com.ua madeis')">
+    @else
+        <title>@yield('title', 'CandleScience. Аромамасла США, Candlescience, отдушки, запашки для свечей мыла, диффузоров, косметики.Аромамасла премиум класса США, материалы для производства свечей, соевый воск для свечей ручной работы, отдушки для свечей')</title>
+        <meta name="title" content="@yield('title_m', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')">
+        <meta name="description" content="@yield('description', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')">
+        <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товары для свечей, отдушки для свечей, отдушки для мыла, ароматизаторы для свечей, ароматизаторы для аромадиффузоров, совый воск Kerax в Украине, американские отдушки Украина, купить ароматизаторы США в Украине, Candlescience в Украине, деревянные фитили Wooden Wick в Украина, товары для свечей MadeIS, Мэйдис, товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитилы. madeis.com.ua madeis')">
+    @endif
     <link rel="canonical" href="{{url()->current()}}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -109,37 +114,51 @@
             >Магазин Made<span  style="color: #3B82F6">IS</span>
                 вітає вас зі святами! Нехай у Новому Році здійснюються
                 всі ваші мрії!<br/> <span  style="color: rgba(255,26,26,0.84)">Ми вихідні 31 грудня та 1 січня, інші дні працюємо у звичному режимі.</span>
-
             </p>
         </div>
 
     </div>
 </div>
 
+
 <div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
     <div class="py-1 text-centre">
-        <div class="px-3  inline">
-            <a href="/info_payment"
+        <div class="inline float-left">
+           <a href="{{ url('/ua') }}">UA</a>|<a href="{{ url('/ru') }}">RU</a>
+        </div>
+        <div class="lg:px-3  inline">
+            <a href="/{{app()->getLocale()}}/info_payment"
                class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
                style=" position: relative; top: 0px !important;
             text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
-            >Оплата
+            >{{__("Оплата")}}
             </a>
         </div>
-        <div class="px-3 inline">
-            <a href="/info_delivery"
+        <div class="lg:px-3 inline">
+
+            <a href="/{{app()->getLocale()}}/info_delivery"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
                style=" position: relative; top: 0px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
-            >Доставка
+            >{{__("Доставка")}}
             </a>
         </div>
-        <div class="px-3 inline">
-            <a href="/info_contact"
+
+
+
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{ route(request()->route()->getName())}}">EN</a>--}}
+{{--        </li>--}}
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{ route(request()->route()->getName())}}">RU</a>--}}
+{{--        </li>--}}
+
+        <div class="lg:px-3 inline">
+            <a href="/{{app()->getLocale()}}/info_contact"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
                style=" position: relative; top: 0px !important;
            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"
-            >Контакти
+            >{{ __('Контакти')}}
             </a>
         </div>
 
@@ -231,17 +250,17 @@
     </script>
     <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
         <div>
-            <a href="/">
+            <a href="/{{app()->getLocale()}}">
                 <img src="/images/logo.webp" alt="Logo" width="100" height="60">
             </a>
         </div>
 
         <div class="mt-8 md:mt-0 flex inline-block items-center  px-15">
-            <a href="{{ route('cart.list') }}" class="flex mr-18 items-center"
+            <a href="{{ route('cart.list',app()->getLocale()) }}" class="flex mr-18 items-center"
                style="  text-decoration-color: #747171;">
                 <img src="/images/cart.png" alt="cart" width="40" height="40">
                 <i class="ya-share1__item text-lg lg:text-xl "> <span
-                        class="hidden  lg:inline-flex  ">  Всього:</span> {{ Cart::getTotal() }} грн</i>
+                        class="hidden  lg:inline-flex  ">  {{__("Всього:")}}</span> {{ Cart::getTotal() }} грн</i>
             </a>
             <div class="flex" style=" margin-left: auto;margin-right: 0;">
 
@@ -257,14 +276,14 @@
                         @admin
 
                         <x-dropdown-item
-                            href="/admin/products"
+                            href="/{{app()->getLocale()}}/admin/products"
                             :active="request()->is('admin/products')"
                         >
                             Dashboard
                         </x-dropdown-item>
 
                         <x-dropdown-item
-                            href="/admin/products/create"
+                            href="/{{app()->getLocale()}}/admin/products/create"
                             :active="request()->is('admin/products/create')"
                         >
                             New Product
@@ -279,7 +298,7 @@
                             Вихід
                         </x-dropdown-item>
 
-                        <form id="logout-form" method="POST" action="/logout" class="hidden">
+                        <form id="logout-form" method="POST" action="/{{app()->getLocale()}}/logout" class="hidden">
                             @csrf
                         </form>
                     </x-dropdown>
@@ -306,11 +325,20 @@
     </nav>
 
     {{ $slot }}
-
+{{--    @foreach (config('app.available_locales') as $locale)--}}
+{{--        <x-dropdown-item :href="--}}
+{{--        route(request()->route()->getName(), $locale, )">--}}
+{{--               <span @if (app()->getLocale() == $locale)--}}
+{{--                         style="font-weight: bold; text-decoration: underline"--}}
+{{--                      @endif>--}}
+{{--{{ strtoupper($locale) }}--}}
+{{--</span>--}}
+{{--        </x-dropdown-item>--}}
+{{--    @endforeach--}}
     <footer class="bg-gray-100  border-opacity-5 rounded-xl text-center py-1 px-1 mt-5">
         <div class=" inline py-1 px-2 bg-gray-200 rounded-full  "
              style="position: relative;   height: 200px; border: 3px solid rgb(255, 179, 0);">
-            <span>Приєднуйтесь до нас у соцмережах</span>
+            <span>{{__("Приєднуйтесь до нас у соцмережах")}}</span>
         </div>
         <div style=" position: relative; top: 8px !important;">
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">

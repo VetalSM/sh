@@ -10,19 +10,19 @@
                         <p class="text-green-800 text-xl lg:text-base">{{ $message }}</p>
                     </div>
                 @endif
-                <h3 class="text-3xl text-bold">Кошик</h3>
+                <h3 class="text-3xl text-bold">{{__("Кошик")}}</h3>
                 <div class="flex-1">
                     <table class="w-full md:table-auto" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
-                            <th class="text-left">Найменування</th>
+                            <th class="text-left">{{__("Найменування")}}</th>
                             <th class="pl-5 text-left lg:text-center lg:pl-5">
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
-                                <span class="hidden lg:inline">Кількість</span>
+                                <span class="hidden lg:inline">{{__("Кількість")}}</span>
                             </th>
-                            <th class="hidden text-right md:table-cell"> ціна</th>
-                            <th class="hidden text-right md:table-cell"> Видалити</th>
+                            <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
+                            <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -43,7 +43,7 @@
                                                  $price->currency=" ";
                                              }
                                         @endphp
-                                        <span class="mb-3 text-2xl lg:text-base">{{ $item->name}}
+                                        <span class="mb-3 text-2xl lg:text-base">{{ Str::limit($item->name,10)}}
                                         </span>
                                         <br>
                                         <h10 class="font-bold text-2xl lg:text-base text-blue-700">
@@ -57,13 +57,13 @@
                                     <div class="h-10 w-28">
                                         <div class="relative  flex flex-row w-full h-8">
 
-                                            <form action="{{ route('cart.update') }}" method="POST">
+                                            <form action="{{ route('cart.update',app()->getLocale()) }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300"/>
                                                 <button type="submit" class="px-1  ml-2 text-white text-base lg:text-base rounded-xl bg-blue-500">
-                                                    оновити
+                                                    {{__("оновити")}}
                                                 </button>
                                             </form>
                                         </div>
@@ -75,7 +75,7 @@
                                 </span>
                                 </td>
                                 <td class="text-right md:table-cell " style="padding: 1px 25px 0px 0;">
-                                    <form action="{{ route('cart.remove') }}" method="POST">
+                                    <form action="{{ route('cart.remove',app()->getLocale()) }}" method="POST">
                                         @csrf
                                         <input type="hidden" value="{{ $item->id }}" name="id">
                                         <button class="px-3 py-0.5 text-white bg-red-600  rounded-full">x</button>
@@ -89,7 +89,7 @@
 
                     <div class="text-xl">
                         @if(isset($price->currency))
-                            Загальна вартість: {{ Cart::getTotal() }} {{$price->currency}}
+                              {{__("Загальна вартість:")}} {{ Cart::getTotal() }} {{$price->currency}}
                         @else
 
                         @endif
@@ -97,16 +97,16 @@
                     </div>
                     <br>
                     <div>
-                        <form action="{{ route('cart.clear') }}" method="POST">
+                        <form action="{{ route('cart.clear',app()->getLocale()) }}" method="POST">
                             @csrf
-                            <button class="px-6 py-2 text-red-800 bg-red-300 text-xl lg:text-base  rounded-full">Очистити кошик</button>
+                            <button class="px-6 py-2 text-red-800 bg-red-300 text-xl lg:text-base  rounded-full">{{__("Очистити кошик")}}</button>
                         </form>
 
-                        <form action="{{route('order')}}" method="post">
+                        <form action="{{route('order',app()->getLocale())}}" method="post">
                             @csrf
                             <div class="form-group">
                                 {{--@dd($cartItems)--}}
-                                <h3 style="color: #000000" for="escola">Контактні дані:</h3>
+                                <h3 style="color: #000000" for="escola">{{__("Контактні дані:")}}</h3>
                                 <input type="hidden" value="{{$cartItems}}" name="name">
 {{--                                @php--}}
 {{--                                    $prices = DB::table('prices')->where('price', "$d")->get();--}}
@@ -136,14 +136,14 @@
                                 <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" value="{{old('tel')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                 <x-form.error name="tel"/>
-                             <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">email</p>  <input type="email" placeholder="email" name="email"  value="{{old('email')}}"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
-                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">П.І.Б</p> <input type="text" placeholder="Прізвище, Ім'я" name="П.І.Б" value="{{old('П_І_Б')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
-                               <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Адреса: населений пункт, № відділення Нової Пошти</p>  <input type="text" placeholder="Адреса" name="address" value="{{old('address')}}" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
-                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >Коментар до замовлення</p>  <textarea  placeholder="Коментар" name="comment" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" >{{old('comment')}}</textarea>
+                             <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">{{__("email")}}</p>  <input type="email" placeholder="email" name="email"  value="{{old('email')}}"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">{{__("П.І.Б")}}</p> <input type="text" placeholder="{{__("Прізвище, Ім'я")}}" name="П.І.Б" value="{{old('П_І_Б')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
+                               <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >{{__("Адреса: населений пункт, № відділення Нової Пошти")}}</p>  <input type="text" placeholder="{{__("Адреса")}}" name="address" value="{{old('address')}}" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" required/>
+                                <p  class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6" >{{__("Коментар до замовлення")}}</p>  <textarea  placeholder="{{__("Коментар")}}" name="comment" class="border  text-2xl lg:text-base border-gray-200  p-2 w-full rounded" >{{old('comment')}}</textarea>
                             </div>
                             <div class="mt-3">
-                                <button type="submit" class="btn btn-danger btn-lg">Замовити</button>
-                                <a href="/" class="btn btn-primary btn-lg">Повернутись до покупок</a>
+                                <button type="submit" class="btn btn-danger btn-lg">{{__("Замовити")}}</button>
+                                <a href="/{{app()->getLocale()}}" class="btn btn-primary btn-lg">{{__("Повернутись до покупок")}}</a>
                             </div>
                         </form>
                     </div>

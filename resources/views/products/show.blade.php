@@ -1,7 +1,23 @@
 <x-layout>
-    @section('title'){{$product->meta_title}}@endsection
-    @section('description'){{$product->meta_description}}@endsection
-    @section('keywords'){{$product->meta_keywords}}@endsection
+    @if(App::currentLocale()==='ru' && isset($product->title_ru))
+        @php
+            $title = $product->title_ru;
+            $body = $product->body_ru;
+        @endphp
+        @section('title'){{$title}}@endsection
+        @section('title_m'){{$product->meta_title_ru}}@endsection
+        @section('description'){{$product->meta_description_ru}}@endsection
+        @section('keywords'){{$product->meta_keywords}}@endsection
+    @else
+        @php
+            $title = $product->title;
+             $body = $product->body;
+        @endphp
+        @section('title'){{$title}}@endsection
+        @section('title_m'){{$product->meta_title}}@endsection
+        @section('description'){{$product->meta_description}}@endsection
+        @section('keywords'){{$product->meta_keywords}}@endsection
+    @endif
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
@@ -9,11 +25,9 @@
                 <div class=" text-center ">
                     <x-status-product :product="$product"/>
                     <div>
-
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
-
                             if($ratings!==0 && $rating_sum!==0){
                             $rating_value = $rating_sum/$ratings->count();
                             $rate_num = number_format($rating_value);}else{
@@ -33,17 +47,17 @@
                                       &nbsp;  {{ $ratings->count() }}
                                     </span>
                                     <span>
-                                         &nbsp;   Кількість оцінок
+                                         &nbsp;  {{  __("Кількість оцінок")}}
                                         </span>
                                 @else
                                     <span>
-                                            &nbsp; Немає оцінок
+                                            &nbsp; &nbsp;  {{  __("Немає оцінок")}}
                                         </span>
                                 @endif
                             </div>
                         </div>
                         <div>
-                            <form action="{{url('/add-rating')}}" method="post">
+                            <form action="{{url('/'.app()->getLocale().'/add-rating')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -52,7 +66,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title " id="exampleModalLabel">
-                                                    Оцінити {{$product->title}}</h5>
+                                                    {{  __("Оцінити")}} {{$product->title}}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                             </div>
@@ -79,11 +93,11 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class=" rounded-2xl btn btn-secondary"
-                                                        data-bs-dismiss="modal">Закрити
+                                                        data-bs-dismiss="modal">{{  __("Закрити")}}
                                                 </button>
                                                 <button type="submit"
                                                         class="bg-blue-500 text-white uppercase font-semibold text-xl lg:text-sm py-2.5 px-8 rounded-2xl hover:bg-blue-600">
-                                                    Оцінити
+                                                    {{  __("Оцінити")}}
                                                 </button>
                                             </div>
                                         </div>
@@ -92,15 +106,13 @@
                             </form>
                         </div>
                     </div>
-
                     <button type="button" class="bg-blue-500 text-white  mt-2 py-1 px-6 rounded-2xl hover:bg-blue-600"
                             data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Оцінити
+                        {{  __("Оцінити")}}
                     </button>
-
                 </div>
                 <div class="  lg:mt-0 py-4 text-center ">
-                    <form action="{{ route('cart.store') }}" method="POST"
+                    <form action="{{ route('cart.store',app()->getLocale()) }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
                         @php
@@ -115,28 +127,26 @@
                                         value="{{$d=$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
                             @endforeach
                         </select>
-
-                            @php $price = DB::table('prices')->where('price', "$d")->first()  @endphp
-
-                            @if(!isset($price->currency))
-                                {{$price->currency=" "}}
-                            @endif
-                            <input type="hidden" value="{{$price->weight}}" name="weight">
-                            <input type="hidden" value="{{$price->unit}}" name="unit">
-                            <input type="hidden" value="{{$price->currency}}" name="currency">
+                        @php $price = DB::table('prices')->where('price', "$d")->first()  @endphp
+                        @if(!isset($price->currency))
+                        @endif
+                        <input type="hidden" value="{{$price->weight}}" name="weight">
+                        <input type="hidden" value="{{$price->unit}}" name="unit">
+                        <input type="hidden" value="{{$price->currency}}" name="currency">
                         <input type="hidden" value="{{$product->id}}" name="prod_id">
                         <input type="hidden" value="{{$product->prices}}" name="prices">
-                        <input type="hidden" value="{{$product->title  }}" name="name">
+                        <input type="hidden" value="{{$title}}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                         @if($product->status !== "ends")
                             <button
                                 class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 ">
-                                Купити
+                                {{  __("Купити")}}
                             </button>
                         @else
                             <button type="button" style=" pointer-events: none; background-color: #c0bebe;"
-                                    class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 " disabled>Закінчився
+                                    class="transition-colors  hover: rounded-3xl ml-6 py-2 px-2 "
+                                    disabled>{{  __("Закінчився")}}
                             </button>
                         @endif
                     </form>
@@ -144,9 +154,8 @@
             </div>
             <div class="col-span-6">
                 <h1 class="font-bold text-2xl lg:text-3xl text-center  mt-0 lg:mt-0 mb-3">
-                    {{ $product->title }}
+                    {{$title}}
                 </h1>
-
                 <div>
                     <a href="{{session('prod_url')}}"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
@@ -159,14 +168,13 @@
                                 </path>
                             </g>
                         </svg>
-                        До каталогу
+                        {{  __("До каталогу")}}
                     </a>
                     <div class=" mt-2 mb-4  space-y-4 leading-loose" style=" line-height: 1.5em;">
-                        {!! $product->body !!}
+                        {!! $body !!}
                     </div>
                     @if(isset($product->ifra_certificate))
                         <div class="flex items-center  mt-1 lg:mt-0 ">
-
                             <a href="{{ asset('storage/' . $product->ifra_certificate) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
@@ -191,7 +199,7 @@
                         <div class="flex items-center  mt-1 lg:mt-0 ">
                             <a href="{{ asset('storage/' . $product->certificate) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
-                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
+                               target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/pdf.png" alt="Logo" width="20" height="20"
                                      class="text-black rounded-l">
                                 <span class="  px-2" style="color: rgb(38,46,58)">Certificate</span>

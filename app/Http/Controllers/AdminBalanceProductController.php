@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminBalanceProductController extends Controller
 {
-    public function index(BalanceProduct $balanceProduct)
+    public function index($locale,BalanceProduct $balanceProduct)
     {
         return view('admin.products.balance.index', [
             'balanceProduct' => $balanceProduct
@@ -29,16 +29,16 @@ class AdminBalanceProductController extends Controller
                     'name' => $name]
                     ));
             }
-        return redirect('/admin/products/balance_products')->with('success', 'price created');
+        return redirect('/'.app()->getLocale()."/admin/products/balance_products")->with('success', 'price created');
     }
 
-    public function edit(BalanceProduct $balanceProduct)
+    public function edit($locale,BalanceProduct $balanceProduct)
     {
         return view('admin.products.balance.edit', ['balanceProduct' => $balanceProduct]);
     }
 
 //
-    public function update(balanceProduct $balanceProduct)
+    public function update($locale,balanceProduct $balanceProduct)
     {
 
    $countOld = $balanceProduct->count;
@@ -53,13 +53,13 @@ class AdminBalanceProductController extends Controller
             ];
 
         $balanceProduct->update($attributes);
-        return redirect('/admin/products/balance_products')->with('success', 'Product Updated!');
+        return redirect('/'.app()->getLocale().'/admin/products/balance_products')->with('success', 'Product Updated!');
     }
 
-    public function destroy(BalanceProduct $balanceProduct)
+    public function destroy($locale,BalanceProduct $balanceProduct)
     {
         $balanceProduct->delete();
-        return redirect('/admin/products/balance_products')->with('success', 'Price Deleted!');
+        return redirect('/'.app()->getLocale().'/admin/products/balance_products')->with('success', 'Price Deleted!');
     }
 
     protected function validateBalanceProduct(?BalanceProduct $balanceProduct = null): array

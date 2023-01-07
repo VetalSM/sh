@@ -4,13 +4,13 @@
             <x-panel>
                 <h1 class="text-center font-bold ">Log In</h1>
 
-                <form method="POST" action="/login" class="mt-10">
+                <form method="POST" action="/{{app()->getLocale()}}/login" class="mt-10">
                     @csrf
 
                     <x-form.input name="email" type="email" autocomplete="username" placeholder="email" required />
                     <x-form.input name="password" type="password" autocomplete="current-password" placeholder="password" required />
 
-                    <x-form.button>Увійти</x-form.button>
+                    <x-form.button> {{  __('Увійти')}}</x-form.button>
                 </form>
             </x-panel>
         </main>

@@ -1,4 +1,5 @@
 <x-layout>
+    @if(App::currentLocale() ==='ua')
     @section('title')Купить Candlescience в Украине@endsection
 
     @section('description')Candlescience США для свечей, массажных масел, косметики, мыла. Если оплату осуществили до 13:00 отпровляем в тот же день.@endsection
@@ -18,7 +19,29 @@
 
                 Дякуємо за те,
                 що ви з нами!</p>
-            <a href="/"
+            @else
+                @section('title')Купить Candlescience в Украине@endsection
+
+                @section('description')Candlescience США для свечей, массажных масел, косметики, мыла. Если оплату осуществили до 13:00 отпровляем в тот же день.@endsection
+                <div class="card text-left items-center mx-auto" >
+                    <div class="card-body">
+                        <h3 class="card-title text-center " style="padding-bottom: 15px;"><span class="text-secondary">Оплата</span></h3>
+                        <p class="card-text">   <span class="text-danger">Отправка заказов производится только после полной предоплаты за заказ</span>.<p/>
+
+
+                        После оформления заказа с вами свяжется менеджер для подтверждения всех позиций и уточнения деталей.
+                        Только после уточнения наличия позиций заказ может быть оплачен.<p/>
+                        Оплата за заказ производится на карту Приват Банка или Моно Банка. Дополнительные сведения об оплате отправляются в сообщении.<p/>
+
+                        После оплаты, обязательно сообщите нам об этом и отправьте скриншот об оплате.<p/>
+
+                        Напомним, что услуги доставки оплачивает заказчик, также все заказы при доставке застраховываются на полную стоимость заказа.<p/>
+
+                        Спасибо за то,
+                        что вы с нами!</p>
+
+            @endif
+            <a href="/{{app()->getLocale()}}"
                                                                      class="transition-colors duration-300 relative inline-flex  hover:text-blue-500">
                 <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                     <g fill="none" fill-rule="evenodd">

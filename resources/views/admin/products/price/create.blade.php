@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting heading="Publish New Price">
-        <form method="POST" action="/admin/products/price" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/price" enctype="multipart/form-data">
             @csrf
             <x-form.input name="name" :value="old('name', $price->name)" required />
             <x-form.input name="weight" :value="old('weight', $price->weight)" required />

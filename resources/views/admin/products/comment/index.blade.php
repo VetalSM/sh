@@ -53,7 +53,7 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <form method="POST" action="/admin/products/comments/{{ $comment->id }}">
+                                        <form method="POST" action="/{{app()->getLocale()}}/admin/products/comments/{{ $comment->id }}">
                                             @csrf
                                             @method('DELETE')
                                             <button class="text-xs text-gray-400">Delete</button>

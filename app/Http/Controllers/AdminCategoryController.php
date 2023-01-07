@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class AdminCategoryController extends Controller
 {
-    public function index(Category $category)
+    public function index($locale,Category $category)
     {
         return view('admin.products.category.index', [
             'category' => $category
         ]);
     }
 
-    public function create(category $category)
+    public function create($locale,category $category)
     {
         return view('admin.products.category.create', ['category' => $category]);
     }
@@ -24,16 +24,16 @@ class AdminCategoryController extends Controller
     {
         Category::create(array_merge($this->validateCategory()));
 
-        return redirect('/admin/products/categories')->with('success', 'price created');
+        return redirect('/'.app()->getLocale().'/admin/products/categories')->with('success', 'price created');
     }
 //
-    public function edit(Category $category)
+    public function edit($locale,Category $category)
     {
-        return view('admin.products.category.edit', ['category' => $category]);
+        return view('/'.app()->getLocale().'admin.products.category.edit', ['category' => $category]);
     }
 
 //
-    public function update(Category $category)
+    public function update($locale,Category $category)
     {
 
         $attributes = $this->validateCategory($category);
@@ -52,14 +52,14 @@ class AdminCategoryController extends Controller
 //        }
         $category->update($attributes);
 
-        return redirect('/admin/products/categories')->with('success', 'Product Updated!');
+        return redirect('/'.app()->getLocale().'/admin/products/categories')->with('success', 'Product Updated!');
     }
 
-    public function destroy(Category $category)
+    public function destroy($locale,Category $category)
     {
         $category->delete();
 
-        return redirect('/admin/products/categories')->with('success', 'Price Deleted!');
+        return redirect('/'.app()->getLocale().'/admin/products/categories')->with('success', 'Price Deleted!');
     }
 
     protected function validateCategory(?Category $category = null): array

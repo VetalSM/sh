@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting :heading="'Edit Price: ' . $price->name">
-        <form method="POST" action="/admin/products/price/{{ $price->id }}" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/price/{{ $price->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <x-form.input name="name" :value="old('name', $price->name)" required />

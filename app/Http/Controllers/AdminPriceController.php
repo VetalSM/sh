@@ -6,14 +6,14 @@ use Illuminate\Validation\Rule;
 
 class AdminPriceController extends Controller
 {
-    public function index(Price $price)
+    public function index($locale,Price $price)
     {
         return view('admin.products.price.index', [
              'price' => $price
         ]);
     }
 
-    public function create(Price $price)
+    public function create($locale,Price $price)
     {
         return view('admin.products.price.create', ['price' => $price]);
     }
@@ -22,26 +22,26 @@ class AdminPriceController extends Controller
     {
         Price::create(array_merge($this->validatePrice()));
 
-        return redirect('/admin/products/price')->with('success', 'price created');
+        return redirect('/'.app()->getLocale().'/admin/products/price')->with('success', 'price created');
     }
 //
-    public function edit(Price $price)
+    public function edit($locale,Price $price)
     {
         return view('admin.products.price.edit', ['price' => $price]);
     }
 
 //
-    public function update(Price $price)
+    public function update($locale,Price $price)
     {
         $attributes = $this->validatePrice($price);
         $price->update($attributes);
-        return redirect('/admin/products/price')->with('success', 'Product Updated!');
+        return redirect('/'.app()->getLocale().'/admin/products/price')->with('success', 'Product Updated!');
     }
 
     public function destroy(Price $price)
     {
         $price->delete();
-        return redirect('/admin/products/price')->with('success', 'Price Deleted!');
+        return redirect('/'.app()->getLocale().'/admin/products/price')->with('success', 'Price Deleted!');
     }
 
     protected function validatePrice(?Price $price = null): array

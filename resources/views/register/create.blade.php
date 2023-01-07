@@ -4,7 +4,7 @@
             <x-panel>
                 <h1 class="text-center font-bold ">Реєстрація</h1>
 
-                <form method="POST" action="/register" class="mt-10">
+                <form method="POST" action="/{{app()->getLocale()}}/register" class="mt-10">
                     @csrf
                     <x-form.input name="name" placeholder="П.І.Б" required />
                     <x-form.input name="username" placeholder="логін" required />

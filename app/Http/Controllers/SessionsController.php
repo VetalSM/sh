@@ -26,13 +26,13 @@ class SessionsController extends Controller
 
         session()->regenerate();
 
-        return redirect('/')->with('success', 'З поверненням!');
+        return redirect('/'.app()->getLocale())->with('success', 'З поверненням!');
     }
 
     public function destroy()
     {
         auth()->logout();
 
-        return redirect('/')->with('success', 'Goodbye!');
+        return redirect('/'.app()->getLocale())->with('success', 'Goodbye!');
     }
 }
