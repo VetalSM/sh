@@ -89,9 +89,18 @@
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-1" style="float:left;">
                             @foreach ($sorted as $price)
-                                <option class="rounded-full "
-                                        value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
-                        @endforeach
+                                <option value="{{ $price->price }} "
+                                @if ($price->weight === "10" && $price->unit === 'г')
+                                    {{'selected="selected"'}}
+                                    @endif
+                                >
+                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
+                                </option>
+                            @endforeach
+                        </select>
+{{--                                <option class="rounded-full "--}}
+{{--                                        value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>--}}
+{{--                        @endforeach--}}
                         </select>
                         <input type="hidden" value="{{$product->prices}}" name="prices">
                         <input type="hidden" value="{{$product->id}}" name="prod_id">
