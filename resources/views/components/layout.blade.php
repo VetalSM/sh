@@ -2,45 +2,45 @@
 
 <html lang="{{App::currentLocale()}}">
 <head>
-{{--    <!-- Google Tag Manager -->--}}
-{{--    <script>(function (w, d, s, l, i) {--}}
-{{--            w[l] = w[l] || [];--}}
-{{--            w[l].push({--}}
-{{--                'gtm.start':--}}
-{{--                    new Date().getTime(), event: 'gtm.js'--}}
-{{--            });--}}
-{{--            var f = d.getElementsByTagName(s)[0],--}}
-{{--                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';--}}
-{{--            j.async = true;--}}
-{{--            j.src =--}}
-{{--                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;--}}
-{{--            f.parentNode.insertBefore(j, f);--}}
-{{--        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>--}}
-{{--    <!-- End Google Tag Manager -->--}}
-{{--    <!-- Google tag (gtag.js) -->--}}
-{{--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>--}}
-{{--    <script>--}}
-{{--        window.dataLayer = window.dataLayer || [];--}}
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-{{--        function gtag() {--}}
-{{--            dataLayer.push(arguments);--}}
-{{--        }--}}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-{{--        gtag('js', new Date());--}}
+        gtag('js', new Date());
 
-{{--        gtag('config', 'G-CY3K5VV4KR');--}}
-{{--    </script>--}}
-{{--    <script>--}}
-{{--        var $window = $(window)--}}
+        gtag('config', 'G-CY3K5VV4KR');
+    </script>
+    <script>
+        var $window = $(window)
 
-{{--        /* Restore scroll position */--}}
-{{--        window.scroll(0, localStorage.getItem('scrollPosition')|0)--}}
+        /* Restore scroll position */
+        window.scroll(0, localStorage.getItem('scrollPosition')|0)
 
-{{--        /* Save scroll position */--}}
-{{--        $window.scroll(function () {--}}
-{{--            localStorage.setItem('scrollPosition', $window.scrollTop())--}}
-{{--        })--}}
-{{--    </script>--}}
+        /* Save scroll position */
+        $window.scroll(function () {
+            localStorage.setItem('scrollPosition', $window.scrollTop())
+        })
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
