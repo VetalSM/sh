@@ -1,419 +1,453 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml"
-    xsi:schemaLocation="
-            http://www.sitemaps.org/schemas/sitemap/0.9
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <!-- created with PRO Sitemap Service https://pro-sitemaps.com -->
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 
     <url>
-        <loc>https://madeis.com.ua/</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <loc>https://madeis.com.ua/ua</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
-        <priority>1.0000</priority>
+        <priority>1.00</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ru</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/info_payment</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/info_payment</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/info_delivery</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/info_delivery</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/info_contact</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/info_contact</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8000</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/products/Stabilo_16</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
-        <loc>https://madeis.com.ua/ru/products/Stabilo_16</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <loc>https://madeis.com.ua/ua/info_payment</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/info_delivery</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/info_contact</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/cart</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/products/Stabilo_16</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Stabilo_14</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru/products/Stabilo_14</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Stabilo_12</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru/products/Stabilo_12</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Augeo_Reed_Diffuser_Base</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Augeo_Reed_Diffuser_Base</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/KeraSoy_Pillar_Blend</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/KeraSoy_Pillar_Blend</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Kerasoy_Container_Blend</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Kerasoy_Container_Blend</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Tonka_and_Oud</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Tonka_and_Oud</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Spiced_Honey_and_Tonka</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Spiced_Honey_and_Tonka</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Christmas_Hearth</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Christmas_Hearth</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Fraser_Fir</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Fraser_Fir</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Frosted_Juniper</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Frosted_Juniper</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Ginger_and_Spice</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Ginger_and_Spice</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Apple_Harvest</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Apple_Harvest</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Black_Cardamom_and_Cream</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Black_Cardamom_and_Cream</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Blue_Spruce</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Blue_Spruce</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Mint_Mojito</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Mint_Mojito</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Mediterranean_Fig</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Mediterranean_Fig</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Citrus_Agave</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
-        <loc>https://madeis.com.ua/products/Citrus_Agave</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <loc>https://madeis.com.ua/ua?page=2</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/info_payment</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/info_delivery</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/info_contact</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/cart</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Stabilo_16</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Stabilo_14</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Stabilo_12</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Augeo_Reed_Diffuser_Base</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/KeraSoy_Pillar_Blend</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Kerasoy_Container_Blend</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Tonka_and_Oud</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Spiced_Honey_and_Tonka</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Christmas_Hearth</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Fraser_Fir</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Frosted_Juniper</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Ginger_and_Spice</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Apple_Harvest</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Black_Cardamom_and_Cream</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Blue_Spruce</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Mint_Mojito</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Mediterranean_Fig</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Citrus_Agave</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru?page=2</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Calla_Lily</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Calla_Lily</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Sea_Salt_and_Orchid</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Sea_Salt_and_Orchid</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Oakmoss_and_Amber</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Oakmoss_and_Amber</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Mango_and_Coconut_Milk</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Mango_and_Coconut_Milk</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Himalayan_Bamboo</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Himalayan_Bamboo</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Hemp</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Hemp</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Cotton_and_Iris</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Cotton_and_Iris</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/products/Caramel_Popcorn</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Caramel_Popcorn</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/products/Cactus_Flower_and_Jade</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Cactus_Flower_and_Jade</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/products/Banana_Nut_Bread</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Banana_Nut_Bread</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Chocolate_Fudge</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9500</priority>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/products/Chocolate_Fudge</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Cashmere_Plum</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
     <url>
-        <loc>https://madeis.com.ua/products/Cashmere_Plum</loc>
-        <lastmod>2023-01-04T16:56:16+00:00</lastmod>
+        <loc>https://madeis.com.ua/ua/products/Caramel_Popcorn</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/products/Cactus_Flower_and_Jade</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua/products/Banana_Nut_Bread</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ua?page=1</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Calla_Lily</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Sea_Salt_and_Orchid</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Oakmoss_and_Amber</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Mango_and_Coconut_Milk</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Himalayan_Bamboo</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Hemp</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Cotton_and_Iris</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Chocolate_Fudge</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Cashmere_Plum</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Caramel_Popcorn</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Cactus_Flower_and_Jade</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru/products/Banana_Nut_Bread</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9500</priority>
+    </url>
+    <url>
+        <loc>https://madeis.com.ua/ru?page=1</loc>
+        <lastmod>2023-01-08T00:52:05+00:00</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9500</priority>
     </url>
