@@ -7,6 +7,29 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    public function render($request, Throwable $e)
+    {
+        if($this->isHttpException($e))
+        {
+            switch (intval($e->getStatusCode())) {
+                // not found
+                case 404:
+                    return redirect()->route('home', app()->getLocale());
+                    break;
+                // internal error
+                case 500:
+                    return \Response::view('custom.500',array(),500);
+                    break;
+
+                default:
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        }
+
+        return parent::render($request, $e);
+    }
+
     /**
      * A list of the exception types that are not reported.
      *
