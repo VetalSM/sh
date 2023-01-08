@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductCommentsController extends Controller
 {
-    public function store(Product $product)
+    public function store($locale, Product $product)
     {
         $attributes = request()->validate([
             'name'=>'required',

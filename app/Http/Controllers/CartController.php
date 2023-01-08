@@ -125,7 +125,7 @@ class CartController extends Controller
 
         $reply_markup= '';
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
-        $chat_id = '-760962497';
+        $chat_id = '-1001881481930';
         $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн'."\n".'коментар: '.$attributes['comment'];
 
         $ch = curl_init();
@@ -141,8 +141,11 @@ class CartController extends Controller
                 'reply_markup' => $reply_markup,
             ]
         ];
+
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
+
+
         \Cart::clear();
         return redirect("/".app()->getLocale())->with('order', __("Дякуємо за замовлення, найближчим часом зв'яжемося з вами!"));
     }
