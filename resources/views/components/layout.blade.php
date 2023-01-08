@@ -77,7 +77,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
 
     <style>
@@ -185,69 +185,69 @@
     </div>
 </div>
 
-<section class="px-6 py-8">
-    <script> var snowCountMax = 50;
-        var arrColor = ["#b9dff5","#b9dff5","#b9dff5","#b9dff5","#b9dff5"];
-        var snowView = "*";
-        var speed = 2;
-        var sizeMax = 25;
-        var sizeMin = 10;
-        var screenHeight;
-        var screenWidth;
-        var timer;
+{{--<section class="px-6 py-8">--}}
+{{--    <script> var snowCountMax = 50;--}}
+{{--        var arrColor = ["#b9dff5","#b9dff5","#b9dff5","#b9dff5","#b9dff5"];--}}
+{{--        var snowView = "*";--}}
+{{--        var speed = 2;--}}
+{{--        var sizeMax = 25;--}}
+{{--        var sizeMin = 10;--}}
+{{--        var screenHeight;--}}
+{{--        var screenWidth;--}}
+{{--        var timer;--}}
 
-        function initSnow() {
-            screenHeight = jQuery(document).height();
-            screenWidth = jQuery(document).width();
-            var sizeRange = sizeMax - sizeMin;
-            for(i = 0; i <= snowCountMax; i++){
-                var sizeFont = Math.floor(sizeRange*Math.random())+sizeMin; // случайный размер снежинки
-                var posx = Math.floor((screenWidth-sizeFont*2)*Math.random()); // снежинки по всей оси X
-                var posy = Math.floor((screenHeight-sizeFont*2)*Math.random()); // снежинки по всей оси Y
-                var randColor = arrColor[Math.floor(arrColor.length*Math.random())]; // случайный цвет
-                var size = Math.floor(sizeRange*Math.random()) + sizeMin;
-                span = jQuery("#snow_"+i); // снежинка по порядку
-                span.css('fontSize', sizeFont+"px"); // задаем ей размер
-                span.css('color', randColor); // цвет
-                span.attr('size', size); // в атрибут сохраняем скорость этой снежинки
-                span.attr('speed', speed*sizeFont/5); // в атрибут сохраняем скорость этой снежинки
-                span.attr('posx', posx); // в атрибут пишем положение по X
-                span.attr('posy', posy); // в атрибут пишем положение по Y
-                span.css('left', posx+"px"); // задаем положение по X
-                span.css('top', posy+"px"); // задаем положение по Y
-            }
-            moveSnow();
-        }
-        function moveSnow() {
-            for(i = 0; i <= snowCountMax; i++){
-                span = jQuery("#snow_"+i); // снежинка по порядку
-                var posy = parseInt(span.attr('posy')) + parseInt(span.attr('speed'));
-                var posx = parseInt(span.attr('posx'));
-                var size = parseInt(span.attr('size'));
-                var margin = posx + Math.floor(Math.random()*4)-2; // колыхание по X
-                span.animate({
-                    top: posy+"px",
-                    left: margin + "px"
-                }, 70);
-                span.attr('posy', posy);
-                span.attr('posx', margin);
-                var sizeRange = sizeMax - sizeMin;
-                var sizeFont = Math.floor(sizeRange*Math.random()) + sizeMin; // случайный размер снежинки
-                if(posy >= (screenHeight-sizeFont*2)){ // если снежинка полностью опустилась
-                    posx = Math.floor((screenWidth-sizeFont*2)*Math.random()); // снежинки по всей оси X
-                    span.attr('posx', posx);
-                    span.attr('posy', 0);
-                    span.css('fontSize', sizeFont+"px"); // меняем размер
-                }
-            }
-            var timer = setTimeout("moveSnow()", 70);
-        }
-        for (i = 0; i <= snowCountMax; i++){
-            jQuery('body').append("<span id='snow_"+i+"' style='position: absolute;'>"+snowView+"</span>");
-        }jQuery(function () {
-            initSnow();
-        });
-    </script>
+{{--        function initSnow() {--}}
+{{--            screenHeight = jQuery(document).height();--}}
+{{--            screenWidth = jQuery(document).width();--}}
+{{--            var sizeRange = sizeMax - sizeMin;--}}
+{{--            for(i = 0; i <= snowCountMax; i++){--}}
+{{--                var sizeFont = Math.floor(sizeRange*Math.random())+sizeMin; // случайный размер снежинки--}}
+{{--                var posx = Math.floor((screenWidth-sizeFont*2)*Math.random()); // снежинки по всей оси X--}}
+{{--                var posy = Math.floor((screenHeight-sizeFont*2)*Math.random()); // снежинки по всей оси Y--}}
+{{--                var randColor = arrColor[Math.floor(arrColor.length*Math.random())]; // случайный цвет--}}
+{{--                var size = Math.floor(sizeRange*Math.random()) + sizeMin;--}}
+{{--                span = jQuery("#snow_"+i); // снежинка по порядку--}}
+{{--                span.css('fontSize', sizeFont+"px"); // задаем ей размер--}}
+{{--                span.css('color', randColor); // цвет--}}
+{{--                span.attr('size', size); // в атрибут сохраняем скорость этой снежинки--}}
+{{--                span.attr('speed', speed*sizeFont/5); // в атрибут сохраняем скорость этой снежинки--}}
+{{--                span.attr('posx', posx); // в атрибут пишем положение по X--}}
+{{--                span.attr('posy', posy); // в атрибут пишем положение по Y--}}
+{{--                span.css('left', posx+"px"); // задаем положение по X--}}
+{{--                span.css('top', posy+"px"); // задаем положение по Y--}}
+{{--            }--}}
+{{--            moveSnow();--}}
+{{--        }--}}
+{{--        function moveSnow() {--}}
+{{--            for(i = 0; i <= snowCountMax; i++){--}}
+{{--                span = jQuery("#snow_"+i); // снежинка по порядку--}}
+{{--                var posy = parseInt(span.attr('posy')) + parseInt(span.attr('speed'));--}}
+{{--                var posx = parseInt(span.attr('posx'));--}}
+{{--                var size = parseInt(span.attr('size'));--}}
+{{--                var margin = posx + Math.floor(Math.random()*4)-2; // колыхание по X--}}
+{{--                span.animate({--}}
+{{--                    top: posy+"px",--}}
+{{--                    left: margin + "px"--}}
+{{--                }, 70);--}}
+{{--                span.attr('posy', posy);--}}
+{{--                span.attr('posx', margin);--}}
+{{--                var sizeRange = sizeMax - sizeMin;--}}
+{{--                var sizeFont = Math.floor(sizeRange*Math.random()) + sizeMin; // случайный размер снежинки--}}
+{{--                if(posy >= (screenHeight-sizeFont*2)){ // если снежинка полностью опустилась--}}
+{{--                    posx = Math.floor((screenWidth-sizeFont*2)*Math.random()); // снежинки по всей оси X--}}
+{{--                    span.attr('posx', posx);--}}
+{{--                    span.attr('posy', 0);--}}
+{{--                    span.css('fontSize', sizeFont+"px"); // меняем размер--}}
+{{--                }--}}
+{{--            }--}}
+{{--            var timer = setTimeout("moveSnow()", 70);--}}
+{{--        }--}}
+{{--        for (i = 0; i <= snowCountMax; i++){--}}
+{{--            jQuery('body').append("<span id='snow_"+i+"' style='position: absolute;'>"+snowView+"</span>");--}}
+{{--        }jQuery(function () {--}}
+{{--            initSnow();--}}
+{{--        });--}}
+{{--    </script>--}}
     <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
         <div>
             <a href="/{{app()->getLocale()}}">
