@@ -39,8 +39,6 @@ return array(
     'App\\Models\\Order' => $baseDir . '/app/Models/Order.php',
     'App\\Models\\Price' => $baseDir . '/app/Models/Price.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
-    'App\\Models\\ProductRu' => $baseDir . '/app/Models/ProductRu.php',
-    'App\\Models\\Productlocale' => $baseDir . '/app/Models/Productlocale.php',
     'App\\Models\\Rating' => $baseDir . '/app/Models/Rating.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
