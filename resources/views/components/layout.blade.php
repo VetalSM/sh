@@ -56,14 +56,14 @@
     <meta name="theme-color" content="#ffffff">
     @if(App::currentLocale() ==='ua')
     <title>@yield('title', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')</title>
-    <meta name="title" content="@yield('title_m', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')"/>
-    <meta name="description" content="@yield('description', 'Купити CandleScience в Україні. Аромаолії США, Candlescience, використовуються для свічок, мила, дифузорів, косметики, бомбочок для ван, запашки для лосьйонів, віддушки для натуральних свічок ручної роботи із соєвого воску')"/>
-    <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товари для свічок, віддушки для свічок, віддушки для мила, ароматизатори для свічок, ароматизатори для аромадифузорів, совий віск Kerax в Україні, американські віддушки Україна, купити ароматизатори США в Україні, Candlescience в Україні, дерев’яні гноти Wooden Wick в Україні, товари для свічок MadeIS, Мейдіс , товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитили. madeis.com.ua madeis')"/>
+    <meta name="title" content="@yield('title_m', 'CandleScience. Аромаолії США, Candlescience, віддушки, запашки для свічок мила, диффузорів, косметики.Аромамасла преміум класса США, матеріали для виробництва свічок, соєвий віск для свічок ручної роботи, віддушки для свічок')">
+    <meta name="description" content="@yield('description', 'Купити CandleScience в Україні. Аромаолії США, Candlescience, використовуються для свічок, мила, дифузорів, косметики, бомбочок для ван, запашки для лосьйонів, віддушки для натуральних свічок ручної роботи із соєвого воску')">
+    <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товари для свічок, віддушки для свічок, віддушки для мила, ароматизатори для свічок, ароматизатори для аромадифузорів, совий віск Kerax в Україні, американські віддушки Україна, купити ароматизатори США в Україні, Candlescience в Україні, дерев’яні гноти Wooden Wick в Україні, товари для свічок MadeIS, Мейдіс , товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитили. madeis.com.ua madeis')">
     @else
         <title>@yield('title', 'CandleScience. Аромамасла США, Candlescience, отдушки, запашки для свечей мыла, диффузоров, косметики.Аромамасла премиум класса США, материалы для производства свечей, соевый воск для свечей ручной работы, отдушки для свечей')</title>
-        <meta name="title" content="@yield('title_m', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')"/>
-        <meta name="description" content="@yield('description', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')"/>
-        <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товары для свечей, отдушки для свечей, отдушки для мыла, ароматизаторы для свечей, ароматизаторы для аромадиффузоров, совый воск Kerax в Украине, американские отдушки Украина, купить ароматизаторы США в Украине, Candlescience в Украине, деревянные фитили Wooden Wick в Украина, товары для свечей MadeIS, Мэйдис, товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитилы. madeis.com.ua madeis')"/>
+        <meta name="title" content="@yield('title_m', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')">
+        <meta name="description" content="@yield('description', 'CandleScience. Купить CandleScience в Украине. Аромаолии США, Candlescience, используются для свечей, мыла, диффузоров, косметики, бомбочек для ванн, запашки для лосьонов, отдушки для натуральных свечей ручной работы из соевого воска.')">
+        <meta name="keywords" content="@yield('keywords', 'Магазин Madeis, товары для свечей, отдушки для свечей, отдушки для мыла, ароматизаторы для свечей, ароматизаторы для аромадиффузоров, совый воск Kerax в Украине, американские отдушки Украина, купить ароматизаторы США в Украине, Candlescience в Украине, деревянные фитили Wooden Wick в Украина, товары для свечей MadeIS, Мэйдис, товары для изготовления свечей, отдушки, соевый воск, деревянные и хлопковые фитилы. madeis.com.ua madeis')">
     @endif
     <link rel="canonical" href="{{url()->current()}}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
@@ -104,23 +104,6 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="  bg-blue-200 border-opacity-5  text-center py-1 px-4 ">
-    <div class="py-1 ">
-        <div class="px-3  inline">
-            <p
-               class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
-{{--               style=" position: relative; top: 0px !important;--}}
-{{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
-            >Магазин Made<span  style="color: #3B82F6">IS</span>
-                вітає вас зі святами! Нехай у Новому Році здійснюються
-                всі ваші мрії!<br/> <span  style="color: rgba(255,26,26,0.84)">Ми вихідні 31 грудня та 1 січня, інші дні працюємо у звичному режимі.</span>
-            </p>
-        </div>
-
-    </div>
-</div>
-
-
 <div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
     <div class="py-1 text-centre">
         <div class="inline float-left">
@@ -161,27 +144,27 @@
             >{{ __('Контакти')}}
             </a>
         </div>
-
-        {{--        <div class=" inline  px-1   rounded-full  "--}}
-        {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
-        {{--            <span>Ми у соцмережах</span>--}}
-        {{--        </div>--}}
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://instagram.com/madeis.ua" target="_blank">
-                <img src="/images/instagram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
+                <img src="/images/instagram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://t.me/MadeIS_UA" target="_blank">
-                <img src="/images/telegram.webp" alt="" style="width: 20px; position: relative; top: 50px !important;">
+                <img src="/images/telegram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
 
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://www.facebook.com/madeis.ua/" target="_blank">
-                <img src="/images/facebook.png" alt="" style="width: 20px; position: relative; top: 50px !important;">
+                <img src="/images/facebook.png" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
+        {{--        <div class=" inline  px-1   rounded-full  "--}}
+        {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
+        {{--            <span>Ми у соцмережах</span>--}}
+        {{--        </div>--}}
+
     </div>
 </div>
 
