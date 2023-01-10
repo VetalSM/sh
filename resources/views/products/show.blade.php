@@ -20,11 +20,12 @@
         @section('title_m'){{$product->meta_title}}@endsection
         @section('description'){{$product->meta_description}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
+
     @endif
-    <meta property="og:image" content="{{ asset('storage/' . $product->thumbnail) }}"/>
-    <meta property="og:title" content="{{$title}}"/>
-    <meta property="og:description" content="{{$excerpt}}"/>
-    <meta property="og:page_url" content="{{url()->current()}}"/>
+    @section('og:image'){{ asset('storage/' . $product->thumbnail) }}@endsection
+    @section('og:title'){{$title}}@endsection
+    @section('og:description'){{$excerpt}}@endsection
+    @section('og:page_url'){{url()->current()}}@endsection
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
