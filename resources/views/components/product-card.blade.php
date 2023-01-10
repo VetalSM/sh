@@ -113,8 +113,8 @@
                                  {{__("Купити")}}
                             </button>
                         @else
-                            <button type="button" style=" pointer-events: none; background-color: #c0bebe;"
-                                    class="transition-colors  hover: rounded-3xl py-2 px-1 " style="float:right;" disabled>{{__("Закінчився")}}
+                            <button type="button" style="float:right; pointer-events: none; background-color: #c0bebe;"
+                                    class="transition-colors  hover: rounded-3xl py-2 px-1 "  disabled>{{__("Закінчився")}}
                             </button>
                         @endif
 

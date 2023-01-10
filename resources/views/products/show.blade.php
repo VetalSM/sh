@@ -1,10 +1,10 @@
 <x-layout>
-    @if(App::currentLocale()==='ru' && isset($product->title_ru))
+@if(App::currentLocale()==='ru' && isset($product->title_ru))
         @php
             $title = $product->title_ru;
             $body = $product->body_ru;
         @endphp
-        @section('title'){{$title}}@endsection
+        @section('title'){{$title}}Украина-MadeIS@endsection
         @section('title_m'){{$product->meta_title_ru}}@endsection
         @section('description'){{$product->meta_description_ru}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
@@ -13,7 +13,7 @@
             $title = $product->title;
              $body = $product->body;
         @endphp
-        @section('title'){{$title}}@endsection
+        @section('title'){{$title}} | Товари для свічок | MadeIS Україна@endsection
         @section('title_m'){{$product->meta_title}}@endsection
         @section('description'){{$product->meta_description}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
