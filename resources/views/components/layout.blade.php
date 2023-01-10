@@ -41,10 +41,13 @@
             localStorage.setItem('scrollPosition', $window.scrollTop())
         })
     </script>
+       <meta charset="UTF-8" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <link rel="alternate" href="{{Request::root()}}/ru{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="ru" />
+    <link rel="alternate" href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="uk" />
+    <link href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" rel="alternate" hreflang="x-default" />
 {{--    <title>@yield('title', 'MadeIS - товари для виготовлення свічок в Україні, віддушки CandleScience в Україні. madeis.com.ua madeis')</title>--}}
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -145,18 +148,18 @@
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
-            <a href="https://instagram.com/madeis.ua" target="_blank">
+            <a href="https://instagram.com/madeis.ua" rel=”nofollow" target="_blank">
                 <img src="/images/instagram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
-            <a href="https://t.me/MadeIS_UA" target="_blank">
+            <a href="https://t.me/MadeIS_UA" rel=”nofollow" target="_blank">
                 <img src="/images/telegram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
 
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
-            <a href="https://www.facebook.com/madeis.ua/" target="_blank">
+            <a href="https://www.facebook.com/madeis.ua/" rel=”nofollow" target="_blank">
                 <img src="/images/facebook.png" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
@@ -268,7 +271,7 @@
             </div>
             <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://t.me/MadeIS_UA" target="_blank">
-                    <img src="/images/telegram.webp" alt="" class="mx-auto " style="width: 50px;">
+                    <img src="/images/telegram.webp" alt="" rel=”nofollow" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
 
