@@ -1,8 +1,10 @@
 <x-layout>
+
 @if(App::currentLocale()==='ru' && isset($product->title_ru))
         @php
             $title = $product->title_ru;
             $body = $product->body_ru;
+              $excerpt = $product->excerpt_ru;
         @endphp
         @section('title'){{$title}}Украина-MadeIS@endsection
         @section('title_m'){{$product->meta_title_ru}}@endsection
@@ -12,12 +14,17 @@
         @php
             $title = $product->title;
              $body = $product->body;
+             $excerpt = $product->excerpt;
         @endphp
         @section('title'){{$title}} | Товари для свічок | MadeIS Україна@endsection
         @section('title_m'){{$product->meta_title}}@endsection
         @section('description'){{$product->meta_description}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
     @endif
+    <meta property="og:image" content="{{ asset('storage/' . $product->thumbnail) }}"/>
+    <meta property="og:title" content="{{$title}}"/>
+    <meta property="og:description" content="{{$excerpt}}"/>
+    <meta property="og:page_url" content="{{url()->current()}}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
