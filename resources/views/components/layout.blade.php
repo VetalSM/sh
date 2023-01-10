@@ -48,7 +48,10 @@
     <link rel="alternate" href="{{Request::root()}}/ru{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="ru" />
     <link rel="alternate" href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="uk" />
     <link href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" rel="alternate" hreflang="x-default" />
-
+    <meta property="og:image" content="@yield('og:image', 'https://madeis.com.ua/images/logo.webp' )"/>
+    <meta property="og:title" content="@yield('og:title')"/>
+    <meta property="og:description" content="@yield('og:description')"/>
+    <meta property="og:page_url" content="@yield('og:page_url', 'https://madeis.com.ua/ua' )"/>
 {{--    <title>@yield('title', 'MadeIS - товари для виготовлення свічок в Україні, віддушки CandleScience в Україні. madeis.com.ua madeis')</title>--}}
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
