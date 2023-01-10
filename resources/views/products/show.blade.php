@@ -6,7 +6,7 @@
             $body = $product->body_ru;
               $excerpt = $product->excerpt_ru;
         @endphp
-        @section('title'){{$title}} Украина-MadeIS@endsection
+        @section('title'){{$title}} Украина MadeIS @endsection
         @section('title_m'){{$product->meta_title_ru}}@endsection
         @section('description'){{$product->meta_description_ru}}@endsection
         @section('keywords'){{$product->meta_keywords}}@endsection
