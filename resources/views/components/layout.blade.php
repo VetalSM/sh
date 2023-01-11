@@ -24,28 +24,20 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() {
             dataLayer.push(arguments);
         }
-
         gtag('js', new Date());
-
         gtag('config', 'G-CY3K5VV4KR');
     </script>
     <script>
         var $window = $(window)
-
-        /* Restore scroll position */
         window.scroll(0, localStorage.getItem('scrollPosition')|0)
-
-        /* Save scroll position */
         $window.scroll(function () {
             localStorage.setItem('scrollPosition', $window.scrollTop())
         })
     </script>
-       <meta charset="UTF-8" />
-
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <link rel="alternate" href="{{Request::root()}}/ru{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="ru" />
@@ -92,18 +84,15 @@
         html {
             scroll-behavior: smooth;
         }
-
         .clamp {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         .clamp.one-line {
             -webkit-line-clamp: 1;
         }
     </style>
-
 </head>
 <body style="font-family: Open Sans, sans-serif">
 <!-- Google Tag Manager (noscript) -->
@@ -134,16 +123,6 @@
             >{{__("Доставка")}}
             </a>
         </div>
-
-
-
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{ route(request()->route()->getName())}}">EN</a>--}}
-{{--        </li>--}}
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{ route(request()->route()->getName())}}">RU</a>--}}
-{{--        </li>--}}
-
         <div class="lg:px-3 inline">
             <a href="/{{app()->getLocale()}}/info_contact"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
@@ -162,54 +141,40 @@
                 <img src="/images/telegram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
-
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://www.facebook.com/madeis.ua/" rel=”nofollow" target="_blank">
                 <img src="/images/facebook.png" alt="" style="width: 22px; position: relative; top: 5px !important;">
             </a>
         </div>
-        {{--        <div class=" inline  px-1   rounded-full  "--}}
-        {{--             style="position: relative; top: -9px !important; right: 10px !important; height: 200px; border: 3px solid rgb(255, 179, 0);">--}}
-        {{--            <span>Ми у соцмережах</span>--}}
-        {{--        </div>--}}
-
     </div>
 </div>
-
     <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
         <div>
             <a href="/{{app()->getLocale()}}">
                 <img src="/images/logo.webp" alt="Logo" width="100" height="60">
             </a>
         </div>
-
         <div class="mt-8 md:mt-0 flex inline-block items-center  px-15">
             <a href="{{ route('cart.list',app()->getLocale()) }}" class="flex mr-18 items-center"
                style="  text-decoration-color: #747171;">
                 <img src="/images/cart.png" alt="cart" width="40" height="40">
                 <i class="ya-share1__item text-lg lg:text-xl "> <span
-                        class="hidden  lg:inline-flex  ">  {{__("Всього:")}}</span> {{ Cart::getTotal() }} грн</i>
-            </a>
+                        class="hidden  lg:inline-flex  ">  {{__("Всього:")}}</span> {{ Cart::getTotal() }} грн</i></a>
             <div class="flex" style=" margin-left: auto;margin-right: 0;">
-
                 @auth
-
                     <x-dropdown class="">
                         <x-slot name="trigger">
                             <button class=" ml-2 text-sm mt-0.5 lg:text-base font-bold ">
                                 Вітаю, {{ auth()->user()->name }}!
                             </button>
                         </x-slot>
-
                         @admin
-
                         <x-dropdown-item
                             href="/{{app()->getLocale()}}/admin/products"
                             :active="request()->is('admin/products')"
                         >
                             Dashboard
                         </x-dropdown-item>
-
                         <x-dropdown-item
                             href="/{{app()->getLocale()}}/admin/products/create"
                             :active="request()->is('admin/products/create')"
@@ -217,7 +182,6 @@
                             New Product
                         </x-dropdown-item>
                         @endadmin
-
                         <x-dropdown-item
                             href="#"
                             x-data="{}"
@@ -231,19 +195,16 @@
                         </form>
                     </x-dropdown>
                 @else
-
                     {{--                log in and register--}}
                     {{--                    <a href="/register"--}}
                     {{--                       class="ml-2 text-sm lg:text-base font-bold uppercase {{ request()->is('register') ? 'text-blue-500' : '' }}">--}}
                     {{--                        Реєстрація--}}
                     {{--                    </a>--}}
-
                     {{--                    <a href="/login"--}}
                     {{--                       class="ml-2 text-sm lg:text-base font-bold uppercase {{ request()->is('login') ? 'text-blue-500' : '' }}">--}}
                     {{--                        Вхід--}}
                     {{--                    </a>--}}
                 @endauth
-
                 {{--                <a href="#newsletter"--}}
                 {{--                   class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">--}}
                 {{--                    Subscribe for Updates--}}
@@ -251,18 +212,7 @@
             </div>
         </div>
     </nav>
-
     {{ $slot }}
-{{--    @foreach (config('app.available_locales') as $locale)--}}
-{{--        <x-dropdown-item :href="--}}
-{{--        route(request()->route()->getName(), $locale, )">--}}
-{{--               <span @if (app()->getLocale() == $locale)--}}
-{{--                         style="font-weight: bold; text-decoration: underline"--}}
-{{--                      @endif>--}}
-{{--{{ strtoupper($locale) }}--}}
-{{--</span>--}}
-{{--        </x-dropdown-item>--}}
-{{--    @endforeach--}}
     <footer class="bg-gray-100  border-opacity-5 rounded-xl text-center py-1 px-1 mt-5">
         <div class=" inline py-1 px-2 bg-gray-200 rounded-full  "
              style="position: relative;   height: 200px; border: 3px solid rgb(255, 179, 0);">
@@ -279,52 +229,13 @@
                     <img src="/images/telegram.webp" alt="" rel=”nofollow" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
-
             <div class="relative  inline-block mx-auto lg:bg-gray-200 rounded-full">
                 <a href="https://www.facebook.com/madeis.ua/" target="_blank">
                     <img src="/images/facebook.png" alt="" class="mx-auto " style="width: 50px;">
                 </a>
             </div>
         </div>
-        {{--        <img src="/images/newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 50px;">--}}
-
-
-        {{--        <p class="text-sm mt-3">Promise to keep the inbox clean.</p>--}}
-
-        {{--        <div class="mt-10">--}}
-        {{--            <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">--}}
-
-        {{--                <form method="POST" action="/newsletter" class="lg:flex text-sm">--}}
-        {{--                    @csrf--}}
-
-        {{--                    <div class="lg:py-3 lg:px-5 flex items-center">--}}
-        {{--                        <label for="email" class="hidden lg:inline-block">--}}
-        {{--                            <img src="/images/mailbox-icon.svg" alt="mailbox letter">--}}
-        {{--                        </label>--}}
-
-        {{--                        <div>--}}
-        {{--                            <input id="email"--}}
-        {{--                                   name="email"--}}
-        {{--                                   type="text"--}}
-        {{--                                   placeholder="Your email address"--}}
-        {{--                                   class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">--}}
-
-        {{--                            @error('email')--}}
-        {{--                            <span class="text-xs text-red-500">{{ $message }}</span>--}}
-        {{--                            @enderror--}}
-        {{--                        </div>--}}
-        {{--                    </div>--}}
-
-        {{--                    <button type="submit"--}}
-        {{--                            class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"--}}
-        {{--                    >--}}
-        {{--                        Subscribe--}}
-        {{--                    </button>--}}
-        {{--                </form>--}}
-        {{--            </div>--}}
-        {{--        </div>--}}
     </footer>
 </section>
-
 <x-flash/>
 </body>
