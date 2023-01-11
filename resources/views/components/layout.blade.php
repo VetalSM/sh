@@ -105,7 +105,20 @@
         <div class="inline float-left">
            <a href="{{ url('/ua') }}">UA</a>|<a href="{{ url('/ru') }}">RU</a>
         </div>
-        <div class="lg:px-3  inline">
+{{--        <div class=" px-20  inline rounded-full"  style=" position: relative;" >--}}
+{{--                 @foreach (App\Models\Category::all() as $category)--}}
+{{--                     <div class="lg:px-1  inline text-black rounded-full" >--}}
+{{--            <a class="lg:px-2  inline text-black rounded-full" style=" text-decoration: none; border: 3px solid rgb(150,223,239); background-color: #f1ebeb;"--}}
+{{--                href="/{{app()->getLocale()}}/?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}"--}}
+{{--                :active='request()->fullUrlIs("*?category={$category->slug}*")'--}}
+{{--            >--}}
+{{--                {{  __(ucwords($category->name))}}--}}
+{{--            </a>--}}
+{{--                     </div>--}}
+{{--                 @endforeach--}}
+{{--        </div>--}}
+{{--        <div  class=" inline float-right ">--}}
+        <div class="lg:px-3 inline-block">
             <a href="/{{app()->getLocale()}}/info_payment"
                class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
                style=" position: relative; top: 0px !important;
@@ -113,7 +126,7 @@
             >{{__("Оплата")}}
             </a>
         </div>
-        <div class="lg:px-3 inline">
+        <div class="lg:px-3 inline-block">
 
             <a href="/{{app()->getLocale()}}/info_delivery"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
@@ -122,7 +135,7 @@
             >{{__("Доставка")}}
             </a>
         </div>
-        <div class="lg:px-3 inline">
+        <div class="lg:px-3 inline-block">
             <a href="/{{app()->getLocale()}}/info_contact"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
                style=" position: relative; top: 0px !important;
@@ -132,19 +145,20 @@
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://instagram.com/madeis.ua" rel=”nofollow" target="_blank">
-                <img src="/images/instagram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
+                <img src="/images/instagram.webp" alt="" style="width: 22px; position: relative;  top: 6px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://t.me/MadeIS_UA" rel=”nofollow" target="_blank">
-                <img src="/images/telegram.webp" alt="" style="width: 22px; position: relative; top: 5px !important;">
+                <img src="/images/telegram.webp" alt="" style="width: 22px; position: relative;  top: 6px !important;">
             </a>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
             <a href="https://www.facebook.com/madeis.ua/" rel=”nofollow" target="_blank">
-                <img src="/images/facebook.png" alt="" style="width: 22px; position: relative; top: 5px !important;">
+                <img src="/images/facebook.png" alt="" style="width: 22px; position: relative;  top: 6px !important;">
             </a>
         </div>
+{{--    </div>--}}
     </div>
 </div>
     <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">

@@ -5,12 +5,30 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Price;
 use Darryldecode\Cart\Cart;
+use Darryldecode\Cart\Exceptions\InvalidConditionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 
 class CartController extends Controller
 {
+//    /**
+//     * @throws InvalidConditionException
+//     */
+//    public function Condition(Request $request)
+//    {
+//        \Cart::clearItemConditions($request->id);
+//        $promo = $request->promo;
+//        $item = new \Darryldecode\Cart\CartCondition(array(
+//            'name' => 'SALE 5%',
+//            'type' => 'sale',
+//            'value' => $promo,
+//        ));
+//        session()->flash('success',  __('Позиція оновлена успішно!'));
+//        \Cart::addItemCondition($request->id, $item);
+//        return redirect()->route('cart.list',app()->getLocale());
+//
+//    }
     public function cartList()
     {
         $cartItems = \Cart::getContent();
@@ -39,7 +57,6 @@ class CartController extends Controller
                 'unit'=>$price->unit,
                 'weight'=>$price->weight,
                 'prod_id'=>$attributes->prod_id,
-
             )
         ]);
         session()->flash('success', __('Товар додано у кошик!'));
@@ -53,9 +70,7 @@ class CartController extends Controller
         \Cart::update(
             $request->id,
             [
-                'quantity' => [
-                    'relative' => false,
-                    'value' => $request->quantity
+                'quantity' => ['relative' => false, 'value' => $request->quantity,
                 ],
             ]
         );
