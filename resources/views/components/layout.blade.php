@@ -2,7 +2,6 @@
 
 <html lang="{{App::currentLocale()}}">
 <head>
-    <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Google Tag Manager -->
