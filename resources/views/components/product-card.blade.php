@@ -1,4 +1,5 @@
 @props(['product'])
+
 @if(App::currentLocale()==='ru' && isset($product->title_ru))
     @php
         $title = $product->title_ru;
@@ -14,6 +15,7 @@
 <article
     {{ $attributes->merge(['class' => 'card-group transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-4 px-5 h-full flex flex-col text-center ">
+
         <div class="">
             <x-status-product :product="$product"/>
         </div>

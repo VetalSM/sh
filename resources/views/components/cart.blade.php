@@ -53,15 +53,15 @@
 
 
                                 </td>
-                                <td class="justify-center mt-8 md:justify-end md:flex">
-                                    <div class="h-10 w-28">
+                                <td class="justify-center mt-8 md:justify-center md:flex">
+                                    <div class="h-10 w-35">
                                         <div class="relative  flex flex-row w-full h-8">
 
                                             <form action="{{ route('cart.update',app()->getLocale()) }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
-                                                       class="w-7 text-center bg-gray-300"/>
+                                                       class="w-7 text-center bg-gray-300" style="width: 2.5em"/>
                                                 <button type="submit" class="px-1  ml-2 text-white text-base lg:text-base rounded-xl bg-blue-500">
                                                     {{__("оновити")}}
                                                 </button>
@@ -86,7 +86,16 @@
                         @endforeach
                         </tbody>
                     </table>
-
+{{--                    <form action="{{ route('cart.Condition',app()->getLocale()) }}" method="POST">--}}
+{{--                        @csrf--}}
+{{--                        {{ $item->getPriceSumWithConditions() }}--}}
+{{--                        <input type="hidden" name="id" value="{{ $item->id}}">--}}
+{{--                        <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">{{__("promo")}}</p>--}}
+{{--                        <input type = "text" size="10" placeholder="promo" name="promo"  value="{{old('promo')}}"/>--}}
+{{--                        <button type="submit" class="px-1  ml-2 text-white text-base lg:text-base rounded-xl bg-blue-500">--}}
+{{--                            {{__("gthtry")}}--}}
+{{--                        </button>--}}
+{{--                    </form>--}}
                     <div class="text-xl">
                         @if(isset($price->currency))
                               {{__("Загальна вартість:")}} {{ Cart::getTotal() }} {{$price->currency}}
