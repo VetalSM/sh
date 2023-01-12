@@ -135,7 +135,7 @@
             >{{__("Доставка")}}
             </a>
         </div>
-        <div class="lg:px-3 inline-block">
+        <div class="px-1 inline-block">
             <a href="/{{app()->getLocale()}}/info_contact"
                class=" text-sm  lg:text-base  text-black inline  px-1  rounded-full "
                style=" position: relative; top: 0px !important;
@@ -161,7 +161,7 @@
 {{--    </div>--}}
     </div>
 </div>
-    <nav class="md:flex flex md:justify-between justify-between items-center  md:items-center">
+    <nav class="md:flex px-2 flex md:justify-between justify-between items-center  md:items-center">
         <div>
             <a href="/{{app()->getLocale()}}">
                 <img src="/images/logo.webp" alt="Logo" width="100" height="60">
