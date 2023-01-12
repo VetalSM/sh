@@ -1,4 +1,4 @@
-<header class="max-w-xl mx-auto  text-center">
+<header class="max-w-xl mx-auto  px-2 text-center">
 
     <h1 class=" text-6xl lg:text-5xl Tangerine">
         Made<span  style="color: #3B82F6">IS</span>
