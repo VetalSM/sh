@@ -27,7 +27,7 @@
     @section('og:description'){{$excerpt}}@endsection
     @section('og:page_url'){{url()->current()}}@endsection
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
+    <main class="max-w-6xl mx-auto px-3 mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-5">
             <div class="col-span-4  lg:pt-14  ">
                 <div class=" text-center ">
