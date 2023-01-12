@@ -1,6 +1,6 @@
 @props(['product'])
 
-@if($product->status=== 'new')
+@if($product->status=== '2')
    <div class=" text-center bd_item bd_item_new">
 
         <img  src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
@@ -9,7 +9,7 @@
                                                         margin-right: auto;
                                                         width:100%;">
         </div>
-@elseif($product->status==="promotion")
+@elseif($product->status==="1")
                 <div class=" text-center bd_item bd_item_Promotion">
                     <img  src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
                          alt="{{$product->title}}" class=" rounded-xl" style="display: block;
@@ -17,7 +17,7 @@
                                                         margin-right: auto;
                                                         width:100%;">
                     </div>
-@elseif($product->status==="sale")
+@elseif($product->status==="7")
     <div class=" text-center ">
 
         <img  src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
@@ -27,7 +27,7 @@
                                                         width:100%;">
     </div>
 
-@elseif($product->status==="hit")
+@elseif($product->status==="3")
     <div class=" text-center ">
 
         <img   src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
@@ -37,7 +37,7 @@
                                                         width:100%;">
     </div>
 
-@elseif($product->status==="expect")
+@elseif($product->status==="6")
     <div class=" text-center ">
 
         <img src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
