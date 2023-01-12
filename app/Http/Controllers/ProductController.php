@@ -19,7 +19,7 @@ class ProductController extends Controller
 //        if ($locale === 'ua') {
             Session::put('prod_url', request()->fullUrl());
         return view('products.index', [
-            'products' => Product::orderBy('category_id')->orderBy('status')->filter(
+            'products' => Product::orderBy('status')->orderBy('category_id')->filter(
                 request(['search', 'category'])
             )->paginate(18)->withQueryString()
         ]);
