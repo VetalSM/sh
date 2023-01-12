@@ -162,8 +162,8 @@
     </div>
 </div>
     <nav class="md:flex  flex md:justify-between justify-between items-center  md:items-center">
-        <div>
-            <a href="/{{app()->getLocale()}}" class="px-2">
+        <div class=" px-2 ">
+            <a href="/{{app()->getLocale()}}">
                 <img src="/images/logo.webp" alt="Logo" width="100" height="60">
             </a>
         </div>
