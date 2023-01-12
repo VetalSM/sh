@@ -13,22 +13,51 @@
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                @if($product->status === "not_available")
+                                                @php
+                                                    if ($product->status === '4') {
+                                                        $statusProd ='active';
+                                                    };
+                                                     if ($product->status === '2') {
+                                                        $statusProd ='new';
+                                                    };
+                                                      if ($product->status === '1') {
+                                                        $statusProd ='promotion';
+                                                    };
+                                                       if ($product->status === '7') {
+                                                        $statusProd ='out';
+                                                    };
+                                                        if ($product->status === '3') {
+                                                        $statusProd ='hit';
+                                                    };
+                                                         if ($product->status === '6') {
+                                                        $statusProd ='expect';
+                                                    };
+                                                          if ($product->status === '5') {
+                                                        $statusProd ='ends';
+                                                    };
+                                                           if ($product->status === '8') {
+                                                        $statusProd ='not_available';
+                                                    };
+
+                                                @endphp
+                                                @if($statusProd === "not_available")
                                                     <div class="text-sm text-red font-medium text-gray-900">
                                                         <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
-                                                            {{ $product->title }}<span class="text-dark">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
+                                                            {{ $product->title }}<span class="text-dark">&nbsp;&nbsp;&nbsp;{{$statusProd }}</span>
                                                         </a>
                                                     </div>
-                                                    @elseif($product->status === "ends")
+                                                    @elseif($statusProd === "out")
+
                                                     <div class="text-sm font-medium text-gray-900">
                                                         <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
-                                                            {{ $product->title }}<span class="text-danger">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
+                                                            {{ $product->title }}<span class="text-danger">&nbsp;&nbsp;&nbsp;{{$statusProd }}</span>
                                                         </a>
                                                     </div>
                                                 @else
+
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
-                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$product->status }}</span>
+                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$statusProd }}</span>
                                                     </a>
                                                 </div>
                                                     @endif
