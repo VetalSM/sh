@@ -146,7 +146,7 @@
                         <input type="hidden" value="{{$title}}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                        @if($product->status !== "ends")
+                        @if($product->status !== "7")
                             <button
                                 class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 ">
                                 {{  __("Купити")}}
