@@ -26,7 +26,7 @@
                        class="bg-transparent  items-center placeholder-black font-semibold "
                        value="{{ request('search') }}"
                 >
-                    <input type="image" src="/images/1.png" class="xs:hidden rounded-full"  alt="Submit" style="width:28px;
+                    <input type="image" src="/images/1.png" class="hidden lg:inline-flex rounded-full"  alt="Submit" style="width:28px;
                     position: relative; top: 4px !important;"/>
             </form>
         </div>
