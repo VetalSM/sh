@@ -29,14 +29,14 @@
                 <x-form.label name="status"/>
                 <select  name="status" required>
                     <option selected>{{old('status', $product->status)}}</option>
-                    <option value="active">active</option>
-                    <option value="new">new</option>
-                    <option value="promotion">promotion</option>
-                    <option value="sale">sale</option>
-                    <option value="hit">hit</option>
-                    <option value="expect">expect</option>
-                    <option value="ends">ends</option>
-                    <option value="not_available">not_available</option>
+                    <option value="4">active</option>
+                    <option value="2">new</option>
+                    <option value="1">promotion</option>
+                    <option value="7">out</option>
+                    <option value="3">hit</option>
+                    <option value="6">expect</option>
+                    <option value="5">ends</option>
+                    <option value="8">not_available</option>
                 </select>
                 <x-form.error name="status"/>
             </x-form.field>
