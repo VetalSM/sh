@@ -21,7 +21,7 @@ class ProductController extends Controller
         return view('products.index', [
             'products' => Product::orderBy('status')->orderBy('category_id')->filter(
                 request(['search', 'category'])
-            )->paginate(18)->withQueryString()
+            )->paginate(12)->withQueryString()
         ]);
 //            return view('products.index', [
 //                'products' => Product::latest()->filter(
