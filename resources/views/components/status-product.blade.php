@@ -2,7 +2,7 @@
 
 @if($product->status=== '2')
    <div class=" text-center bd_item ">
-       <span class="  bd_item_new">{{__('')}}</span>
+       <span class="  bd_item_new">{{__('Новинка!!!')}}</span>
         <img  src="{{ asset('storage/' . $product->thumbnail) }}" loading="lazy"
              alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
