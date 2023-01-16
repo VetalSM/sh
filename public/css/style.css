@@ -68,8 +68,8 @@
 
 /*Promotion*/
 
-.bd_item_Promotion:after {
-    content: 'Акція!!!';
+.bd_item_Promotion {
+
     background: #fb1717;
     z-index: 1500;
     padding-top: 4px;
@@ -101,8 +101,7 @@
     position: relative;
     overflow: hidden;
 }
-.bd_item_new:after {
-    content: 'Новинка!!!';
+.bd_item_new {
     background: #13b003;
     z-index: 1500;
     padding-top: 4px;

@@ -52,6 +52,15 @@
                 <li>
                     <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>
                 </li>
+                <li>
+                    <span class="font-semibold mb-4">Orders</span>
+                </li>
+                <li>
+                <a href="/{{app()->getLocale()}}/admin/products/orders" class="{{ request()->is('admin/products/orders') ? 'text-blue-500' : '' }}">All Order</a>
+                </li>
+                <li>
+{{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
+                </li>
             </ul>
         </aside>
 

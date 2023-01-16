@@ -29,7 +29,7 @@ class AdminCategoryController extends Controller
 //
     public function edit($locale,Category $category)
     {
-        return view('/'.app()->getLocale().'admin.products.category.edit', ['category' => $category]);
+        return view('admin.products.category.edit', ['category' => $category]);
     }
 
 //
