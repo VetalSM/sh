@@ -42,7 +42,7 @@
     <link rel="alternate" href="{{Request::root()}}/ru{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="ru" />
     <link rel="alternate" href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" hreflang="uk" />
     <link href="{{Request::root()}}/ua{{Str::substr(url()->current(), 24 , 1000)}}" rel="alternate" hreflang="x-default" />
-    <meta property="og:image" content="@yield('og:image', 'https://madeis.com.ua/images/logoOG.webp' )"/>
+    <meta property="og:image" content="@yield('og:image', 'https://madeis.com.ua/images/logoOG.jpg' )"/>
     <meta property="og:title" content="@yield('og:title', 'Магазин товарів для свічок "MadeIS". ')"/>
     <meta property="og:description" content="@yield('og:description', '✅Якісні товари від відомих виробників.
 ✅Приємні ціни.
