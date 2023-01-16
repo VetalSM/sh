@@ -34,7 +34,7 @@
                 <div class="card text-left  mx-auto" style="">
                     <div class="card-body">
                         <h3 class="card-title text-center " style="padding-bottom: 15px;"><span
-                                class="text-secondary">Контакти</span></h3>
+                                class="text-secondary">Контакты</span></h3>
                         <p class="card-text text-center">
                             Вы можете связаться с нами по телефону: <br/>
                             <span class="text-danger text-center"> +380955600435 <br/>
