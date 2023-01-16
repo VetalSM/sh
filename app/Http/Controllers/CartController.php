@@ -44,7 +44,6 @@ class CartController extends Controller
 
         if(!isset($price->currency)){
           $price->currency=" ";}
-
         \Cart::add([
             'id' => $attributes->id,
             'name' => $attributes->name,
@@ -131,7 +130,7 @@ class CartController extends Controller
                 'quantity' => $cart->quantity,
                 'product_total' => $product_total,
                 'total' => $total,
-                'created' => $time
+                'created' => time(),
             ]);
             $order -> save();
         }

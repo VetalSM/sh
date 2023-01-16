@@ -11,6 +11,7 @@ return array(
     'App\\Http\\Controllers\\AdminBalanceProductController' => $baseDir . '/app/Http/Controllers/AdminBalanceProductController.php',
     'App\\Http\\Controllers\\AdminCategoryController' => $baseDir . '/app/Http/Controllers/AdminCategoryController.php',
     'App\\Http\\Controllers\\AdminCommentController' => $baseDir . '/app/Http/Controllers/AdminCommentController.php',
+    'App\\Http\\Controllers\\AdminOrderController' => $baseDir . '/app/Http/Controllers/AdminOrderController.php',
     'App\\Http\\Controllers\\AdminPriceController' => $baseDir . '/app/Http/Controllers/AdminPriceController.php',
     'App\\Http\\Controllers\\AdminProductController' => $baseDir . '/app/Http/Controllers/AdminProductController.php',
     'App\\Http\\Controllers\\CartController' => $baseDir . '/app/Http/Controllers/CartController.php',

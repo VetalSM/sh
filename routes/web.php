@@ -4,6 +4,7 @@
 use App\Http\Controllers\AdminBalanceProductController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminCommentController;
+use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
@@ -50,6 +51,7 @@ Route::group(
         Route::resource('/admin/products/comments', AdminCommentController::class);
         Route::resource('/admin/products/categories', AdminCategoryController::class);
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
+        Route::resource('/admin/products/orders',  AdminOrderController::class);
 
 
     });

@@ -21,10 +21,9 @@
 
 
                                 @foreach (\App\Models\BalanceProduct::all()->unique('product_id') as $balanceProduct)
-
                                     @if($balanceProduct->product_id)
                                       @php
-                                          $data= $balanceProduct->count - (\App\Models\Order::where('product_id', $balanceProduct->product_id)->sum('weight'));
+                                          $data= $balanceProduct->count - (\App\Models\Order::where('product_id', $balanceProduct->product_id)->sum('total'));
                                       @endphp
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
