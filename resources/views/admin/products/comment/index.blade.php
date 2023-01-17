@@ -39,7 +39,12 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                    {{ $comment->name }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
+                                                    @if(\App\Models\Comment::all()->where('name', $comment->name)->count('name') !== \App\Models\Comment::all()->where('nickName', $comment->nickName)->count('nickName'))
+                                                       <span style="color: red"> {{ $comment->name }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}}) </span>
+                                                    @else
+                                                        {{ $comment->name }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
+                                                    @endif
+
                                                 </span>
                                             </div>
                                         </div>
@@ -48,7 +53,17 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                    {{ $comment->nickName }} ({{\App\Models\Comment::all()->where('nickName', $comment->nickName)->count('nickName')}})
+                                                    {{ $comment->nickName }}
+                                                    @if(\App\Models\Comment::all()->where('nickName', $comment->nickName)->count('nickName') >=6)
+                                                        <span  style="color: red">
+                                                        ({{\App\Models\Comment::all()->where('nickName', $comment->nickName)->count('nickName')}})
+                                                            </span>
+                                                    @else
+                                                        <span  style="color: #87a4ff">
+                                                        ({{\App\Models\Comment::all()->where('nickName', $comment->nickName)->count('nickName')}})
+                                                            </span>
+                                                    @endif
+
                                                 </span>
                                             </div>
                                         </div>
