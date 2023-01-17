@@ -8,7 +8,7 @@
 
         <div>
             <header class="mb-4">
-                <h5 class="font-bold">{{ $comment->name }}</h5>
+                <h5 class="font-bold">{{ ucwords($comment->name) }}</h5>
 
                 <p >
                     {{__("Прокоментовано:")}}
