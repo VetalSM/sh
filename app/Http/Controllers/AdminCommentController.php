@@ -7,11 +7,18 @@ use Illuminate\Http\Request;
 
 class AdminCommentController extends Controller
 {
-    public function index($locale,Comment $comment)
+
+
+    public function index($locale, Comment $comment)
     {
+
         return view('admin.products.comment.index', [
             'Comment' => $comment
         ]);
+    }
+    public function create()
+    {
+        return view('admin.products.comment.nick-name', );
     }
 
     public function destroy($locale,Comment $comment)

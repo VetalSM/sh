@@ -19,7 +19,14 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                     <span class="text-dark" style="text-decoration: none;">
-                                                        {{ $comment->product_id }}
+
+
+                                                            @foreach ( \App\Models\Product::all() as $product)
+                                                            @if ($comment->product_id === $product->id)
+                                                        {{ $product->title }}
+                                                            @endif
+                                                                @endforeach
+
                                                     </span>
                                             </div>
                                         </div>
@@ -28,7 +35,7 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                    {{ $comment->name }}
+                                                    {{ $comment->name }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
                                                 </span>
                                             </div>
                                         </div>

@@ -32,8 +32,11 @@
                 <li>
                 <li>
                     <span class="font-semibold mb-4">Комментарии</span>
-                </li>
+                <li>
                     <a href="/{{app()->getLocale()}}/admin/products/comments" class="{{ request()->is('/admin/products/comments') ? 'text-blue-500' : '' }}">Все комментарии</a>
+                </li>
+                <li>
+                <a href="/{{app()->getLocale()}}/admin/products/comments/create" class="{{ request()->is('/admin/products/comments/create') ? 'text-blue-500' : '' }}">instagram</a>
                 </li>
                 <li>
                 <li>
