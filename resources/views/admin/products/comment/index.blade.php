@@ -24,7 +24,10 @@
 
                                                             @foreach ( \App\Models\Product::all() as $product)
                                                             @if ($comment->product_id === $product->id)
-                                                        {{ $product->title }}
+                                                                <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                            {{ $product->title }}
+                                                        </a>
+
                                                             @endif
                                                                 @endforeach
 
