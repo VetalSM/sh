@@ -194,7 +194,7 @@
                     @endif
                     @if(isset($product->safety))
                         <div class="flex items-center  mt-1 lg:mt-0">
-                            <a href="{{ asset('storage/' . $product->safety) }}"
+           вар                 <a href="{{ asset('storage/' . $product->safety) }}"
                                class="  py-1 px-2  border-opacity-8 mb-1 rounded-xl label inline-flex text-black"
                                target="_blank" style="  text-decoration: none;background-color: rgb(212 212 216);">
                                 <img src="/images/pdf.png" alt="Logo" width="20" height="20"
