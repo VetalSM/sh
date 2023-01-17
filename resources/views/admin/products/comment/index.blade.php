@@ -45,7 +45,7 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                    {{ $comment->nickName }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
+                                                    {{ $comment->nickName }} ({{\App\Models\Comment::all()->where('name', $comment->nickName)->count('nickName')}})
                                                 </span>
                                             </div>
                                         </div>
