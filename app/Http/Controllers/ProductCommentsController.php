@@ -12,13 +12,15 @@ class ProductCommentsController extends Controller
         $attributes = request()->validate([
             'name'=>'required',
             'tel'=>  ['required', new PhoneNumber],
-            'body' => 'required'
+            'body' => 'required',
+            'nickName' => ''
         ]);
 //        dd($attributes['name']);
         $product->comments()->create([
             'name' => request("name"),
             'tel' => request('tel'),
-            'body' => request('body')
+            'body' => request('body'),
+            'nickName' => request('nickName')
         ]);
 
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
