@@ -9,6 +9,7 @@
                             <tr class="h-12 uppercase">
                                 <th class="text-center">ім'я товару</th>
                                 <th class="text-center">Коментатор</th>
+                                <th class="text-center">Никнейм</th>
                                 <th class="text-center">телефон</th>
                                 <th class="text-center">коментар</th>
                                 <th class="text-center"></th>
@@ -36,6 +37,15 @@
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
                                                     {{ $comment->name }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="text-sm font-medium text-gray-900">
+                                                <span style="text-decoration: none;">
+                                                    {{ $comment->nickName }} ({{\App\Models\Comment::all()->where('name', $comment->name)->count('name')}})
                                                 </span>
                                             </div>
                                         </div>
