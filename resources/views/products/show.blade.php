@@ -178,7 +178,7 @@
                         </svg>
                         {{  __("До каталогу")}}
                     </a>
-                    <a href="#comment"
+                    <noindex><a rel="nofollow" href="#comment"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500" style="float:right;">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">
@@ -188,7 +188,7 @@
                             </g>
                         </svg>&nbsp;
                         {{  __("Коментарі")}} ({{\App\Models\Comment::all()->where('product_id', $product->id)->count('product_id')}})
-                    </a>
+                    </a></noindex>
 
 
                     <div class=" mt-2 mb-4  space-y-4 leading-loose" style=" line-height: 1.5em;">
