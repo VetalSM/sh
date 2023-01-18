@@ -31,7 +31,7 @@
                 @enderror
             </div>
 
-            <div class="flex justify-end mt-6 pt-2 border-t border-gray-200">
+            <div id="comment" class="flex justify-end mt-6 pt-2 border-t border-gray-200">
                 <x-form.button>{{  __('Опублікувати')}}</x-form.button>
             </div>
         </form>
