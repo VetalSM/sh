@@ -21,25 +21,25 @@
         </div>
 
 
-        <div class="py-6  flex flex-col justify-between  flex-1  ">
+        <div class="py-3  flex flex-col justify-between  flex-1  ">
             <header>
                 <div style="float:left;">
                     <x-category-button :category="$product->category"/>
                 </div>
                 <div style="float:right;">
-                    <a class=" transition-colors italic text-sm duration-300 py-2 px-2 font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "
+                    <a class=" transition-colors italic text-xs duration-300 py-1 px-2 font-semibold bg-gray-100 hover:bg-gray-300 rounded-full " style=" opacity: 0.8; border: 1px solid rgb(255, 179, 0);"
                        href="/{{app()->getLocale()}}/products/{{ $product->slug }}"
                     >{{__("Повний опис")}}</a>
                 </div>
-                <div class="mt-10 lg:mt-8  ">
-                    <div class=" text-2xl">
-                        <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}">
+                <div class="mt-10 lg:mt-10  ">
+                    <div class=" text-2xl" >
+                        <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}"  >
                             {{ $title }}
                         </a>
 
 
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-1">
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
@@ -57,20 +57,32 @@
                                 @for($j = $rate_num+1;$j <=5;$j++)
                                     <i class="fa fa-star nochecked"></i>
                                 @endfor
-                                @if($rate_num >0)
-                                    <span class="font-bold">
-                                      &nbsp;  {{ $ratings->count() }}
+                                    <span>
+                                          <a class=" transition-colors  text-xs  py-2 px-2 font-semibold  "
+                                             href="/{{app()->getLocale()}}/products/{{ $product->slug }}/#comment"
+                                          >{{__("Коментарі")}} ({{\App\Models\Comment::all()->where('product_id', $product->id)->count('product_id')}})</a>
+
                                     </span>
-                                    <span>
-                                         &nbsp;{{__("Кількість оцінок")}}
-                                        </span>
-                                @else
-                                    <span>
-                                            &nbsp;{{__("Немає оцінок")}}
-                                        </span>
-                                @endif
+{{--                                @if($rate_num >0)--}}
+{{--                                    <span class="font-bold">--}}
+{{--                                      &nbsp;  {{ $ratings->count() }}--}}
+{{--                                    </span>--}}
+{{--                                    <span>--}}
+{{--                                         &nbsp;{{__("Кількість оцінок")}}--}}
+{{--                                        </span>--}}
+{{--                                @else--}}
+{{--                                    <span>--}}
+{{--                                            &nbsp;{{__("Немає оцінок")}}--}}
+{{--                                        </span>--}}
+{{--                                @endif--}}
                             </div>
                         </div>
+{{--                        <div>--}}
+{{--                            <a class=" transition-colors italic text-sm duration-300 py-2 px-2 font-semibold bg-gray-100 hover:bg-gray-300 rounded-full "--}}
+{{--                               href="/{{app()->getLocale()}}/products/{{ $product->slug }}/#comment"--}}
+{{--                            >{{__("Коментарі")}} ({{\App\Models\Comment::all()->where('product_id', $product->id)->count('product_id')}})</a>--}}
+
+{{--                        </div>--}}
                     </div>
                 </div>
             </header>
@@ -114,7 +126,7 @@
                                 class=" cartbutton transition-colors  hover: rounded-3xl py-2 px-1 " style="float:right;">
                                  {{__("Купити")}}
                             </button>
-                        @else
+                              @else
                             <button type="button" style="float:right; pointer-events: none; background-color: #c0bebe;"
                                     class="transition-colors  hover: rounded-3xl py-2 px-1 "  disabled>{{__("Закінчився")}}
                             </button>
