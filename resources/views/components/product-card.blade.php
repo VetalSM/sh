@@ -58,9 +58,9 @@
                                     <i class="fa fa-star nochecked"></i>
                                 @endfor
                                     <span>
-                                          <a class=" transition-colors  text-xs  py-2 px-2 font-semibold  "
+                                        <noindex><a rel="nofollow" class=" transition-colors  text-xs  py-2 px-2 font-semibold  "
                                              href="/{{app()->getLocale()}}/products/{{ $product->slug }}/#comment"
-                                          >{{__("Коментарі")}} ({{\App\Models\Comment::all()->where('product_id', $product->id)->count('product_id')}})</a>
+                                          >{{__("Коментарі")}} ({{\App\Models\Comment::all()->where('product_id', $product->id)->count('product_id')}})</a></noindex>
 
                                     </span>
 {{--                                @if($rate_num >0)--}}
