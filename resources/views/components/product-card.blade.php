@@ -21,7 +21,7 @@
         </div>
 
 
-        <div class="py-3  flex flex-col justify-between  flex-1  ">
+        <div class="py-6  flex flex-col justify-between  flex-1  ">
             <header>
                 <div style="float:left;">
                     <x-category-button :category="$product->category"/>
@@ -31,7 +31,7 @@
                        href="/{{app()->getLocale()}}/products/{{ $product->slug }}"
                     >{{__("Повний опис")}}</a>
                 </div>
-                <div class="mt-10 lg:mt-10  ">
+                <div class="mt-10 lg:mt-8  ">
                     <div class=" text-2xl" >
                         <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}"  >
                             {{ $title }}
@@ -39,7 +39,7 @@
 
 
                     </div>
-                    <div class="mt-1">
+                    <div class="mt-2">
                         @php
                             $ratings = \App\Models\Rating::where('prod_id', $product->id)->get();
                             $rating_sum =  \App\Models\Rating::where('prod_id', $product->id)->sum('stars_rated');
