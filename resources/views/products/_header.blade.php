@@ -1,5 +1,24 @@
 <header class="max-w-xl mx-auto  px-2 text-center">
+    <meta name="robots" content="noindex" />
+    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">
+        <div class="py-1 ">
+            <div class="px-3  inline">
+                <p
+                    class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
+                    {{--               style=" position: relative; top: 0px !important;--}}
+                    {{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
+                >Наразі у магазині Made<span  style="color: #3B82F6">IS</span>
+                    проходить <span  style="color: rgba(255,26,26,0.84)">розіграш</span>! Даруємо подарунок за чесний коментар. Подробиці <a href="https://www.instagram.com/p/Cnhpfzet0wn/?igshid=YmMyMTA2M2Y=" rel=”nofollow" target="_blank">
+                        тут
+                    </a> (Інстаграм)<br/>
+                    Приз - 100г аромаолії CANDLESCIENCE
 
+
+                </p>
+            </div>
+
+        </div>
+    </div>
     <h1 class=" text-6xl lg:text-5xl Tangerine">
         Made<span  style="color: #3B82F6">IS</span>
     </h1>
