@@ -29,7 +29,7 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                    {{ $order->total }}
+                                                   {{ \App\Models\Order::all()->where('created', $order->created)->sum('product_total')}}
                                                 </span>
                                             </div>
                                         </div>

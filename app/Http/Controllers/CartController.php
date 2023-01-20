@@ -111,10 +111,11 @@ class CartController extends Controller
         $time = date("Y-m-d H:i");
 
         foreach (\Cart::getContent() as $cart) {
-            $total = \Cart::gettotal();
+
             $product_total =  $cart->price * $cart->quantity;
 
-            $weight = $cart->attributes->weight * $cart->quantity;
+//            $weight = $cart->attributes->weight * $cart->quantity;
+            $total =  $cart->attributes->weight * $cart->quantity;
 
             $order = new order([
                 'tel' => $attributes['tel'],
@@ -125,7 +126,7 @@ class CartController extends Controller
                 'product_id' => $cart->attributes->prod_id,
                 'price' => $cart->price,
                 'currency' => $cart->attributes->currency,
-                'weight' => $weight,
+                'weight' => $cart->attributes->weight,
                 'unit' => $cart->attributes->unit,
                 'quantity' => $cart->quantity,
                 'product_total' => $product_total,
