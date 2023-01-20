@@ -14,7 +14,7 @@
                                 {{--                                <th class="text-center">вал.</th>--}}
                             </tr>
 
-                            @foreach (\App\Models\Order::all()->unique('created')->sortByDesc('created') as $order)
+                            @foreach (\App\Models\Order::all()->unique('created')->sortByDesc('created_at') as $order)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
