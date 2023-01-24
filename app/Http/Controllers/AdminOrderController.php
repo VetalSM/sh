@@ -123,9 +123,9 @@ class AdminOrderController extends Controller
             'orders' => Order::orderBy('tel')->get()]);
 
     }
-    public function sortShow($locale,Order $order)
+    public function sort($locale,Order $order)
     {
-        dd(request()->start);
+        dd(request());
         if (request()->start === 0) {
 
             return view('admin.products.order.sort', [

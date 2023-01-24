@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting heading="Manage Category">
-        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort/">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort/"  enctype="multipart/form-data">
             @csrf
             <label for="start">start:</label>
             <input type="date" id="start" name="start">

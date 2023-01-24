@@ -53,7 +53,7 @@ Route::group(
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
         Route::resource('/admin/products/orders',  AdminOrderController::class);
         Route::get('/admin/products/orders_sort',  [AdminOrderController::class, 'date']);
-        Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sortShow']);
+        Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sort']);
 
 
 
