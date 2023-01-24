@@ -125,7 +125,7 @@ class AdminOrderController extends Controller
     }
     public function sort($locale,Order $order)
     {
-        dd(request());
+
         if (request()->start === 0) {
 
             return view('admin.products.order.sort', [
