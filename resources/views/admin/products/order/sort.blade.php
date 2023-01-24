@@ -6,7 +6,7 @@
             <input type="date" id="start" name="start">
             <label for="end">end:</label>
             <input type="date" id="end" name="end">
-            <button class="text-xs text-gray-400">get</button>
+            <button type="submit" class="text-xs text-gray-400">get</button>
         </form>
 
         @if($orders)
