@@ -88,7 +88,8 @@
                     </table>
 {{--                    <form action="{{ route('cart.Condition',app()->getLocale()) }}" method="POST">--}}
 {{--                        @csrf--}}
-{{--                        {{ $item->getPriceSumWithConditions() }}--}}
+{{--                        @dd($item)--}}
+{{--                        {{ }}--}}
 {{--                        <input type="hidden" name="id" value="{{ $item->id}}">--}}
 {{--                        <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">{{__("promo")}}</p>--}}
 {{--                        <input type = "text" size="10" placeholder="promo" name="promo"  value="{{old('promo')}}"/>--}}
