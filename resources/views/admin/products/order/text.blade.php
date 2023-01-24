@@ -11,7 +11,7 @@
         {{ $orders->links()}}
         @if($orders)
 
-            @foreach ($orders->sortByDesc('created_at') as $order)
+            @foreach ($orders as $order)
                 <h4 class=" text-bold">{{$order->tel.', '.$order->credentials}}</h4>
                 <h4 class=" text-bold">{{$order->address}}</h4>
                 @if(isset($order->comment))
