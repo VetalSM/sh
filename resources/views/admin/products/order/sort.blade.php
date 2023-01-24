@@ -1,6 +1,6 @@
 <x-layout>
     <x-setting heading="Manage Category">
-        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort/" enctype="multipart/form-data">
+        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort/">
             @csrf
             <label for="start">start:</label>
             <input type="date" id="start" name="start">
@@ -82,21 +82,21 @@
                             </tbody>
                         </table>
 
+{{--                            @foreach($orders as $order)--}}
+{{--                                @foreach(\App\Models\Category::all() as $category)--}}
+{{--                                    @if($order->product_id == $category->id)--}}
 
-                        @foreach(\App\Models\Category::all()->unique('name') as $category)
-                            @foreach(\App\Models\Product::all()->sort()->unique('id') as $product)
-                            @foreach($orders->unique('product_id') as $order)
-                                @if($order->product_id == $product->id)
-                                        @if($product->category_id == $category->id)
-                        {{$category->name}}: {{$orders->where('product_id', $order->product_id)->sum('product_total')}}
-                                        @endif     @endif        @endforeach
-                                             @endforeach
-                        @endforeach
+{{--                        {{$category->name}}: {{$orders->where('')sum('product_total')}}--}}
+
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                            @endforeach--}}
+
 {{--                            Total: {{$orders->category->sum('product_total')}}--}}
 
 {{--                            {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}--}}
 {{--                        >{{ ucwords($category->name) }}</option>--}}
-{{--                        Total: {{$orders->category->sum('product_total')}}--}}
+                        Total: {{$orders->sum('product_total')}}
                     </div>
                 </div>
             </div>
