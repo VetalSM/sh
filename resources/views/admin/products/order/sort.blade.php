@@ -83,6 +83,7 @@
                         </table>
 
                             @foreach($orders->sort()->unique() as $order)
+
                             @foreach(\App\Models\Product::all()->sort()->unique() as $product)
                                 @if($order->product_id == $product->id)
                                 @foreach(\App\Models\Category::all()->sort()->unique() as $category)
