@@ -32,10 +32,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @php
-                            $orders = DB::table('orders')->where('created', "$order->created")->get();
-                        @endphp
-                        @foreach ($orders as $item)
 
                             <tr>
                                 <td>
@@ -43,31 +39,31 @@
                                 </td>
                                 <td>
                                     <a href="#"></a>
-                                    <span class="mb-3 text-2xl lg:text-base">{{$item->product}}
+                                    <span class="mb-3 text-2xl lg:text-base">{{$order->product}}
                                         </span>
                                     <br>
                                     <h10 class="font-bold text-2xl lg:text-base text-blue-700">
-                                        {{$item->weight. $item->unit}} <span class="text-black">{{'('.$item->price.' '.$item->currency.')' }}</span>
+                                        {{$order->weight. $order->unit}} <span class="text-black">{{'('.$order->price.' '.$order->currency.')' }}</span>
                                     </h10>
                                 </td>
                                 <td class="justify-center mt-3 md:justify-center md:flex">
                                     <div class="h-10 w-35">
                                         <div class="relative  flex flex-row w-full h-8">
-                                            <p>{{ $item->quantity }}</p>
+                                            <p>{{ $order->quantity }}</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="hidden  text-right md:table-cell " >
                                 <span class="text-2xl lg:text-base font-medium lg:text-base  max-height">
-                                    {{ $item->price*$item->quantity }} {{$item->currency}}
+                                    {{ $order->price*$order->quantity }} {{$order->currency}}
                                 </span>
                                 </td>
                             </tr>
-                        @endforeach
+
                         </tbody>
                     </table>
                     <div class="text-xl">
-                        {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
+                        {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$order->currency}}
                     </div>
 <br/><br/>
 
