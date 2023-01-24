@@ -82,21 +82,16 @@
                             </tbody>
                         </table>
 
-                            @foreach($orders->sort()->unique() as $order)
 
+                        @foreach(\App\Models\Category::all()->unique('name') as $category)
                             @foreach(\App\Models\Product::all()->sort()->unique() as $product)
+                            @foreach($orders->unique('product_id') as $order)
                                 @if($order->product_id == $product->id)
-                                @foreach(\App\Models\Category::all()->sort()->unique() as $category)
-                                    @if($product->category_id == $category->id)
-
+                                        @if($product->category_id == $category->id)
                         {{$category->name}}: {{$orders->where('product_id', $order->product_id)->sum('product_total')}}
-
-                                @endif
-                            @endforeach @endif
-                            @endforeach
-
+                                        @endif     @endif        @endforeach
+                                             @endforeach
                         @endforeach
-
 {{--                            Total: {{$orders->category->sum('product_total')}}--}}
 
 {{--                            {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}--}}
