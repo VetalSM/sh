@@ -25,18 +25,20 @@ class AdminOrderController extends Controller
         $total = request()->weight * request()->quantity;
         $productTotal = request()->price * request()->quantity;
         foreach (\App\Models\Product::all() as $product)
-
             if(request()->product_id == $product->id) {
                 $product = $product->title;
                 Order::create(array_merge($this->validateOrder(), [
-                        'product_total'=> $productTotal,
+                        'product_total' => $productTotal,
                         'product' => $product,
                         'total' => $total
-                        ]
+                    ]
                 ));
-                 return redirect()->back()->with('message','Operation Successful !');
-            }
-
+                foreach (\App\Models\Order::all() as $order)
+                    if (request()->created == $order->created) {
+                        $attributes['comment'] = request()->comment;
+                        $order->update($attributes);
+                    }
+            }     return redirect()->back()->with('message', 'Operation Successful !');
 //        return redirect('/'.app()->getLocale().'/admin/products/orders')->with('success', 'price created');
     }
 //
@@ -113,5 +115,37 @@ class AdminOrderController extends Controller
 
 
         ]);
+    }
+    public function date($locale,Order $order)
+    {
+
+        return view('admin.products.order.sort', [
+            'orders' => Order::orderBy('tel')->get()]);
+
+    }
+    public function sortShow($locale,Order $order)
+    {
+
+
+        if (request()->start === 0) {
+
+            return view('admin.products.order.sort', [
+                'orders' => Order::all()]);
+        } else
+        {
+            $fromDate = request()->start;
+            $toDate = request()->end;
+            $start_date = date('Y-m-d 00:00:00', strtotime($fromDate));
+
+            $end_date = date('Y-m-d 23:59:59', strtotime($toDate));
+
+
+
+            return view('admin.products.order.sort', [
+                'orders' => Order::where('created_at', '>=', $start_date)
+                    ->where('created_at', '<=', $end_date)->get()]);
+        }
+
+
     }
 }

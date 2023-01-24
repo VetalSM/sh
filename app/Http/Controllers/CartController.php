@@ -12,23 +12,23 @@ use Illuminate\Support\Facades\URL;
 
 class CartController extends Controller
 {
-//    /**
-//     * @throws InvalidConditionException
-//     */
-//    public function Condition(Request $request)
-//    {
-//        \Cart::clearItemConditions($request->id);
-//        $promo = $request->promo;
-//        $item = new \Darryldecode\Cart\CartCondition(array(
-//            'name' => 'SALE 5%',
-//            'type' => 'sale',
-//            'value' => $promo,
-//        ));
-//        session()->flash('success',  __('Позиція оновлена успішно!'));
-//        \Cart::addItemCondition($request->id, $item);
-//        return redirect()->route('cart.list',app()->getLocale());
-//
-//    }
+    /**
+     * @throws InvalidConditionException
+     */
+    public function Condition(Request $request)
+    {
+        \Cart::clearItemConditions($request->id);
+        $promo = $request->promo;
+        $item = new \Darryldecode\Cart\CartCondition(array(
+            'name' => 'SALE 5%',
+            'type' => 'sale',
+            'value' => $promo,
+        ));
+        session()->flash('success',  __('Позиція оновлена успішно!'));
+        \Cart::addItemCondition($request->id, $item);
+        return redirect()->route('cart.list',app()->getLocale());
+
+    }
     public function cartList()
     {
         $cartItems = \Cart::getContent();

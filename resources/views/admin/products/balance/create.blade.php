@@ -4,12 +4,15 @@
         <form method="POST" action="/{{app()->getLocale()}}/admin/products/balance_products" enctype="multipart/form-data">
             @csrf
 
-            <select name="product_id" class="bt rounded-full ">
+            <select name="product_id" class="bt rounded-full " >
                 @foreach (\App\Models\Product::all() as $product)
                     <option class="rounded-full"
-                            value="{{$product->id}}">{{$product->title}}</option>
-
+                            value="{{$product->id}}" >{{$product->title}}</option>
                 @endforeach
+
+                <option value="none" selected  hidden>
+                  Выбери продукт!!!
+                </option>
             </select>
 
             <input type="number" placeholder="сколько пришло" name="count" value="{{old('count')}}" class="border  text-2xl lg:text-base border-gray-200  py-2 px-2 w-full rounded" required/>

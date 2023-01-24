@@ -52,6 +52,9 @@ Route::group(
         Route::resource('/admin/products/categories', AdminCategoryController::class);
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
         Route::resource('/admin/products/orders',  AdminOrderController::class);
+        Route::get('/admin/products/orders_sort',  [AdminOrderController::class, 'date']);
+        Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sortShow']);
+
 
 
     });
@@ -59,7 +62,7 @@ Route::group(
     Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
     Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
     Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-//    Route::post('Condition-cart', [CartController::class, 'Condition'])->name('cart.Condition');
+    Route::post('Condition-cart', [CartController::class, 'Condition'])->name('cart.Condition');
     Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
     Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 

@@ -87,7 +87,7 @@
                     <input type="hidden" name="created" value="{{ $order->created}}">
                     <input type="hidden" name="credentials" value="{{ $order->credentials}}">
                     <input type="hidden" name="address" value="{{ $order->address}}">
-                    <input type="hidden" name="comment" value="{{ $order->comment}}">
+
                     <input type="hidden" name="currency" value="{{ $order->currency}}">
                     <input type="hidden" name="weight" value="{{ $order->weight}}">
                     <input type="hidden" name="product_id" value="{{ $order->product_id}}">
@@ -112,7 +112,7 @@
                  <p>
                     <h5 class="inline">Количество позиций:</h5>  <input type="number" name="quantity"  class="w-7 text-center bg-gray-300"  style="width: 2.5em" required/>
                  </p>
-
+                    <x-form.textarea name="comment" required>{{ old('comment', $order->comment) }}</x-form.textarea>
 
                         <x-form.button>Добавить</x-form.button>
                     </form>
