@@ -54,6 +54,7 @@ Route::group(
         Route::resource('/admin/products/orders',  AdminOrderController::class);
         Route::get('/admin/products/orders_sort',  [AdminOrderController::class, 'date']);
         Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sort']);
+        Route::get('/admin/products/orders_text',  [AdminOrderController::class, 'orderText']);
 
 
 
