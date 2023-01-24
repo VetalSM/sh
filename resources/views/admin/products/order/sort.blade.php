@@ -84,7 +84,7 @@
 
 
                         @foreach(\App\Models\Category::all()->unique('name') as $category)
-                            @foreach(\App\Models\Product::all()->sort()->unique() as $product)
+                            @foreach(\App\Models\Product::all()->sort()->unique('id') as $product)
                             @foreach($orders->unique('product_id') as $order)
                                 @if($order->product_id == $product->id)
                                         @if($product->category_id == $category->id)

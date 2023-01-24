@@ -118,7 +118,7 @@ class AdminOrderController extends Controller
     }
     public function date($locale,Order $order)
     {
-
+        dd(request()->start);
         return view('admin.products.order.sort', [
             'orders' => Order::orderBy('tel')->get()]);
 
