@@ -120,7 +120,7 @@ class AdminOrderController extends Controller
     {
 
             return view('admin.products.order.text', [
-                'orders' => Order::orderBy('tel')->paginate(10)->withQueryString()]);
+                'orders' => Order::orderBy('tel')->paginate(5)->withQueryString()]);
 
     }
     public function date($locale,Order $order)
