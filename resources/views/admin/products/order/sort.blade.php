@@ -1,33 +1,48 @@
 <x-layout>
     <x-setting heading="Manage Category">
+        <div class="">
         <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort"  enctype="multipart/form-data">
             @csrf
-            <label for="start">start:</label>
-            <input type="date" id="start" name="start">
-            <label for="end">end:</label>
-            <input type="date" id="end" name="end">
-            <button type="submit" class="text-xs text-gray-400">get</button>
-        </form>
+            <label for="start" class=" font-semibold ">ОТ:</label>
+            <input type="date" id="start" name="start" value="{{ old('start', request()->start) }}">&nbsp;&nbsp;&nbsp;
 
+            <label for="end" class=" font-semibold ">ДО:</label>
+            <input type="date" id="end" name="end" value="{{ old('end', request()->end) }}">&nbsp;&nbsp;&nbsp;
+            <button type="submit" class=" font-semibold ">Показать</button>
+        </form>
+            <span class=" inline " style="    position: absolute; right: 0; top: 255px " >      Total: {{$orders->sum('product_total')}}  грн</span>
+        </div>
         @if($orders)
 
 
-        <div class="flex flex-col" >
+        <div class="mt-3 flex flex-col" >
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
                             <tr class="h-12 uppercase">
-                                <th class="text-center">name</th>
-                                <th class="text-center">slug</th>
-                                                                <th class="text-center">вага</th>
-                                                                <th class="text-center">од. вимір.</th>
-                                                                <th class="text-center">вал.</th>
+
+                                <th class="text-center">№</th>
+                                <th class="text-center">Тел.</th>
+                                <th class="text-center">Сумма заказа</th>
+                                <th class="text-center">Ф.И.О</th>
+                                <th class="text-center">Дата</th>
+
                             </tr>
 
                             @foreach ($orders->unique('created')->sortByDesc('created_at') as $order)
                                 <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        {{--                                        <div class="flex items-center">--}}
+                                        {{--                                            <div class="text-sm font-medium text-gray-900">--}}
+                                        {{--                                                    <span class="text-dark" style="text-decoration: none;">--}}
+                                        {{--                                                        {{ $order->created }}--}}
+                                        {{--                                                    </span>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
+                                    </td>
+
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
@@ -41,7 +56,7 @@
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
                                                 <span style="text-decoration: none;">
-                                                   {{ \App\Models\Order::all()->where('created', $order->created)->sum('product_total')}}
+                                                   {{ \App\Models\Order::all()->where('created', $order->created)->sum('product_total')}}  {{ $order->currency}}
                                                 </span>
                                             </div>
                                         </div>
@@ -96,7 +111,7 @@
 
 {{--                            {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}--}}
 {{--                        >{{ ucwords($category->name) }}</option>--}}
-                        Total: {{$orders->sum('product_total')}}
+
                     </div>
                 </div>
             </div>

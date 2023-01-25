@@ -56,13 +56,22 @@
                     <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>
                 </li>
                 <li>
-                    <span class="font-semibold mb-4">Orders</span>
+                    <span class="font-semibold mb-4">Заказы</span>
                 </li>
                 <li>
-                <a href="/{{app()->getLocale()}}/admin/products/orders" class="{{ request()->is('admin/products/orders') ? 'text-blue-500' : '' }}">All Order</a>
+                <a href="/{{app()->getLocale()}}/admin/products/orders" class="{{ request()->is('admin/products/orders') ? 'text-blue-500' : '' }}">Все заказы</a>
                 </li>
                 <li>
-{{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
+                    <a href="/{{app()->getLocale()}}/admin/products/orders_sort" class="{{ request()->is('/admin/products/orders_sort') ? 'text-blue-500' : '' }}">По дате</a>
+                </li>
+                <li>
+                                        <a href="/{{app()->getLocale()}}/admin/products/orders_text" class="{{ request()->is('admin/products/orders_text') ? 'text-blue-500' : '' }}">Заявки на печать</a>
+                </li>
+                <li>
+                    {{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
+                </li>
+                <li>
+                    {{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
                 </li>
             </ul>
         </aside>

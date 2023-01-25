@@ -12,24 +12,31 @@
                 <table class="w-full md:table-auto" cellspacing="0">
                     <thead>
                     <tr class="h-12 uppercase">
-                        <th class="hidden md:table-cell"></th>
+
+                        <th class="text-left">{{__("№")}}</th>
                         <th class="text-left">{{__("Найменування")}}</th>
                         <th class="pl-5 text-left lg:text-center lg:pl-5">
                             <span class="lg:hidden" title="Quantity">К-ть</span>
                             <span class="hidden lg:inline">{{__("Кількість")}}</span>
                         </th>
                         <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
-                        <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>
+{{--                        <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
                     </tr>
                     </thead>
                     <tbody>
                     @php
                         $orders = DB::table('orders')->where('created', "$order->created")->get();
                     @endphp
-                    @foreach ($orders as $item)
+
+                    @foreach ($orders as $key=>$item)
+
+
 
                         <tr>
                             <td>
+                                <a href="#"></a>
+                                <span class="mb-3 font-bold text-2xl lg:text-base" style="color: brown;  position: relative; top: -11px !important;">{{$key+=1}}.
+                                        </span>
 
                             </td>
                             <td>
@@ -74,11 +81,13 @@
                                 </form>
                             </td>
                         </tr>
+
                     @endforeach
                     </tbody>
                 </table>
-                <div class="text-xl">
-                        {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
+                -----------------------------------------------------
+                <div class="text-xl mt-1">
+                       {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
                 </div>
 
                 <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders" enctype="multipart/form-data">
@@ -112,7 +121,7 @@
                  <p>
                     <h5 class="inline">Количество позиций:</h5>  <input type="number" name="quantity"  class="w-7 text-center bg-gray-300"  style="width: 2.5em" required/>
                  </p>
-                    <x-form.textarea name="comment" required>{{ old('comment', $order->comment) }}</x-form.textarea>
+                    <x-form.textarea name="comment">{{ old('comment', $order->comment) }}</x-form.textarea>
 
                         <x-form.button>Добавить</x-form.button>
                     </form>

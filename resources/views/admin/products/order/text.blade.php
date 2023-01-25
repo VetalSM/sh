@@ -1,21 +1,22 @@
 <x-layout>
     <x-setting heading="Manage Category">
-        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_sort"  enctype="multipart/form-data">
-            @csrf
-            <label for="start">start:</label>
-            <input type="date" id="start" name="start">
-            <label for="end">end:</label>
-            <input type="date" id="end" name="end">
-            <button type="submit" class="text-xs text-gray-400">get</button>
-        </form>
+{{--        <form method="POST" action="/{{app()->getLocale()}}/admin/products/orders_text"  enctype="multipart/form-data">--}}
+{{--            @csrf--}}
+{{--            <label for="start">start:</label>--}}
+{{--            <input type="date" id="start" name="start">--}}
+{{--            <label for="end">end:</label>--}}
+{{--            <input type="date" id="end" name="end">--}}
+{{--            <button type="submit" class="text-xs text-gray-400">get</button>--}}
+{{--        </form>--}}
         {{ $orders->links()}}
-        @if($orders)
-
-            @foreach ($orders->sortByDesc('created_at') as $order)
-                <h4 class=" text-bold">{{$order->tel.', '.$order->credentials}}</h4>
+{{--        @if($orders)--}}
+{{--        ->sortByDesc('created_at')--}}
+            @foreach ($orders->unique('created') as $order)
+            <h7 class=" text-bold" style="color: brown;">{{$order->created_at}}</h7>
+                <h4 class="mt-2 text-bold">{{$order->tel}}<br/>{{$order->credentials}}</h4>
                 <h4 class=" text-bold">{{$order->address}}</h4>
                 @if(isset($order->comment))
-                    <h4 class=" text-bold">{{$order->comment}}</h4>
+                    <h7 class=" text-bold">{{$order->comment}}</h7>
                 @endif
                 <div class="flex-1">
                     <table class="w-full md:table-auto" cellspacing="0">
@@ -28,48 +29,55 @@
                                 <span class="hidden lg:inline">{{__("Кількість")}}</span>
                             </th>
                             <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
-                            <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>
+{{--                            <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
                         </tr>
                         </thead>
                         <tbody>
+                        @php
+                            $orders = DB::table('orders')->where('created', "$order->created")->get();
+                        @endphp
+                        @foreach ($orders as $key=>$item)
 
                             <tr>
                                 <td>
+                                    <a href="#"></a>
+                                    <span class="mb-3 font-bold text-2xl lg:text-base" style="color: brown;  position: relative; top: -11px !important;">{{$key+=1}}.
+                                        </span>
 
                                 </td>
                                 <td>
                                     <a href="#"></a>
-                                    <span class="mb-3 text-2xl lg:text-base">{{$order->product}}
+                                    <span class="mb-3 text-2xl lg:text-base">{{$item->product}}
                                         </span>
                                     <br>
                                     <h10 class="font-bold text-2xl lg:text-base text-blue-700">
-                                        {{$order->weight. $order->unit}} <span class="text-black">{{'('.$order->price.' '.$order->currency.')' }}</span>
+                                        {{$item->weight. $item->unit}} <span class="text-black">{{'('.$item->price.' '.$item->currency.')' }}</span>
                                     </h10>
                                 </td>
                                 <td class="justify-center mt-3 md:justify-center md:flex">
                                     <div class="h-10 w-35">
                                         <div class="relative  flex flex-row w-full h-8">
-                                            <p>{{ $order->quantity }}</p>
+                                            <p>{{ $item->quantity }}</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="hidden  text-right md:table-cell " >
                                 <span class="text-2xl lg:text-base font-medium lg:text-base  max-height">
-                                    {{ $order->price*$order->quantity }} {{$order->currency}}
+                                    {{ $item->price*$item->quantity }} {{$item->currency}}
                                 </span>
                                 </td>
                             </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="text-xl">
-                        {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$order->currency}}
-                    </div>
-<br/><br/>
+                        {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
+                    </div>----------------------------------------------------------------------------------------------------------------------------------------
+                    <br/><br/>
 
             @endforeach
 
-@endif
+{{--@endif--}}
 
 {{--        --}}
 {{--            <div class="flex flex-col" >--}}
