@@ -116,11 +116,11 @@ class AdminOrderController extends Controller
 
         ]);
     }
-    public function orderText($locale,Order $order)
+    public function orderText()
     {
-
+//        'orders' => Order::all()->unique('created')->sortBy('id')]);
             return view('admin.products.order.text', [
-                'orders' => Order::orderBy('created')->paginate(5)->withQueryString()]);
+                'orders' => Order::orderBy('created', 'desc')->paginate(200)->withQueryString()]);
 
     }
     public function date($locale,Order $order)
