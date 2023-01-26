@@ -38,7 +38,7 @@ class AdminPriceController extends Controller
         return redirect('/'.app()->getLocale().'/admin/products/price')->with('success', 'Product Updated!');
     }
 
-    public function destroy(Price $price)
+    public function destroy($locale,Price $price)
     {
         $price->delete();
         return redirect('/'.app()->getLocale().'/admin/products/price')->with('success', 'Price Deleted!');
