@@ -129,7 +129,7 @@
                             $d='';
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
-                        <select name="price" class="bt rounded-full py-2 px-2 ">
+                        <select name="price" class="bt rounded-full py-2 px-2 " style="color: red">
                             @foreach ($sorted as $price)
                                 <option class="rounded-full"
                                         value="{{$d=$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
@@ -178,7 +178,7 @@
                         </svg>
                         {{  __("До каталогу")}}
                     </a>
-                   <a rel="nofollow" href="#comment"
+                    <noindex><a rel="nofollow" href="#comment"
                        class="transition-colors duration-300 relative inline-flex  hover:text-blue-500" style="float:right;">
                         <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                             <g fill="none" fill-rule="evenodd">

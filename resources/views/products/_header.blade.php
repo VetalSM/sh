@@ -7,14 +7,10 @@
                     class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
                     {{--               style=" position: relative; top: 0px !important;--}}
                     {{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
-                >Наразі у магазині Made<span  style="color: #3B82F6">IS</span>
-                    проходить <span  style="color: rgba(255,26,26,0.84)">розіграш</span>! Даруємо подарунок за чесний коментар. Подробиці <a href="https://www.instagram.com/p/Cnhpfzet0wn/?igshid=YmMyMTA2M2Y=" rel=”nofollow" target="_blank">
-                        тут
-                    </a> (Інстаграм)<br/>
-                    Приз - 100г аромаолії CANDLESCIENCE
+                >Шалені знижки у магазині Made </p><span  style="color: #3B82F6">IS</span>
+                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!
 
 
-                </p>
             </div>
 
         </div>
