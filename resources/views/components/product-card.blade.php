@@ -101,7 +101,7 @@
                               $sorted = $prices->sortBy('price');
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
-                        <select name="price" class="bt rounded-full py-2 px-1" style="float:left;">
+                        <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">
                             @foreach ($sorted as $price)
                                 <option value="{{ $price->price }} "
                                 @if ($price->weight === "10" && $price->unit === 'г')
