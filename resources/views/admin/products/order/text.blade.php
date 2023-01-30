@@ -22,21 +22,16 @@
                     <table class="w-full md:table-auto" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
-<th class="text-left">
-    <span class="lg:hidden" title="№">№</span></th>
-{{--                            <th class="hidden md:table-cell"></th>--}}
-
+                            <th class="hidden md:table-cell"></th>
 
                             <th class="text-left">{{__("Найменування")}}</th>
                             <th class="pl-5 text-left lg:text-center lg:pl-5">
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
                                 <span class="hidden lg:inline">{{__("Кількість")}}</span>
                             </th>
-                            <th class="hidden text-right md:table-cell"> {{__("ціна за товар")}}</th>
+                            <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
 {{--                            <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
                         </tr>
-                        <th class="hidden "></th>
-                        <th class="hidden md:table-cell"></th>
                         </thead>
                         <tbody>
                         @php
@@ -68,7 +63,6 @@
                                             @else
                                                 <p style="color: red">{{ $item->quantity }}</p>
                                             @endif
-
                                         </div>
                                     </div>
                                 </td>
