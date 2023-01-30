@@ -32,9 +32,11 @@
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
                                 <span class="hidden lg:inline">{{__("Кількість")}}</span>
                             </th>
-                            <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
+                            <th class="hidden text-right md:table-cell"> {{__("ціна за товар")}}</th>
 {{--                            <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
                         </tr>
+                        <th class="hidden "></th>
+                        <th class="hidden md:table-cell"></th>
                         </thead>
                         <tbody>
                         @php
