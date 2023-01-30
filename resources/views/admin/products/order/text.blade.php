@@ -22,7 +22,11 @@
                     <table class="w-full md:table-auto" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
-                            <th class="hidden md:table-cell"></th>
+<th class="text-left">
+    <span class="lg:hidden" title="№">№</span></th>
+{{--                            <th class="hidden md:table-cell"></th>--}}
+
+
                             <th class="text-left">{{__("Найменування")}}</th>
                             <th class="pl-5 text-left lg:text-center lg:pl-5">
                                 <span class="lg:hidden" title="Quantity">К-ть</span>
@@ -57,7 +61,12 @@
                                 <td class="justify-center mt-3 md:justify-center md:flex">
                                     <div class="h-10 w-35">
                                         <div class="relative  flex flex-row w-full h-8">
-                                            <p>{{ $item->quantity }}</p>
+                                            @if($item->quantity <= 1)
+                                                <p>{{ $item->quantity }}</p>
+                                            @else
+                                                <p style="color: red">{{ $item->quantity }}</p>
+                                            @endif
+
                                         </div>
                                     </div>
                                 </td>
