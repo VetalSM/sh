@@ -29,9 +29,16 @@
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
+                                                @if( $order->payment_status === 1)
                                                     <span class="text-dark" style="text-decoration: none;">
                                                         {{ $order->tel }}
                                                     </span>
+
+                                                    @else
+                                                    <span style="text-decoration: none; color: red">
+                                                        {{ $order->tel }}
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
                                     </td>
@@ -61,6 +68,21 @@
                                                 </span>
                                             </div>
                                         </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <form method="GET"
+                                              action="/{{app()->getLocale()}}/admin/products/payment_status">
+                                            @csrf
+                                            @if( $order->payment_status === 1)
+                                                <input type="checkbox" name="payment_status" value="0" checked="checked" onChange="submit()" >
+                                            @else
+                                                <input type="checkbox" name="payment_status" value="1" onChange="submit()" >
+                                            @endif
+
+                                            <input type="hidden" name="created" value="{{ $order->created}}">
+
+
+                                        </form>
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

@@ -29,6 +29,7 @@ class CreateOrdersTable extends Migration
             $table->text('product_total')->nullable();
             $table->text('total')->nullable();
             $table->text('created')->nullable();
+            $table->text('payment_status')->nullable();
             $table->timestamps();
 
         });

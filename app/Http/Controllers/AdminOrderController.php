@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class AdminOrderController extends Controller
 {
-    public function index($locale,Order $order)
+    public function index($locale, Order $order)
     {
         return view('admin.products.order.index', [
             'order' => $order
         ]);
     }
 
-    public function create($locale,order $order)
+    public function create($locale, order $order)
     {
         return view('admin.products.order.create', ['order' => $order]);
     }
@@ -25,7 +25,7 @@ class AdminOrderController extends Controller
         $total = request()->weight * request()->quantity;
         $productTotal = request()->price * request()->quantity;
         foreach (\App\Models\Product::all() as $product)
-            if(request()->product_id == $product->id) {
+            if (request()->product_id == $product->id) {
                 $product = $product->title;
                 Order::create(array_merge($this->validateOrder(), [
                         'product_total' => $productTotal,
@@ -38,16 +38,18 @@ class AdminOrderController extends Controller
                         $attributes['comment'] = request()->comment;
                         $order->update($attributes);
                     }
-            }     return redirect()->back()->with('message', 'Operation Successful !');
+            }
+        return redirect()->back()->with('message', 'Operation Successful !');
 //        return redirect('/'.app()->getLocale().'/admin/products/orders')->with('success', 'price created');
     }
+
 //
-    public function edit($locale,Order $order)
+    public function edit($locale, Order $order)
     {
 //        foreach (Order::all() as $ordeR){
 //            if ($ordeR->created === $order->created){
 
-                return view('admin.products.order.edit', ['order' => $order]);
+        return view('admin.products.order.edit', ['order' => $order]);
 //            }
 //        }
 
@@ -55,12 +57,12 @@ class AdminOrderController extends Controller
     }
 
 //
-    public function update($locale,Order $order)
+    public function update($locale, Order $order)
     {
 
         $attributes = $this->validateOrder($order);
 
-       $attributes['product_total'] = $attributes['price'] * $attributes['quantity'];
+        $attributes['product_total'] = $attributes['price'] * $attributes['quantity'];
         $attributes['total'] = $attributes['weight'] * $attributes['quantity'];
 //            $attributes['thumbnail'] = request()->file('thumbnail')->storeAs('thumbnails', $thumbnailName);
 //        }
@@ -75,15 +77,15 @@ class AdminOrderController extends Controller
 //        }
 
         $order->update($attributes);
-        return redirect()->back()->with('message','Operation Successful !');
+        return redirect()->back()->with('message', 'Operation Successful !');
 //        return redirect('/'.app()->getLocale().'/admin/products/orders')->with('success', 'Product Updated!');
     }
 
-    public function destroy($locale,Order $order)
+    public function destroy($locale, Order $order)
     {
 
         $order->delete();
-        return redirect()->back()->with('message','Operation Successful !');
+        return redirect()->back()->with('message', 'Operation Successful !');
 
 //dd($order->created);
 //        $order->delete();
@@ -110,39 +112,39 @@ class AdminOrderController extends Controller
             'product_total' => '',
             'total' => '',
             'created' => '',
-            'product_id'=>'',
-
+            'product_id' => '',
 
 
         ]);
     }
+
     public function orderText()
     {
 //        'orders' => Order::all()->unique('created')->sortBy('id')]);
-            return view('admin.products.order.text', [
-                'orders' => Order::orderBy('created', 'desc')->paginate(200)->withQueryString()]);
+        return view('admin.products.order.text', [
+            'orders' => Order::orderBy('created', 'desc')->paginate(200)->withQueryString()]);
 
     }
-    public function date($locale,Order $order)
+
+    public function date($locale, Order $order)
     {
         return view('admin.products.order.sort', [
             'orders' => Order::orderBy('tel')->get()]);
     }
-    public function sort($locale,Order $order)
+
+    public function sort($locale, Order $order)
     {
 
         if (request()->start === 0) {
 
             return view('admin.products.order.sort', [
                 'orders' => Order::all()]);
-        } else
-        {
+        } else {
             $fromDate = request()->start;
             $toDate = request()->end;
             $start_date = date('Y-m-d 00:00:00', strtotime($fromDate));
 
             $end_date = date('Y-m-d 23:59:59', strtotime($toDate));
-
 
 
             return view('admin.products.order.sort', [
@@ -152,4 +154,15 @@ class AdminOrderController extends Controller
 
 
     }
+
+    public function payment($locale, Order $order)
+    {
+
+        foreach (\App\Models\Order::all() as $order)
+            if (request()->created == $order->created) {
+                $attributes['payment_status'] = request()->payment_status;
+                $order->update($attributes);
+            }
+         return redirect()->back()->with('message', 'Operation Successful !');
+}
 }
