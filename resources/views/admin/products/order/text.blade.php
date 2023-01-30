@@ -77,6 +77,7 @@
                     </table>
                     <div class="text-xl">
                         {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
+                        <br/>
                         @if( $order->payment_status === 1)
                             <span class="text-dark" style="text-decoration: none;">
                                                    <span style="text-decoration: none; color: red">
