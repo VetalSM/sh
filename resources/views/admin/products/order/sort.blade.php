@@ -9,8 +9,8 @@
             <label for="end" class=" font-semibold ">ДО:</label>
             <input type="date" id="end" name="end" value="{{ old('end', request()->end) }}">&nbsp;&nbsp;&nbsp;
             <button type="submit" class=" font-semibold ">Показать</button>
-        </form>
-            <span class=" inline " style="    position: absolute; right: 0; top: 255px " >      Total: {{$orders->sum('product_total')}}  грн</span>
+        </form><br>
+            <span >      Total: {{$orders->sum('product_total')}}  грн</span>
         </div>
         @if($orders)
 
