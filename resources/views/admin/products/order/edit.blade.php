@@ -73,7 +73,7 @@
                                 </span>
                             </td>
                             <td class="text-right md:table-cell " >
-                                <div style="padding: 0px 0px 0px 0;">
+                                <div style="padding: 0px 0px 8px 0;">
                                 <form action="/{{app()->getLocale()}}/admin/products/orders/{{$item->id}}" method="POST">
                                     @csrf
                                     @method('DELETE')
