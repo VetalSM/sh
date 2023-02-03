@@ -12,26 +12,16 @@
                 <table class="w-full md:table-auto" cellspacing="0">
                     <thead>
                     <tr class="h-12 uppercase">
-                        <th class="hidden md:table-cell"></th>
+
+                        <th class="text-left">{{__("№")}}</th>
                         <th class="text-left">{{__("Найменування")}}</th>
                         <th class="pl-5 text-left lg:text-center lg:pl-5">
                             <span class="lg:hidden" title="Quantity">К-ть</span>
                             <span class="hidden lg:inline">{{__("Кількість")}}</span>
                         </th>
                         <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>
-{{--                        <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
+                        <th class="hidden text-right md:table-cell"> {{__("Вид.")}}</th>
                     </tr>
-{{--                    <tr class="h-12 uppercase">--}}
-
-{{--                        <th class="text-left">{{__("№")}}</th>--}}
-{{--                        <th class="text-left">{{__("Найменування")}}</th>--}}
-{{--                        <th class="pl-5 text-left lg:text-center lg:pl-5">--}}
-{{--                            <span class="lg:hidden" title="Quantity">К-ть</span>--}}
-{{--                            <span class="hidden lg:inline">{{__("Кількість")}}</span>--}}
-{{--                        </th>--}}
-{{--                        <th class="hidden text-right md:table-cell"> {{__("ціна")}}</th>--}}
-{{--                        <th class="hidden text-right md:table-cell"> {{__("Видалити")}}</th>--}}
-{{--                    </tr>--}}
                     </thead>
                     <tbody>
                     @php
@@ -59,7 +49,7 @@
                                 </h10>
                             </td>
                             <td class="justify-center mt-3 md:justify-center md:flex">
-                                <div class="h-10 w-35">
+                                <div class="h-10 w-36">
                                     <div class="relative  flex flex-row w-full h-8">
 
                                         <form action="/{{app()->getLocale()}}/admin/products/orders/{{$item->id}}" method="POST">
@@ -83,12 +73,14 @@
                                 </span>
                             </td>
                             <td class="text-right md:table-cell " >
+                                <div style="padding: 0px 0px 0px 0;">
                                 <form action="/{{app()->getLocale()}}/admin/products/orders/{{$item->id}}" method="POST">
                                     @csrf
                                     @method('DELETE')
 {{--                                    Picture::where('filename', $filename)->delete();--}}
-                                    <button class="px-3 py-0.5 text-white bg-red-600  rounded-full">x</button>
+                                    <button   class="px-3 text-white bg-red-600  rounded-full">x</button>
                                 </form>
+                                </div>
                             </td>
                         </tr>
 
