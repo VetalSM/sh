@@ -15,6 +15,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',  function () {
@@ -51,7 +53,10 @@ Route::group(
         Route::resource('/admin/products/comments', AdminCommentController::class);
         Route::resource('/admin/products/categories', AdminCategoryController::class);
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
-        Route::resource('/admin/products/orders',  AdminOrderController::class);
+        Route::resource('/admin/products/orders',  AdminOrderController::class)->missing(function (Request $request) {
+            return redirect("/".app()->getLocale()."/admin/products/orders");
+
+        });;
         Route::get('/admin/products/orders_sort',  [AdminOrderController::class, 'date']);
         Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sort']);
         Route::get('/admin/products/orders_text',  [AdminOrderController::class, 'orderText']);
