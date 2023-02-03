@@ -112,6 +112,29 @@
                                 </option>
                             @endforeach
                         </select>
+{{--                        <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">--}}
+{{--                            @foreach ($sorted as $price)--}}
+{{--                                @foreach (\App\Models\BalanceProduct::all() as $balance)--}}
+{{--                                    @php--}}
+{{--                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));--}}
+{{--                                    @endphp--}}
+{{--                                    @if((int)$balance->product_id === $product->id)--}}
+{{--                                        @if($data <= 50 && $data >=40)--}}
+{{--                                            @if((int)$price->weight <=30)--}}
+{{--                                                <option value="{{ $price->price }} "--}}
+{{--                                                @if ($price->weight === "10" && $price->unit === 'г')--}}
+{{--                                                    {{'selected="selected"'}}--}}
+{{--                                                    @endif--}}
+{{--                                                >--}}
+{{--                                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}--}}
+{{--                                                </option>--}}
+{{--                                            @endif--}}
+
+{{--                                        @endif--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
 {{--                                <option class="rounded-full "--}}
 {{--                                        value="{{$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>--}}
 {{--                        @endforeach--}}
