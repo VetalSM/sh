@@ -61,7 +61,9 @@
                                             @if($item->quantity <= 1)
                                                 <p>{{ $item->quantity }}</p>
                                             @else
+                                                <h8 class="font-bold text-2xl lg:text-base ">
                                                 <p style="color: red">{{ $item->quantity }}</p>
+                                                </h8>
                                             @endif
                                         </div>
                                     </div>
@@ -82,6 +84,15 @@
                             <span class="text-dark" style="text-decoration: none;">
                                                    <span style="text-decoration: none; color: red">
                                                       *</span>{{__("Сплачено")}}</span><span style="text-decoration: none; color: red">*</span>
+                            @if($order->delivery_status === 1)
+                                <span class="text-dark" style="text-decoration: none;">
+                                                   <span style="text-decoration: none; color: red">
+                                                      *</span>{{__("Відправлено")}}</span><span style="text-decoration: none; color: red">*</span>
+                            @else
+                                <span style="text-decoration: none; color: red">
+                                                   <span style="text-decoration: none; color: red">
+                                                      *</span>{{__("Не відправлено")}}</span><span style="text-decoration: none; color: red">*</span>
+                            @endif
 
                         @else
                             <span style="text-decoration: none; color: red">
