@@ -15,7 +15,15 @@
                             </tr>
 
                             @foreach (\App\Models\Order::all()->unique('created')->sortByDesc('created_at') as $order)
-                                <tr>
+                                @if($order->payment_status === 1 &&  ($order->delivery_status === 1))
+                                    <tr style="background-color:#39e634">
+                                @elseif($order->payment_status === 1)
+                                    <tr style="background-color:#f6e643">
+
+                                @else
+                                    <tr style="background-color:rgba(248,76,76,0.65)">
+                                @endif
+
                                     <td class="px-6 py-4 whitespace-nowrap">
 {{--                                        <div class="flex items-center">--}}
 {{--                                            <div class="text-sm font-medium text-gray-900">--}}
@@ -24,21 +32,29 @@
 {{--                                                    </span>--}}
 {{--                                            </div>--}}
 {{--                                        </div>--}}
+                                        <form method="GET"
+                                              action="/{{app()->getLocale()}}/admin/products/delivery_status">
+                                            @csrf
+                                            @if( $order->delivery_status === 1)
+                                                <input type="checkbox" name="delivery_status" value="0" checked="checked" onChange="submit()" >
+                                            @else
+                                                <input type="checkbox" name="delivery_status" value="1" onChange="submit()" >
+                                            @endif
+
+                                            <input type="hidden" name="created" value="{{ $order->created}}">
+
+
+                                        </form>
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
                                             <div class="text-sm font-medium text-gray-900">
-                                                @if( $order->payment_status === 1)
-                                                    <span class="text-dark" style="text-decoration: none;">
+
+                                                    <span style="text-decoration: none;" >
                                                         {{ $order->tel }}
                                                     </span>
 
-                                                    @else
-                                                    <span style="text-decoration: none; color: red">
-                                                        {{ $order->tel }}
-                                                    </span>
-                                                @endif
                                             </div>
                                         </div>
                                     </td>

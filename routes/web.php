@@ -61,6 +61,7 @@ Route::group(
         Route::post('/admin/products/orders_sort',  [AdminOrderController::class, 'sort']);
         Route::get('/admin/products/orders_text',  [AdminOrderController::class, 'orderText']);
         Route::get('/admin/products/payment_status',  [AdminOrderController::class, 'payment']);
+        Route::get('/admin/products/delivery_status',  [AdminOrderController::class, 'delivery']);
 
 
 
