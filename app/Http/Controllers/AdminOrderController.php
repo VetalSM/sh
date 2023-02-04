@@ -165,4 +165,14 @@ class AdminOrderController extends Controller
             }
          return redirect()->back()->with('message', 'Operation Successful !');
 }
+    public function delivery($locale, Order $order)
+    {
+
+        foreach (\App\Models\Order::all() as $order)
+            if (request()->created == $order->created) {
+                $attributes['delivery_status'] = request()->delivery_status;
+                $order->update($attributes);
+            }
+        return redirect()->back()->with('message', 'Operation Successful !');
+    }
 }
