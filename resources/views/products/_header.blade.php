@@ -8,7 +8,8 @@
                     {{--               style=" position: relative; top: 0px !important;--}}
                     {{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
                 >Шалені знижки у магазині Made</p><span  style="color: #3B82F6">IS</span>
-                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!
+                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!<br/>
+                Останній день знижок - 12 лютого 2023 р.
 
 
             </div>
