@@ -120,33 +120,61 @@
                     </button>
                 </div>
                 <div class="  lg:mt-0 py-4 text-center ">
-                    <form action="{{ route('cart.store',app()->getLocale()) }}" method="POST"
+                    <form action="{{ route('cart.store', app()->getLocale()) }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
                         @php
                             $prices = DB::table('prices')->where('name', "$product->prices")->get();
-                            $sorted = $prices->sortBy('price');
-                            $d='';
+                              $sorted = $prices->sortBy('price');
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
                         <select name="price" class="bt rounded-full py-2 px-2 " style="color: red">
                             @foreach ($sorted as $price)
-                                <option class="rounded-full"
-                                        value="{{$d=$price->price}}">{{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}</option>
+                                @foreach (\App\Models\BalanceProduct::all() as $balance)
+                                    @php
+                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                    @endphp
+                                    @if((int)$balance->product_id === $product->id)
+                                        @if($data >= $price->weight )
+                                            @if((int)$price->weight <= $data)
+                                                <option value="{{ $price->price }} "
+                                                @if ($price->weight === "10" && $price->unit === 'г')
+                                                    {{'selected="selected"'}}
+                                                    @endif
+                                                >
+                                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
+                                                </option>
+                                            @endif
+                                        @endif
+                                    @endif
+                                @endforeach
                             @endforeach
                         </select>
-                        @php $price = DB::table('prices')->where('price', "$d")->first()  @endphp
-                        @if(!isset($price->currency))
-                        @endif
-                        <input type="hidden" value="{{$price->weight}}" name="weight">
-                        <input type="hidden" value="{{$price->unit}}" name="unit">
-                        <input type="hidden" value="{{$price->currency}}" name="currency">
-                        <input type="hidden" value="{{$product->id}}" name="prod_id">
                         <input type="hidden" value="{{$product->prices}}" name="prices">
+                        <input type="hidden" value="{{$product->id}}" name="prod_id">
                         <input type="hidden" value="{{$title}}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                        @if($product->status !== "7")
+                        @php
+                            $button = false;
+                        @endphp
+                        @foreach ($sorted as $price)
+                            @foreach (\App\Models\BalanceProduct::all() as $balance)
+                                @php
+                                    $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                @endphp
+                                @if((int)$balance->product_id === $product->id)
+                                    @if($data !>= $price->weight )
+                                        @if((int)$price->weight <= $data)
+                                            @php
+                                                $button = true;
+                                            @endphp
+                                        @endif
+                                    @endif
+                                @endif
+                            @endforeach
+                        @endforeach
+                        @if($button === true && ($product->status !== "7"))
                             <button
                                 class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 ">
                                 {{  __("Купити")}}
@@ -158,6 +186,7 @@
                             </button>
                         @endif
                     </form>
+
                 </div>
             </div>
             <div class="col-span-6">
