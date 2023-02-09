@@ -164,7 +164,7 @@
                                     $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
                                 @endphp
                                 @if((int)$balance->product_id === $product->id)
-                                    @if($data !>= $price->weight )
+                                    @if($data >= $price->weight )
                                         @if((int)$price->weight <= $data)
                                             @php
                                                 $button = true;
