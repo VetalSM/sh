@@ -25,7 +25,7 @@ class RatingController extends Controller
                 'prod_id' => $product_id,
                 'stars_rated' => $stars_rated
             ]);
-            return redirect()->back()->with('success', "Дякуємо за оцінку!");
+            return redirect()->back()->with('success', __("Дякуємо за оцінку!"));
         }
         else{
             Rating::where('user_id',$user_id)->update([  'stars_rated' => $stars_rated]);
