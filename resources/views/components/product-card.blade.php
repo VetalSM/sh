@@ -112,7 +112,7 @@
 {{--                                </option>--}}
 {{--                            @endforeach--}}
 {{--                        </select>--}}
-                        <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">
+                        <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
                             @foreach ($sorted as $price)
                                 @foreach (\App\Models\BalanceProduct::all() as $balance)
                                     @php

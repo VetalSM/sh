@@ -128,7 +128,7 @@
                               $sorted = $prices->sortBy('price');
                         @endphp
                         <input type="hidden" value="{{ $product->id . time()}}" name="id">
-                        <select name="price" class="bt rounded-full py-2 px-2 " style="color: red">
+                        <select name="price" class="bt rounded-full py-2 px-2 " >
                             @foreach ($sorted as $price)
                                 @foreach (\App\Models\BalanceProduct::all() as $balance)
                                     @php

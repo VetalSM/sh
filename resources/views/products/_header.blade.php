@@ -1,21 +1,21 @@
 <header class="max-w-xl mx-auto  px-2 text-center">
 
-    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">
-        <div class="py-1 ">
-            <div class="px-3  inline">
-                <p
-                    class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "
-                    {{--               style=" position: relative; top: 0px !important;--}}
-                    {{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
-                >Шалені знижки у магазині Made</p><span  style="color: #3B82F6">IS</span>
-                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!<br/>
-                Останній день знижок - 12 лютого 2023 р.
+{{--    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">--}}
+{{--        <div class="py-1 ">--}}
+{{--            <div class="px-3  inline">--}}
+{{--                <p--}}
+{{--                    class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "--}}
+{{--                    --}}{{--               style=" position: relative; top: 0px !important;--}}
+{{--                    --}}{{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
+{{--                >Шалені знижки у магазині Made</p><span  style="color: #3B82F6">IS</span>--}}
+{{--                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!<br/>--}}
+{{--                Останній день знижок - 12 лютого 2023 р.--}}
 
 
-            </div>
+{{--            </div>--}}
 
-        </div>
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
     <h1 class=" text-6xl lg:text-5xl Tangerine">
         Made<span  style="color: #3B82F6">IS</span>
     </h1>
