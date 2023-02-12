@@ -43,6 +43,9 @@ class AppServiceProvider extends ServiceProvider
             if($user->username === 'Vitalli'){
                 return $user->username === 'Vitalli';
             }
+            if($user->username === 'Ludmila'){
+                return $user->username === 'Ludmila';
+            }
             if($user->username === 'Irina'){
                 return $user->username === 'Irina';
             }
