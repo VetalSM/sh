@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='UTF-8'?>
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://madeis.com.ua/ua</loc>
         <priority>1.0</priority>
@@ -26,12 +32,6 @@
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/info_contact</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/?category=candlescience_fragrance_oil</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
@@ -73,12 +73,6 @@
         <lastmod>2023-01-18</lastmod>
     </url>
     <url>
-        <loc>https://madeis.com.ua/ua/?category=Wicks</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
         <loc>https://madeis.com.ua/ua/products/Wooden_Wick_Crackling_Booster_04=12.7mm_127mm</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
@@ -115,24 +109,6 @@
         <lastmod>2023-01-18</lastmod>
     </url>
     <url>
-        <loc>https://madeis.com.ua/ua?page=2</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua?page=3</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua?page=4</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
         <loc>https://madeis.com.ua/ru/info_payment</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
@@ -146,18 +122,6 @@
     </url>
     <url>
         <loc>https://madeis.com.ua/ru/info_contact</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru/?</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru/?category=candlescience_fragrance_oil</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
@@ -193,19 +157,7 @@
         <lastmod>2023-01-18</lastmod>
     </url>
     <url>
-        <loc>https://madeis.com.ua/ru/?category=diffuser_components</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
         <loc>https://madeis.com.ua/ru/products/Augeo_Reed_Diffuser_Base</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru/?category=Wicks</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
@@ -247,24 +199,6 @@
         <lastmod>2023-01-18</lastmod>
     </url>
     <url>
-        <loc>https://madeis.com.ua/ru?page=2</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru?page=3</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru?page=4</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
         <loc>https://madeis.com.ua/ua/products/Caramel_Popcorn</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
@@ -278,12 +212,6 @@
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Citrus_Agave</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua/?category=Wax</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
@@ -392,12 +320,6 @@
     </url>
     <url>
         <loc>https://madeis.com.ua/ua/products/Oakmoss_and_Amber</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ua?page=1</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
@@ -578,12 +500,6 @@
     </url>
     <url>
         <loc>https://madeis.com.ua/ru/products/Oakmoss_and_Amber</loc>
-        <priority>1.0</priority>
-        <changefreq>always</changefreq>
-        <lastmod>2023-01-18</lastmod>
-    </url>
-    <url>
-        <loc>https://madeis.com.ua/ru?page=1</loc>
         <priority>1.0</priority>
         <changefreq>always</changefreq>
         <lastmod>2023-01-18</lastmod>
