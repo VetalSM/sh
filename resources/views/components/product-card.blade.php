@@ -112,7 +112,11 @@
 {{--                                </option>--}}
 {{--                            @endforeach--}}
 {{--                        </select>--}}
+                        @if($product->status==="1")
+                            <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">
+                                @else
                         <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
+                            @endif
                             @foreach ($sorted as $price)
                                 @foreach (\App\Models\BalanceProduct::all() as $balance)
                                     @php
