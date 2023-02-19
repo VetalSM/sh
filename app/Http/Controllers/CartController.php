@@ -40,7 +40,7 @@ class CartController extends Controller
     {
 
         $attributes = request();
-        $price = Price::all()->where('price', "$attributes->price")->first();
+        $price = Price::all()->where('name', "$attributes->prices")->first();
 
         if(!isset($price->currency)){
           $price->currency=" ";}
@@ -116,7 +116,7 @@ class CartController extends Controller
 
 //            $weight = $cart->attributes->weight * $cart->quantity;
             $total =  $cart->attributes->weight * $cart->quantity;
-
+dd($cart->attributes->weight);
             $order = new order([
                 'tel' => $attributes['tel'],
                 'credentials' => $attributes['П_І_Б'],
@@ -137,32 +137,32 @@ class CartController extends Controller
         }
 
 
-
-        $reply_markup= '';
-        $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
-        $chat_id = '-1001881481930';
-        $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн'."\n".'коментар: '.$attributes['comment'];
-
-        $ch = curl_init();
-        $ch_post = [
-            CURLOPT_URL => 'https://api.telegram.org/bot' . $bot_token . '/sendMessage',
-            CURLOPT_POST => TRUE,
-            CURLOPT_RETURNTRANSFER => TRUE,
-            CURLOPT_TIMEOUT => 10,
-            CURLOPT_POSTFIELDS => [
-                'chat_id' => $chat_id,
-                'parse_mode' => 'HTML',
-                'text' => $text,
-                'reply_markup' => $reply_markup,
-            ]
-        ];
-
-        curl_setopt_array($ch, $ch_post);
-        curl_exec($ch);
-
-
-        \Cart::clear();
-        return redirect("/".app()->getLocale())->with('order', __("Дякуємо за замовлення, найближчим часом зв'яжемося з вами!"));
+//
+//        $reply_markup= '';
+//        $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
+//        $chat_id = '-1001881481930';
+//        $text = $attributes['П_І_Б']  ."\n".' tel: ' . $attributes['tel'] . '  '."\n" . $attributes['email'] . "\n" . $attributes['address']  ."\n"."\n" . $attributes['name'] . "\n" . 'Загальна ціна: ' . $attributes['total'] . ' грн'."\n".'коментар: '.$attributes['comment'];
+//
+//        $ch = curl_init();
+//        $ch_post = [
+//            CURLOPT_URL => 'https://api.telegram.org/bot' . $bot_token . '/sendMessage',
+//            CURLOPT_POST => TRUE,
+//            CURLOPT_RETURNTRANSFER => TRUE,
+//            CURLOPT_TIMEOUT => 10,
+//            CURLOPT_POSTFIELDS => [
+//                'chat_id' => $chat_id,
+//                'parse_mode' => 'HTML',
+//                'text' => $text,
+//                'reply_markup' => $reply_markup,
+//            ]
+//        ];
+//
+//        curl_setopt_array($ch, $ch_post);
+//        curl_exec($ch);
+//
+//
+//        \Cart::clear();
+//        return redirect("/".app()->getLocale())->with('order', __("Дякуємо за замовлення, найближчим часом зв'яжемося з вами!"));
     }
 }
 
