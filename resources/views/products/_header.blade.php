@@ -1,5 +1,10 @@
 <header class="max-w-xl mx-auto  px-2 text-center">
-
+    @auth
+        <form action="{{ route('cart.clear',app()->getLocale()) }}" method="POST">
+            @csrf
+            <button >{{__("к")}}</button>
+        </form>
+    @endauth
 {{--    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">--}}
 {{--        <div class="py-1 ">--}}
 {{--            <div class="px-3  inline">--}}
