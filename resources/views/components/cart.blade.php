@@ -135,8 +135,9 @@
                                 @php
                                                                        $text=[];
                                           foreach($cartItems as $f=>$b){
-                                                     $w = $b->attributes['weight'];
-                                         $price = DB::table('prices')->where('price', "$b->price")->first();
+                                                     $w = (int)$b->attributes['weight'];
+                                                     $p = (int)$b->price;
+                                         $price = DB::table('prices')->where('weight', "$w")->where('price', "$p")->first();
                                     if(!isset($price->currency)) {
                                $price->currency=" ";
                                                          }

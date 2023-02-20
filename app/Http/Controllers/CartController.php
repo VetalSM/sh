@@ -41,7 +41,7 @@ class CartController extends Controller
 
         $attributes = request();
 
-        $price = Price::all()->where('name', "$attributes->prices")->first();
+        $price = Price::all()->where('name', "$attributes->prices")->where('price', $attributes->price)->first();
 
         if(!isset($price->currency)){
           $price->currency=" ";}
