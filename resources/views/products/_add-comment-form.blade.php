@@ -12,8 +12,8 @@
 
                 <p class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6">{{  __("Ім'я")}}</p>
                 <input type="text"  name="name"  value="{{old('name')}}"  class="text-2xl lg:text-sm border border-gray-200  p-2 w-full rounded" required/>
-                <p class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6">{{  __("Нікнейм в інстаграм (обов'язково для участі в акції)")}}</p>
-                <input type="text"  name="nickName"  value="{{old('nickName')}}"  class="text-2xl lg:text-sm border border-gray-200  p-2 w-full rounded" required/>
+{{--                <p class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6">{{  __("Нікнейм в інстаграм (обов'язково для участі в акції)")}}</p>--}}
+{{--                <input type="text"  name="nickName"  value="{{old('nickName')}}"  class="text-2xl lg:text-sm border border-gray-200  p-2 w-full rounded" required/>--}}
                 <p class="block mb-2 uppercase font-bold text-xs text-gray-700   w-full rounded mt-6">{{  __('Телефон')}}</p>
                 <input type="text"  name="tel"  value="{{old('tel')}}"  class="text-2xl lg:text-sm border border-gray-200  p-2 w-full rounded" required/>
                 <x-form.error name="tel"/>
