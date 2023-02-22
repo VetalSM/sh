@@ -1,15 +1,36 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 <main class="max-w-6xl mx-auto my-8">
     <div class=" px-6 mx-auto">
         <div class="flex justify-center my-6">
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
+                <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">
+                    <div class="py-1 ">
+                        <div class="px-3  inline">
+                            <span class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full" style=" font-weight: 600;">Економте разом із Made</span><span style="color:#3B82F6; font-weight: 600;">IS</span>!
+                            <br>
+                            <h7  style="color: rgba(255,26,26,0.84)">5% </h7> від  <h7 style="color: rgba(255,26,26,0.84)">500грн!</h7>&nbsp;&nbsp;&nbsp;
+                            <h7  style="color: rgba(255,26,26,0.84)">10% </h7>від <h7 style="color: rgba(255,26,26,0.84)">2000грн!</h7><br>
+                            <h7  style="color: rgba(255,26,26,0.84)">8% </h7>від <h7 style="color: rgba(255,26,26,0.84)">1000грн!</h7>&nbsp;
+                            <h7  style="color: rgba(255,26,26,0.84)">12% </h7>від <h7 style="color: rgba(255,26,26,0.84)">3000грн!</h7><br>
+                            Знижки будуть нараховані при оформленні замовлення, якщо сума замовлення перевищує 500грн.<br/>
+                            Акція діє з 23.02 по 28.02 включно.
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <p/>
                 @if ($message = Session::get('success'))
                     <div class="p-4 mb-3 bg-green-400 rounded">
                         <p class="text-green-800 text-xl lg:text-base">{{ $message }}</p>
                     </div>
                 @endif
+
                 <h3 class="text-3xl text-bold">{{__("Кошик")}}</h3>
                 <div class="flex-1">
                     <table class="w-full md:table-auto" cellspacing="0">
@@ -97,9 +118,43 @@
 {{--                            {{__("gthtry")}}--}}
 {{--                        </button>--}}
 {{--                    </form>--}}
+
+                    @php
+                        if (Cart::getTotal() >= 500 and Cart::getTotal() <= 1000){
+                          $percent = 0.95;
+                      }
+                      if (Cart::getTotal() >= 1000 and Cart::getTotal() <= 2000){
+                          $percent = 0.92;
+                      }
+                       if (Cart::getTotal() >= 2000 and Cart::getTotal() <= 3000){
+                          $percent = 0.90;
+                      }
+                        if (Cart::getTotal() >= 3000 ){
+                          $percent = 0.88;
+                      }
+                         if (Cart::getTotal() >= 500 ){
+                      $total = Cart::getTotal() * $percent;
+                       $sale = Cart::getTotal() - $total;
+                       }
+
+                    @endphp
                     <div class="text-xl">
                         @if(isset($price->currency))
-                              {{__("Загальна вартість:")}} {{ Cart::getTotal() }} {{$price->currency}}
+                            @if(Cart::getTotal() >= 500)
+                            {{__("Загальна вартість:")}}   <del>{{ Cart::getTotal() }}</del> {{$price->currency}}
+                                <input type="hidden" value="{{$total}}" name="total" class="text-xs" required/>
+                            @else
+                                {{__("Загальна вартість: ")}} {{ Cart::getTotal() }}{{ $price->currency}}
+                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
+                            @endif
+
+                        @if(Cart::getTotal() >= 500)
+                                <p style="color: red">{{__("Знижка: ")}}{{ $sale}} {{$price->currency}}</p>
+                            <span>{{__("До сплати: ")}}</span><span style=" font-weight: 700;"> {{$total}} {{$price->currency}}</span>
+
+                        @endif
+
+
                         @else
 
                         @endif
@@ -145,7 +200,13 @@
                            ' к-во'.': '.$b->quantity. '|'.' Всього: '.$b->price*$b->quantity.' '.$price->currency."\n";}
                                 @endphp
                                 <input type="hidden" value="{{implode("", $text)}}" name="name" class="text-xs" required/>
-                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
+{{--                                <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>--}}
+{{--                                promotion telrgram--}}
+                                @if(Cart::getTotal() >= 500)
+                                    <input type="hidden" value="{{$total}}" name="total" class="text-xs" required/>
+                                @else
+                                    <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
+                                @endif
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" value="{{old('tel')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                 <x-form.error name="tel"/>
                              <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">{{__("email")}}</p>  <input type="email" placeholder="email" name="email"  value="{{old('email')}}"  class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>

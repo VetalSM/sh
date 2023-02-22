@@ -5,22 +5,23 @@
             <button >{{__("к")}}</button>
         </form>
     @endauth
-{{--    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">--}}
-{{--        <div class="py-1 ">--}}
-{{--            <div class="px-3  inline">--}}
-{{--                <p--}}
-{{--                    class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full "--}}
-{{--                    --}}{{--               style=" position: relative; top: 0px !important;--}}
-{{--                    --}}{{--            text-decoration: none;  border: 3px solid rgb(255, 179, 0);"--}}
-{{--                >Шалені знижки у магазині Made</p><span  style="color: #3B82F6">IS</span>--}}
-{{--                    <h3  style="color: rgba(255,26,26,0.84)">до -20% на всі товари!</h3> Ціни на сайті вказані вже з урахуванням знижки!<br/>--}}
-{{--                Останній день знижок - 12 лютого 2023 р.--}}
+    <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">
+        <div class="py-1 ">
+            <div class="px-3  inline">
+                <span class=" text-sm  lg:text-base  text-black inline  px-1 rounded-full" style=" font-weight: 600;">Економте разом із Made</span><span style="color:#3B82F6; font-weight: 600;">IS</span>!
+                <br>
+                        <h7  style="color: rgba(255,26,26,0.84)">5% </h7> від  <h7 style="color: rgba(255,26,26,0.84)">500грн!</h7>&nbsp;&nbsp;&nbsp;
+                <h7  style="color: rgba(255,26,26,0.84)">10% </h7>від <h7 style="color: rgba(255,26,26,0.84)">2000грн!</h7><br>
+                <h7  style="color: rgba(255,26,26,0.84)">8% </h7>від <h7 style="color: rgba(255,26,26,0.84)">1000грн!</h7>&nbsp;
+                        <h7  style="color: rgba(255,26,26,0.84)">12% </h7>від <h7 style="color: rgba(255,26,26,0.84)">3000грн!</h7><br>
+                 Знижки будуть нараховані при оформленні замовлення у кошику у відсотках відповідно до суми замовлення!<br/>
+                Акція діє з 23.02 по 28.02 включно.
 
 
-{{--            </div>--}}
+            </div>
 
-{{--        </div>--}}
-{{--    </div>--}}
+        </div>
+    </div>
     <h1 class=" text-6xl lg:text-5xl Tangerine">
         Made<span  style="color: #3B82F6">IS</span>
     </h1>
