@@ -139,7 +139,7 @@
 
 {{--                    @endphp--}}
                     <div class="text-xl">
-{{--                        @if(isset($price->currency))--}}
+                        @if(isset($price->currency))
 {{--                            @if(Cart::getTotal() >= 500)--}}
 {{--                            {{__("Загальна вартість:")}}   <del>{{ Cart::getTotal() }}</del> {{$price->currency}}--}}
 {{--                                <input type="hidden" value="{{$total}}" name="total" class="text-xs" required/>--}}
@@ -157,7 +157,7 @@
 
 {{--                        @else--}}
 
-{{--                        @endif--}}
+                        @endif
 
                     </div>
                     <br>
@@ -205,7 +205,7 @@
 {{--                                @if(Cart::getTotal() >= 500)--}}
 {{--                                    <input type="hidden" value="{{$total}}" name="total" class="text-xs" required/>--}}
 {{--                                @else--}}
-                                    <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" required/>
+                                    <input type="hidden" value="{{Cart::getTotal()}}" name="total" class="text-xs" />
 {{--                                @endif--}}
                               <p class="block mb-2 uppercase font-bold text-2xl lg:text-base text-gray-700   w-full rounded mt-6">tel</p> <input type="tel" placeholder="+380" name="tel" value="{{old('tel')}}" class="text-2xl lg:text-base border border-gray-200  p-2 w-full rounded" required/>
                                 <x-form.error name="tel"/>
