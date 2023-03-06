@@ -137,7 +137,6 @@ class CartController extends Controller
         }
 
 
-
         $reply_markup= '';
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
         $chat_id = '-1001881481930';
@@ -159,7 +158,65 @@ class CartController extends Controller
 
         curl_setopt_array($ch, $ch_post);
         curl_exec($ch);
+// несколько получателей
+        $user = $attributes['П_І_Б'];
+        $to = " $user <vitaliism1992@gmail.com>"; // обратите внимание на запятую
 
+// тема письма
+        $subject = 'Деталі по замовленню';
+
+// текст письма
+        $message = "
+<html>
+<head>
+  <title>Деталі по замовленню</title>
+</head>
+<body>
+  <p/>Вітаємо, $user!<br>
+  <span>Дякуємо Вам за замовлення у нашому магазині <a href='https://madeis.com.ua/'>madeis.com.ua</a>!</span>
+<span>Деталі по Вашому замовленню:</span><p/>
+    <table name='contact_seller' style='border-collapse:collapse';>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Part Number</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>";
+        foreach(\Cart::getContent() as $cart) {
+            $message .="<tr>
+                            <td>" . $cart->attributes->image . $cart->name  .
+            $cart->weight. $cart->unit . $cart->price.$cart->currency."</td>
+
+                            <td>".['part_number']."</td>
+                            <td>".['description']."</td>
+                            <td>".['quantity']."</td>
+                        </tr>";
+        }
+        $message .= "</tbody>
+            </table>
+ <p/><span>Найближчим часом з Вами зв'яжеться менеджер для підтвердження наявності всіх позицій та уточнення деталей.<br/>
+   Тільки після уточнення наявності позицій, замовлення може бути оплачене.</span><br/>
+   <span style='font-weight: bold'>Звертаємо Вашу увагу, що всі замовлення, узгоджені та оплачені до 13:00, відправляємо того ж дня! </span><br/>
+<span>З найкращими побажаннями, команда MadeIS!</span>
+</body>
+</html>
+";
+
+// Для отправки HTML-письма должен быть установлен заголовок Content-type
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers  .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+// Дополнительные заголовки
+// $headers .= 'To: "Vitalii"';
+        $headers .= 'From: 	"madeis.com.ua" <support@madeis.com.ua> ';
+// $headers .= 'Cc: support@madeis.com.ua';
+// $headers .= 'Bcc: support@madeis.com.ua';
+
+// Отправляем
+        mail($to, $subject, $message,  $headers);
 
         \Cart::clear();
         return redirect("/".app()->getLocale())->with('order', __("Дякуємо за замовлення, найближчим часом зв'яжемося з вами!"));
