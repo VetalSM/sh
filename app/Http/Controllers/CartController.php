@@ -190,9 +190,9 @@ class CartController extends Controller
                             <td>" . $cart->attributes->image . $cart->name  .
             $cart->weight. $cart->unit . $cart->price.$cart->currency."</td>
 
-                            <td>".['part_number']."</td>
-                            <td>".['description']."</td>
-                            <td>".['quantity']."</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
                         </tr>";
         }
         $message .= "</tbody>
