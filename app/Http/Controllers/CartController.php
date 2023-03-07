@@ -190,10 +190,10 @@ class CartController extends Controller
                             <td>
                               <a href="#">
                                         <img src="https://madeis.com.ua/storage/'.$cart->attributes->image.'"  alt="image"
-                                             width="80" height="80"> '.$cart->name.'  <br/>
-            '.$cart->attributes->weight. $cart->attributes->unit. ' / '. $cart->price.$cart->attributes->currency.'</td>
+                                             width="80" height="80"> </td>
  </a>
-                            <td>1</td>
+                            <td>'.$cart->name.'  <br/>
+            '.$cart->attributes->weight. $cart->attributes->unit. ' / '. $cart->price.$cart->attributes->currency.'</td>
                             <td>2</td>
                             <td>3</td>
                         </tr>';
