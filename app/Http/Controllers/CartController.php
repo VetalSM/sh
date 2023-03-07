@@ -178,7 +178,7 @@ class CartController extends Controller
     <table name='contact_seller' style='border-collapse:collapse';>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th></th>
                         <th>Part Number</th>
                         <th>Description</th>
                         <th>Quantity</th>
@@ -186,6 +186,8 @@ class CartController extends Controller
                 </thead>
                 <tbody>";
         foreach(\Cart::getContent() as $cart) {
+            $totalMail = $attributes["total"];
+            $product_total =  $cart->price * $cart->quantity;
             $message .='<tr>
                             <td>
                               <a href="#">
@@ -194,12 +196,13 @@ class CartController extends Controller
  </a>
                             <td>'.$cart->name.'  <br/>
             '.$cart->attributes->weight. $cart->attributes->unit. ' / '. $cart->price.$cart->attributes->currency.'</td>
-                            <td>2</td>
-                            <td>3</td>
+                            <td>'  .  '</td>
+                            <td>'.$product_total.$cart->attributes->currency.'</td>
                         </tr>';
         }
         $message .= "</tbody>
             </table>
+            <span>До сплати: $totalMail грн</span>
  <p/><span>Найближчим часом з Вами зв'яжеться менеджер для підтвердження наявності всіх позицій та уточнення деталей.<br/>
    Тільки після уточнення наявності позицій, замовлення може бути оплачене.</span><br/>
    <span style='font-weight: bold'>Звертаємо Вашу увагу, що всі замовлення, узгоджені та оплачені до 13:00, відправляємо того ж дня! </span><br/>
