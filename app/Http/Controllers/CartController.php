@@ -186,14 +186,16 @@ class CartController extends Controller
                 </thead>
                 <tbody>";
         foreach(\Cart::getContent() as $cart) {
-            $message .="<tr>
-                            <td>" . $cart->attributes->image . $cart->name  .
-            $cart->weight. $cart->unit . $cart->price.$cart->currency."</td>
+            $message .='<tr>
+                            <td>
+                                        <img src="madeis.com.ua/storage/storage/ '.$cart->attributes->image.'"  alt="image"
+                                             width="80" height="80"> '.$cart->name.'  <br/>
+            '.$cart->weight.'.' .$cart->unit.' . $cart->price.$cart->currency."</td>
 
                             <td>1</td>
                             <td>2</td>
                             <td>3</td>
-                        </tr>";
+                        </tr>';
         }
         $message .= "</tbody>
             </table>
