@@ -160,7 +160,8 @@ class CartController extends Controller
         curl_exec($ch);
 // несколько получателей
         $user = $attributes['П_І_Б'];
-        $to = " $user <vitaliism1992@gmail.com>"; // обратите внимание на запятую
+        $emailS= $attributes['email'];
+        $to = " $user <$emailS>"; // обратите внимание на запятую
 
 // тема письма
         $subject = 'Деталі по замовленню';
@@ -179,9 +180,9 @@ class CartController extends Controller
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Part Number</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
+                        <th>Найменування</th>
+                        <th>Кількість</th>
+                        <th>ціна</th>
                     </tr>
                 </thead>
                 <tbody>";
@@ -196,7 +197,7 @@ class CartController extends Controller
  </a>
                             <td>'.$cart->name.'  <br/>
             '.$cart->attributes->weight. $cart->attributes->unit. ' / '. $cart->price.$cart->attributes->currency.'</td>
-                            <td>'  .  '</td>
+                            <td>'.  $cart->quantity  .'</td>
                             <td>'.$product_total.$cart->attributes->currency.'</td>
                         </tr>';
         }
