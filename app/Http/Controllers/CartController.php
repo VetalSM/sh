@@ -190,7 +190,7 @@ class CartController extends Controller
                             <td>
                                         <img src="https://madeis.com.ua/storage/storage/ '.$cart->attributes->image.'"  alt="image"
                                              width="80" height="80"> '.$cart->name.'  <br/>
-            '.$cart->attributes->weight. $cart->attributes->unit.' . $cart->price.$cart->currency."</td>
+            '.$cart->attributes->weight. $cart->attributes->unit. ' '. $cart->price.$cart->currency.'</td>
 
                             <td>1</td>
                             <td>2</td>
