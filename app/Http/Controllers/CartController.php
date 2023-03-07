@@ -181,6 +181,7 @@ class CartController extends Controller
                     <tr>
                         <th></th>
                         <th>Найменування</th>
+                         <th>   </th>
                         <th>Кількість</th>
                         <th>ціна</th>
                     </tr>
@@ -197,6 +198,7 @@ class CartController extends Controller
  </a>
                             <td>'.$cart->name.'  <br/>
             '.$cart->attributes->weight. $cart->attributes->unit. ' / '. $cart->price.$cart->attributes->currency.'</td>
+             <td>' . '</td>
                             <td>'.  $cart->quantity  .'</td>
                             <td>'.$product_total.$cart->attributes->currency.'</td>
                         </tr>';
