@@ -188,9 +188,9 @@ class CartController extends Controller
         foreach(\Cart::getContent() as $cart) {
             $message .='<tr>
                             <td>
-                                        <img src="https://madeis.com.ua/storage/storage/ '.$cart->attributes->image.'"  alt="image"
+                                        <img src="https://madeis.com.ua/storage/ '.$cart->attributes->image.'"  alt="image"
                                              width="80" height="80"> '.$cart->name.'  <br/>
-            '.$cart->attributes->weight. $cart->attributes->unit. ' '. $cart->price.$cart->currency.'</td>
+            '.$cart->attributes->weight. $cart->attributes->unit. '/'. $cart->price.$cart->attributes->currency.'</td>
 
                             <td>1</td>
                             <td>2</td>
