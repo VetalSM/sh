@@ -161,7 +161,7 @@ class CartController extends Controller
 // несколько получателей
         $user = $attributes['П_І_Б'];
         $emailS= $attributes['email'];
-        $to = " $user <$emailS>"; // обратите внимание на запятую
+        $to = " $user <$emailS>,$user <support@madeis.com.ua>"; // обратите внимание на запятую
 
 // тема письма
         $subject = 'Деталі по замовленню';
