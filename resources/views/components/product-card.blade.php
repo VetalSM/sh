@@ -126,7 +126,7 @@
                                         @if($data >= $price->weight )
                                             @if((int)$price->weight <= $data)
                                                 <option value="{{ $price->price }} "
-                                                    @endif
+
                                                 >
                                                     {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
                                                 </option>
