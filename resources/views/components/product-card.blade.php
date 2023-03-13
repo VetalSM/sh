@@ -119,9 +119,7 @@
                             @endif
                             @foreach ($sorted as $price)
                                 @foreach (\App\Models\BalanceProduct::all() as $balance)
-                                    @php
-                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
-                                    @endphp
+
                                     @if((int)$balance->product_id === $product->id)
 
                                                 <option value="{{ $price->price }} "
