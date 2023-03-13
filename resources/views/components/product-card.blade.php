@@ -126,8 +126,6 @@
                                         @if($data >= $price->weight )
                                             @if((int)$price->weight <= $data)
                                                 <option value="{{ $price->price }} "
-                                                @if ($price->weight === "10" && $price->unit === 'г')
-                                                    {{'selected="selected"'}}
                                                     @endif
                                                 >
                                                     {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
