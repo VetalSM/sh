@@ -119,9 +119,12 @@
                             @endif
                             @foreach ($sorted as $price)
                                 @foreach (\App\Models\BalanceProduct::all() as $balance)
-
+                                    @php
+                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                    @endphp
                                     @if((int)$balance->product_id === $product->id)
-
+                                        @if($data >= $price->weight )
+                                            @if((int)$price->weight <= $data)
                                                 <option value="{{ $price->price }} "
                                                 @if ($price->weight === "10" && $price->unit === 'г')
                                                     {{'selected="selected"'}}
@@ -129,7 +132,8 @@
                                                 >
                                                     {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
                                                 </option>
-
+                                            @endif
+                                        @endif
                                     @endif
                                 @endforeach
                             @endforeach
