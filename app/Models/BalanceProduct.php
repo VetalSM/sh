@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BalanceProduct extends Model
 {
-    protected $table = 'balance_products';
+    use HasFactory;
 
     public function orders()
     {
