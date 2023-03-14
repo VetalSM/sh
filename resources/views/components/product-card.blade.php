@@ -118,7 +118,8 @@
                         <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
                             @endif
                             @php
-                                $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
+                                    $button = false;
+                                    $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
                             @endphp
                             @foreach ($sorted as $price)
                                 @php
@@ -133,6 +134,11 @@
                                     @if ($balance->product_id !== $product->id || $availableQuantity < $weight)
                                         @continue
                                     @endif
+                                @if($availableQuantity >= $weight)
+                                        @php
+                                            $button = true;
+                                        @endphp
+                                @endif
                                     <option value="{{ $price->price }} " @if ($weight === "10" && $unit === 'г') selected="selected" @endif>
                                         {{ $weight }}{{ $unit }} {{ $price->price }}{{ $currency }}
                                     </option>
@@ -149,9 +155,11 @@
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
                                     @php
-                                        $button = \App\Models\BalanceProduct::where('product_id', $product->id)
-                                            ->whereRaw('count - (SELECT COALESCE(SUM(total), 0) FROM orders WHERE product_id = balance_products.product_id) >= ?', [$sorted->max('weight')])
-                                            ->exists();
+
+//                                        $button = \App\Models\BalanceProduct::where('product_id', $product->id)
+//                                            ->whereRaw('count - (SELECT COALESCE(SUM(total), 0) FROM orders WHERE product_id = balance_products.product_id) >= ?', [$sorted->max('weight')])
+//                                            ->exists();
+//                                           var_dump($button);
                                     @endphp
 
                         @if($button === true && ($product->status !== "7"))
