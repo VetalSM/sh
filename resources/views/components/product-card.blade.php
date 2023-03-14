@@ -122,29 +122,33 @@
                                     $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
                             @endphp
                             @foreach ($sorted as $price)
-                                @php
-                                    $weight = $price->weight;
-                                    $currency = $price->currency;
-                                    $unit = $price->unit;
-                                @endphp
                                 @foreach ($balanceProducts as $balance)
                                     @php
-                                        $availableQuantity = $balance->count - $balance->orders->sum('total');
+
+                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
                                     @endphp
-                                    @if ($balance->product_id !== $product->id || $availableQuantity < $weight)
-                                        @continue
+                                    @if((int)$balance->product_id === $product->id)
+                                        @if($data >= $price->weight )
+                                            @if((int)$price->weight <= $data)
+                                                @if( $data >=1)
+                                                    @php
+                                                        $button = true;
+
+                                                    @endphp
+                                                @endif
+                                                <option value="{{ $price->price }} "
+                                                @if ($price->weight === "10" && $price->unit === 'г')
+                                                    {{'selected="selected"'}}
+                                                    @endif
+                                                >
+                                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
+                                                </option>
+                                            @endif
+                                        @endif
                                     @endif
-                                @if($availableQuantity >= $weight)
-                                        @php
-                                            $button = true;
-                                        @endphp
-                                @endif
-                                    <option value="{{ $price->price }} " @if ($weight === "10" && $unit === 'г') selected="selected" @endif>
-                                        {{ $weight }}{{ $unit }} {{ $price->price }}{{ $currency }}
-                                    </option>
-                                    @break
                                 @endforeach
                             @endforeach
+
                         </select>
 
 

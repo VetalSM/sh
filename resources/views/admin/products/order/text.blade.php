@@ -80,11 +80,11 @@
                     <div class="text-xl">
                         {{__("Загальна вартість:")}} {{ $orders->sum('product_total')}} {{$item->currency}}
                         <br/>
-                        @if( $order->payment_status === 1)
+                        @if( $order->payment_status == 1)
                             <span class="text-dark" style="text-decoration: none;">
                                                    <span style="text-decoration: none; color: red">
                                                       *</span>{{__("Сплачено")}}</span><span style="text-decoration: none; color: red">*</span>
-                            @if($order->delivery_status === 1)
+                            @if($order->delivery_status == 1)
                                 <span class="text-dark" style="text-decoration: none;">
                                                    <span style="text-decoration: none; color: red">
                                                       *</span>{{__("Відправлено")}}</span><span style="text-decoration: none; color: red">*</span>
