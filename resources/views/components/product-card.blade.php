@@ -117,24 +117,26 @@
                                 @else
                         <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
                             @endif
+                            @php
+                                $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
+                            @endphp
                             @foreach ($sorted as $price)
-                                @foreach (\App\Models\BalanceProduct::all() as $balance)
+                                @php
+                                    $weight = $price->weight;
+                                    $currency = $price->currency;
+                                    $unit = $price->unit;
+                                @endphp
+                                @foreach ($balanceProducts as $balance)
                                     @php
-                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                        $availableQuantity = $balance->count - $balance->orders->sum('total');
                                     @endphp
-                                    @if((int)$balance->product_id === $product->id)
-                                        @if($data >= $price->weight )
-                                            @if((int)$price->weight <= $data)
-                                                <option value="{{ $price->price }} "
-                                                @if ($price->weight === "10" && $price->unit === 'г')
-                                                    {{'selected="selected"'}}
-                                                    @endif
-                                                >
-                                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
-                                                </option>
-                                            @endif
-                                        @endif
+                                    @if ($balance->product_id !== $product->id || $availableQuantity < $weight)
+                                        @continue
                                     @endif
+                                    <option value="{{ $price->price }} " @if ($weight === "10" && $unit === 'г') selected="selected" @endif>
+                                        {{ $weight }}{{ $unit }} {{ $price->price }}{{ $currency }}
+                                    </option>
+                                    @break
                                 @endforeach
                             @endforeach
                         </select>
@@ -146,25 +148,12 @@
                         <input type="hidden" value="{{$title}}" name="name">
                         <input type="hidden" value="{{ $product->thumbnail }}" name="image">
                         <input type="hidden" value="1" name="quantity">
-                        @php
-                            $button = false;
-                        @endphp
-                        @foreach ($sorted as $price)
-                            @foreach (\App\Models\BalanceProduct::all() as $balance)
-                                @php
-                                    $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
-                                @endphp
-                                @if((int)$balance->product_id === $product->id)
-                                    @if($data >= $price->weight )
-                                        @if((int)$price->weight <= $data)
-                                        @php
-                                            $button = true;
-                                        @endphp
-                                        @endif
-                                    @endif
-                                @endif
-                            @endforeach
-                        @endforeach
+                                    @php
+                                        $button = \App\Models\BalanceProduct::where('product_id', $product->id)
+                                            ->whereRaw('count - (SELECT COALESCE(SUM(total), 0) FROM orders WHERE product_id = balance_products.product_id) >= ?', [$sorted->max('weight')])
+                                            ->exists();
+                                    @endphp
+
                         @if($button === true && ($product->status !== "7"))
                             <button
                                 class=" cartbutton transition-colors  hover: rounded-3xl py-2 px-1 " style="float:right;">

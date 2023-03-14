@@ -15,9 +15,12 @@
                             </tr>
 
                             @foreach (\App\Models\Order::all()->unique('created')->sortByDesc('created_at') as $order)
-                                @if($order->payment_status === 1 &&  ($order->delivery_status === 1))
+
+                                @if($order->payment_status == 1 &&  ($order->delivery_status == 1))
+
                                     <tr style="background-color:#39e634">
-                                @elseif($order->payment_status === 1)
+                                @elseif($order->payment_status == 1)
+
                                     <tr style="background-color:#f6e643">
 
                                 @else
@@ -35,7 +38,7 @@
                                         <form method="GET"
                                               action="/{{app()->getLocale()}}/admin/products/delivery_status">
                                             @csrf
-                                            @if( $order->delivery_status === 1)
+                                            @if( $order->delivery_status == 1)
                                                 <input type="checkbox" name="delivery_status" value="0" checked="checked" onChange="submit()" >
                                             @else
                                                 <input type="checkbox" name="delivery_status" value="1" onChange="submit()" >
@@ -89,7 +92,7 @@
                                         <form method="GET"
                                               action="/{{app()->getLocale()}}/admin/products/payment_status">
                                             @csrf
-                                            @if( $order->payment_status === 1)
+                                            @if( $order->payment_status == 1)
                                                 <input type="checkbox" name="payment_status" value="0" checked="checked" onChange="submit()" >
                                             @else
                                                 <input type="checkbox" name="payment_status" value="1" onChange="submit()" >

@@ -16,12 +16,14 @@ class CreateBalanceProductsTable extends Migration
         Schema::create('balance_products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->string('count');
             $table->string('unit');
             $table->string('expected')->nullable();
             $table->string('old_count')->nullable();
             $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
         });
     }
 

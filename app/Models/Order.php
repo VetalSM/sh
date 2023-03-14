@@ -7,8 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory;
-    public static function paginate(int $int)
-    {
-    }
+    protected $table = 'orders';
 }
