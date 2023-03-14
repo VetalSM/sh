@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class BalanceProduct extends Model
 {
-    use HasFactory;
+    protected $table = 'balance_products';
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'product_id');
+    }
 }
+
+

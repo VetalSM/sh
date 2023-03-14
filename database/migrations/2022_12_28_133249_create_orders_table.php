@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->text('address')->nullable();
             $table->text('comment')->nullable();
             $table->text('product')->nullable();
-            $table->text('product_id')->nullable();
+            $table->unsignedBigInteger('product_id');
             $table->text('price')->nullable();
             $table->text('currency')->nullable();
             $table->text('weight')->nullable();
@@ -32,7 +32,7 @@ class CreateOrdersTable extends Migration
             $table->text('payment_status')->nullable();
             $table->text('delivery_status')->nullable();
             $table->timestamps();
-
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
