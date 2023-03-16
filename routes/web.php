@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminProductsPriceController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\NewsletterController;
@@ -53,8 +54,9 @@ Route::group(
         Route::resource('/admin/products/comments', AdminCommentController::class);
         Route::resource('/admin/products/categories', AdminCategoryController::class);
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
-        Route::resource('/admin/products/orders',  AdminOrderController::class)->missing(function (Request $request) {
-            return redirect("/".app()->getLocale()."/admin/products/orders");
+//        Route::resource('/admin/products/products_prices', AdminProductsPriceController::class);
+        Route::resource('/admin/products/orders',  AdminOrderController::class)->missing(function (Request $request) {return redirect("/".app()->getLocale()."/admin/products/orders");
+
 
         });;
         Route::get('/admin/products/orders_sort',  [AdminOrderController::class, 'date']);

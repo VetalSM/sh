@@ -67,12 +67,12 @@
                 <li>
                                         <a href="/{{app()->getLocale()}}/admin/products/orders_text" class="{{ request()->is('admin/products/orders_text') ? 'text-blue-500' : '' }}">Заявки на печать</a>
                 </li>
-                <li>
-                    {{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
-                </li>
-                <li>
-                    {{--                    <a href="/{{app()->getLocale()}}/admin/products/balance_products/create" class="{{ request()->is('admin/products/balance_products/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
-                </li>
+{{--                <li>--}}
+{{--                                        <a href="/{{app()->getLocale()}}/admin/products/products_prices" class="{{ request()->is('/admin/products/products_prices') ? 'text-blue-500' : '' }}">11111111111</a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="/{{app()->getLocale()}}/admin/products/products_prices/create" class="{{ request()->is('admin/products/products_prices/create') ? 'text-blue-500' : '' }}">новый продукт</a>--}}
+{{--                </li>--}}
             </ul>
         </aside>
 
