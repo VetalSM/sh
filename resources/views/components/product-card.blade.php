@@ -32,9 +32,9 @@
                     >{{__("Повний опис")}}</a>
                 </div>
                 <div class="mt-10 lg:mt-10  ">
-                    <div class=" text-2xl" >
+                    <div>
                         <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}"  >
-                            {{ $title }}
+                            <h4>{{ $title }}</h4>
                         </a>
 
 
