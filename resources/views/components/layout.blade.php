@@ -5,19 +5,19 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>
+{{--    <script>(function (w, d, s, l, i) {--}}
+{{--            w[l] = w[l] || [];--}}
+{{--            w[l].push({--}}
+{{--                'gtm.start':--}}
+{{--                    new Date().getTime(), event: 'gtm.js'--}}
+{{--            });--}}
+{{--            var f = d.getElementsByTagName(s)[0],--}}
+{{--                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';--}}
+{{--            j.async = true;--}}
+{{--            j.src =--}}
+{{--                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;--}}
+{{--            f.parentNode.insertBefore(j, f);--}}
+{{--        })(window, document, 'script', 'dataLayer', 'GTM-KX8DH3S');</script>--}}
     <!-- End Google Tag Manager -->
 {{--    <!-- Google tag (gtag.js) -->--}}
 {{--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>--}}
@@ -98,12 +98,12 @@
     </style>
 </head>
 <body style="font-family: Open Sans, sans-serif">
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8DH3S"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
+{{--<!-- Google Tag Manager (noscript) -->--}}
+{{--<noscript>--}}
+{{--    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8DH3S"--}}
+{{--            height="0" width="0" style="display:none;visibility:hidden"></iframe>--}}
+{{--</noscript>--}}
+{{--<!-- End Google Tag Manager (noscript) -->--}}
 
 <div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
     <div class="py-1 text-centre">
