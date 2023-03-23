@@ -59,7 +59,7 @@ class CartController extends Controller
                 'prod_id'=>$attributes->prod_id,
             )
         ]);
-        session()->flash('success', __('Товар додано у кошик!'));
+        session()->flash('prod_cart', __('Товар додано у кошик!'));
 
 
         return  redirect(session('prod_url'));
