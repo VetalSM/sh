@@ -14,7 +14,7 @@
             gtag('config', 'G-CY3K5VV4KR');
         </script>
     <script>
-        var $window = $(window)
+        var $window = (window)
         window.scroll(0, localStorage.getItem('scrollPosition')|0)
         $window.scroll(function () {
             localStorage.setItem('scrollPosition', $window.scrollTop())
