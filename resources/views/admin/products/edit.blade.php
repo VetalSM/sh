@@ -70,8 +70,26 @@
             <span> {{$product->ifra_certificate}}</span>
             <x-form.input name="safety" type="file" />
             <span> {{$product->safety}}</span>
+
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $product->excerpt) }}</x-form.textarea>
-            <x-form.textarea name="body" required>{{ old('body', $product->body) }}</x-form.textarea>
+            <textarea id="content" name="body" required>{{ old('body', $product->body) }}</textarea>
+
+            <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+            <script>
+                tinymce.init({
+                    selector: '#content',
+                    language: 'ru',
+                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    tinycomments_mode: 'embedded',
+
+                    tinycomments_author: 'Author name',
+                    mergetags_list: [
+                        { value: 'First.Name', title: 'First Name' },
+                        { value: 'Email', title: 'Email' },
+                    ]
+                });
+            </script>
             <x-form.textarea name="meta_title" >{{ old('meta_title', $product->meta_title) }}</x-form.textarea>
             <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
             <x-form.textarea name="meta_description" >{{ old('meta_description', $product->meta_description) }}</x-form.textarea>

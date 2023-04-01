@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PackagePricesTable extends Migration
+class CreateArtCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class PackagePricesTable extends Migration
      */
     public function up()
     {
-        Schema::create('package_prices', function (Blueprint $table) {
+        Schema::create('art_categories', function (Blueprint $table) {
             $table->id();
-            $table->text('weight')->nullable();
-            $table->text('bottle')->nullable();
-            $table->text('sticker')->nullable();
-            $table->text('package')->nullable();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->timestamps();
-
         });
-    }
 
+    }
 
     /**
      * Reverse the migrations.
@@ -32,6 +29,6 @@ class PackagePricesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(' package_prices');
+        Schema::dropIfExists('art_categories');
     }
 }

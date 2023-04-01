@@ -57,6 +57,7 @@ class AdminCategoryController extends Controller
 
     public function destroy($locale,Category $category)
     {
+
         $category->delete();
 
         return redirect('/'.app()->getLocale().'/admin/products/categories')->with('success', 'Price Deleted!');
