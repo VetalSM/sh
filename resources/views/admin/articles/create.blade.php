@@ -31,6 +31,7 @@
             <script>
                 tinymce.init({
                     selector: '#body, #excerpt',
+                    language: 'ru',
                     plugins: 'image link code',
                     toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
                     relative_urls: false,
