@@ -17,7 +17,7 @@
         <p>{{ session('order') }}</p>
     </div>
 @endif
-@if ( Cart::getContent()->count()) {
+@if ( Cart::getContent()->count())
 <div class="fixed  py-1 px-3 rounded-full bottom-3 right-3   text-xl" style="background-color:hsla(0,0%,100%,0.71);">
     <a href="{{ route('cart.list',app()->getLocale()) }}" class="flex mr-18 items-center">
         <img src="/images/cart12.png" alt="cart" width="35" height="35">

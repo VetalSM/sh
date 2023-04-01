@@ -5,6 +5,12 @@
         <div class="  hidden lg:inline-flex py-1 mt-4">
         <p class="inline">{{ __('Категорії:') }}</p>
         <div class=" px-2  inline rounded-full"  style=" position: relative;" >
+            <div class="lg:px-1  inline text-black rounded-full" >
+                <a class="lg:px-2  inline text-black rounded-full" style=" text-decoration: none; border: 3px solid rgb(150,223,239); background-color: #f1ebeb;"
+                   href="/{{app()->getLocale()}}/?">
+                    {{  __('Всі')}}
+                </a>
+            </div>
             @foreach (App\Models\Category::all() as $category)
                 <div class="lg:px-1  inline text-black rounded-full" >
                     <a class="lg:px-2  inline text-black rounded-full" style=" text-decoration: none; border: 3px solid rgb(150,223,239); background-color: #f1ebeb;"
