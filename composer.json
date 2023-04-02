@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "mailchimp/marketing": "^3.0",
         "spatie/yaml-front-matter": "^2.0",
+        "tinymce/tinymce": "^6.4",
         "unisharp/laravel-filemanager": "^2.6"
     },
     "require-dev": {
