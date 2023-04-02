@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
           $table->string('title');
           $table->string('thumbnail')->nullable();
           $table->text('body');
-          $table->string('excerpt')->nullable();
+          $table->text('excerpt')->nullable();
           $table->integer('status')->default(4);
           $table->integer('views')->nullable();
           $table->text('meta_keywords')->nullable();
