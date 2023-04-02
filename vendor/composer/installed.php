@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '09212a734f1ba3d5c181aaff74ff6d21bc123d45',
+=======
+        'reference' => '7f62026b114b8306e05e2977b2a0eb261ad7b469',
+>>>>>>> e39ce6aa626a1f03710e3c17fb63cbccdd59e981
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -451,7 +455,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '09212a734f1ba3d5c181aaff74ff6d21bc123d45',
+=======
+            'reference' => '7f62026b114b8306e05e2977b2a0eb261ad7b469',
+>>>>>>> e39ce6aa626a1f03710e3c17fb63cbccdd59e981
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1286,6 +1294,15 @@
             'reference' => 'c42125b83a4fa63b187fdf29f9c93cb7733da30c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tinymce/tinymce' => array(
+            'pretty_version' => '6.4.1',
+            'version' => '6.4.1.0',
+            'reference' => 'b2327c03fba64f8c47ec030c1f3bce98da8f7596',
+            'type' => 'component',
+            'install_path' => __DIR__ . '/../tinymce/tinymce',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

@@ -40,26 +40,16 @@
                 <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="" class="rounded-xl ml-6" width="100">
             </div>
 
-            <textarea id="excerpt"  name="excerpt" required>{{ old('excerpt', $article->excerpt) }}</textarea>
-
-            <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+            <textarea id="body"  name="excerpt" required>{{ old('excerpt', $article->excerpt) }}</textarea>
 
             <textarea id="body" name="body" required>{{ old('body', $article->body) }}</textarea>
 
-            <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
             <script>
                 tinymce.init({
-                    selector: '#body, #excerpt',
+                    selector: '#body',
                     language: 'ru',
                     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
                     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                    tinycomments_mode: 'embedded',
-
-                    tinycomments_author: 'Author name',
-                    mergetags_list: [
-                        { value: 'First.Name', title: 'First Name' },
-                        { value: 'Email', title: 'Email' },
-                    ]
                 });
             </script>
             <x-form.textarea name="meta_title" >{{ old('meta_title', $article->meta_title) }}</x-form.textarea>

@@ -23,31 +23,16 @@
 {{--            <x-form.input name="certificate" type="file"  />--}}
 {{--            <x-form.input name="ifra_certificate" type="file"  />--}}
 {{--            <x-form.input name="safety" type="file" />--}}
-            <x-form.textarea id="excerpt" name="excerpt" required > </x-form.textarea>
+            <textarea id="body" name="excerpt" required > </textarea>
 {{--            <x-form.textarea name="body" required />--}}
-            <x-form.textarea id="body" name="body"> </x-form.textarea>
+            <textarea id="body" name="body" required> </textarea>
 
-            <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
             <script>
                 tinymce.init({
-                    selector: '#body, #excerpt',
+                    selector: '#body',
                     language: 'ru',
-                    plugins: 'image link code',
-                    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
-                    relative_urls: false,
-                    file_picker_callback: function(callback, value, meta) {
-                        if (meta.filetype == 'image') {
-                            tinymce.activeEditor.windowManager.openUrl({
-                                url: '/laravel-filemanager?type=' + meta.filetype,
-                                title: 'File Manager',
-                                width: 900,
-                                height: 600,
-                                onMessage: function(api, message) {
-                                    callback(message.content);
-                                }
-                            });
-                        }
-                    }
+                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
                 });
             </script>
             <x-form.textarea name="meta_title" ></x-form.textarea>

@@ -63,6 +63,7 @@
             crossorigin="anonymous"></script>
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <style>
         html {
@@ -109,8 +110,8 @@
             </a>
             <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink" style="width: auto; min-width: max-content;">
                 <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_payment">{{__("Оплата")}}</a></li>
-                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_contact">{{ __('Контакти')}}</a></li>
                 <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_delivery">{{__("Доставка")}}</a></li>
+                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_contact">{{ __('Контакти')}}</a></li>
             </ul>
         </div>
         <div class=" hidden  lg:inline-flex  inline-block   rounded-full">
