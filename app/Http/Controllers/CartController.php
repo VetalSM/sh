@@ -103,7 +103,7 @@ class CartController extends Controller
         $attributes = request()->validate([
             'name' => '',
             'total' => '',
-            'tel' => 'required|min:13|max:13',
+            'tel' => 'required|min:9|max:15',
             'email' => '',
             'П_І_Б' => '',
             'address' => '',

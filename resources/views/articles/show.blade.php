@@ -111,14 +111,17 @@
                     @endphp
                     <div>
 
-                        <div >
+                        <div>
+                            <div class="px-2">
+
                             @for($i=1; $i<=$rate_num; $i++)
-                                <i class="fa fa-star checked"></i>
+                                <i class=" fa fa-star checked"></i>
                             @endfor
                             @for($j = $rate_num+1;$j <=5;$j++)
                                 <i class="fa fa-star nochecked "></i>
                             @endfor
                             @if($rate_num >0)
+                            </div>
                                 <span class="font-bold">
                                       &nbsp;  {{ $ratings->count() }}
                                     </span>
