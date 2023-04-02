@@ -158,3 +158,25 @@ del:before {
     opacity: .8;
     transform: rotate(0deg);
 }
+
+.text{
+    margin: 40px 10px;
+    clear: both;position: relative;
+    padding: 40px;
+    outline: rgb(236, 153, 45) dashed 2px;
+    outline-offset: -14px;border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(125,144,227);
+    border-right-color: rgb(125,144,227);
+    border-bottom-color: rgb(125,144,227);
+    border-left-color: rgb(125,144,227);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-repeat: initial;
+}
