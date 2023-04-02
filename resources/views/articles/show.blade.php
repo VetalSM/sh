@@ -129,7 +129,7 @@
                                          &nbsp;  {{  __("Кількість оцінок")}}
                                         </span>
 
-                                    <hr style="height:2px;"/>
+                                    <hr style="height:2px; margin-bottom: 1rem;"/>
                             @else
                                     <span class=" text-sm">
                                             &nbsp; &nbsp;  {{  __("Немає оцінок")}}
@@ -138,7 +138,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="px-2 mt-2 mb-4 space-y-4 leading-loose" style=" line-height: 1.5em;">
+                    <div class="px-2 mb-4 space-y-4 leading-loose" style=" line-height: 1.5em;">
                         {!! $excerpt !!}
                     </div>
                     <section class="col-span-8 col-start-5 mt-10 space-y-6">
