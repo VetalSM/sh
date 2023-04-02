@@ -129,7 +129,7 @@
                                          &nbsp;  {{  __("Кількість оцінок")}}
                                         </span>
 
-                                    <hr style="height:2px; margin-bottom: 1rem;"/>
+                                    <hr style="height:2px; margin-bottom: 0rem;"/>
                             @else
                                     <span class=" text-sm">
                                             &nbsp; &nbsp;  {{  __("Немає оцінок")}}
