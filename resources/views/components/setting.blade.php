@@ -1,6 +1,6 @@
 @props(['heading'])
 {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
-<section class="py-8 max-w-4xl mx-auto">
+<section class=" max-w-7xl mx-auto">
     <h1 class="text-lg font-bold mb-8 pb-2 border-b">
         {{ $heading }}
     </h1>
