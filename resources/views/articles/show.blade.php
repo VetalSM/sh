@@ -66,7 +66,7 @@
                 </div>
 
                 </div>
-            <div class="col-span-6">
+            <div class="col-span-7">
                 <h1 class="font-bold text-2xl lg:text-3xl text-center  mt-3 lg:mt-0 mb-4">
                     {{$title}}
                 </h1>
