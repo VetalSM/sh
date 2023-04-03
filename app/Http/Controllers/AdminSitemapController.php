@@ -19,11 +19,10 @@ class AdminSitemapController extends Controller
                 // Links present on the contact page won't be added to the
                 // sitemap unless they are present on a crawlable page.
 
-                return strpos($url->getPath(), '/admin') === false;
-            }) ->getSitemap()
+                return strpos($url->getPath(), '/storage') === false;
+            })  ->getSitemap()
             // here we add one extra link, but you can add as many as you'd like
-            ->add(Url::create('/')->setPriority(0.5))
-
-            ->writeToFile($sitemapPath);
+//            ->add(Url::create('/')->setPriority(0.5))
+            ->writeToFile($sitemapPath)->return->back()->with('success', 'sitemap generated!');
     }
 }

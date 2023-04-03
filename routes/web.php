@@ -59,13 +59,6 @@ Route::group(
             return view('calculator');
         });
 
-        Route::get('/sitemap', function(){
-
-            SitemapGenerator::create('https://madeis.com.ua')->writeToFile('si.xml');
-
-            return 'Sitemap generated';
-
-        });
         Route::resource('/admin/sitemap', AdminSitemapController::class);
 
 
