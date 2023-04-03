@@ -7,8 +7,7 @@
              alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                          width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
         </div>
 @elseif($product->status==="1")
                 <div class=" text-center bd_item ">
@@ -17,8 +16,7 @@
                          alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                           width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
                     </div>
 @elseif($product->status==="7")
     <div class=" text-center ">
@@ -27,8 +25,7 @@
              alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                          width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
     </div>
 
 @elseif($product->status==="3")
@@ -38,8 +35,7 @@
              alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                         width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
     </div>
 
 @elseif($product->status==="6")
@@ -49,8 +45,7 @@
              alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                         width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
     </div>
 
 @else
@@ -60,8 +55,7 @@
                                      alt="{{$product->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                          width: 334px;
-                                                        height:334px">
+                                                        width:100%;">
                                 </div>
 
 @endif
