@@ -23,6 +23,7 @@ class AdminSitemapController extends Controller
             })  ->getSitemap()
             // here we add one extra link, but you can add as many as you'd like
 //            ->add(Url::create('/')->setPriority(0.5))
-            ->writeToFile($sitemapPath)->return->back()->with('success', 'sitemap generated!');
+            ->writeToFile($sitemapPath);
+        return redirect('/'.app()->getLocale().'/admin')->with('success', 'sitemap generated!');
     }
 }
