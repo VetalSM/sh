@@ -112,7 +112,7 @@
                     <div>
 
                         <div>
-                            <div class="px-2">
+                            <div class="d-inline " style="padding-left: 5px;">
 
                             @for($i=1; $i<=$rate_num; $i++)
                                 <i class=" fa fa-star checked"></i>
@@ -122,14 +122,14 @@
                             @endfor
                             @if($rate_num >0)
                             </div>
-                                <span class="font-bold">
+                                <span class="d-inline-block font-bold">
                                       &nbsp;  {{ $ratings->count() }}
                                     </span>
                                 <span class=" text-sm">
                                          &nbsp;  {{  __("Кількість оцінок")}}
                                         </span>
 
-                                    <hr style="height:2px;"/>
+                                    <hr style="height:2px; margin-bottom: 0rem;"/>
                             @else
                                     <span class=" text-sm">
                                             &nbsp; &nbsp;  {{  __("Немає оцінок")}}
@@ -138,7 +138,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class=" mt-2 mb-4 space-y-4 leading-loose" style=" line-height: 1.5em;">
+                    <div class="px-2 mb-4 space-y-4 leading-loose" style=" line-height: 1.5em;">
                         {!! $excerpt !!}
                     </div>
                     <section class="col-span-8 col-start-5 mt-10 space-y-6">

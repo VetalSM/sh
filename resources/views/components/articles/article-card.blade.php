@@ -23,8 +23,7 @@
                   alt="{{$article->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
                                                         margin-right: auto;
-                                                        width: 301.233px;
-                                                        height:301.233px">
+                                                        width:100%;">
         </div>
 
 

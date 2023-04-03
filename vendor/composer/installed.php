@@ -4,10 +4,14 @@
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'reference' => '09212a734f1ba3d5c181aaff74ff6d21bc123d45',
 =======
         'reference' => '7f62026b114b8306e05e2977b2a0eb261ad7b469',
 >>>>>>> e39ce6aa626a1f03710e3c17fb63cbccdd59e981
+=======
+        'reference' => 'a5eed394c0dcc27d63585a4e005820a70831be69',
+>>>>>>> 95093b64d2c0d6aa3db8f98b9fcc7b07d9cf4b2a
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -456,10 +460,14 @@
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
 <<<<<<< HEAD
+<<<<<<< HEAD
             'reference' => '09212a734f1ba3d5c181aaff74ff6d21bc123d45',
 =======
             'reference' => '7f62026b114b8306e05e2977b2a0eb261ad7b469',
 >>>>>>> e39ce6aa626a1f03710e3c17fb63cbccdd59e981
+=======
+            'reference' => 'a5eed394c0dcc27d63585a4e005820a70831be69',
+>>>>>>> 95093b64d2c0d6aa3db8f98b9fcc7b07d9cf4b2a
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -528,6 +536,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'league/glide' => array(
+            'pretty_version' => '1.7.2',
+            'version' => '1.7.2.0',
+            'reference' => '8dba756ada0b8e525bf6f1f7d1bd83c1e99e124e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../league/glide',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'league/mime-type-detection' => array(
             'pretty_version' => '1.11.0',
             'version' => '1.11.0.0',
@@ -543,6 +560,15 @@
             'reference' => 'c1a38f7248d8de7de412418fed8dae759b9e4b97',
             'type' => 'library',
             'install_path' => __DIR__ . '/../mailchimp/marketing',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'masterminds/html5' => array(
+            'pretty_version' => '2.7.6',
+            'version' => '2.7.6.0',
+            'reference' => '897eb517a343a2281f11bc5556d6548db7d93947',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../masterminds/html5',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -603,6 +629,15 @@
             'reference' => 'cacdbf5a91a657ede665c541eda28941d4b09c1e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nette/utils',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'nicmart/tree' => array(
+            'pretty_version' => '0.3.1',
+            'version' => '0.3.1.0',
+            'reference' => 'c55ba47c64a3cb7454c22e6d630729fc2aab23ff',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nicmart/tree',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -801,8 +836,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1006,6 +1041,78 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'spatie/browsershot' => array(
+            'pretty_version' => '3.57.6',
+            'version' => '3.57.6.0',
+            'reference' => '41382e013a00a62a7b2f2945a615d73e59b3a907',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/browsershot',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/crawler' => array(
+            'pretty_version' => '7.1.3',
+            'version' => '7.1.3.0',
+            'reference' => 'f0f73947fdfaf68efdc68b73c4dbb28dfc785113',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/crawler',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/image' => array(
+            'pretty_version' => '1.10.6',
+            'version' => '1.10.6.0',
+            'reference' => '897e819848096ea8eee8ed4a3531c6166f9a99e0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/image-optimizer' => array(
+            'pretty_version' => '1.6.4',
+            'version' => '1.6.4.0',
+            'reference' => 'd997e01ba980b2769ddca2f00badd3b80c2a2512',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/image-optimizer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-package-tools' => array(
+            'pretty_version' => '1.12.1',
+            'version' => '1.12.1.0',
+            'reference' => '09f80fa240d44fafb1c70657c74ee44ffa929357',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-package-tools',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/laravel-sitemap' => array(
+            'pretty_version' => '6.2.5',
+            'version' => '6.2.5.0',
+            'reference' => '903d9860b81b9c99622c930af628f9695f3283be',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-sitemap',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/robots-txt' => array(
+            'pretty_version' => '2.0.2',
+            'version' => '2.0.2.0',
+            'reference' => 'f40a12b89f98dd18f3665673d04757298f5fbbf9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/robots-txt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'spatie/temporary-directory' => array(
+            'pretty_version' => '2.1.1',
+            'version' => '2.1.1.0',
+            'reference' => 'e2818d871783d520b319c2d38dc37c10ecdcde20',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/temporary-directory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'spatie/yaml-front-matter' => array(
             'pretty_version' => '2.0.7',
             'version' => '2.0.7.0',
@@ -1048,6 +1155,15 @@
             'reference' => 'e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/dom-crawler' => array(
+            'pretty_version' => 'v6.2.8',
+            'version' => '6.2.8.0',
+            'reference' => '0e0d0f709997ad1224ef22bb0a28287c44b7840f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dom-crawler',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminProductsPriceController;
+use App\Http\Controllers\AdminSitemapController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InfoController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('/',  function () {
    return redirect(app()->getLocale());
@@ -34,6 +36,7 @@ Route::group(
 'middleware' => ['setlocale', 'throttle:web']
 
 ], function() {
+
 
     Route::get('/articles' , [ArticleController::class, 'index'])->name('arthome');
     Route::get('articles/{article:slug}', [ArticleController::class, 'show'])->name('artshow');
@@ -51,6 +54,21 @@ Route::group(
     Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 // Admin Section
     Route::middleware('can:admin')->group(function () {
+       //sitemapgen
+        Route::get('/calculator', function () {
+            return view('calculator');
+        });
+
+        Route::get('/sitemap', function(){
+
+            SitemapGenerator::create('http://127.0.0.1:8000')->writeToFile('si.xml');
+
+            return 'Sitemap generated';
+
+        });
+        Route::resource('/admin/sitemap', AdminSitemapController::class);
+
+
         //Articles
 
         Route::resource('/admin/articles', AdminArticleController::class)->except('artshow');
