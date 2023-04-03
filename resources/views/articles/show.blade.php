@@ -112,7 +112,7 @@
                     <div>
 
                         <div>
-                            <div class="d-inline px-2">
+                            <div class="d-inline " style="padding-left: 5px;">
 
                             @for($i=1; $i<=$rate_num; $i++)
                                 <i class=" fa fa-star checked"></i>
