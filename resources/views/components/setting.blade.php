@@ -137,7 +137,19 @@
                     </li>
                 </ul>
             </div>
+            <div class="btn">
+                <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    доп
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/{{app()->getLocale()}}/admin/sitemap" class="{{ request()->is('/admin/sitemap') ? 'text-blue-500' : '' }}">Sitemap Generator</a>
+                    </li>
+
+                </ul>
+            </div>
             <ul>
+
 {{--                <li >--}}
 {{--                    <span class="font-semibold mb-4">Товары</span>--}}
 {{--                </li>--}}
