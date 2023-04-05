@@ -6,7 +6,7 @@
             $body = $article->body_ru;
               $excerpt = $article->excerpt_ru;
         @endphp
-        @section('title'){{$title}}| Всё про свечи | Украина MadeIS@endsection
+        @section('title'){{$title}} | Всё про свечи | Украина MadeIS@endsection
         @section('title_m'){{$article->meta_title_ru}}@endsection
         @section('description'){{$article->meta_description_ru}}@endsection
         @section('keywords'){{$article->meta_keywords}}@endsection
