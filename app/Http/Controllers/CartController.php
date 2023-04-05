@@ -67,19 +67,31 @@ class CartController extends Controller
 
     public function updateCart(Request $request)
     {
-        \Cart::update(
-            $request->id,
-            [
-                'quantity' => ['relative' => false, 'value' => $request->quantity,
-                ],
-            ]
-        );
 
-        session()->flash('success',  __('Позиція оновлена успішно!'));
+        $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $request->id_prod)->get();
+        $request->prod_weight;
+        foreach ($balanceProducts as $balance) {
+            $data = $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+        }
+        $update= $request->prod_weight * $request->quantity;
 
-        return redirect()->route('cart.list',app()->getLocale());
+        if ($data >=$update) {
+            \Cart::update(
+                $request->id,
+                [
+                    'quantity' => ['relative' => false, 'value' => $request->quantity,
+                    ],
+                ]
+            );
+
+            session()->flash('success', __('Позиція оновлена успішно!'));
+
+            return redirect()->route('cart.list', app()->getLocale());
+        }else
+            session()->flash('error', __("Товару не достатньо, для уточнення наявної кількості напишіть у коментарі до замовлення!"));
+
+        return redirect()->route('cart.list', app()->getLocale());
     }
-
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);

@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminProductsPriceController;
 use App\Http\Controllers\AdminSitemapController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\NewsletterController;
@@ -52,16 +53,15 @@ Route::group(
     Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
     Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
     Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
+    //calculator
+    Route::resource('/calculator', CalculatorController::class);
 // Admin Section
     Route::middleware('can:admin')->group(function () {
+
+//        Route::get('/calculator', function () {return view('calculator');});
        //sitemapgen
-        Route::get('/calculator', function () {
-            return view('calculator');
-        });
 
         Route::resource('/admin/sitemap', AdminSitemapController::class);
-
-
         //Articles
 
         Route::resource('/admin/articles', AdminArticleController::class)->except('artshow');
