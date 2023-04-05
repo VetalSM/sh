@@ -157,7 +157,7 @@
                 </div>
             </article>
 
-            <div class="px-2"> {!! $body !!}</div>
+            <div class="px-2" style="user-select: none;"> {!! $body !!}</div>
             <hr style="height:2px;"/>
             <div><span class="font-semibold">{{__('Пошук за хештегами:')}}</span>
                 @foreach($article->hashtags as $hashtag)
