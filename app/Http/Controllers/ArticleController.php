@@ -17,7 +17,7 @@ class ArticleController extends Controller
 
         Session::put('prod_url', request()->fullUrl());
         return view('articles.index', [
-            'articles' => Article::orderBy('status')->orderBy('category_id')->orderBy('title')->filter(
+            'articles' => Article::orderByDesc('created_at')->filter(
                 request(['search', 'category', 'hashtag'])
             )->paginate(12)->withQueryString()
         ]);

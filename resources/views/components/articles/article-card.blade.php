@@ -20,9 +20,12 @@
         <div class=" text-center ">
 @if($article->status == "8")
     @auth()
-        <p>in editing</p>
+                    <a href="/{{app()->getLocale()}}/admin/articles/{{$article->id}}/edit">in editing</a>
     @endauth
 @endif
+    @auth()
+
+    @endauth
             <img  src="{{ asset('storage/' . $article->thumbnail) }}" loading="lazy"
                   alt="{{$article->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
