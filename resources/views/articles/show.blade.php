@@ -45,7 +45,7 @@
         {{$title}}
     @endsection
     @section('og:description')
-        {{$excerpt}}
+        {{ strip_tags($excerpt)}}
     @endsection
     @section('og:page_url')
         {{url()->current()}}
