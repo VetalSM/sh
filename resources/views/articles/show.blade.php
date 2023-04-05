@@ -45,10 +45,10 @@
         {{$title}}
     @endsection
     @if(App::currentLocale()=='ua')
-        @section('og:description'){!!  strip_tags($article->excerpt_ru ) !!}@endsection
+        @section('og:description'){{ strip_tags($article->excerpt )}}@endsection
         @elseif(App::currentLocale()=='ru')
 
-            @section('og:description'){!!  strip_tags($article->excerpt_ru ) !!}@endsection
+            @section('og:description'){{ strip_tags($article->excerpt_ru )}}@endsection
             @endif
 
 
