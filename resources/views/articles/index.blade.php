@@ -14,6 +14,7 @@
                         </a>
                     </li>
                     @endforeach
+    <li><a class="font-semibold text-black" href="/{{app()->getLocale()}}/calculator">{{ __('Калькулятори')}}</a></li>
                 </ul>
             </div>
             <div class=" py-4 px-4 transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">

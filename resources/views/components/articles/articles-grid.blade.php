@@ -22,12 +22,16 @@
 @if ($articles->count() >= 0)
     <div class="lg:grid lg:grid-cols-6">
         @foreach ($articles->skip(0) as $article)
-            @if($article->status !== "8")
+            @if($article->status != "8")
             <x-articles.article-card
                 :article="$article"
                 class="{{ $loop->iteration < 3 ? 'col-span-2' : 'col-span-2' }}"></x-articles.article-card>
-{{--            @else--}}
-
+            @else
+                @auth()
+                    <x-articles.article-card
+                        :article="$article"
+                        class="{{ $loop->iteration < 3 ? 'col-span-2' : 'col-span-2' }}"></x-articles.article-card>
+                @endauth
             @endif
         @endforeach
     </div>

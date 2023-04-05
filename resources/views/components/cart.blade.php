@@ -1,5 +1,5 @@
-<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css" rel="stylesheet">-->
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css" rel="stylesheet">
+{{--<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -8,6 +8,12 @@
     <div class=" px-6 mx-auto">
         <div class="flex justify-center my-6">
             <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
+
+             @if(empty(Session::get('success')) and empty(Session::get('error')))
+                <p style="color: #0a58ca">
+                    {{__("Додавання товару у кошик не є бронюванням. Для бронювання товару за вами, будь ласка оформіть замовлення до кінця!")}}
+                </p>
+             @endif
 {{--                <div class="  bg-blue-200 border-opacity-5  rounded-full text-center py-1 px-1 " style="background-color: rgb(254 215 170);">--}}
 {{--                    <div class="py-1 ">--}}
 {{--                        <div class="px-3  inline">--}}
@@ -29,6 +35,11 @@
                 @if ($message = Session::get('success'))
                     <div class="p-4 mb-3 bg-green-400 rounded">
                         <p class="text-green-800 text-xl lg:text-base">{{ $message }}</p>
+                    </div>
+                @endif
+                @if ($message = Session::get('error'))
+                    <div class="p-4 mb-3 bg-green-400 rounded">
+                        <p class=" text-xl lg:text-base" style="color: #b90303">{{ $message }}</p>
                     </div>
                 @endif
 
@@ -81,7 +92,10 @@
 
                                             <form action="{{ route('cart.update',app()->getLocale()) }}" method="POST">
                                                 @csrf
+
+                                                <input type="hidden" name="prod_weight" value="{{ $item->attributes->weight}}">
                                                 <input type="hidden" name="id" value="{{ $item->id}}">
+                                                <input type="hidden" name="id_prod" value="{{ $item->attributes->prod_id}}">
                                                 <input type="number" name="quantity" value="{{ $item->quantity }}"
                                                        class="w-7 text-center bg-gray-300" style="width: 2.5em"/>
                                                 <button type="submit" class="px-1  ml-2 text-white text-base lg:text-base rounded-xl bg-blue-500">
