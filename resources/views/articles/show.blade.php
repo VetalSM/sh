@@ -44,6 +44,9 @@
     @section('og:title')
         {{$title}}
     @endsection
+        @php
+             $excerpt = strip_tags($excerpt);
+        @endphp
     @section('og:description')
         {{ strip_tags($excerpt)}}
     @endsection
