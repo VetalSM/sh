@@ -6,54 +6,33 @@
             $body = $article->body_ru;
               $excerpt = $article->excerpt_ru;
         @endphp
-        @section('title')
-            {{$title}}| Всё про свечи | Украина MadeIS
-        @endsection
-        @section('title_m')
-            {{$article->meta_title_ru}}
-        @endsection
-        @section('description')
-            {{$article->meta_description_ru}}
-        @endsection
-        @section('keywords')
-            {{$article->meta_keywords}}
-        @endsection
+        @section('title'){{$title}}| Всё про свечи | Украина MadeIS@endsection
+        @section('title_m'){{$article->meta_title_ru}}@endsection
+        @section('description'){{$article->meta_description_ru}}@endsection
+        @section('keywords'){{$article->meta_keywords}}@endsection
     @else
         @php
             $title = $article->title;
              $body = $article->body;
              $excerpt = $article->excerpt;
         @endphp
-        @section('title')
-            {{$title}} | Виготовлення свічок | MadeIS Україна
-        @endsection
-        @section('title_m')
-            {{$article->meta_title}}
-        @endsection
-        @section('description')
-            {{$article->meta_description}}
-        @endsection
-        @section('keywords')
-            {{$article->meta_keywords}}
-        @endsection
+        @section('title'){{$title}} | Виготовлення свічок | MadeIS Україна@endsection
+        @section('title_m'){{$article->meta_title}}@endsection
+        @section('description'){{$article->meta_description}}@endsection
+        @section('keywords'){{$article->meta_keywords}}@endsection
 
     @endif
-    @section('og:image')
-        {{ asset('storage/' . $article->thumbnail) }}
-    @endsection
-    @section('og:title')
-        {{$title}}
-    @endsection
+    @section('og:image'){{ asset('storage/' . $article->thumbnail) }}@endsection
+    @section('og:title'){{$title}}@endsection
     @if(App::currentLocale()=='ua')
         @section('og:description'){{strip_tags($article->excerpt)}}@endsection
         @elseif(App::currentLocale()=='ru')
+        @dd(strip_tags($article->excerpt_ru))
             @section('og:description'){{strip_tags($article->excerpt_ru)}}@endsection
             @endif
 
 
-        @section('og:page_url')
-            {{url()->current()}}
-        @endsection
+        @section('og:page_url'){{url()->current()}}@endsection
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <main class="max-w-6xl mx-auto px-3 mt-5 lg:mt-20 space-y-6">
             <article class="max-w-4sm mx-auto lg:grid lg:grid-cols-11 gap-x-5">
