@@ -18,7 +18,11 @@
     <div class="lg:py-4 lg:px-5 py-3 px-4 h-full flex flex-col text-center ">
 
         <div class=" text-center ">
-
+@if($article->status == "8")
+    @auth()
+        <p>in editing</p>
+    @endauth
+@endif
             <img  src="{{ asset('storage/' . $article->thumbnail) }}" loading="lazy"
                   alt="{{$article->title}}" class=" rounded-xl" style="display: block;
                                                         margin-left: auto;
