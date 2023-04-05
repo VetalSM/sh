@@ -27,7 +27,7 @@
     @if(App::currentLocale()=='ua')
         @section('og:description'){{strip_tags($article->excerpt)}}@endsection
         @elseif(App::currentLocale()=='ru')
-        @dd(strip_tags($article->excerpt_ru))
+
             @section('og:description'){{strip_tags($article->excerpt_ru)}}@endsection
             @endif
 
