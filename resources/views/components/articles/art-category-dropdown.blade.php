@@ -7,6 +7,7 @@
         </button>
     </x-slot>
 
+
     <x-dropdown-item
         href="/{{app()->getLocale()}}/articles/?{{ http_build_query(request()->except('category', 'page')) }}"
         :active="request()->routeIs('arthome') && is_null(request()->getQueryString())"
@@ -22,4 +23,10 @@
             {{  __(ucwords($category->name))}}
         </x-dropdown-item>
     @endforeach
+
+    <x-dropdown-item
+        href="/{{app()->getLocale()}}/calculator"
+    >
+        {{  __('Калькулятори')}}
+    </x-dropdown-item>
 </x-dropdown>
