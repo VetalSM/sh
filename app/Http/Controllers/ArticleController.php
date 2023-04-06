@@ -25,9 +25,9 @@ class ArticleController extends Controller
     public function show($locale,Article $article)
     {
 
-
-        Article::where('id', $article->id)->update(array('views' => $article->views+1));
-
+    if (auth()->id() == 0) {
+        Article::where('id', $article->id)->update(array('views' => $article->views + 1));
+    }
         return view('articles.show', [
             'article' => $article,
 

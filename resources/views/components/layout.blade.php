@@ -1,9 +1,8 @@
 <!doctype html>
-
 <html lang="{{App::currentLocale()}}">
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-        <!-- Google tag (gtag.js) -->
+    @if(auth()->id() == 0)
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -13,6 +12,8 @@
             gtag('js', new Date());
             gtag('config', 'G-CY3K5VV4KR');
         </script>
+    @endif
+
     <script>
         var $window = (window)
         window.scroll(0, localStorage.getItem('scrollPosition')|0)
@@ -86,13 +87,14 @@
     </style>
 </head>
 <body style="font-family: Open Sans, sans-serif">
+@if(auth()->id() == 0)
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX8DH3S"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-
+@endif
 <div class="  bg-gray-100 border-opacity-5  text-right py-1 px-4 ">
     <div class="py-1 text-centre">
         <div class="inline float-left">
