@@ -57,7 +57,8 @@
 
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
-                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$statusProd }}</span>
+                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$statusProd   }}</span><span style="color: #1b1a1a">
+                                                               П : {{  $product->views}}</span>
                                                     </a>
                                                 </div>
                                                     @endif
