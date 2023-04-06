@@ -2,6 +2,7 @@
 <html lang="{{App::currentLocale()}}">
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    @if(auth()->id() == 0)
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
     <script>
@@ -12,6 +13,7 @@
         gtag('js', new Date());
         gtag('config', 'G-CY3K5VV4KR');
     </script>
+    @endif
     <script>
         var $window = (window)
         window.scroll(0, localStorage.getItem('scrollPosition')|0)
