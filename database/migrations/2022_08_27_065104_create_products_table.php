@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->text('excerpt');
             $table->text('body');
             $table->integer('status')->default(1);
+            $table->integer('views')->nullable();
             $table->text('prices');
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
