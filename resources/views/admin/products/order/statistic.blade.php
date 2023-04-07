@@ -47,8 +47,10 @@
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <span class="text-dark" style="text-decoration: none;">
-                                                        {{$product->title  }} <span style="color: #4f3232">
+                                                         <a href="/{{app()->getLocale()}}/products/{{ $product->slug }}" style="text-decoration: none;">
+                                                        {{ $product->title }}<span class="text-success">&nbsp;&nbsp;&nbsp;{{$statusProd   }}</span><span style="color: #1b1a1a">
                                                                П : {{  $product->views}}</span>
+                                                    </a>
                                                     </span>
                                                 </div>
                                             </div>
