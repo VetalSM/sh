@@ -47,7 +47,7 @@
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
                                                     <span class="text-dark" style="text-decoration: none;">
-                                                        {{$product->title }}
+                                                        {{$product->title  }} П : {{$product->views}}
                                                     </span>
                                                 </div>
                                             </div>
