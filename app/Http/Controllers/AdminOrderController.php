@@ -175,4 +175,25 @@ class AdminOrderController extends Controller
             }
         return redirect()->back()->with('message', 'Operation Successful !');
     }
+
+    public function statistic($locale, Order $order)
+    {
+
+        if (request()->start === 0) {
+
+            return view('admin.products.order.statistic', [
+                'orders' => Order::all()]);
+        } else {
+            $fromDate = request()->start;
+            $toDate = request()->end;
+            $start_date = date('Y-m-d 00:00:00', strtotime($fromDate));
+
+            $end_date = date('Y-m-d 23:59:59', strtotime($toDate));
+
+
+            return view('admin.products.order.statistic', [
+                'orders' => Order::where('created_at', '>=', $start_date)
+                    ->where('created_at', '<=', $end_date)->get()]);
+        }
+    }
 }
