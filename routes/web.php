@@ -83,6 +83,8 @@ Route::group(
         Route::get('/admin/products/payment_status',  [AdminOrderController::class, 'payment']);
         Route::get('/admin/products/delivery_status',  [AdminOrderController::class, 'delivery']);
 
+        Route::get('/admin/products/orders_statistic',  [AdminOrderController::class, 'statistic']);
+        Route::post('/admin/products/orders_statistic',  [AdminOrderController::class, 'statistic']);
 
 
     });
