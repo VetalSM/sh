@@ -17,7 +17,7 @@
             <script>
                 tinymce.init({
                     selector: '#content',
-                    plugins: 'image link code',
+                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount ',
                     toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
                     relative_urls: false,
                     file_picker_callback: function(callback, value, meta) {
