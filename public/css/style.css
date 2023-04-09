@@ -86,7 +86,7 @@
 .bd_item_Promotion {
 
     background: #fb1717;
-    z-index: 1500;
+    z-index: 0;
     padding-top: 4px;
     color: white;
     font-family: sans-serif ;
