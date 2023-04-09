@@ -48,7 +48,7 @@
                 tinymce.init({
                     selector: '#body',
                     language: 'ru',
-                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount ',
+                    plugins: 'anchor autolink charmap code codesample emoticons image link lists media searchreplace table visualblocks wordcount ',
                     toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
                 });
             </script>
