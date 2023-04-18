@@ -25,7 +25,7 @@
 {{--            <x-form.input name="safety" type="file" />--}}
             <textarea id="excerpt" name="excerpt" required > </textarea>
 {{--            <x-form.textarea name="body" required />--}}
-            <textarea id="body" name="body" required> </textarea>
+            <x-form.textarea id="body" name="body" required/>
 
             <script>
                 tinymce.init({
