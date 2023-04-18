@@ -23,7 +23,7 @@
 {{--            <x-form.input name="certificate" type="file"  />--}}
 {{--            <x-form.input name="ifra_certificate" type="file"  />--}}
 {{--            <x-form.input name="safety" type="file" />--}}
-            <textarea id="excerpt" name="excerpt" required > </textarea>
+            <x-form.textarea id="excerpt" name="excerpt" required />
 {{--            <x-form.textarea name="body" required />--}}
             <x-form.textarea id="body" name="body" required/>
 
