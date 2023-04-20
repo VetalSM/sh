@@ -177,7 +177,7 @@
                 </div>
             </article>
 
-            <div class="px-2" style="user-select: none;"> <?php echo $body; ?></div>
+            <div class="px-2" > <?php echo $body; ?></div>
             <hr style="height:2px;"/>
             <div><span class="font-semibold"><?php echo e(__('Пошук за хештегами:')); ?></span>
                 <?php $__currentLoopData = $article->hashtags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hashtag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

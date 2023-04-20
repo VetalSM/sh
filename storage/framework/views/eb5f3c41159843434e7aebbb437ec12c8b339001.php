@@ -35,6 +35,17 @@
             </div>
             <div class="btn">
                 <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Статистика
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/orders_statistic" class="<?php echo e(request()->is('admin/products/balance_products') ? 'text-blue-500' : ''); ?>">По дате</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="btn">
+                <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Остатки
                 </button>
                 <ul class="dropdown-menu">

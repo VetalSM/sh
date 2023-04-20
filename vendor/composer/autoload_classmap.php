@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\UpdateProductStatus' => $baseDir . '/app/Console/Commands/UpdateProductStatus.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminArtCategoryController' => $baseDir . '/app/Http/Controllers/AdminArtCategoryController.php',
@@ -20,7 +21,9 @@ return array(
     'App\\Http\\Controllers\\AdminProductsPriceController' => $baseDir . '/app/Http/Controllers/AdminProductsPriceController.php',
     'App\\Http\\Controllers\\AdminPromoController' => $baseDir . '/app/Http/Controllers/AdminPromoController.php',
     'App\\Http\\Controllers\\AdminSitemapController' => $baseDir . '/app/Http/Controllers/AdminSitemapController.php',
+    'App\\Http\\Controllers\\AdminStatusJobController' => $baseDir . '/app/Http/Controllers/AdminStatusJobController.php',
     'App\\Http\\Controllers\\ArticleController' => $baseDir . '/app/Http/Controllers/ArticleController.php',
+    'App\\Http\\Controllers\\CalculatorController' => $baseDir . '/app/Http/Controllers/CalculatorController.php',
     'App\\Http\\Controllers\\CartController' => $baseDir . '/app/Http/Controllers/CartController.php',
     'App\\Http\\Controllers\\CommentController' => $baseDir . '/app/Http/Controllers/CommentController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
@@ -54,6 +57,7 @@ return array(
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\ProductPrice' => $baseDir . '/app/Models/ProductPrice.php',
     'App\\Models\\Rating' => $baseDir . '/app/Models/Rating.php',
+    'App\\Models\\StatusJob' => $baseDir . '/app/Models/StatusJob.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\promo' => $baseDir . '/app/Models/promo.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

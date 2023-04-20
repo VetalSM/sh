@@ -156,6 +156,9 @@
                     <li>
                         <a href="/{{app()->getLocale()}}/admin/sitemap" class="{{ request()->is('/admin/sitemap') ? 'text-blue-500' : '' }}">Sitemap Generator</a>
                     </li>
+                    <li>
+                        <a href="/{{app()->getLocale()}}/admin/products/status_jobs" class="{{ request()->is('/admin/sitemap') ? 'text-blue-500' : '' }}">status jobs</a>
+                    </li>
 
                 </ul>
             </div>
