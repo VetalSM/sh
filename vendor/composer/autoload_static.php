@@ -608,6 +608,7 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\UpdateProductStatus' => __DIR__ . '/../..' . '/app/Console/Commands/UpdateProductStatus.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminArtCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminArtCategoryController.php',
@@ -622,7 +623,9 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
         'App\\Http\\Controllers\\AdminProductsPriceController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminProductsPriceController.php',
         'App\\Http\\Controllers\\AdminPromoController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminPromoController.php',
         'App\\Http\\Controllers\\AdminSitemapController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminSitemapController.php',
+        'App\\Http\\Controllers\\AdminStatusJobController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminStatusJobController.php',
         'App\\Http\\Controllers\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArticleController.php',
+        'App\\Http\\Controllers\\CalculatorController' => __DIR__ . '/../..' . '/app/Http/Controllers/CalculatorController.php',
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
         'App\\Http\\Controllers\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -656,6 +659,7 @@ class ComposerStaticInit5b60788080fccc3b751760249fe4bb1a
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\ProductPrice' => __DIR__ . '/../..' . '/app/Models/ProductPrice.php',
         'App\\Models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
+        'App\\Models\\StatusJob' => __DIR__ . '/../..' . '/app/Models/StatusJob.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\promo' => __DIR__ . '/../..' . '/app/Models/promo.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

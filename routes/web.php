@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminPriceController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminProductsPriceController;
 use App\Http\Controllers\AdminSitemapController;
+use App\Http\Controllers\AdminStatusJobController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\CartController;
@@ -73,6 +74,7 @@ Route::group(
         Route::resource('/admin/products/price', AdminPriceController::class);
         Route::resource('/admin/products/comments', AdminCommentController::class);
         Route::resource('/admin/products/categories', AdminCategoryController::class);
+        Route::resource('/admin/products/status_jobs', AdminStatusJobController::class);
         Route::resource('/admin/products/balance_products', AdminBalanceProductController::class);
 //        Route::resource('/admin/products/products_prices', AdminProductsPriceController::class);
         Route::resource('/admin/products/orders',  AdminOrderController::class)->missing(function (Request $request) {return redirect("/".app()->getLocale()."/admin/products/orders");

@@ -76,9 +76,9 @@
                 });
             </script>
             <x-form.textarea name="meta_title" ></x-form.textarea>
-            <x-form.textarea name="meta_keywords" ></x-form.textarea>
-           <x-form.textarea name="meta_description"></x-form.textarea>
 
+           <x-form.textarea name="meta_description"></x-form.textarea>
+            <x-form.textarea name="meta_keywords" ></x-form.textarea>
 
             <x-form.field>
                 <x-form.label name="category"/>

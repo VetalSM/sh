@@ -135,8 +135,8 @@
                 });
             </script>
             <x-form.textarea name="meta_title" >{{ old('meta_title', $product->meta_title) }}</x-form.textarea>
-            <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
             <x-form.textarea name="meta_description" >{{ old('meta_description', $product->meta_description) }}</x-form.textarea>
+            <x-form.textarea name="meta_keywords" >{{ old('meta_keywords', $product->meta_keywords) }}</x-form.textarea>
 
             <x-form.input name="title_ru" :value="old('title', $product->title_ru)" required />
             <x-form.textarea name="excerpt_ru" required>{{ old('excerpt', $product->excerpt_ru) }}</x-form.textarea>
