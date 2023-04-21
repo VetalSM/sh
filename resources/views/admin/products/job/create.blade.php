@@ -36,6 +36,7 @@
 
             <x-form.label name="status start"/>
             <select  name="status_start" required>
+                <option value="0" selected></option>
                 <option value="4">active</option>
                 <option value="2">new</option>
                 <option value="1">promotion</option>
@@ -47,6 +48,7 @@
             </select>
             <x-form.label name="status end"/>
             <select  name="status_end" required>
+                <option value="0" selected></option>
                 <option value="4">active</option>
                 <option value="2">new</option>
                 <option value="1">promotion</option>
