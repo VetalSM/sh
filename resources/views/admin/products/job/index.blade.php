@@ -25,7 +25,8 @@
 
                                 @if($status->product_id)
                                     @if($status->work_start == 1 &&  ($status->work_end == 1))
-
+                                        <tr style="background-color:#39e634">
+                                    @elseif($status->work_start == 1 && $status->status_end == 0 )
                                         <tr style="background-color:#39e634">
                                     @elseif($status->work_start == 1)
 
