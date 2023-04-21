@@ -45,10 +45,10 @@
             </select>
 
             <x-form.label name="status start"/>
-
             <select  name="status_start" required>
-
-                @if( $status->status_start == "1")
+                @if( $status->status_start == "0")
+                    <option value="0" selected></option>
+                @elseif( $status->status_start == "1")
                     <option value="1" selected>{{old('status_start', 'promotion')}}</option>
                 @elseif($status->status_start == "2")
                     <option  value="2" selected>{{old('status_start', 'new')}}</option>
@@ -76,7 +76,9 @@
             </select>
             <x-form.label name="status end"/>
             <select  name="status_end" required>
-                @if( $status->status_end == "1")
+                    @if( $status->status_end == "0")
+                    <option value="0" selected></option>
+                    @elseif( $status->status_end == "1")
                     <option value="1" selected>{{old('status_end', 'promotion')}}</option>
                     @elseif($status->status_end == "2")
                     <option value="2" selected>{{old('status_end', 'new')}}</option>
