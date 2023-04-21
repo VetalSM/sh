@@ -12,7 +12,7 @@ class AdminStatusJobController extends Controller
     {
 
         return view('admin.products.job.index', [
-            'statuses' => StatusJob::all()
+            'statuses' => StatusJob::all()->sortByDesc('created_at')
         ]);
     }
     public function create($locale,StatusJob $status)
