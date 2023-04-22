@@ -65,7 +65,10 @@
             crossorigin="anonymous"></script>
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
-    <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    @auth()
+        <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    @endauth
 
     <style>
         html {
