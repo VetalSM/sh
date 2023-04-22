@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{App::currentLocale()}}">
 <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+{{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
     @if(auth()->id() == 0)
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
         <script>
@@ -68,7 +68,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
 {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+{{--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">--}}
     @auth()
         <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @endauth
