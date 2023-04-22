@@ -165,6 +165,9 @@
                     <li>
                         <a href="/<?php echo e(app()->getLocale()); ?>/admin/sitemap" class="<?php echo e(request()->is('/admin/sitemap') ? 'text-blue-500' : ''); ?>">Sitemap Generator</a>
                     </li>
+                    <li>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/status_jobs" class="<?php echo e(request()->is('/admin/sitemap') ? 'text-blue-500' : ''); ?>">status jobs</a>
+                    </li>
 
                 </ul>
             </div>
