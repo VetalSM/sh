@@ -116,6 +116,7 @@ class AdminProductController extends Controller
             'body' => 'required',
             'status' => '',
             'prices' =>  '',
+            'prom_prices' => '',
             'meta_title' =>'',
             'meta_keywords' =>'',
             'meta_description' =>'',

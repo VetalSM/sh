@@ -59,14 +59,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
+
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+{{--    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"--}}
+{{--            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"--}}
+{{--            crossorigin="anonymous"></script>--}}
+    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
     @auth()
-        <script defer src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @endauth
 
     <style>
@@ -84,6 +88,10 @@
     </style>
 </head>
 <body style="font-family: Open Sans, sans-serif">
+
+{{--    model windows--}}
+{{--   @include('components.modals.survey')--}}
+
 @if(auth()->id() == 0)
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -262,3 +270,94 @@
 </section>
 <x-flash/>
 </body>
+<script>
+    $('.selectPrice').each(function() {
+        var colors = ['#2c2a2a', '#c81313', '#2c2a2a'];
+        var textDecorationStyles = ['none', 'line-through', ];
+        var textPosition = ['left: 0']
+
+        var $this = $(this),
+            numberOfOptions = $(this).children('option').length;
+
+        $this.addClass('s-hidden');
+        $this.wrap('<div class="select"></div>');
+        var $selectContainer = $this.parent(); // Cache the select container
+        $this.after('<div class="styledSelect"></div>');
+
+        var $styledSelect = $this.next('div.styledSelect');
+
+        // Show the first select option in the styled div
+        var defaultIndex = $this.children('option').length > 1 ? 1 : 0;
+        $styledSelect.html($this.children('option').eq(defaultIndex).text()
+            .split(' ').map((word, index) => `<span style=" color:${colors[index % colors.length]}; text-decoration:${textDecorationStyles[index % textDecorationStyles.length]}">${word}</span>`).join(' '));
+
+
+
+        // Insert an unordered list after the styled div and also cache the list
+        var $list = $('<ul />', {
+            'class': 'options'
+        }).insertAfter($styledSelect);
+
+        // Insert a list item into the unordered list for each select option
+        for (var i = 0; i < numberOfOptions; i++) {
+            var listItem = $('<li />', {
+                html: $this.children('option').eq(i).text()
+                    .split(' ').map((word, index) => `<span style=" color:${colors[index % colors.length]}; text-decoration:${textDecorationStyles[index % textDecorationStyles.length]}">${word}</span>`).join(' '),
+                rel: $this.children('option').eq(i).val()
+            }).appendTo($list);
+
+            // Apply the styles directly to the list item
+            if (i === 0) {
+                listItem.addClass('active'); // Применить стиль для первого элемента
+            }
+        }
+
+
+        // Cache the list items
+        var $listItems = $list.children('li');
+
+        // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
+        $selectContainer.click(function(e) {
+            e.stopPropagation();
+            $('div.styledSelect.active').not($styledSelect).removeClass('active').next('ul.options').hide();
+            $styledSelect.toggleClass('active').next('ul.options').toggle();
+        });
+
+
+        // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
+        // Updates the select element to have the value of the equivalent option
+        $listItems.click(function(e) {
+            e.stopPropagation();
+            $listItems.removeClass('active'); // Удалите класс "active" у всех элементов списка
+            $(this).addClass('active'); // Добавьте класс "active" к выбранному элементу
+            $styledSelect.html($(this).html()).removeClass('active'); // Используйте innerHTML для копирования содержимого, чтобы сохранить стили
+            $this.val($(this).attr('rel'));
+            $list.hide();
+        });
+
+
+
+        // Hides the unordered list when clicking outside of it
+        $(document).click(function() {
+            $('div.styledSelect.active').removeClass('active').next('ul.options').hide();
+        });
+        // $listItems.first().addClass('active');
+    });
+
+    // $(document).ready(function() {
+    //     const myVariable = $('#myVariable').text();
+    //     $('.t').select2({
+    //
+    //         templateResult: function(el) { return '<span style="color: red">' + el.text + '</span>' +  '<span style="color: #000000;">'+ myVariable +'jj</span>'; },
+    //
+    //     // render html for the selected option
+    //     templateSelection: function(el) { return '<span class="' + ($(el.element).prop('class') || '') + '">' + el.text + '</span>'; },
+    //     // render html as-is without escaping it
+    //     escapeMarkup: function(markup) { return markup; }
+    // });
+    // });
+    // $('.t').on('change', function() {
+    //     $('.select2-selection__rendered').html($('.select2-selection__rendered').html());
+    // });
+</script>
+

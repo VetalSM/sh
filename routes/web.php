@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\AdminArtCategoryController;
 use App\Http\Controllers\AdminArticleController;
 use App\Http\Controllers\AdminBalanceProductController;
@@ -39,7 +39,7 @@ Route::group(
 
 ], function() {
 
-
+    Route::post('/save-survey', [SurveyController::class, 'saveSurvey']);
     Route::get('/articles' , [ArticleController::class, 'index'])->name('arthome');
     Route::get('articles/{article:slug}', [ArticleController::class, 'show'])->name('artshow');
     //poroducts
