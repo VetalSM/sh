@@ -237,7 +237,7 @@
                         @endforeach
                         @if($button === true && ($product->status !== "7"))
                             <button
-                                class=" cartbutton transition-colors  hover: rounded-3xl ml-6 py-2 px-2 ">
+                                class=" cartbutton transition-colors  hover: rounded-3xl  py-2 px-2 " style="float: right">
                                 {{  __("Купити")}}
                             </button>
                         @else
@@ -250,7 +250,7 @@
 
                 </div>
             </div>
-            <div class="col-span-7">
+            <div class="col-span-7" style="margin-top: 20px;">
                 <h1 class="font-bold text-2xl lg:text-3xl text-center  mt-0 lg:mt-0 mb-3">
                     {{$title}}
                 </h1>
@@ -323,6 +323,9 @@
                             <x-product-comment :comment="$comment"/>
                         @endforeach
                     </section>
+                </div>
+            </div>
         </article>
+
     </main>
 </x-layout>
