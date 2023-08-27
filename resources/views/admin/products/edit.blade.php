@@ -25,6 +25,21 @@
                 </select>
                 <x-form.error name="price"/>
             </x-form.field>
+
+            <x-form.field>
+                <x-form.label name="promotional price"/>
+                <select name="prom_prices" id="prom_prices" required>
+
+                    @foreach ($result as $price)
+                        <option
+
+                            value="{{ $price }}"
+                            {{ old('prom_prices', $product->prom_prices) == $price ? 'selected' : '' }}
+                        >{{ ucwords($price) }}</option>
+                    @endforeach
+                </select>
+                <x-form.error name="prom_prices"/>
+            </x-form.field>
             <x-form.field>
                 <x-form.label name="status"/>
                 <select  name="status" required>

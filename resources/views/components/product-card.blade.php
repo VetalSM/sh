@@ -113,58 +113,96 @@
 {{--                            @endforeach--}}
 {{--                        </select>--}}
                         @if($product->status==="1")
-                            <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">
-                                @else
-                        <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
-                            @endif
-                            @php
+                            <select name="price" id="selectbox1" class="selectPrice bt rounded-full py-2 px-1"
+                                    style="float:left;">
+                                @php
                                     $button = false;
                                     $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
-                            @endphp
-                            @foreach ($sorted as $price)
-                                @foreach ($balanceProducts as $balance)
-                                    @php
+                                @endphp
+                                @foreach ($sorted as $price)
+                                    @foreach ($balanceProducts as $balance)
+                                        @php
 
-                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
-                                    @endphp
-                                    @if((int)$balance->product_id === $product->id)
-                                        @if($data >= $price->weight )
-                                            @if((int)$price->weight <= $data)
-                                                @if( $data >=1)
-                                                    @php
-                                                        $button = true;
+                                            $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                        @endphp
+                                        @if((int)$balance->product_id === $product->id)
+                                            @if($data >= $price->weight )
+                                                @if((int)$price->weight <= $data)
+                                                    @if( $data >=1)
+                                                        @php
+                                                            $button = true;
 
-                                                    @endphp
-                                                @endif
-                                                <option value="{{ $price->price }} "
-                                                @if ($price->weight === "10" && $price->unit === 'г')
-                                                    {{'selected="selected"'}}
+                                                        @endphp
                                                     @endif
-                                                >
-                                                    {{$price->weight}}{{$price->unit}} {{$price->price}}{{$price->currency}}
-                                                </option>
+
+                                                    <option
+                                                        value="{{ \App\Models\Price::where('name', $product->prom_prices)->where('weight', $price->weight)->value('price') }} "
+                                                    @if ($price->weight === "10" && $price->unit === 'г')
+                                                        {{'selected="selected"'}}
+                                                        @endif
+                                                    >
+                                                        {{$price->weight}}{{$price->unit}}  {{\App\Models\Price::where('name', $product->prom_prices)->where('weight', $price->weight)->value('price').$price->currency}} {{$price->price}}{{$price->currency}}
+                                                    </option>
+                                                @endif
                                             @endif
                                         @endif
-                                    @endif
+                                    @endforeach
                                 @endforeach
-                            @endforeach
 
-                        </select>
+                            </select>
+                            <input type="hidden" value="{{$product->prom_prices}}" name="prices">
+                            <input type="hidden" value="{{$product->id}}" name="prod_id">
+                            <input type="hidden" value="{{$title}}" name="name">
+                            <input type="hidden" value="{{ $product->thumbnail }}" name="image">
+                            <input type="hidden" value="1" name="quantity">
+                        @else
+                            <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
+
+                                @php
+                                    $button = false;
+                                    $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
+                                @endphp
+                                @foreach ($sorted as $price)
+                                    @foreach ($balanceProducts as $balance)
+                                        @php
+
+                                            $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                        @endphp
+                                        @if((int)$balance->product_id === $product->id)
+                                            @if($data >= $price->weight )
+                                                @if((int)$price->weight <= $data)
+                                                    @if( $data >=1)
+                                                        @php
+                                                            $button = true;
+
+                                                        @endphp
+                                                    @endif
+
+                                                    <option value="{{ $price->price }} "
+                                                    @if ($price->weight === "10" && $price->unit === 'г')
+                                                        {{'selected="selected"'}}
+                                                        @endif
+                                                    >
+                                                        {{$price->weight}}{{$price->unit}}  {{$price->price}}{{$price->currency}}
+                                                    </option>
+                                                @endif
+                                            @endif
+                                        @endif
+                                    @endforeach
+                                @endforeach
+
+
+                            </select>
+                            <input type="hidden" value="{{$product->prices}}" name="prices">
+                            <input type="hidden" value="{{$product->id}}" name="prod_id">
+                            <input type="hidden" value="{{$title}}" name="name">
+                            <input type="hidden" value="{{ $product->thumbnail }}" name="image">
+                            <input type="hidden" value="1" name="quantity">
+                        @endif
 
 
 
-                        <input type="hidden" value="{{$product->prices}}" name="prices">
-                        <input type="hidden" value="{{$product->id}}" name="prod_id">
-                        <input type="hidden" value="{{$title}}" name="name">
-                        <input type="hidden" value="{{ $product->thumbnail }}" name="image">
-                        <input type="hidden" value="1" name="quantity">
-                                    @php
 
-//                                        $button = \App\Models\BalanceProduct::where('product_id', $product->id)
-//                                            ->whereRaw('count - (SELECT COALESCE(SUM(total), 0) FROM orders WHERE product_id = balance_products.product_id) >= ?', [$sorted->max('weight')])
-//                                            ->exists();
-//                                           var_dump($button);
-                                    @endphp
 
                         @if($button === true && ($product->status !== "7"))
                             <button
@@ -189,7 +227,33 @@
 
                     </form>
                 </div>
+{{--                <select id="selectbox1">--}}
+{{--                    <option value="">Select an option&hellip;</option>--}}
+{{--                    <option value="aye">Aye in Red</option>--}}
+{{--                    <option value="eh">Eh in Red</option>--}}
+{{--                    <option value="ooh">Ooh in Red</option>--}}
+{{--                    <option value="whoop">Whoop in Red</option>--}}
+{{--                </select>--}}
+
+{{--                <select id="selectbox2">--}}
+{{--                    <option value="">Month&hellip;</option>--}}
+{{--                    <option value="january">January</option>--}}
+{{--                    <option value="february">February</option>--}}
+{{--                    <option value="march">March</option>--}}
+{{--                    <option value="april">April</option>--}}
+{{--                    <option value="may">May</option>--}}
+{{--                    <option value="june">June</option>--}}
+{{--                    <option value="july">July</option>--}}
+{{--                    <option value="august">August</option>--}}
+{{--                    <option value="september">September</option>--}}
+{{--                    <option value="october">October</option>--}}
+{{--                    <option value="november">November</option>--}}
+{{--                    <option value="december">December</option>--}}
+{{--                </select>--}}
             </footer>
         </div>
     </div>
 </article>
+<script>
+
+</script>
