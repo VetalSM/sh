@@ -344,7 +344,7 @@
 <script>
     $('.selectPrice').each(function() {
         var colors = ['#2c2a2a', '#c81313', '#2c2a2a'];
-        var textDecorationStyles = ['none', 'line-through', ];
+        var textDecorationStyles = ['none', 'none', 'line-through', ];
         var textPosition = ['left: 0']
 
         var $this = $(this),

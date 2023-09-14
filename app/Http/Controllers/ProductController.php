@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
             Session::put('prod_url', request()->fullUrl());
         return view('products.index', [
-            'products' => Product::orderBy('status')->orderBy('category_id')->orderBy('title')->filter(
+            'products' => Product::orderBy('category_id')->orderBy('title')->filter(
                 request(['search', 'category'])
             )->paginate(12)->withQueryString()
         ]);

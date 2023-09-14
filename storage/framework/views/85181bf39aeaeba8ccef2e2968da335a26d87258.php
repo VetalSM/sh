@@ -144,60 +144,100 @@
 
 
                         <?php if($product->status==="1"): ?>
-                            <select name="price" class="bt rounded-full py-2 px-1" style="color: red; float:left;">
-                                <?php else: ?>
-                        <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
-                            <?php endif; ?>
-                            <?php
+                            <select name="price" id="selectbox1" class="selectPrice bt rounded-full py-2 px-1"
+                                    style="float:left;">
+                                <?php
                                     $button = false;
                                     $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
-                            ?>
-                            <?php $__currentLoopData = $sorted; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $price): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php $__currentLoopData = $balanceProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $balance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php
+                                ?>
+                                <?php $__currentLoopData = $sorted; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $price): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $balanceProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $balance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php
 
-                                        $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
-                                    ?>
-                                    <?php if((int)$balance->product_id === $product->id): ?>
-                                        <?php if($data >= $price->weight ): ?>
-                                            <?php if((int)$price->weight <= $data): ?>
-                                                <?php if( $data >=1): ?>
-                                                    <?php
-                                                        $button = true;
+                                            $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                        ?>
+                                        <?php if((int)$balance->product_id === $product->id): ?>
+                                            <?php if($data >= $price->weight ): ?>
+                                                <?php if((int)$price->weight <= $data): ?>
+                                                    <?php if( $data >=1): ?>
+                                                        <?php
+                                                            $button = true;
 
-                                                    ?>
-                                                <?php endif; ?>
-                                                <option value="<?php echo e($price->price); ?> "
-                                                <?php if($price->weight === "10" && $price->unit === 'г'): ?>
-                                                    <?php echo e('selected="selected"'); ?>
-
+                                                        ?>
                                                     <?php endif; ?>
-                                                >
-                                                    <?php echo e($price->weight); ?><?php echo e($price->unit); ?> <?php echo e($price->price); ?><?php echo e($price->currency); ?>
 
-                                                </option>
+                                                    <option
+                                                        value="<?php echo e(\App\Models\Price::where('name', $product->prom_prices)->where('weight', $price->weight)->value('price')); ?> "
+                                                    <?php if($price->weight === "10" && $price->unit === 'г'): ?>
+                                                        <?php echo e('selected="selected"'); ?>
+
+                                                        <?php endif; ?>
+                                                    >
+                                                        <?php echo e($price->weight); ?><?php echo e($price->unit); ?>  <?php echo e(\App\Models\Price::where('name', $product->prom_prices)->where('weight', $price->weight)->value('price').$price->currency); ?> <?php echo e($price->price); ?><?php echo e($price->currency); ?>
+
+                                                    </option>
+                                                <?php endif; ?>
                                             <?php endif; ?>
                                         <?php endif; ?>
-                                    <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                        </select>
+                            </select>
+                            <input type="hidden" value="<?php echo e($product->prom_prices); ?>" name="prices">
+                            <input type="hidden" value="<?php echo e($product->id); ?>" name="prod_id">
+                            <input type="hidden" value="<?php echo e($title); ?>" name="name">
+                            <input type="hidden" value="<?php echo e($product->thumbnail); ?>" name="image">
+                            <input type="hidden" value="1" name="quantity">
+                        <?php else: ?>
+                            <select name="price" class="bt rounded-full py-2 px-1" style=" float:left;">
+
+                                <?php
+                                    $button = false;
+                                    $balanceProducts = \App\Models\BalanceProduct::with('orders')->where('product_id', $product->id)->get();
+                                ?>
+                                <?php $__currentLoopData = $sorted; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $price): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $balanceProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $balance): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php
+
+                                            $data= $balance->count - (\App\Models\Order::where('product_id', $balance->product_id)->sum('total'));
+                                        ?>
+                                        <?php if((int)$balance->product_id === $product->id): ?>
+                                            <?php if($data >= $price->weight ): ?>
+                                                <?php if((int)$price->weight <= $data): ?>
+                                                    <?php if( $data >=1): ?>
+                                                        <?php
+                                                            $button = true;
+
+                                                        ?>
+                                                    <?php endif; ?>
+
+                                                    <option value="<?php echo e($price->price); ?> "
+                                                    <?php if($price->weight === "10" && $price->unit === 'г'): ?>
+                                                        <?php echo e('selected="selected"'); ?>
+
+                                                        <?php endif; ?>
+                                                    >
+                                                        <?php echo e($price->weight); ?><?php echo e($price->unit); ?>  <?php echo e($price->price); ?><?php echo e($price->currency); ?>
+
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+                            </select>
+                            <input type="hidden" value="<?php echo e($product->prices); ?>" name="prices">
+                            <input type="hidden" value="<?php echo e($product->id); ?>" name="prod_id">
+                            <input type="hidden" value="<?php echo e($title); ?>" name="name">
+                            <input type="hidden" value="<?php echo e($product->thumbnail); ?>" name="image">
+                            <input type="hidden" value="1" name="quantity">
+                        <?php endif; ?>
 
 
 
-                        <input type="hidden" value="<?php echo e($product->prices); ?>" name="prices">
-                        <input type="hidden" value="<?php echo e($product->id); ?>" name="prod_id">
-                        <input type="hidden" value="<?php echo e($title); ?>" name="name">
-                        <input type="hidden" value="<?php echo e($product->thumbnail); ?>" name="image">
-                        <input type="hidden" value="1" name="quantity">
-                                    <?php
 
-//                                        $button = \App\Models\BalanceProduct::where('product_id', $product->id)
-//                                            ->whereRaw('count - (SELECT COALESCE(SUM(total), 0) FROM orders WHERE product_id = balance_products.product_id) >= ?', [$sorted->max('weight')])
-//                                            ->exists();
-//                                           var_dump($button);
-                                    ?>
 
                         <?php if($button === true && ($product->status !== "7")): ?>
                             <button
@@ -224,8 +264,34 @@
 
                     </form>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </footer>
         </div>
     </div>
 </article>
+<script>
+
+</script>
 <?php /**PATH /home/yx479316/madeis.com.ua/www/resources/views/components/product-card.blade.php ENDPATH**/ ?>
