@@ -25,8 +25,8 @@ class ExpenseRatesTable extends Migration
             $table->decimal('travel', 8, 2); // Дорога
             $table->decimal('advertising', 8, 2); // Реклама
             $table->decimal('profit', 8, 2); // Прибыль
-            $table->dropColumn('price_name');
-            $table->dropColumn('weight');
+            $table->string('price_name');
+            $table->integer('weight');
             $table->integer('category_id');
             $table->timestamps();
         });
