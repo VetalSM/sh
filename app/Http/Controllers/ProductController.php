@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 
 
+use App\Models\SearchTerm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
@@ -15,6 +16,14 @@ class ProductController extends Controller
 
     public function index()
     {
+        if (request('search') != 0)
+        {
+            SearchTerm::create([
+                'term' => request('search')
+            ]);
+        }
+
+//        dd(request('search'));
             Session::put('prod_url', request()->fullUrl());
         return view('products.index', [
             'products' => Product::orderBy('category_id')->orderBy('title')->filter(
