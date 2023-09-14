@@ -76,7 +76,11 @@
                                                  $price->currency=" ";
                                              }
                                         @endphp
-                                        <span class="mb-3 text-2xl lg:text-base">{{ Str::limit($item->name,10)}}
+                                        <span class="mb-3 text-2xl lg:text-base">
+
+                                            <a href="/{{app()->getLocale()}}/products/{{ $item->attributes->slug }}">
+                                                {{ Str::limit($item->name,10)}}
+                                            </a>
                                         </span>
                                         <br>
                                         <h10 class="font-bold text-2xl lg:text-base text-blue-700">

@@ -61,6 +61,7 @@ class CartController extends Controller
                 'weight'=>$price->weight,
                 'prod_id'=>$attributes->prod_id,
                 'category_id'=>$prodStatus->category_id,
+                'slug' => $prodStatus->slug,
             )
         ]);
         session()->flash('prod_cart', __('Товар додано у кошик!'));
