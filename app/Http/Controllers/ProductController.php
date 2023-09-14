@@ -20,6 +20,9 @@ class ProductController extends Controller
             'products' => Product::orderBy('category_id')->orderBy('title')->filter(
                 request(['search', 'category'])
             )->paginate(12)->withQueryString()
+//               'products' => Product::orderBy('status')->orderBy('category_id')->orderBy('title')->filter(
+//        request(['search', 'category'])
+//    )->paginate(12)->withQueryString()
         ]);
         }
 

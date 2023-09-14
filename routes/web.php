@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminExpensePercentageController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\AdminArtCategoryController;
 use App\Http\Controllers\AdminArticleController;
@@ -72,6 +73,7 @@ Route::group(
         //products
         Route::resource('/admin/products', AdminProductController::class)->except('show');
         Route::resource('/admin/products/price', AdminPriceController::class);
+        Route::resource('/admin/products/expense', AdminExpensePercentageController::class);
         Route::resource('/admin/products/comments', AdminCommentController::class);
         Route::resource('/admin/products/categories', AdminCategoryController::class);
         Route::resource('/admin/products/status_jobs', AdminStatusJobController::class);
@@ -88,6 +90,11 @@ Route::group(
         Route::get('/admin/products/orders_statistic',  [AdminOrderController::class, 'statistic']);
         Route::post('/admin/products/orders_statistic',  [AdminOrderController::class, 'statistic']);
 
+        Route::get('/admin/products/expense_statistic',  [AdminOrderController::class, 'expense']);
+        Route::post('/admin/products/expense_statistic',  [AdminOrderController::class, 'expense']);
+
+
+         Route::get('/admin/products/price_formation',  [AdminOrderController::class, 'priceFormation']);
 
     });
 //cart

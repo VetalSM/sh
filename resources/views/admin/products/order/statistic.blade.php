@@ -11,9 +11,24 @@
                 <button type="submit" class=" font-semibold ">Показать</button>
             </form><br>
             <span >      Total: {{$orders->sum('product_total')}}  грн</span>
+            <div>
+                <span>
+               {{ '(С/С): ' . $costs['all_created']['cost']['totalWeight'] . ' грн'}}
+                </span>
+            </div>
+            <div>
+                <span>
+               {{'(Расходы): ' . $costs['all_created']['expenses']['totalExpense'] . ' грн'}}
+                </span>
+            </div>
+            <div>
+                <span>
+                    {{'(Прибыль): ' . $costs['all_created']['profit']['total'] . ' грн'}}
+                </span>
+            </div>
         </div>
-        @if($orders)
 
+        @if($orders)
 
             <div class="mt-3 flex flex-col" >
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -41,8 +56,6 @@
                                     return $orders->where('product_id', $product->id)->sum('weight');
                                 }) as $product)
                                     <tr>
-
-
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
@@ -75,8 +88,6 @@
                                                         {{$bb = $balanceProduct->count - (\App\Models\Order::where('product_id', $product->id)->sum('total'))}}
                                                         @if($bb <= 100)
                                                         <span style="color: #fb1717">></span>
-
-
                                                     @endif
                                                     @endif
                                                 </span>

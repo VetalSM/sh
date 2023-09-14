@@ -4,7 +4,7 @@
 {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
     @if(auth()->id() == 0)
         <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
-        <script defer>
+        <script defer async>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -70,8 +70,8 @@
 {{--            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"--}}
 {{--            crossorigin="anonymous"></script>--}}
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer async></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }} " defer async></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
 
     @auth()
