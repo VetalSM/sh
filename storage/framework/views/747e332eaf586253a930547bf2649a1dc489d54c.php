@@ -192,7 +192,8 @@
                                           foreach($cartItems as $f=>$b){
                                                      $w = $b->attributes['weight'];
                                                      $p = $b->price;
-                                         $price = DB::table('prices')->where('weight', "$w")->where('price', "$p")->first();
+
+                                         $price = DB::table('prices')->where('weight', "$w")->where('price', "$p")->where('name', $b->attributes['prices'])->first();
                                     if(!isset($price->currency)) {
                                $price->currency=" ";
                                                          }

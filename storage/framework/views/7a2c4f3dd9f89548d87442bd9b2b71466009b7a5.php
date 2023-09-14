@@ -11,16 +11,7 @@
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['heading' => 'Manage Category']); ?>
 
-
-
-
-
-
-
-
         <?php echo e($orders->links()); ?>
-
-
 
             <?php $__currentLoopData = $orders->unique('created'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <h7 class=" text-bold" style="color: brown;"><?php echo e($order->created_at); ?></h7>
@@ -41,7 +32,6 @@
                                 <span class="hidden lg:inline"><?php echo e(__("Кількість")); ?></span>
                             </th>
                             <th class="hidden text-right md:table-cell"> <?php echo e(__("ціна")); ?></th>
-
                         </tr>
                         </thead>
                         <tbody>
@@ -114,103 +104,26 @@
 
                                                     </span>
                         <?php endif; ?>
+
+                        <?php if(isset($costs[$order->created])): ?>
+                            <div>
+                                <?php echo e('(С/С): ' . $costs[$order->created]['all_category']['cost']['totalWeight'] . ' грн'); ?>
+
+                            </div>
+                            <div>
+                                <?php echo e('(Расходы): ' . $costs[$order->created]['all_category']['expenses']['totalExpense'] . ' грн'); ?>
+
+                            </div>
+                            <div>
+                                <?php echo e('(Прибыль): ' . $costs[$order->created]['all_category']['profit']['total'] . ' грн'); ?>
+
+                            </div>
+                        <?php endif; ?>
+
                     </div>----------------------------------------------------------------------------------------------------------------------------------------
                     <br/><br/>
 
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

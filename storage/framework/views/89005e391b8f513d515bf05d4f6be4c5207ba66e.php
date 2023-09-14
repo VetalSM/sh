@@ -4,7 +4,7 @@
 
     <?php if(auth()->id() == 0): ?>
         <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
-        <script defer>
+        <script defer async>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -70,8 +70,8 @@
 
 
     
-    <script src="<?php echo e(asset('js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/jquery-3.6.0.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/bootstrap.bundle.min.js')); ?>" defer async></script>
+    <script src="<?php echo e(asset('js/jquery-3.6.0.min.js')); ?> " defer async></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
 
     <?php if(auth()->guard()->check()): ?>

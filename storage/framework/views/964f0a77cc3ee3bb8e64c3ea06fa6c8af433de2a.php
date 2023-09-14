@@ -21,9 +21,27 @@
                 <button type="submit" class=" font-semibold ">Показать</button>
             </form><br>
             <span >      Total: <?php echo e($orders->sum('product_total')); ?>  грн</span>
-        </div>
-        <?php if($orders): ?>
+            <div>
+                <span>
+               <?php echo e('(С/С): ' . $costs['all_created']['cost']['totalWeight'] . ' грн'); ?>
 
+                </span>
+            </div>
+            <div>
+                <span>
+               <?php echo e('(Расходы): ' . $costs['all_created']['expenses']['totalExpense'] . ' грн'); ?>
+
+                </span>
+            </div>
+            <div>
+                <span>
+                    <?php echo e('(Прибыль): ' . $costs['all_created']['profit']['total'] . ' грн'); ?>
+
+                </span>
+            </div>
+        </div>
+
+        <?php if($orders): ?>
 
             <div class="mt-3 flex flex-col" >
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -51,8 +69,6 @@
                                     return $orders->where('product_id', $product->id)->sum('weight');
                                 }); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-
-
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
@@ -87,8 +103,6 @@
 
                                                         <?php if($bb <= 100): ?>
                                                         <span style="color: #fb1717">></span>
-
-
                                                     <?php endif; ?>
                                                     <?php endif; ?>
                                                 </span>

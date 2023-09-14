@@ -37,9 +37,13 @@
                 <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Статистика
                 </button>
+
                 <ul class="dropdown-menu">
                     <li>
                         <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/orders_statistic" class="<?php echo e(request()->is('admin/products/balance_products') ? 'text-blue-500' : ''); ?>">По дате</a>
+                    </li>
+                    <li>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense_statistic" class="<?php echo e(request()->is('/admin/products/expense_statistic') ? 'text-blue-500' : ''); ?>">expense</a>
                     </li>
 
                 </ul>
@@ -84,6 +88,20 @@
                     <li>
                         <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/price/create" class="<?php echo e(request()->is('admin/products/price/create') ? 'text-blue-500' : ''); ?>">Новая цeна</a>
                     </li>
+                </ul>
+            </div>
+            <div class="btn">
+                <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Expense
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense" class="<?php echo e(request()->is('admin/products/price_formation') ? 'text-blue-500' : ''); ?>">Цена образование</a>
+                    </li>
+                    <li>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense/create" class="<?php echo e(request()->is('admin/products/balance_products') ? 'text-blue-500' : ''); ?>">create</a>
+                    </li>
+
                 </ul>
             </div>
             <div class="btn">
