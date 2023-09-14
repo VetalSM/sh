@@ -4,7 +4,7 @@
 {{--    <link rel="preconnect" href="https://fonts.gstatic.com">--}}
     @if(auth()->id() == 0)
         <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-CY3K5VV4KR"></script>
-        <script defer>
+        <script defer async>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -66,8 +66,8 @@
 {{--            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"--}}
 {{--            crossorigin="anonymous"></script>--}}
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer async></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }} " defer async></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
     @auth()
         <script src="https://cdn.tiny.cloud/1/pebtcux3vb4jvpk5xu5eqdmmxiohb4tj9plx25aken3kenzs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
@@ -273,7 +273,7 @@
 <script>
     $('.selectPrice').each(function() {
         var colors = ['#2c2a2a', '#c81313', '#2c2a2a'];
-        var textDecorationStyles = ['none', 'line-through', ];
+        var textDecorationStyles = ['none', 'none', 'line-through', ];
         var textPosition = ['left: 0']
 
         var $this = $(this),

@@ -10,7 +10,25 @@
             <input type="date" id="end" name="end" value="{{ old('end', request()->end) }}">&nbsp;&nbsp;&nbsp;
             <button type="submit" class=" font-semibold ">Показать</button>
         </form><br>
-            <span >      Total: {{$orders->sum('product_total')}}  грн</span>
+            <span >
+                Total: {{$orders->sum('product_total')}}  грн
+            </span>
+
+            <div>
+                <span>
+               {{'(С/С): ' . $costs['all_created']['cost']['totalWeight'] . ' грн'}}
+                </span>
+            </div>
+            <div>
+                <span>
+               {{'(Расходы): ' . $costs['all_created']['expenses']['totalExpense'] . ' грн'}}
+                </span>
+            </div>
+            <div>
+                <span>
+                    {{'(Прибыль): ' . $costs['all_created']['profit']['total'] . ' грн'}}
+                </span>
+            </div>
         </div>
         @if($orders)
 

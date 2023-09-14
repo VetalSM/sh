@@ -1,4 +1,4 @@
 User-agent: *
 allow: /
 
-Sitemap: https://madeis.com.ua/sitemap.xml
+Sitemap: https://madeis.com.ua/ap.xml

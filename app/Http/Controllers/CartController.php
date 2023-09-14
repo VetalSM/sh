@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Price;
+use App\Models\Product;
 use Darryldecode\Cart\Cart;
 use Darryldecode\Cart\Exceptions\InvalidConditionException;
 use Illuminate\Http\Request;
@@ -42,6 +43,7 @@ class CartController extends Controller
         $attributes = request();
 
         $price = Price::all()->where('name', "$attributes->prices")->where('price', $attributes->price)->first();
+        $prodStatus = Product::where('id', $attributes->prod_id)->first();
 
         if(!isset($price->currency)){
           $price->currency=" ";}
@@ -51,12 +53,14 @@ class CartController extends Controller
             'price' => $attributes->price,
             'quantity' => $attributes->quantity,
             'attributes' => array(
+                'status'=> $prodStatus->status,
                 'image' => $attributes->image,
                 'prices'=> $attributes->prices,
                 'currency' => $price->currency,
                 'unit'=>$price->unit,
                 'weight'=>$price->weight,
                 'prod_id'=>$attributes->prod_id,
+                'category_id'=>$prodStatus->category_id,
             )
         ]);
         session()->flash('prod_cart', __('Товар додано у кошик!'));
@@ -143,11 +147,13 @@ class CartController extends Controller
                 'quantity' => $cart->quantity,
                 'product_total' => $product_total,
                 'total' => $total,
+                'product_status' => $cart->attributes->status,
+                'price_name' => $cart->attributes->prices,
+                'category_id' => $cart->attributes->category_id,
                 'created' => time(),
             ]);
             $order -> save();
         }
-
 
         $reply_markup= '';
         $bot_token = '5391156329:AAH8K4w5_JQDD6C4BQ1Q1eXLr1Fm2NDnZC4';
