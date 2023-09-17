@@ -114,8 +114,8 @@
                 {{__('Корисне')}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width: auto; min-width: max-content;" >
-                <li><a class="dropdown-item "  href="/{{app()->getLocale()}}/articles"  >{{__("Статті")}}</a></li>
-                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/calculator">{{ __('Калькулятори')}}</a></li>
+                <li><a class="dropdown-item "  href="https://articles.madeis.com.ua/{{app()->getLocale()}}/articles"  >{{__("Статті")}}</a></li>
+                <li><a class="dropdown-item" href="https://articles.madeis.com.ua/{{app()->getLocale()}}/calculator">{{ __('Калькулятори')}}</a></li>
 {{--                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_delivery">{{__("Доставка")}}</a></li>--}}
             </ul>
         </div>
