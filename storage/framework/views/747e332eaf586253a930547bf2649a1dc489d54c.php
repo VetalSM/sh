@@ -77,8 +77,12 @@
                                                  $price->currency=" ";
                                              }
                                         ?>
-                                        <span class="mb-3 text-2xl lg:text-base"><?php echo e(Str::limit($item->name,10)); ?>
+                                        <span class="mb-3 text-2xl lg:text-base">
 
+                                            <a href="/<?php echo e(app()->getLocale()); ?>/products/<?php echo e($item->attributes->slug); ?>">
+                                                <?php echo e(Str::limit($item->name,10)); ?>
+
+                                            </a>
                                         </span>
                                         <br>
                                         <h10 class="font-bold text-2xl lg:text-base text-blue-700">

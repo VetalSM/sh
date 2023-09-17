@@ -71,7 +71,7 @@
 {{--            crossorigin="anonymous"></script>--}}
     {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer async></script>
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }} " defer async></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }} "  ></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
 
     @auth()
@@ -119,11 +119,7 @@
             >
                 {{__('Корисне')}}
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width: auto; min-width: max-content;" >
-                <li><a class="dropdown-item "  href="/{{app()->getLocale()}}/articles"  >{{__("Статті")}}</a></li>
-                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/calculator">{{ __('Калькулятори')}}</a></li>
-{{--                <li><a class="dropdown-item" href="/{{app()->getLocale()}}/info_delivery">{{__("Доставка")}}</a></li>--}}
-            </ul>
+          
         </div>
         <div class="dropdown px-1 inline-block">
             <a class="text-sm lg:text-base text-black inline px-1 rounded-full nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative; top: 0px !important; text-decoration: none; border: 3px solid rgb(255, 179, 0); padding-top: 0rem; padding-bottom: 0rem;">
