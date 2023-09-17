@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Session;
 class ProductController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        if (request('search') != 0)
+
+        if ($request->search != 0)
         {
             SearchTerm::create([
-                'term' => request('search')
+                'term' => $request->search,
+                'ip' => $request->ip()
             ]);
         }
 
