@@ -23,15 +23,18 @@ class AdminOrderController extends Controller
 
     public function store()
     {
+
         $total = request()->weight * request()->quantity;
         $productTotal = request()->price * request()->quantity;
         foreach (\App\Models\Product::all() as $product)
             if (request()->product_id == $product->id) {
-                $product = $product->title;
                 Order::create(array_merge($this->validateOrder(), [
                         'product_total' => $productTotal,
-                        'product' => $product,
-                        'total' => $total
+                        'product' => $product->title,
+                        'total' => $total,
+                        'product_status' => $product->status,
+                        'category_id' => $product->category_id
+
                     ]
                 ));
                 foreach (\App\Models\Order::all() as $order)
@@ -47,6 +50,7 @@ class AdminOrderController extends Controller
 //
     public function edit($locale, Order $order)
     {
+
 //        foreach (Order::all() as $ordeR){
 //            if ($ordeR->created === $order->created){
 
