@@ -33,7 +33,8 @@ class AdminOrderController extends Controller
                         'product' => $product->title,
                         'total' => $total,
                         'product_status' => $product->status,
-                        'category_id' => $product->category_id
+                        'category_id' => $product->category_id,
+                        'price_name' => $product->prices
 
                     ]
                 ));
