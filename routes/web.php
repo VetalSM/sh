@@ -28,7 +28,66 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
+//   Route::resource('/calculator', CalculatorController::class);
 
+ Route::get('/ua/articles/Rozbir_sertyfikata_IFRA_po_katehoriiam', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/Rozbir_sertyfikata_IFRA_po_katehoriiam', 301);
+    });
+     Route::get('/ru/articles/Rozbir_sertyfikata_IFRA_po_katehoriiam', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/Rozbir_sertyfikata_IFRA_po_katehoriiam', 301);
+    });
+    
+    Route::get('/ua/calculator', function () {
+        return redirect('https://articles.madeis.com.ua/ua/calculator', 301);
+    });
+    
+     Route::get('/ru/calculator', function () {
+        return redirect('https://articles.madeis.com.ua/ru/calculator', 301);
+    });
+    
+ Route::get('/ru/articles/Pravyla_dodavannya_aromatyzatoriv_u_visk', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/Pravyla_dodavannya_aromatyzatoriv_u_visk', 301);
+    });
+
+    Route::get('/ua/articles/Pravyla_dodavannya_aromatyzatoriv_u_visk', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/Pravyla_dodavannya_aromatyzatoriv_u_visk', 301);
+    });
+    
+     Route::get('/ua/articles/', function () {
+        return redirect('https://articles.madeis.com.ua/ua/', 301);
+    });
+     Route::get('/ru/articles/', function () {
+        return redirect('https://articles.madeis.com.ua/ru/', 301);
+    });
+    
+    
+    Route::get('/ru/articles/Vmist_vanilinu_u_viddushkakh', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/Vmist_vanilinu_u_viddushkakh', 301);
+    });
+    Route::get('/ua/articles/Vmist_vanilinu_u_viddushkakh', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/Vmist_vanilinu_u_viddushkakh', 301);
+    });
+    Route::get('/ru/articles/vydy_voskiv_dlya_svichok_plyusy_ta_minusy', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/vydy_voskiv_dlya_svichok_plyusy_ta_minusy', 301);
+    });
+    Route::get('/ua/articles/vydy_voskiv_dlya_svichok_plyusy_ta_minusy', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/vydy_voskiv_dlya_svichok_plyusy_ta_minusy', 301);
+    });
+    Route::get('/ru/articles/osinni_aromaty_dlia_svichok', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/osinni_aromaty_dlia_svichok', 301);
+    });
+    Route::get('/ua/articles/osinni_aromaty_dlia_svichok', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/osinni_aromaty_dlia_svichok', 301);
+    });
+    Route::get('/ru/articles/Shcho_take_sertyfikat_IFRA', function () {
+        return redirect('https://articles.madeis.com.ua/ru/articles/Shcho_take_sertyfikat_IFRA', 301);
+    });
+    Route::get('/ua/articles/Shcho_take_sertyfikat_IFRA', function () {
+        return redirect('https://articles.madeis.com.ua/ua/articles/Shcho_take_sertyfikat_IFRA', 301);
+    });
+   
+   
+   
 Route::get('/',  function () {
    return redirect(app()->getLocale());
 });
@@ -41,8 +100,8 @@ Route::group(
 ], function() {
 
     Route::post('/save-survey', [SurveyController::class, 'saveSurvey']);
-    Route::get('/articles' , [ArticleController::class, 'index'])->name('arthome');
-    Route::get('articles/{article:slug}', [ArticleController::class, 'show'])->name('artshow');
+//     Route::get('/articles' , [ArticleController::class, 'index'])->name('arthome');
+//     Route::get('articles/{article:slug}', [ArticleController::class, 'show'])->name('artshow');
     //poroducts
     Route::get('/' , [ProductController::class, 'index'])->name('home');
     Route::get('products/{product:slug}', [ProductController::class, 'show'])->name('show');
@@ -56,7 +115,7 @@ Route::group(
     Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
     Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
     //calculator
-    Route::resource('/calculator', CalculatorController::class);
+    // Route::resource('/calculator', CalculatorController::class);
 // Admin Section
     Route::middleware('can:admin')->group(function () {
 

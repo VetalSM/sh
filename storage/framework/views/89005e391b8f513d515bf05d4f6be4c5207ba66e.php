@@ -74,7 +74,9 @@
 
     
     <script src="<?php echo e(asset('js/bootstrap.bundle.min.js')); ?>" defer async></script>
+
     <script src="<?php echo e(asset('js/jquery-3.6.0.min.js')); ?> "  ></script>
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
 
     <?php if(auth()->guard()->check()): ?>
