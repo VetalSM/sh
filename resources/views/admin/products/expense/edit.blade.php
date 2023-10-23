@@ -68,7 +68,7 @@
                     <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                            for="cost"
                     >
-                        {{ ucwords('Цена грн') }}
+                        {{ ucwords('Общая себестоимость %') }}
                     </label>
                     <input class="border border-gray-200 p-2 w-full rounded"
                            name="cost"
