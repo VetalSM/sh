@@ -127,7 +127,7 @@
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="width: auto; min-width: max-content;" >
-                <li><a class="dropdown-item "  href="https://articles.madeis.com.ua/<?php echo e(app()->getLocale()); ?>/articles"  ><?php echo e(__("Статті")); ?></a></li>
+                <li><a class="dropdown-item "  href="https://articles.madeis.com.ua/<?php echo e(app()->getLocale()); ?>/"  ><?php echo e(__("Статті")); ?></a></li>
                 <li><a class="dropdown-item" href="https://articles.madeis.com.ua/<?php echo e(app()->getLocale()); ?>/calculator"><?php echo e(__('Калькулятори')); ?></a></li>
 
             </ul>

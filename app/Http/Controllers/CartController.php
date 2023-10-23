@@ -235,11 +235,11 @@ class CartController extends Controller
 
 // Для отправки HTML-письма должен быть установлен заголовок Content-type
         $headers  = 'MIME-Version: 1.0' . "\r\n";
-        $headers  .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers  .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
 // Дополнительные заголовки
 // $headers .= 'To: "Vitalii"';
-        $headers .= 'From: 	"madeis.com.ua" <support@madeis.com.ua> ';
+        $headers .= 'From: 	"madeis.com.ua" <orders@madeis.com.ua> ';
 // $headers .= 'Cc: support@madeis.com.ua';
 // $headers .= 'Bcc: support@madeis.com.ua';
 
