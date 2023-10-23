@@ -16,11 +16,13 @@ class AdminExpensePercentageController extends Controller
 
     public function create($locale,ExpenseRate $expense)
     {
+
         return view('admin.products.expense.create', ['expense' => $expense]);
     }
 
     public function store()
     {
+
         ExpenseRate::create(array_merge($this->validateExpense()));
 
         return redirect('/'.app()->getLocale().'/admin/products/expense')->with('success', 'expense created');
@@ -48,6 +50,7 @@ class AdminExpensePercentageController extends Controller
     protected function validateExpense(?ExpenseRate $expense = null): array
     {
         $expense ??= new ExpenseRate();
+
         return request()->validate([
             'price_name' => 'required',
             'status' => 'required',

@@ -49,26 +49,138 @@
                 <x-form.error name="prom_prices"/>
             </x-form.field>
             <hr>
-            <x-form.input name="weight" :value="old('weight', $expense->weight)" required />
-            <x-form.error name="weight"/>
+            <div class="mt-6">
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                       for="weight"
+                >
+                    {{ ucwords('Вес или шт') }}
+                </label>
+                <input class="border border-gray-200 p-2 w-full rounded"
+                       name="weight"
+                       id="weight"
+                       value="{{ old('weight', $expense->weight) }}" required>
+                <x-form.error name="weight"/>
+            </div>
             <hr>
-            <x-form.input name="cost" :value="old('cost', $expense->cost)" required />
-            <x-form.error name="cost"/>
-            <x-form.input name="packaging" :value="old('packaging', $expense->packaging)" required />
-            <x-form.error name="packaging"/>
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="cost"
+                    >
+                        {{ ucwords('Цена грн') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="cost"
+                           id="cost"
+                           value="{{ $expense->cost }}" required>
+                    <x-form.error name="cost"/>
+                </div>
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="packaging"
+                    >
+                        {{ ucwords('Упаковка %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="packaging"
+                           id="packaging"
+                           value="{{ old('packaging', $expense->packaging) }}" required>
+                    <x-form.error name="packaging"/>
+
+                </div>
+            </div>
+
             <hr>
-            <x-form.input name="expenses" :value="old('expenses', $expense->expenses)" required />
-            <x-form.error name="expenses"/>
-            <x-form.input name="admin_expenses" :value="old('admin_expenses', $expense->admin_expenses)" required />
-            <x-form.error name="admin_expenses"/>
-            <x-form.input name="other_expenses" :value="old('other_expenses', $expense->other_expenses)" required />
-            <x-form.error name="other_expenses"/>
-            <x-form.input name="tax" :value="old('tax', $expense->tax)" required />
-            <x-form.error name="tax"/>
-            <x-form.input name="travel" :value="old('travel', $expense->travel)" required />
-            <x-form.error name="travel"/>
-            <x-form.input name="advertising" :value="old('advertising', $expense->advertising)" required />
-            <x-form.error name="advertising"/>
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="expenses"
+                    >
+                        {{ ucwords('Расходы %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="expenses"
+                           id="expenses"
+                           value="{{ old('expenses', $expense->expenses) }}" required>
+                    <x-form.error name="expenses"/>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="admin_expenses"
+                    >
+                        {{ ucwords('Админ расходы %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="admin_expenses"
+                           id="admin_expenses"
+                           value="{{ old('admin_expenses', $expense->admin_expenses) }}" required>
+                    <x-form.error name="admin_expenses"/>
+
+                </div>
+            </div>
+
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="other_expenses"
+                    >
+                        {{ ucwords('Другие расходы %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="other_expenses"
+                           id="other_expenses"
+                           value="{{ old('other_expenses', $expense->other_expenses) }}" required>
+                    <x-form.error name="other_expenses"/>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="tax"
+                    >
+                        {{ ucwords('tax %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="tax"
+                           id="tax"
+                           value="{{ old('tax', $expense->tax) }}" required>
+                    <x-form.error name="tax"/>
+
+                </div>
+            </div>
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="travel"
+                    >
+                        {{ ucwords('Дорога %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="travel"
+                           id="travel"
+                           value="{{ old('travel', $expense->travel) }}" required>
+                    <x-form.error name="travel"/>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="advertising"
+                    >
+                        {{ ucwords('Реклама %') }}
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="advertising"
+                           id="advertising"
+                           value="{{ old('advertising', $expense->advertising) }}" required>
+                    <x-form.error name="advertising"/>
+
+                </div>
+            </div>
+
+
             <hr>
             <x-form.input name="profit" :value="old('profit', $expense->profit)" required />
             <x-form.error name="profit"/>

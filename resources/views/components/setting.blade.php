@@ -83,14 +83,14 @@
             </div>
             <div class="btn">
                 <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Expense
+                    Расходы
                 </button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/{{app()->getLocale()}}/admin/products/expense" class="{{ request()->is('admin/products/price_formation') ? 'text-blue-500' : '' }}">Цена образование</a>
+                        <a href="/{{app()->getLocale()}}/admin/products/expense" class="{{ request()->is('admin/products/price_formation') ? 'text-blue-500' : '' }}">Ценообразование</a>
                     </li>
                     <li>
-                        <a href="/{{app()->getLocale()}}/admin/products/expense/create" class="{{ request()->is('admin/products/balance_products') ? 'text-blue-500' : '' }}">create</a>
+                        <a href="/{{app()->getLocale()}}/admin/products/expense/create" class="{{ request()->is('admin/products/balance_products') ? 'text-blue-500' : '' }}">Создать</a>
                     </li>
 
                 </ul>

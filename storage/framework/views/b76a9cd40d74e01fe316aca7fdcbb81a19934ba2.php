@@ -37,7 +37,7 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-                <select  name="status" required>
+                <select name="status" required>
                     <option selected><?php echo e(old('status', $expense->status)); ?></option>
                     <option value="4">active</option>
                     <option value="2">new</option>
@@ -146,19 +146,18 @@
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
             <hr>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'weight','value' => old('weight', $expense->weight),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'weight','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('weight', $expense->weight)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+            <div class="mt-6">
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                       for="weight"
+                >
+                    <?php echo e(ucwords('Вес или шт')); ?>
+
+                </label>
+                <input class="border border-gray-200 p-2 w-full rounded"
+                       name="weight"
+                       id="weight"
+                       value="<?php echo e(old('weight', $expense->weight)); ?>" required>
+                <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'weight']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -170,20 +169,22 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+            </div>
             <hr>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'cost','value' => old('cost', $expense->cost),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'cost','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('cost', $expense->cost)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="cost"
+                    >
+                        <?php echo e(ucwords('Цена грн')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="cost"
+                           id="cost"
+                           value="<?php echo e($expense->cost); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'cost']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -195,19 +196,19 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'packaging','value' => old('packaging', $expense->packaging),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'packaging','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('packaging', $expense->packaging)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+                </div>
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="packaging"
+                    >
+                        <?php echo e(ucwords('Упаковка %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="packaging"
+                           id="packaging"
+                           value="<?php echo e(old('packaging', $expense->packaging)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'packaging']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -219,20 +220,24 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+
+                </div>
+            </div>
+
             <hr>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'expenses','value' => old('expenses', $expense->expenses),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'expenses','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('expenses', $expense->expenses)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="expenses"
+                    >
+                        <?php echo e(ucwords('Расходы %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="expenses"
+                           id="expenses"
+                           value="<?php echo e(old('expenses', $expense->expenses)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'expenses']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -244,19 +249,20 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'admin_expenses','value' => old('admin_expenses', $expense->admin_expenses),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'admin_expenses','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('admin_expenses', $expense->admin_expenses)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="admin_expenses"
+                    >
+                        <?php echo e(ucwords('Админ расходы %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="admin_expenses"
+                           id="admin_expenses"
+                           value="<?php echo e(old('admin_expenses', $expense->admin_expenses)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'admin_expenses']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -268,19 +274,24 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'other_expenses','value' => old('other_expenses', $expense->other_expenses),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'other_expenses','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('other_expenses', $expense->other_expenses)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+
+                </div>
+            </div>
+
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="other_expenses"
+                    >
+                        <?php echo e(ucwords('Другие расходы %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="other_expenses"
+                           id="other_expenses"
+                           value="<?php echo e(old('other_expenses', $expense->other_expenses)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'other_expenses']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -292,19 +303,20 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'tax','value' => old('tax', $expense->tax),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'tax','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('tax', $expense->tax)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="tax"
+                    >
+                        <?php echo e(ucwords('tax %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="tax"
+                           id="tax"
+                           value="<?php echo e(old('tax', $expense->tax)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'tax']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -316,19 +328,23 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'travel','value' => old('travel', $expense->travel),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'travel','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('travel', $expense->travel)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+
+                </div>
+            </div>
+
+            <div class="mt-6 flex">
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="travel"
+                    >
+                        <?php echo e(ucwords('Дорога %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="travel"
+                           id="travel"
+                           value="<?php echo e(old('travel', $expense->travel)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'travel']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -340,19 +356,20 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'advertising','value' => old('advertising', $expense->advertising),'required' => true]]); ?>
-<?php $component->withName('form.input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['name' => 'advertising','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('advertising', $expense->advertising)),'required' => true]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+                </div>
+
+                <div class="col">
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                           for="advertising"
+                    >
+                        <?php echo e(ucwords('Реклама %')); ?>
+
+                    </label>
+                    <input class="border border-gray-200 p-2 w-full rounded"
+                           name="advertising"
+                           id="advertising"
+                           value="<?php echo e(old('advertising', $expense->advertising)); ?>" required>
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.error','data' => ['name' => 'advertising']]); ?>
 <?php $component->withName('form.error'); ?>
 <?php if ($component->shouldRender()): ?>
@@ -364,6 +381,11 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+
+                </div>
+            </div>
+
+
             <hr>
             <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.input','data' => ['name' => 'profit','value' => old('profit', $expense->profit),'required' => true]]); ?>
@@ -413,4 +435,9 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
+<style>
+    hr {
+        height: 5px !important;
+    }
+</style>
 <?php /**PATH /home/vitalii/Desktop/PhpstormProjects/sp/test price/shop/resources/views/admin/products/expense/create.blade.php ENDPATH**/ ?>

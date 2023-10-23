@@ -92,14 +92,14 @@
             </div>
             <div class="btn">
                 <button class="btn btn-secondary  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Expense
+                    Расходы
                 </button>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense" class="<?php echo e(request()->is('admin/products/price_formation') ? 'text-blue-500' : ''); ?>">Цена образование</a>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense" class="<?php echo e(request()->is('admin/products/price_formation') ? 'text-blue-500' : ''); ?>">Ценообразование</a>
                     </li>
                     <li>
-                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense/create" class="<?php echo e(request()->is('admin/products/balance_products') ? 'text-blue-500' : ''); ?>">create</a>
+                        <a href="/<?php echo e(app()->getLocale()); ?>/admin/products/expense/create" class="<?php echo e(request()->is('admin/products/balance_products') ? 'text-blue-500' : ''); ?>">Создать</a>
                     </li>
 
                 </ul>
