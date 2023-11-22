@@ -26,7 +26,7 @@ class ExpenseRatesTable extends Migration
             $table->decimal('advertising', 8, 2); // Реклама
             $table->decimal('profit', 8, 2); // Прибыль
             $table->string('price_name');
-            $table->integer('weight');
+            $table->decimal('weight',8, 2); // вес
             $table->integer('category_id');
             $table->timestamps();
         });

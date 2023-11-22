@@ -13,8 +13,14 @@
             <select name="product_id"  required>
                 @foreach (\App\Models\Product::all() as $product)
                     <option class="rounded-full"
-                            value="{{$product->id}}" >{{$product->title}} текущий прайс:::{{$product->prices}} </option>
+                            value="{{$product->id}}" >{{$product->title}} << прайс:::{{$product->prices ?? null}}>>
+                        << акция:::{{$product->prom_prices ?? null}}>> </option>
                 @endforeach
+            </select>
+            <x-form.label name="change price in status"/>
+            <select name="price_status"  required>
+                <option class="rounded-full" value="prom" >prom</option>
+                <option class="rounded-full" value="active" >active</option>
             </select>
             <x-form.label name="price start"/>
             <select name="price_start_name"  required>

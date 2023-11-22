@@ -17,6 +17,7 @@ class CreateStatusJobsTable extends Migration
             $table->id();
             $table->string('product_name')->nullable();
             $table->foreignId('product_id')->nullable();
+            $table->string('price_status')->nullable();
             $table->string('price_start_name')->nullable();
             $table->string('price_end_name')->nullable();
             $table->integer('status_start')->nullable();
