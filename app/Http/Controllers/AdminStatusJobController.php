@@ -65,6 +65,7 @@ $status = StatusJob::where('id', $status)->first();
         return request()->validate([
             'product_name' => '',
             'product_id' => '',
+            'price_status' => '',
             'price_start_name' => '',
             'price_end_name' => '',
             'status_start' => '',
