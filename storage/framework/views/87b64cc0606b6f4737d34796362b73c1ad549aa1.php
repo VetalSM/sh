@@ -34,8 +34,25 @@
             <select name="product_id"  required>
                 <?php $__currentLoopData = \App\Models\Product::all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <option class="rounded-full"
-                            value="<?php echo e($product->id); ?>" ><?php echo e($product->title); ?> текущий прайс:::<?php echo e($product->prices); ?> </option>
+                            value="<?php echo e($product->id); ?>" ><?php echo e($product->title); ?> << прайс:::<?php echo e($product->prices ?? null); ?>>>
+                        << акция:::<?php echo e($product->prom_prices ?? null); ?>>> </option>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </select>
+            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.label','data' => ['name' => 'change price in status']]); ?>
+<?php $component->withName('form.label'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['name' => 'change price in status']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+            <select name="price_status"  required>
+                <option class="rounded-full" value="prom" >prom</option>
+                <option class="rounded-full" value="active" >active</option>
             </select>
             <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.form.label','data' => ['name' => 'price start']]); ?>
