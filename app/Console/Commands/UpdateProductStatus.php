@@ -39,7 +39,7 @@ class UpdateProductStatus extends Command
 
         foreach (Product::all() as $product) {
             foreach (StatusJob::where('product_id', $product->id)->get() as $status)
-                if ($status->price_status === 'prom'){
+                if ($status->price_status === 'active'){
                     if ($product->id === $status->product_id) {
                         if ($status->status_start != 0 && $status->work_start != 1 && $status->start_date < now()) {
                             $product->status = $status->status_start;
@@ -56,7 +56,7 @@ class UpdateProductStatus extends Command
                             $product->save();
                         }
                     }
-                    if ($status->price_status === 'active'){
+                    if ($status->price_status === 'prom'){
                         if ($status->status_start != 0 && $status->work_start != 1 && $status->start_date < now()) {
                             $product->status = $status->status_start;
                             $product->prom_prices = $status->price_start_name;
