@@ -13,8 +13,7 @@ class UpdateProductStatus extends Command
      *
      * @var string
      */
-    protected $signature = ' update:product-status
-';
+    protected $signature = 'update:product-status';
 
     /**
      * The console command description.
@@ -39,6 +38,7 @@ class UpdateProductStatus extends Command
 
         foreach (Product::all() as $product) {
             foreach (StatusJob::where('product_id', $product->id)->get() as $status) {
+
                 if ($status->price_status == 'active') {
                     if ($product->id === $status->product_id) {
                         if ($status->status_start != 0 && $status->work_start != 1 && $status->start_date < now()) {
