@@ -101,7 +101,7 @@
 <body style="font-family: Open Sans, sans-serif">
 
 {{--    model windows--}}
-   @include('components.modals.survey')
+{{--   @include('components.modals.survey')--}}
 
 @if(auth()->id() == 0)
 <!-- Google Tag Manager (noscript) -->
